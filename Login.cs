@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TeamProject
 {
-    public partial class Form2 : Form
+    public partial class LoginForm : Form
     {
-        public Form2()
+        public LoginForm()
         {
             InitializeComponent();
         }
