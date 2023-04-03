@@ -16,5 +16,12 @@ namespace TeamProject
         {
             InitializeComponent();
         }
+
+        private void btnJoin_Click(object sender, EventArgs e)
+        {
+            Check check = new Check();
+            check.AddUser(IDBox.Text, PWbox.Text,NameBox.Text,PhnBox.Text ,nnBox.Text);
+            this.Close();
+        }
     }
 }

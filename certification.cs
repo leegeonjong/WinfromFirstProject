@@ -18,7 +18,7 @@ namespace TeamProject
 
         public SqlCommand GetSqlCommand()
         {
-            using SqlConnection conn = new SqlConnection(_connectionString);
+            SqlConnection conn = new SqlConnection(_connectionString);
             conn.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;

@@ -37,14 +37,14 @@ CREATE TABLE Review
 
 CREATE TABLE Project_User
 (
-  u_uid      int         NOT NULL,
+  u_uid      int         NOT NULL IDENTITY(1,1),
   u_id       varchar(20) NOT NULL,
   u_password varchar(20) NOT NULL,
-  u_name     varchar(10) NOT NULL,
-  u_phonenum varchar     NOT NULL,
+  u_name     varchar(20) NOT NULL,
+  u_phonenum varchar(20) NOT NULL,
   u_level    int         NOT NULL DEFAULT 1,
-  u_nickname varchar     NOT NULL,
-  u_isadmin  bit         NOT NULL,
+  u_nickname varchar(20) NOT NULL,
+  u_isadmin  bit         NOT NULL DEFAULT 0,
   CONSTRAINT PK_User PRIMARY KEY (u_uid)
 )
 CREATE TABLE MovieList
@@ -59,6 +59,10 @@ Country VARCHAR(255),
 Country2 VARCHAR(255),
 Distributor VARCHAR(255)
 )
+DROP TABLE Project_User
+INSERT INTO Project_User
+(u_id, u_password, u_name, u_phonenum, u_nickname) 
+VALUES ('i', 'i2', 'i3', 'i4asdasd', 'i5')
 
         
       select*from Project_User
