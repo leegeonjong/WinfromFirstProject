@@ -47,6 +47,18 @@ CREATE TABLE Project_User
   u_isadmin  bit         NOT NULL,
   CONSTRAINT PK_User PRIMARY KEY (u_uid)
 )
+CREATE TABLE MovieList
+(
+MovieUID INT ,
+Title VARCHAR(255),
+ReleaseDate DATE,
+Sales BIGINT,
+Audiences BIGINT,
+Screen INT,
+Country VARCHAR(255),
+Country2 VARCHAR(255),
+Distributor VARCHAR(255)
+)
 
         
       select*from Project_User
