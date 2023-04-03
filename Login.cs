@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,15 +23,9 @@ namespace TeamProject
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var db = new certification(strConn);
-            SqlCommand cmd = db.GetSqlCommand();
-            if (true)
-            {
-                
-                MessageBox.Show("로그인 성공");
 
-            }
-                MessageBox.Show("로그인 실패");
+
+
         }
 
         private void btID_Click(object sender, EventArgs e)
@@ -47,9 +42,9 @@ namespace TeamProject
 
         private void btJoin_Click(object sender, EventArgs e)
         {
-            join_membership Jms= new join_membership();
+            join_membership Jms = new join_membership();
             Jms.Show();
         }
     }
-    
+
 }
