@@ -5,6 +5,8 @@ namespace TeamProject
         public Main()
         {
             InitializeComponent();
+            LoginForm lg= new LoginForm();
+            lg.Show();
         }
     }
 }

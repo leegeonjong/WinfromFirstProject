@@ -28,123 +28,137 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TextId = new System.Windows.Forms.TextBox();
+            this.TextPassword = new System.Windows.Forms.TextBox();
+            this.btID = new System.Windows.Forms.Button();
+            this.btPW = new System.Windows.Forms.Button();
+            this.btJoin = new System.Windows.Forms.Button();
+            this.btLogIn = new System.Windows.Forms.Button();
+            this.btCancle = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(172, 25);
-            label1.Name = "label1";
-            label1.Size = new Size(43, 15);
-            label1.TabIndex = 0;
-            label1.Text = "로그인";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(221, 33);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "로그인";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(51, 91);
-            label2.Name = "label2";
-            label2.Size = new Size(43, 15);
-            label2.TabIndex = 1;
-            label2.Text = "아이디";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(66, 121);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "아이디";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(51, 129);
-            label3.Name = "label3";
-            label3.Size = new Size(55, 15);
-            label3.TabIndex = 2;
-            label3.Text = "비밀번호";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(66, 172);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 20);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "비밀번호";
             // 
-            // textBox1
+            // TextId
             // 
-            textBox1.Location = new Point(148, 83);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 3;
+            this.TextId.Location = new System.Drawing.Point(190, 111);
+            this.TextId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextId.Name = "TextId";
+            this.TextId.Size = new System.Drawing.Size(127, 27);
+            this.TextId.TabIndex = 3;
             // 
-            // textBox2
+            // TextPassword
             // 
-            textBox2.Location = new Point(148, 129);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 4;
+            this.TextPassword.Location = new System.Drawing.Point(190, 172);
+            this.TextPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextPassword.Name = "TextPassword";
+            this.TextPassword.Size = new System.Drawing.Size(127, 27);
+            this.TextPassword.TabIndex = 4;
             // 
-            // button1
+            // btID
             // 
-            button1.Location = new Point(51, 233);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 5;
-            button1.Text = "ID 찾기";
-            button1.UseVisualStyleBackColor = true;
+            this.btID.Location = new System.Drawing.Point(66, 311);
+            this.btID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btID.Name = "btID";
+            this.btID.Size = new System.Drawing.Size(96, 31);
+            this.btID.TabIndex = 5;
+            this.btID.Text = "ID 찾기";
+            this.btID.UseVisualStyleBackColor = true;
+            this.btID.Click += new System.EventHandler(this.btID_Click);
             // 
-            // button2
+            // btPW
             // 
-            button2.Location = new Point(161, 233);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 6;
-            button2.Text = "PW 찾기";
-            button2.UseVisualStyleBackColor = true;
+            this.btPW.Location = new System.Drawing.Point(207, 311);
+            this.btPW.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btPW.Name = "btPW";
+            this.btPW.Size = new System.Drawing.Size(96, 31);
+            this.btPW.TabIndex = 6;
+            this.btPW.Text = "PW 찾기";
+            this.btPW.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btJoin
             // 
-            button3.Location = new Point(274, 233);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 7;
-            button3.Text = "회원가입";
-            button3.UseVisualStyleBackColor = true;
+            this.btJoin.Location = new System.Drawing.Point(352, 311);
+            this.btJoin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btJoin.Name = "btJoin";
+            this.btJoin.Size = new System.Drawing.Size(96, 31);
+            this.btJoin.TabIndex = 7;
+            this.btJoin.Text = "회원가입";
+            this.btJoin.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btLogIn
             // 
-            button4.Location = new Point(86, 309);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 8;
-            button4.Text = "로그인";
-            button4.UseVisualStyleBackColor = true;
+            this.btLogIn.Location = new System.Drawing.Point(111, 412);
+            this.btLogIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btLogIn.Name = "btLogIn";
+            this.btLogIn.Size = new System.Drawing.Size(96, 31);
+            this.btLogIn.TabIndex = 8;
+            this.btLogIn.Text = "로그인";
+            this.btLogIn.UseVisualStyleBackColor = true;
+            this.btLogIn.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button5
+            // btCancle
             // 
-            button5.Location = new Point(212, 309);
-            button5.Name = "button5";
-            button5.Size = new Size(75, 23);
-            button5.TabIndex = 9;
-            button5.Text = "취소";
-            button5.UseVisualStyleBackColor = true;
+            this.btCancle.Location = new System.Drawing.Point(273, 412);
+            this.btCancle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btCancle.Name = "btCancle";
+            this.btCancle.Size = new System.Drawing.Size(96, 31);
+            this.btCancle.TabIndex = 9;
+            this.btCancle.Text = "취소";
+            this.btCancle.UseVisualStyleBackColor = true;
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(427, 450);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Name = "LoginForm";
-            Text = "Login";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(549, 600);
+            this.Controls.Add(this.btCancle);
+            this.Controls.Add(this.btLogIn);
+            this.Controls.Add(this.btJoin);
+            this.Controls.Add(this.btPW);
+            this.Controls.Add(this.btID);
+            this.Controls.Add(this.TextPassword);
+            this.Controls.Add(this.TextId);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "LoginForm";
+            this.Text = "Login";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -152,12 +166,12 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
+        private TextBox TextId;
+        private TextBox TextPassword;
+        private Button btID;
+        private Button btPW;
+        private Button btJoin;
+        private Button btLogIn;
+        private Button btCancle;
     }
 }
