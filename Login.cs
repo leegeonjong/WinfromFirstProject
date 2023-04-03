@@ -25,12 +25,12 @@ namespace TeamProject
         {
             var db = new certification(strConn);
             SqlCommand cmd = db.GetSqlCommand();
-            cmd.CommandText 
-            if ()
-            {
-            
-                MessageBox.Show("로그인 성공");
+            //cmd.CommandText;
+            //if ()
+            //{
 
+            //    MessageBox.Show("로그인 성공");
+            //}
         }
 
         private void btID_Click(object sender, EventArgs e)
