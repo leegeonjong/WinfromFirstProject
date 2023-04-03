@@ -119,5 +119,11 @@ namespace TeamProject
 
             this.Controls.Add(flowLayoutPanel);
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            LoginForm lgf = new LoginForm();
+            lgf.Show();
+        }
     }
 }

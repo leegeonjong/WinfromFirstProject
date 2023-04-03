@@ -139,6 +139,7 @@
             this.btCancle.TabIndex = 9;
             this.btCancle.Text = "취소";
             this.btCancle.UseVisualStyleBackColor = true;
+            this.btCancle.Click += new System.EventHandler(this.btCancle_Click);
             // 
             // LoginForm
             // 
