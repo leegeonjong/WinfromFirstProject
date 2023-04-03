@@ -71,6 +71,7 @@
             memberView.RowTemplate.Height = 25;
             memberView.Size = new Size(800, 322);
             memberView.TabIndex = 3;
+            memberView.CellDoubleClick += memberView_CellDoubleClick;
             // 
             // btn_delete
             // 

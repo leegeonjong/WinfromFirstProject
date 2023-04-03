@@ -101,7 +101,7 @@ namespace TeamProject
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            
+
 
             foreach (DataGridViewCell cell in memberView.SelectedCells)
             {
@@ -129,6 +129,22 @@ namespace TeamProject
             reader.Close();
             cmd.Dispose();
 
+        }
+
+        private void memberView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+            if (e.ColumnIndex == 0)
+            {
+                // detailForm 객체 생성 및 화면에 표시
+                MyPage mypage = new MyPage();
+                AddOwnedForm(mypage);
+                mypage.StartPosition = FormStartPosition.CenterScreen;
+                mypage.Show();
+
+
+            }
         }
     }
 }
