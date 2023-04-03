@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System;
 using Newtonsoft.Json.Linq;
+using System.Net;
+using System.Text;
 
 namespace TeamProject
 {
@@ -22,7 +24,7 @@ namespace TeamProject
             InitializeComponent();
 
             LoadMovieDataAsync();
-         
+
         }
 
         private async void LoadMovieDataAsync()
@@ -72,6 +74,8 @@ namespace TeamProject
             }
 
             return null; // 영화 포스터를 찾을 수 없는 경우
+
+
         }
 
         private void AddMovieItem(string title, string posterUrl)
@@ -118,6 +122,12 @@ namespace TeamProject
             };
 
             this.Controls.Add(flowLayoutPanel);
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            LoginForm lg = new LoginForm();
+            lg.Show();
         }
     }
 }
