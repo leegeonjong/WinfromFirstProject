@@ -32,9 +32,9 @@ namespace TeamProject
             //if ()
             //{
             
-                MessageBox.Show("로그인 성공");
+                //MessageBox.Show("로그인 성공");
             
-                MessageBox.Show("로그인 성공")
+                //MessageBox.Show("로그인 성공")
 
             //    MessageBox.Show("로그인 성공");
             //}

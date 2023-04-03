@@ -104,9 +104,6 @@ namespace TeamProject
 
             fLPMain.Controls.Add(panel);
 
-
-            LoginForm lg= new LoginForm();
-            lg.Show();
         }
     }
 }
