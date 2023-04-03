@@ -132,13 +132,14 @@ namespace TeamProject
                 // DataTable 객체 생성
                 DataTable dataTable = new DataTable();
 
-            memberView.DataSource = ds.Tables[0];
+                memberView.DataSource = ds.Tables[0];
 
-            memberView.Columns[0].ReadOnly = true;
-            memberView.Columns[0].Width = 30;
+                memberView.Columns[0].ReadOnly = true;
+                memberView.Columns[0].Width = 30;
 
-            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; //나머지 여백 차지해줌
-            dataGridView1.AllowUserToDeleteRows = false; // 직접 행 삭제 불가
+                memberView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; //나머지 여백 차지해줌
+                memberView.AllowUserToDeleteRows = false; // 직접 행 삭제 불가
+            }
         }
     }
-}
+    }
