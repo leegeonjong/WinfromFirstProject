@@ -62,11 +62,12 @@ namespace TeamProject
             {
                 string result = await response.Content.ReadAsStringAsync();
                 JObject json = JObject.Parse(result);
-                JArray items = (JArray)json["items"];
+                JArray items = (JArray)json["item"];
 
                 if (items.Count > 0)
                 {
                     string imageUrl = (string)items[0]["image"];
+                    MessageBox.Show(imageUrl);
                     return imageUrl;
                 }
             }
@@ -104,6 +105,20 @@ namespace TeamProject
 
             fLPMain.Controls.Add(panel);
 
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            flowLayoutPanel = new FlowLayoutPanel
+            {
+                Dock = DockStyle.Fill,
+                AutoScroll = true,
+                FlowDirection = FlowDirection.LeftToRight,
+                WrapContents = true,
+                Size = new Size(5 * 130, 0)
+            };
+
+            this.Controls.Add(flowLayoutPanel);
         }
     }
 }

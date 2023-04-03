@@ -158,6 +158,7 @@
             Controls.Add(label1);
             Name = "Main";
             Text = "Form1";
+            Load += Main_Load;
             ResumeLayout(false);
             PerformLayout();
         }
