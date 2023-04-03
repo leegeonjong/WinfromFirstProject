@@ -31,18 +31,20 @@
             label5 = new Label();
             tab1 = new TabControl();
             tabPage1 = new TabPage();
+            textBox4 = new TextBox();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             tabPage2 = new TabPage();
             tabPage3 = new TabPage();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            label6 = new Label();
             tab1.SuspendLayout();
             tabPage1.SuspendLayout();
+            tabPage2.SuspendLayout();
             SuspendLayout();
             // 
             // label5
@@ -84,6 +86,34 @@
             tabPage1.Text = "회원정보";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(195, 228);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(100, 23);
+            textBox4.TabIndex = 11;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(195, 170);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(100, 23);
+            textBox3.TabIndex = 10;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(195, 115);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(100, 23);
+            textBox2.TabIndex = 9;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(195, 65);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(100, 23);
+            textBox1.TabIndex = 8;
+            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -122,6 +152,7 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(label6);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
@@ -139,33 +170,14 @@
             tabPage3.Text = "즐겨찾기";
             tabPage3.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // label6
             // 
-            textBox1.Location = new Point(195, 65);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 8;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(195, 115);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 9;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(195, 170);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 10;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(195, 228);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 11;
+            label6.AutoSize = true;
+            label6.Location = new Point(140, 72);
+            label6.Name = "label6";
+            label6.Size = new Size(39, 15);
+            label6.TabIndex = 0;
+            label6.Text = "label6";
             // 
             // MyPage
             // 
@@ -179,6 +191,8 @@
             tab1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -197,5 +211,6 @@
         private TextBox textBox3;
         private TextBox textBox2;
         private TextBox textBox1;
+        private Label label6;
     }
 }

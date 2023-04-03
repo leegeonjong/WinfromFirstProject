@@ -28,6 +28,13 @@ namespace TeamProject
             //cmd.CommandText
             //if ()
             //{
+            //cmd.CommandText;
+            //if ()
+            //{
+            
+                MessageBox.Show("로그인 성공");
+            
+                MessageBox.Show("로그인 성공")
 
             //    MessageBox.Show("로그인 성공");
             //}
@@ -39,17 +46,18 @@ namespace TeamProject
             FID.Show();
         }
 
-        private void btPW_Click(object sender, EventArgs e)
-        {
-            Find_PW FPW = new();
-            FPW.Show();
+            private void btPW_Click(object sender, EventArgs e)
+            {
+                Find_PW FPW = new();
+                FPW.Show();
+            }
+
+            private void btJoin_Click(object sender, EventArgs e)
+            {
+                join_membership Jms = new join_membership();
+                Jms.Show();
+            }
         }
 
-        private void btJoin_Click(object sender, EventArgs e)
-        {
-            join_membership Jms = new join_membership();
-            Jms.Show();
-        }
-    }
-
+    
 }

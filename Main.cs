@@ -11,7 +11,7 @@ namespace TeamProject
 {
     public partial class Main : Form
     {
-        const string strConn = "Server=127.0.0.1; Database=teamproject; uid=sa; pwd=1234; Encrypt=false";
+        const string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
         SqlConnection conn;
         SqlDataReader reader;
         private FlowLayoutPanel flowLayoutPanel;
@@ -20,6 +20,7 @@ namespace TeamProject
         public Main()
         {
             InitializeComponent();
+
             LoadMovieDataAsync();
             LoginForm lg = new LoginForm();
             lg.Show();
@@ -27,7 +28,7 @@ namespace TeamProject
 
         private async void LoadMovieDataAsync()
         {
-            const string strConn = "Server=127.0.0.1; Database=teamproject; uid=sa; pwd=1234; Encrypt=false";
+            const string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
             string name = "ÇÑ±¹";
             using SqlConnection conn = new SqlConnection(strConn);
             conn.Open();
@@ -103,7 +104,9 @@ namespace TeamProject
 
             fLPMain.Controls.Add(panel);
 
-            
+
+            LoginForm lg= new LoginForm();
+            lg.Show();
         }
     }
 }
