@@ -15,8 +15,8 @@ namespace TeamProject
         SqlConnection conn;
         SqlDataReader reader;
         private FlowLayoutPanel flowLayoutPanel;
-        
-        
+
+
         public Main()
         {
             InitializeComponent();
@@ -105,7 +105,7 @@ namespace TeamProject
             
 
 
-            LoginForm lg= new LoginForm();
+            LoginForm lg = new LoginForm();
             lg.Show();
         }
     }
