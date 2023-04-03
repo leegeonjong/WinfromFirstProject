@@ -2,6 +2,7 @@
 using Microsoft.Data.SqlClient;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 using System.Xml.Linq;
+using static Azure.Core.HttpHeader;
 
 namespace TeamProject
 {
@@ -48,6 +49,20 @@ namespace TeamProject
             return cmd.ExecuteScalar()?.ToString();
 
 
+        }
+
+        public bool IsAdmin(string userId)
+        {
+            string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
+            var db = new certification(strConn);
+            SqlCommand cmd = db.GetSqlCommand();
+            cmd.CommandText = $"SELECT u_isadmin FROM Project_User WHERE u_id='{userId}'";
+            object isAdmin = cmd.ExecuteScalar();
+            if (isAdmin != null && isAdmin != DBNull.Value)
+            {
+                return (bool)isAdmin;
+            }
+            return false;
         }
     }
 
