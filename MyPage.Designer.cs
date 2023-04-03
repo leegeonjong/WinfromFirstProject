@@ -31,12 +31,16 @@
             label5 = new Label();
             tab1 = new TabControl();
             tabPage1 = new TabPage();
-            tabPage2 = new TabPage();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            tabPage2 = new TabPage();
             tabPage3 = new TabPage();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            textBox3 = new TextBox();
+            textBox4 = new TextBox();
             tab1.SuspendLayout();
             tabPage1.SuspendLayout();
             SuspendLayout();
@@ -64,6 +68,10 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(textBox4);
+            tabPage1.Controls.Add(textBox3);
+            tabPage1.Controls.Add(textBox2);
+            tabPage1.Controls.Add(textBox1);
             tabPage1.Controls.Add(label4);
             tabPage1.Controls.Add(label3);
             tabPage1.Controls.Add(label2);
@@ -75,16 +83,6 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "회원정보";
             tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(752, 383);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "내가 남긴 리뷰";
-            tabPage2.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -122,6 +120,16 @@
             label1.TabIndex = 4;
             label1.Text = "아이디";
             // 
+            // tabPage2
+            // 
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(752, 383);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "내가 남긴 리뷰";
+            tabPage2.UseVisualStyleBackColor = true;
+            // 
             // tabPage3
             // 
             tabPage3.Location = new Point(4, 24);
@@ -130,6 +138,34 @@
             tabPage3.TabIndex = 2;
             tabPage3.Text = "즐겨찾기";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(195, 65);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(100, 23);
+            textBox1.TabIndex = 8;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(195, 115);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(100, 23);
+            textBox2.TabIndex = 9;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(195, 170);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(100, 23);
+            textBox3.TabIndex = 10;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(195, 228);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(100, 23);
+            textBox4.TabIndex = 11;
             // 
             // MyPage
             // 
@@ -157,5 +193,9 @@
         private Label label2;
         private Label label1;
         private TabPage tabPage3;
+        private TextBox textBox4;
+        private TextBox textBox3;
+        private TextBox textBox2;
+        private TextBox textBox1;
     }
 }
