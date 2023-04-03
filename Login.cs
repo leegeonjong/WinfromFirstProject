@@ -23,8 +23,13 @@ namespace TeamProject
 
         private void button4_Click(object sender, EventArgs e)
         {
-
-
+            var db = new certification(strConn);
+            SqlCommand cmd = db.GetSqlCommand();
+            cmd.CommandText 
+            if ()
+            {
+            
+                MessageBox.Show("로그인 성공");
 
         }
 
