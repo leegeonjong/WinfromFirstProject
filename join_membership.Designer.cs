@@ -28,150 +28,166 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            btnJoin = new Button();
-            button2 = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnJoin = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.IDBox = new System.Windows.Forms.TextBox();
+            this.PWbox = new System.Windows.Forms.TextBox();
+            this.NameBox = new System.Windows.Forms.TextBox();
+            this.PhnBox = new System.Windows.Forms.TextBox();
+            this.nnBox = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(221, 30);
-            label1.Name = "label1";
-            label1.Size = new Size(55, 15);
-            label1.TabIndex = 0;
-            label1.Text = "회원가입";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(284, 40);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "회원가입";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(125, 103);
-            label2.Name = "label2";
-            label2.Size = new Size(19, 15);
-            label2.TabIndex = 1;
-            label2.Text = "ID";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(161, 137);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(24, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "ID";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(125, 148);
-            label3.Name = "label3";
-            label3.Size = new Size(55, 15);
-            label3.TabIndex = 2;
-            label3.Text = "비밀번호";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(161, 197);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 20);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "비밀번호";
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(125, 238);
-            label4.Name = "label4";
-            label4.Size = new Size(55, 15);
-            label4.TabIndex = 3;
-            label4.Text = "전화번호";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(161, 317);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 20);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "전화번호";
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(125, 193);
-            label5.Name = "label5";
-            label5.Size = new Size(31, 15);
-            label5.TabIndex = 4;
-            label5.Text = "이름";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(161, 257);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(39, 20);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "이름";
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(125, 283);
-            label6.Name = "label6";
-            label6.Size = new Size(43, 15);
-            label6.TabIndex = 5;
-            label6.Text = "닉네임";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(161, 377);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(54, 20);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "닉네임";
             // 
             // btnJoin
             // 
-            btnJoin.Location = new Point(134, 327);
-            btnJoin.Name = "btnJoin";
-            btnJoin.Size = new Size(75, 23);
-            btnJoin.TabIndex = 6;
-            btnJoin.Text = "가입하기";
-            btnJoin.UseVisualStyleBackColor = true;
+            this.btnJoin.Location = new System.Drawing.Point(172, 436);
+            this.btnJoin.Margin = new System.Windows.Forms.Padding(4);
+            this.btnJoin.Name = "btnJoin";
+            this.btnJoin.Size = new System.Drawing.Size(96, 31);
+            this.btnJoin.TabIndex = 6;
+            this.btnJoin.Text = "가입하기";
+            this.btnJoin.UseVisualStyleBackColor = true;
+            this.btnJoin.Click += new System.EventHandler(this.btnJoin_Click);
             // 
             // button2
             // 
-            button2.Location = new Point(309, 327);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 7;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(397, 436);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(96, 31);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // IDBox
             // 
-            textBox1.Location = new Point(300, 95);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 8;
+            this.IDBox.Location = new System.Drawing.Point(386, 127);
+            this.IDBox.Margin = new System.Windows.Forms.Padding(4);
+            this.IDBox.Name = "IDBox";
+            this.IDBox.Size = new System.Drawing.Size(127, 27);
+            this.IDBox.TabIndex = 8;
             // 
-            // textBox2
+            // PWbox
             // 
-            textBox2.Location = new Point(300, 140);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 9;
+            this.PWbox.Location = new System.Drawing.Point(386, 187);
+            this.PWbox.Margin = new System.Windows.Forms.Padding(4);
+            this.PWbox.Name = "PWbox";
+            this.PWbox.Size = new System.Drawing.Size(127, 27);
+            this.PWbox.TabIndex = 9;
             // 
-            // textBox3
+            // NameBox
             // 
-            textBox3.Location = new Point(300, 185);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 10;
+            this.NameBox.Location = new System.Drawing.Point(386, 247);
+            this.NameBox.Margin = new System.Windows.Forms.Padding(4);
+            this.NameBox.Name = "NameBox";
+            this.NameBox.Size = new System.Drawing.Size(127, 27);
+            this.NameBox.TabIndex = 10;
             // 
-            // textBox4
+            // PhnBox
             // 
-            textBox4.Location = new Point(300, 230);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 11;
+            this.PhnBox.Location = new System.Drawing.Point(386, 307);
+            this.PhnBox.Margin = new System.Windows.Forms.Padding(4);
+            this.PhnBox.Name = "PhnBox";
+            this.PhnBox.Size = new System.Drawing.Size(127, 27);
+            this.PhnBox.TabIndex = 11;
             // 
-            // textBox5
+            // nnBox
             // 
-            textBox5.Location = new Point(300, 275);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(100, 23);
-            textBox5.TabIndex = 12;
+            this.nnBox.Location = new System.Drawing.Point(386, 367);
+            this.nnBox.Margin = new System.Windows.Forms.Padding(4);
+            this.nnBox.Name = "nnBox";
+            this.nnBox.Size = new System.Drawing.Size(127, 27);
+            this.nnBox.TabIndex = 12;
             // 
             // join_membership
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(577, 450);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(button2);
-            Controls.Add(btnJoin);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Name = "join_membership";
-            Text = "Form3";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(742, 600);
+            this.Controls.Add(this.nnBox);
+            this.Controls.Add(this.PhnBox);
+            this.Controls.Add(this.NameBox);
+            this.Controls.Add(this.PWbox);
+            this.Controls.Add(this.IDBox);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnJoin);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "join_membership";
+            this.Text = "Form3";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -184,10 +200,10 @@
         private Label label6;
         private Button btnJoin;
         private Button button2;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
+        private TextBox IDBox;
+        private TextBox PWbox;
+        private TextBox NameBox;
+        private TextBox PhnBox;
+        private TextBox nnBox;
     }
 }
