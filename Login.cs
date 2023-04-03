@@ -28,14 +28,24 @@ namespace TeamProject
             SqlCommand cmd = db.GetSqlCommand();
             Check check = new();
             int result = check.LogIn(TextId.Text, TextPassword.Text);
-            if (result == 1 ) 
+            if (result == 1)
             {
                 MessageBox.Show("로그인 성공");
-                
+
+                // 현재 로그인한 사용자가 관리자인 경우에만 adminpage를 띄움
+                bool isAdmin = check.IsAdmin(TextId.Text);
+                if (isAdmin)
+                {
+                    var adminPage = new Admin_Page();
+                    adminPage.Show();
+                }
+
                 this.Close();
             }
             else
+            {
                 MessageBox.Show("로그인 실패");
+            }
         }
 
         private void btID_Click(object sender, EventArgs e)
@@ -55,7 +65,12 @@ namespace TeamProject
                 join_membership Jms = new join_membership();
                 Jms.Show();
             }
+
+        private void btCancle_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
+    }
 
     
 }

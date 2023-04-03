@@ -15,6 +15,7 @@ namespace TeamProject
 {
     public partial class Main : Form
     {
+        public int logStatus { get; set; }
         const string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
         SqlConnection conn;
         SqlDataReader reader;
@@ -32,6 +33,9 @@ namespace TeamProject
 
         private async void LoadMovieDataAsync()
         {
+            //Admin_Page adminPage = new Admin_Page();
+            //adminPage.Show();
+
             const string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
             string name = "ÇÑ±¹";
             using SqlConnection conn = new SqlConnection(strConn);
@@ -52,6 +56,7 @@ namespace TeamProject
                 AddMovieItem(title, imageUrl);
                 i++;
             }
+
         }
 
         public async Task<string> GetPosterUrlAsync(string title)
