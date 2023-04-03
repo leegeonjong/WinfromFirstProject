@@ -15,12 +15,17 @@ namespace TeamProject
                 $"VALUES ('{i}', '{i2}', '{i3}', '{i4}', '{i5}') ";
            cmd.ExecuteNonQuery();
         }
-        //public Login() 
-        //{
-        //    string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
-        //    var db = new certification(strConn);
-        //    SqlCommand cmd = db.GetSqlCommand();
-        //}
+        public int LogIn(string id, string password)
+        {
+            string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
+            var db = new certification(strConn);
+            using SqlConnection conn = new SqlConnection(strConn);
+            SqlCommand cmd = new SqlCommand($"SELECT COUNT(*) FROM Project_User WHERE u_id = '{id}' AND u_password = '{password}'", conn);
+            conn.Open();
+            int count = (int)cmd.ExecuteScalar();
+            
+            return count == 1 ? 1 : 2;
+        }
     }
 
 

@@ -37,12 +37,12 @@ namespace TeamProject
             cmd.Parameters.Add(parameter);
 
             using SqlDataReader reader = await cmd.ExecuteReaderAsync();
-            //while (await reader.ReadAsync())
-            //{
-            //    string title = reader.GetString(0);
-            //    string imageUrl = await GetPosterUrlAsync(title);
-            //    AddMovieItem(title, imageUrl);
-            //}
+            while (await reader.ReadAsync())
+            {
+                string title = reader.GetString(0);
+                string imageUrl = await GetPosterUrlAsync(title);
+                AddMovieItem(title, imageUrl);
+            }
         }
 
         public async Task<string> GetPosterUrlAsync(string title)
