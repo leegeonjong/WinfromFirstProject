@@ -33,6 +33,7 @@
             btn_Search = new Button();
             memberView = new DataGridView();
             btn_delete = new Button();
+            btn_Update = new Button();
             ((System.ComponentModel.ISupportInitialize)memberView).BeginInit();
             SuspendLayout();
             // 
@@ -79,12 +80,24 @@
             btn_delete.TabIndex = 4;
             btn_delete.Text = "삭제";
             btn_delete.UseVisualStyleBackColor = true;
+            btn_delete.Click += btn_delete_Click;
+            // 
+            // btn_Update
+            // 
+            btn_Update.Location = new Point(104, 99);
+            btn_Update.Name = "btn_Update";
+            btn_Update.Size = new Size(101, 23);
+            btn_Update.TabIndex = 5;
+            btn_Update.Text = "회원정보 수정";
+            btn_Update.UseVisualStyleBackColor = true;
+            btn_Update.Click += btn_Update_Click;
             // 
             // Admin_Page
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btn_Update);
             Controls.Add(btn_delete);
             Controls.Add(memberView);
             Controls.Add(btn_Search);
@@ -103,7 +116,8 @@
         private Label label1;
         private TextBox SearchBox;
         private Button btn_Search;
-        private DataGridView memberView;
         private Button btn_delete;
+        private Button btn_Update;
+        public DataGridView memberView;
     }
 }
