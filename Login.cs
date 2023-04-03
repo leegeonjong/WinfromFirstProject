@@ -27,13 +27,13 @@ namespace TeamProject
             var db = new certification(strConn);
             SqlCommand cmd = db.GetSqlCommand();
             Check check = new();
-            int result = check.LogIn(TextId.Text, TextPassword.Text);
+            int result = check.LogIn(TextId.Text.Trim(), TextPassword.Text.Trim());
             if (result == 1)
             {
                 MessageBox.Show("로그인 성공");
 
                 // 현재 로그인한 사용자가 관리자인 경우에만 adminpage를 띄움
-                bool isAdmin = check.IsAdmin(TextId.Text);
+                bool isAdmin = check.IsAdmin(TextId.Text.Trim());
                 if (isAdmin)
                 {
                     var adminPage = new Admin_Page();
