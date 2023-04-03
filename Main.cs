@@ -22,8 +22,7 @@ namespace TeamProject
             InitializeComponent();
 
             LoadMovieDataAsync();
-            LoginForm lg = new LoginForm();
-            lg.Show();
+         
         }
 
         private async void LoadMovieDataAsync()
@@ -38,12 +37,12 @@ namespace TeamProject
             cmd.Parameters.Add(parameter);
 
             using SqlDataReader reader = await cmd.ExecuteReaderAsync();
-            while (await reader.ReadAsync())
-            {
-                string title = reader.GetString(0);
-                string imageUrl = await GetPosterUrlAsync(title);
-                AddMovieItem(title, imageUrl);
-            }
+            //while (await reader.ReadAsync())
+            //{
+            //    string title = reader.GetString(0);
+            //    string imageUrl = await GetPosterUrlAsync(title);
+            //    AddMovieItem(title, imageUrl);
+            //}
         }
 
         public async Task<string> GetPosterUrlAsync(string title)
@@ -104,6 +103,12 @@ namespace TeamProject
 
             fLPMain.Controls.Add(panel);
 
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            LoginForm lg = new LoginForm();
+            lg.Show();
         }
     }
 }
