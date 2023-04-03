@@ -22,7 +22,8 @@ namespace TeamProject
             InitializeComponent();
 
             LoadMovieDataAsync();
-            
+            LoginForm lg = new LoginForm();
+            lg.Show();
         }
 
         private async void LoadMovieDataAsync()
@@ -50,7 +51,7 @@ namespace TeamProject
             string clientId = "FXqKsjIoNLVFmlkXvTzt";
             string clientSecret = "RZVA7QWEda";
 
-            string apiUrl = $"https://openapi.naver.com/v1/search/movie.json?query={Uri.EscapeDataString(title)}";
+            string apiUrl = $"https://openapi.naver.com/v1/search/movie.json?query={title}";
 
             using HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Add("X-Naver-Client-Id", clientId);
