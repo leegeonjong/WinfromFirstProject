@@ -86,8 +86,7 @@ namespace TeamProject
                 // UPDATE 쿼리문 실행
                 int rowsAffected = cmd.ExecuteNonQuery();
                 adminform.LoadMemberView();
-
-
+                adminform.Refresh();
 
 
 
