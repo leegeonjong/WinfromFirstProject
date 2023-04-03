@@ -73,7 +73,7 @@
             // TextId
             // 
             this.TextId.Location = new System.Drawing.Point(190, 111);
-            this.TextId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextId.Margin = new System.Windows.Forms.Padding(4);
             this.TextId.Name = "TextId";
             this.TextId.Size = new System.Drawing.Size(127, 27);
             this.TextId.TabIndex = 3;
@@ -81,7 +81,7 @@
             // TextPassword
             // 
             this.TextPassword.Location = new System.Drawing.Point(190, 172);
-            this.TextPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextPassword.Margin = new System.Windows.Forms.Padding(4);
             this.TextPassword.Name = "TextPassword";
             this.TextPassword.Size = new System.Drawing.Size(127, 27);
             this.TextPassword.TabIndex = 4;
@@ -89,7 +89,7 @@
             // btID
             // 
             this.btID.Location = new System.Drawing.Point(66, 311);
-            this.btID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btID.Margin = new System.Windows.Forms.Padding(4);
             this.btID.Name = "btID";
             this.btID.Size = new System.Drawing.Size(96, 31);
             this.btID.TabIndex = 5;
@@ -100,27 +100,29 @@
             // btPW
             // 
             this.btPW.Location = new System.Drawing.Point(207, 311);
-            this.btPW.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btPW.Margin = new System.Windows.Forms.Padding(4);
             this.btPW.Name = "btPW";
             this.btPW.Size = new System.Drawing.Size(96, 31);
             this.btPW.TabIndex = 6;
             this.btPW.Text = "PW 찾기";
             this.btPW.UseVisualStyleBackColor = true;
+            this.btPW.Click += new System.EventHandler(this.btPW_Click);
             // 
             // btJoin
             // 
             this.btJoin.Location = new System.Drawing.Point(352, 311);
-            this.btJoin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btJoin.Margin = new System.Windows.Forms.Padding(4);
             this.btJoin.Name = "btJoin";
             this.btJoin.Size = new System.Drawing.Size(96, 31);
             this.btJoin.TabIndex = 7;
             this.btJoin.Text = "회원가입";
             this.btJoin.UseVisualStyleBackColor = true;
+            this.btJoin.Click += new System.EventHandler(this.btJoin_Click);
             // 
             // btLogIn
             // 
             this.btLogIn.Location = new System.Drawing.Point(111, 412);
-            this.btLogIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btLogIn.Margin = new System.Windows.Forms.Padding(4);
             this.btLogIn.Name = "btLogIn";
             this.btLogIn.Size = new System.Drawing.Size(96, 31);
             this.btLogIn.TabIndex = 8;
@@ -131,7 +133,7 @@
             // btCancle
             // 
             this.btCancle.Location = new System.Drawing.Point(273, 412);
-            this.btCancle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btCancle.Margin = new System.Windows.Forms.Padding(4);
             this.btCancle.Name = "btCancle";
             this.btCancle.Size = new System.Drawing.Size(96, 31);
             this.btCancle.TabIndex = 9;
@@ -153,7 +155,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoginForm";
             this.Text = "Login";
             this.ResumeLayout(false);
