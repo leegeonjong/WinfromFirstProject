@@ -25,20 +25,19 @@ namespace TeamProject
         {
             var db = new certification(strConn);
             SqlCommand cmd = db.GetSqlCommand();
-           
-
-
+            cmd.CommandText 
+            if ()
             {
-
+            
                 MessageBox.Show("로그인 성공");
 
-            }
         }
-            private void btID_Click(object sender, EventArgs e)
-            {
-                Find_ID FID = new();
-                FID.Show();
-            }
+
+        private void btID_Click(object sender, EventArgs e)
+        {
+            Find_ID FID = new();
+            FID.Show();
+        }
 
             private void btPW_Click(object sender, EventArgs e)
             {
