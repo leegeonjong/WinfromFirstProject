@@ -1,5 +1,7 @@
 ﻿
 using Microsoft.Data.SqlClient;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
+using System.Xml.Linq;
 
 namespace TeamProject
 {
@@ -26,17 +28,26 @@ namespace TeamProject
             
             return count == 1 ? 1 : 2;
         }
-        public void FindID(string Name, string Phnum)
+        public string FindID(string Name, string Phnum)
         {
             string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
             var db = new certification(strConn);
             SqlCommand cmd = db.GetSqlCommand();
-            cmd.CommandText = $"SELECT u_id FROM" +
-                   $"(u_id, u_password, u_name, u_phonenum, u_nickname) " +
-                   $"VALUES ('{i}', '{i2}', '{i3}', '{i4}', '{i5}') ";
-            cmd.ExecuteNonQuery();
+            cmd.CommandText = $"SELECT u_id FROM Project_User WHERE u_name = '{Name}' AND u_phonenum = '{Phnum}'";
+            return cmd.ExecuteScalar()?.ToString();
 
-         
+
+        }
+        public string FindPW(string Name, string ID, string Phnum)
+        {
+            string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
+            var db = new certification(strConn);
+            SqlCommand cmd = db.GetSqlCommand();
+            cmd.CommandText = $"SELECT u_id FROM Project_User " +
+                $"WHERE u_name = '{Name}' AND u_id= '{ID}' AND u_phonenum= '{Phnum}'";
+            return cmd.ExecuteScalar()?.ToString();
+
+
         }
     }
 
