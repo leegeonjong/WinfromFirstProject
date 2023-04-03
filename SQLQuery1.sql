@@ -64,7 +64,9 @@ INSERT INTO Project_User
 (u_id, u_password, u_name, u_phonenum, u_nickname) 
 VALUES ('i', 'i2', 'i3', 'i4asdasd', 'i5')
 
-        
+SELECT u_id FROM Project_User 
+WHERE u_name = 'qwe' and u_phonenum = 'qwe'
+ 
       select*from Project_User
 	  select*from Review
 	  select*from Movie

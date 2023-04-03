@@ -15,6 +15,7 @@ namespace TeamProject
 {
     public partial class LoginForm : Form
     {
+        
         string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
         public LoginForm()
         {
@@ -25,12 +26,16 @@ namespace TeamProject
         {
             var db = new certification(strConn);
             SqlCommand cmd = db.GetSqlCommand();
-            //cmd.CommandText;
-            //if ()
-            //{
-
-            //    MessageBox.Show("로그인 성공");
-            //}
+            Check check = new();
+            int result = check.LogIn(TextId.Text, TextPassword.Text);
+            if (result == 1 ) 
+            {
+                MessageBox.Show("로그인 성공");
+                
+                this.Close();
+            }
+            else
+                MessageBox.Show("로그인 실패");
         }
 
         private void btID_Click(object sender, EventArgs e)
