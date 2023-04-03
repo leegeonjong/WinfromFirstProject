@@ -20,6 +20,7 @@ namespace TeamProject
         public Main()
         {
             InitializeComponent();
+<<<<<<< HEAD
             LoadMovieDataAsync();
             
         }
@@ -102,7 +103,8 @@ namespace TeamProject
 
             fLPMain.Controls.Add(panel);
 
-
+=======
+>>>>>>> ebacd12060175c98eea815688146e314c33f9592
             LoginForm lg= new LoginForm();
             lg.Show();
         }
