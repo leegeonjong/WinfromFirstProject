@@ -114,31 +114,21 @@ namespace TeamProject
 
         public void LoadMemberView()
         {
-            try
-            {
-                // certification 인스턴스 생성 및 SqlCommand 객체 가져오기
-                certification cert = new certification(strConn);
-                SqlCommand cmd = cert.GetSqlCommand();
+            certification cert = new certification(strConn);
+            SqlCommand cmd = cert.GetSqlCommand();
 
-                // SELECT 쿼리문 작성
-                string sql = "SELECT u_uid, u_id, u_name, u_phonenum, u_level, u_nickname FROM project_user";
+            cmd.CommandText = "SELECT u_uid,u_id, u_password, u_name, u_phonenum, u_level, u_nickname FROM project_user";
+            SqlDataReader reader = cmd.ExecuteReader();
 
-                // SqlCommand 객체에 SELECT 쿼리문 설정
-                cmd.CommandText = sql;
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
 
-                // SqlDataReader 객체 생성
-                SqlDataReader reader = cmd.ExecuteReader();
+            memberView.DataSource = dataTable;
 
-                // DataTable 객체 생성
-                DataTable dataTable = new DataTable();
+            // 리소스 정리
+            reader.Close();
+            cmd.Dispose();
 
-            memberView.DataSource = ds.Tables[0];
-
-            memberView.Columns[0].ReadOnly = true;
-            memberView.Columns[0].Width = 30;
-
-            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; //나머지 여백 차지해줌
-            dataGridView1.AllowUserToDeleteRows = false; // 직접 행 삭제 불가
         }
     }
 }
