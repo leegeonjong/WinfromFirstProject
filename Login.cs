@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,15 @@ namespace TeamProject
 
         private void button4_Click(object sender, EventArgs e)
         {
+            var db = new certification(strConn);
+            SqlCommand cmd = db.GetSqlCommand();
+            if (true)
+            {
+                
+                MessageBox.Show("로그인 성공");
 
+            }
+                MessageBox.Show("로그인 실패");
         }
 
         private void btID_Click(object sender, EventArgs e)
@@ -29,5 +38,18 @@ namespace TeamProject
             Find_ID FID = new();
             FID.Show();
         }
+
+        private void btPW_Click(object sender, EventArgs e)
+        {
+            Find_PW FPW = new();
+            FPW.Show();
+        }
+
+        private void btJoin_Click(object sender, EventArgs e)
+        {
+            join_membership Jms= new join_membership();
+            Jms.Show();
+        }
     }
+    
 }
