@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -25,31 +25,33 @@ namespace TeamProject
         {
             var db = new certification(strConn);
             SqlCommand cmd = db.GetSqlCommand();
-            cmd.CommandText 
-            if ()
+           
+
+
             {
-            
+
                 MessageBox.Show("로그인 성공");
 
+            }
+        }
+            private void btID_Click(object sender, EventArgs e)
+            {
+                Find_ID FID = new();
+                FID.Show();
+            }
+
+            private void btPW_Click(object sender, EventArgs e)
+            {
+                Find_PW FPW = new();
+                FPW.Show();
+            }
+
+            private void btJoin_Click(object sender, EventArgs e)
+            {
+                join_membership Jms = new join_membership();
+                Jms.Show();
+            }
         }
 
-        private void btID_Click(object sender, EventArgs e)
-        {
-            Find_ID FID = new();
-            FID.Show();
-        }
-
-        private void btPW_Click(object sender, EventArgs e)
-        {
-            Find_PW FPW = new();
-            FPW.Show();
-        }
-
-        private void btJoin_Click(object sender, EventArgs e)
-        {
-            join_membership Jms = new join_membership();
-            Jms.Show();
-        }
-    }
-
+    
 }
