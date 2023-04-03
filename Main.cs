@@ -15,8 +15,8 @@ namespace TeamProject
         SqlConnection conn;
         SqlDataReader reader;
         private FlowLayoutPanel flowLayoutPanel;
-        
-        
+
+
         public Main()
         {
             InitializeComponent();

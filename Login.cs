@@ -25,16 +25,9 @@ namespace TeamProject
         {
             var db = new certification(strConn);
             SqlCommand cmd = db.GetSqlCommand();
-            //cmd.CommandText
-            //if ()
-            //{
             //cmd.CommandText;
             //if ()
             //{
-            
-                //MessageBox.Show("로그인 성공");
-            
-                //MessageBox.Show("로그인 성공")
 
             //    MessageBox.Show("로그인 성공");
             //}
