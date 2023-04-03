@@ -102,7 +102,7 @@ namespace TeamProject
             };
             panel.Controls.Add(titleLabel);
 
-            fLPMain.Controls.Add(panel);
+            
 
 
             LoginForm lg= new LoginForm();
