@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System;
 using Newtonsoft.Json.Linq;
+using System.Net;
+using System.Text;
 
 namespace TeamProject
 {
@@ -22,11 +24,14 @@ namespace TeamProject
             InitializeComponent();
 
             LoadMovieDataAsync();
-         
+
         }
 
         private async void LoadMovieDataAsync()
         {
+            Admin_Page adminPage = new Admin_Page();
+            adminPage.Show();
+
             const string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
             string name = "한국";
             using SqlConnection conn = new SqlConnection(strConn);
@@ -37,12 +42,12 @@ namespace TeamProject
             cmd.Parameters.Add(parameter);
 
             using SqlDataReader reader = await cmd.ExecuteReaderAsync();
-            while (await reader.ReadAsync())
-            {
-                string title = reader.GetString(0);
-                string imageUrl = await GetPosterUrlAsync(title);
-                AddMovieItem(title, imageUrl);
-            }
+            //while (await reader.ReadAsync())
+            //{
+            //    string title = reader.GetString(0);
+            //    string imageUrl = await GetPosterUrlAsync(title);
+            //    AddMovieItem(title, imageUrl);
+            //}
         }
 
         public async Task<string> GetPosterUrlAsync(string title)
@@ -72,6 +77,8 @@ namespace TeamProject
             }
 
             return null; // 영화 포스터를 찾을 수 없는 경우
+
+
         }
 
         private void AddMovieItem(string title, string posterUrl)
@@ -122,8 +129,8 @@ namespace TeamProject
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            LoginForm lgf = new LoginForm();
-            lgf.Show();
+            LoginForm lg = new LoginForm();
+            lg.Show();
         }
     }
 }
