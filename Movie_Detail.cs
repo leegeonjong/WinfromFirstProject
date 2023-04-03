@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TeamProject
 {
-    public partial class Form4 : Form
+    public partial class Movie_Detail : Form
     {
-        public Form4()
+        public Movie_Detail()
         {
             InitializeComponent();
         }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TeamProject
 {
-    public partial class Form3 : Form
+    public partial class Find_Result : Form
     {
-        public Form3()
+        public Find_Result()
         {
             InitializeComponent();
         }
