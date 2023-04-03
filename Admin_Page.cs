@@ -132,19 +132,13 @@ namespace TeamProject
                 // DataTable 객체 생성
                 DataTable dataTable = new DataTable();
 
-                // SqlDataReader 객체에서 읽어온 데이터를 DataTable 객체에 추가
-                dataTable.Load(reader);
+            memberView.DataSource = ds.Tables[0];
 
-                // DataGridView 컨트롤에 DataTable 객체 설정
-                memberView.DataSource = dataTable;
+            memberView.Columns[0].ReadOnly = true;
+            memberView.Columns[0].Width = 30;
 
-                // SqlDataReader 객체를 닫음
-                reader.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; //나머지 여백 차지해줌
+            dataGridView1.AllowUserToDeleteRows = false; // 직접 행 삭제 불가
         }
     }
 }

@@ -65,7 +65,12 @@ namespace TeamProject
                 join_membership Jms = new join_membership();
                 Jms.Show();
             }
+
+        private void btCancle_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
+    }
 
     
 }

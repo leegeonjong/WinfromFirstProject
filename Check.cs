@@ -8,9 +8,10 @@ namespace TeamProject
 {
     public class Check
     {
+        string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
         public void AddUser(string i, string i2, string i3, string i4, string i5)
         {
-            string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
+           
             var db = new certification(strConn);
             SqlCommand cmd = db.GetSqlCommand();
             cmd.CommandText = $"INSERT INTO Project_User" +
@@ -20,7 +21,7 @@ namespace TeamProject
         }
         public int LogIn(string id, string password)
         {
-            string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
+            
             var db = new certification(strConn);
             using SqlConnection conn = new SqlConnection(strConn);
             SqlCommand cmd = new SqlCommand($"SELECT COUNT(*) FROM Project_User WHERE u_id = '{id}' AND u_password = '{password}'", conn);
@@ -31,7 +32,7 @@ namespace TeamProject
         }
         public string FindID(string Name, string Phnum)
         {
-            string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
+            
             var db = new certification(strConn);
             SqlCommand cmd = db.GetSqlCommand();
             cmd.CommandText = $"SELECT u_id FROM Project_User WHERE u_name = '{Name}' AND u_phonenum = '{Phnum}'";
@@ -41,8 +42,7 @@ namespace TeamProject
         }
         public string FindPW(string Name, string ID, string Phnum)
         {
-            string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
-            var db = new certification(strConn);
+           var db = new certification(strConn);
             SqlCommand cmd = db.GetSqlCommand();
             cmd.CommandText = $"SELECT u_id FROM Project_User " +
                 $"WHERE u_name = '{Name}' AND u_id= '{ID}' AND u_phonenum= '{Phnum}'";

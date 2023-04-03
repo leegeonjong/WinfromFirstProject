@@ -50,7 +50,7 @@
             // NameBox
             // 
             this.NameBox.Location = new System.Drawing.Point(215, 141);
-            this.NameBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.NameBox.Margin = new System.Windows.Forms.Padding(4);
             this.NameBox.Name = "NameBox";
             this.NameBox.Size = new System.Drawing.Size(127, 27);
             this.NameBox.TabIndex = 1;
@@ -58,7 +58,7 @@
             // PhonenumBox
             // 
             this.PhonenumBox.Location = new System.Drawing.Point(215, 217);
-            this.PhonenumBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PhonenumBox.Margin = new System.Windows.Forms.Padding(4);
             this.PhonenumBox.Name = "PhonenumBox";
             this.PhonenumBox.Size = new System.Drawing.Size(127, 27);
             this.PhonenumBox.TabIndex = 2;
@@ -86,7 +86,7 @@
             // btn_Result
             // 
             this.btn_Result.Location = new System.Drawing.Point(89, 308);
-            this.btn_Result.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Result.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Result.Name = "btn_Result";
             this.btn_Result.Size = new System.Drawing.Size(96, 31);
             this.btn_Result.TabIndex = 5;
@@ -97,12 +97,13 @@
             // btn_Cancel
             // 
             this.btn_Cancel.Location = new System.Drawing.Point(247, 308);
-            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(96, 31);
             this.btn_Cancel.TabIndex = 6;
             this.btn_Cancel.Text = "취소";
             this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // Find_ID
             // 
@@ -116,7 +117,7 @@
             this.Controls.Add(this.PhonenumBox);
             this.Controls.Add(this.NameBox);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Find_ID";
             this.Text = "아이디 찾기";
             this.ResumeLayout(false);
