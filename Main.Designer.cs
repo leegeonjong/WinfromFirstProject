@@ -28,153 +28,147 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.CB_Category = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.fLPMain = new System.Windows.Forms.FlowLayoutPanel();
-            this.SuspendLayout();
+            flowLayoutPanel = new FlowLayoutPanel();
+            label1 = new Label();
+            label2 = new Label();
+            textBox1 = new TextBox();
+            label3 = new Label();
+            btnSearch = new Button();
+            btnLogin = new Button();
+            CB_Category = new ComboBox();
+            label4 = new Label();
+            dateTimePicker1 = new DateTimePicker();
+            dateTimePicker2 = new DateTimePicker();
+            fLPMain = new FlowLayoutPanel();
+            SuspendLayout();
             // 
             // flowLayoutPanel
             // 
-            this.flowLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(200, 100);
-            this.flowLayoutPanel.TabIndex = 0;
+            flowLayoutPanel.Location = new Point(0, 0);
+            flowLayoutPanel.Name = "flowLayoutPanel";
+            flowLayoutPanel.Size = new Size(200, 100);
+            flowLayoutPanel.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(539, 146);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "날짜 시작";
+            label1.AutoSize = true;
+            label1.Location = new Point(599, 182);
+            label1.Name = "label1";
+            label1.Size = new Size(90, 25);
+            label1.TabIndex = 0;
+            label1.Text = "날짜 시작";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(780, 146);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "날짜 끝";
+            label2.AutoSize = true;
+            label2.Location = new Point(867, 182);
+            label2.Name = "label2";
+            label2.Size = new Size(72, 25);
+            label2.TabIndex = 1;
+            label2.Text = "날짜 끝";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(1021, 174);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(248, 27);
-            this.textBox1.TabIndex = 4;
+            textBox1.Location = new Point(1134, 218);
+            textBox1.Margin = new Padding(3, 2, 3, 2);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(275, 31);
+            textBox1.TabIndex = 4;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1021, 150);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 20);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "영화이름 검색";
+            label3.AutoSize = true;
+            label3.Location = new Point(1134, 188);
+            label3.Name = "label3";
+            label3.Size = new Size(126, 25);
+            label3.TabIndex = 5;
+            label3.Text = "영화이름 검색";
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(1275, 174);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(100, 26);
-            this.btnSearch.TabIndex = 6;
-            this.btnSearch.Text = "검색";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Location = new Point(1417, 218);
+            btnSearch.Margin = new Padding(3, 2, 3, 2);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(111, 32);
+            btnSearch.TabIndex = 6;
+            btnSearch.Text = "검색";
+            btnSearch.UseVisualStyleBackColor = true;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(1389, 86);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(100, 26);
-            this.btnLogin.TabIndex = 7;
-            this.btnLogin.Text = "로그인";
-            this.btnLogin.UseVisualStyleBackColor = true;
-        
+            btnLogin.Location = new Point(1543, 108);
+            btnLogin.Margin = new Padding(3, 2, 3, 2);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(111, 32);
+            btnLogin.TabIndex = 7;
+            btnLogin.Text = "로그인";
+            btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // CB_Category
             // 
-            this.CB_Category.FormattingEnabled = true;
-            this.CB_Category.Items.AddRange(new object[] {
-            "오름차순",
-            "내림차순",
-            "관객숫자",
-            "매출순위",
-            "개봉일자"});
-            this.CB_Category.Location = new System.Drawing.Point(253, 174);
-            this.CB_Category.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CB_Category.Name = "CB_Category";
-            this.CB_Category.Size = new System.Drawing.Size(165, 28);
-            this.CB_Category.TabIndex = 8;
+            CB_Category.FormattingEnabled = true;
+            CB_Category.Items.AddRange(new object[] { "오름차순", "내림차순", "관객숫자", "매출순위", "개봉일자" });
+            CB_Category.Location = new Point(281, 218);
+            CB_Category.Margin = new Padding(3, 2, 3, 2);
+            CB_Category.Name = "CB_Category";
+            CB_Category.Size = new Size(183, 33);
+            CB_Category.TabIndex = 8;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(253, 150);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 20);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "카테고리 선택";
+            label4.AutoSize = true;
+            label4.Location = new Point(281, 188);
+            label4.Name = "label4";
+            label4.Size = new Size(126, 25);
+            label4.TabIndex = 9;
+            label4.Text = "카테고리 선택";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(539, 172);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(237, 27);
-            this.dateTimePicker1.TabIndex = 10;
+            dateTimePicker1.Location = new Point(599, 215);
+            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(263, 31);
+            dateTimePicker1.TabIndex = 10;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(780, 174);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(237, 27);
-            this.dateTimePicker2.TabIndex = 11;
+            dateTimePicker2.Location = new Point(867, 218);
+            dateTimePicker2.Margin = new Padding(3, 2, 3, 2);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(263, 31);
+            dateTimePicker2.TabIndex = 11;
             // 
             // fLPMain
             // 
-            this.fLPMain.Location = new System.Drawing.Point(253, 205);
-            this.fLPMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.fLPMain.Name = "fLPMain";
-            this.fLPMain.Size = new System.Drawing.Size(1236, 604);
-            this.fLPMain.TabIndex = 12;
+            fLPMain.Location = new Point(281, 256);
+            fLPMain.Margin = new Padding(3, 2, 3, 2);
+            fLPMain.Name = "fLPMain";
+            fLPMain.Size = new Size(1373, 755);
+            fLPMain.TabIndex = 12;
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1709, 818);
-            this.Controls.Add(this.fLPMain);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.CB_Category);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Main";
-            this.Text = "Form1";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1899, 1022);
+            Controls.Add(fLPMain);
+            Controls.Add(dateTimePicker2);
+            Controls.Add(dateTimePicker1);
+            Controls.Add(label4);
+            Controls.Add(CB_Category);
+            Controls.Add(btnLogin);
+            Controls.Add(btnSearch);
+            Controls.Add(label3);
+            Controls.Add(textBox1);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "Main";
+            Text = "Form1";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

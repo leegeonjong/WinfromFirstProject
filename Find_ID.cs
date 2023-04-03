@@ -16,5 +16,19 @@ namespace TeamProject
         {
             InitializeComponent();
         }
+
+        private void btn_Result_Click(object sender, EventArgs e)
+        {
+            Check check = new Check();
+            string id;
+            id = check.FindID(NameBox.Text, PhonenumBox.Text);
+            if (id == null) 
+            { MessageBox.Show("잘못된 값입니다");
+              
+            }
+            else
+            MessageBox.Show(id);
+            
+        }
     }
 }
