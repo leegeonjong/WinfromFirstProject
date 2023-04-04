@@ -232,7 +232,7 @@ namespace TeamProject
             bool endDatePickerChanged = false;
             dTPStart.ValueChanged += (sender, e) => startDatePickerChanged = true;
             dTPEnd.ValueChanged += (sender, e) => endDatePickerChanged = true;
-            btnSearch.Click += (sender, e) =>
+            btnSearch.Click += async (sender, e) =>
             {
                 if (startDatePickerChanged && endDatePickerChanged)
                 {
@@ -240,6 +240,24 @@ namespace TeamProject
                     DateTime endDate = dTPEnd.Value;
                     Console.WriteLine($"시작 날짜: {startDate}");
                     // 시작 날짜를 사용하여 원하는 작업을 수행하세요.
+                    using SqlCommand cmd = new SqlCommand("SELECT Title FROM MovieList WHERE ReleaseDate BETWEEN @startDate AND @endDate", conn);
+                    SqlParameter startParam = new SqlParameter("@startDate", System.Data.SqlDbType.Date);
+                    startParam.Value = startDate;
+                    cmd.Parameters.Add(startParam);
+
+                    SqlParameter endParam = new SqlParameter("@endDate", System.Data.SqlDbType.Date);
+                    endParam.Value = endDate;
+                    cmd.Parameters.Add(endParam);
+
+                    using SqlDataReader reader = await cmd.ExecuteReaderAsync();
+                    fLPMain.Controls.Clear();
+                    rank = 0;
+                    while (await reader.ReadAsync())
+                    {
+                        string title = reader.GetString(0);
+                        string imageUrl = await GetPosterUrlAsync(title);
+                        AddMovieItem(title, imageUrl);
+                    }
                 }
             };
 
