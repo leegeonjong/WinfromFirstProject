@@ -48,7 +48,11 @@ namespace TeamProject
                 ch = 0;
                 return;
             }
-            
+            if (IDBox.ReadOnly == false)
+            {
+                MessageBox.Show("빈칸이 있는 항목이 있습니다. 회원가입이 실패했습니다.");
+                return;
+            }
             Check check = new Check();
             check.AddUser(IDBox.Text.Trim(), PWbox.Text.Trim(), NameBox.Text.Trim(), PhnBox.Text.Trim(), nnBox.Text.Trim());
             this.Close();
@@ -66,12 +70,13 @@ namespace TeamProject
             if (i == 1)
             {
                 MessageBox.Show("중복검사에 성공하였습니다");
-                
-            
+                IDBox.ReadOnly = true;
+
+
             }
             else if (i == 2)
             {
-                MessageBox.Show("중복검사에 실패하였습니다");
+                MessageBox.Show("중복검사를 눌러주세요");
                 IDBox.Text = "";
             }
             else if (i == 3) 
@@ -92,6 +97,11 @@ namespace TeamProject
         private void Quitbtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            IDBox.ReadOnly = false;
         }
     }
  

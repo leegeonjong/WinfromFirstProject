@@ -23,7 +23,7 @@ namespace TeamProject
             Check check = new Check();
           
             
-            id = check.FindID(NameBox.Text, PhonenumBox.Text);
+            id = check.FindID(NameBox.Text.Trim(), PhonenumBox.Text.Trim());
             if (id == null)
             {
                 MessageBox.Show("잘못된 값입니다");

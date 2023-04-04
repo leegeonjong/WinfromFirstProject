@@ -28,7 +28,7 @@ namespace TeamProject
 
             CB_Category.SelectedIndex = 0;
             LoadMovieDataAsync();
-
+            
         }
 
         private async void LoadMovieDataAsync()
