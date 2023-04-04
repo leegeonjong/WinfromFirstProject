@@ -19,11 +19,14 @@ namespace TeamProject
         string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
 
         Admin_Page adminform;
+        Main mainform;
+
         public MyPage(Admin_Page form)
         {
             InitializeComponent();
 
             this.adminform = form;
+           
 
         }
 
@@ -42,6 +45,7 @@ namespace TeamProject
             cmd.CommandText = "SELECT u_uid,u_id, u_password, u_name, u_phonenum, u_level, u_nickname FROM project_user WHERE u_uid = @u_uid";
             cmd.Parameters.AddWithValue("@u_uid", uid);
 
+            
 
 
             SqlDataReader reader = cmd.ExecuteReader();
