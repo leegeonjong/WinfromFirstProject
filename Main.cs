@@ -130,6 +130,7 @@ namespace TeamProject
              btnLogin.Text = "·Î±×¾Æ¿ô";
             label_id.Text = userid;
             label_nn.Text = userNickname;
+            mypage.Visible= true;
            
   
         }
@@ -250,6 +251,7 @@ namespace TeamProject
         private void txtName_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
+            { 
                 btnSearch_Click(sender, e);
             }
         }
