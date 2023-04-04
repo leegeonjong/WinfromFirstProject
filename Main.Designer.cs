@@ -149,6 +149,7 @@
             txtName.PlaceholderText = "검색할 영화이름을 입력하세요";
             txtName.Size = new Size(375, 31);
             txtName.TabIndex = 16;
+            txtName.KeyDown += txtName_KeyDown;
             // 
             // CB_Category
             // 

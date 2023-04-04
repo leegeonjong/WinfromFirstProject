@@ -14,6 +14,7 @@ using TMDbLib.Client;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Search;
+using Microsoft.VisualBasic.Devices;
 
 namespace TeamProject
 {
@@ -226,9 +227,9 @@ namespace TeamProject
                 }
             };
 
-            using SqlCommand cmd = new SqlCommand("SELECT TOP 50 Title FROM MovieList WHERE Title = @name", conn);
+            using SqlCommand cmd = new SqlCommand("SELECT TOP 50 Title FROM MovieList WHERE Title LIKE @name", conn);
             SqlParameter parameter = new SqlParameter("@name", System.Data.SqlDbType.VarChar);
-            parameter.Value = name;
+            parameter.Value = "%" + name + "%";
             cmd.Parameters.Add(parameter);
 
             using SqlDataReader reader = await cmd.ExecuteReaderAsync();
@@ -240,6 +241,14 @@ namespace TeamProject
                 string imageUrl = await GetPosterUrlAsync(title);
 
                 AddMovieItem(title, imageUrl);
+            }
+        }
+
+        private void txtName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSearch_Click(sender, e);
             }
         }
     }
