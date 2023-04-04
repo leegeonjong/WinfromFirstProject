@@ -36,11 +36,11 @@ namespace TeamProject
             //Admin_Page adminPage = new Admin_Page();
             //adminPage.Show();
 
-            const string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
+           
             string name = "한국";
             using SqlConnection conn = new SqlConnection(strConn);
             conn.Open();
-            using SqlCommand cmd = new SqlCommand("SELECT Title FROM MovieList$ WHERE Country = @name", conn);
+            using SqlCommand cmd = new SqlCommand("SELECT Title FROM MovieList WHERE Country = @name", conn);
             SqlParameter parameter = new SqlParameter("@name", System.Data.SqlDbType.VarChar);
             parameter.Value = name;
             cmd.Parameters.Add(parameter);
@@ -132,11 +132,11 @@ namespace TeamProject
 
         private async void btnSearch_Click(object sender, EventArgs e)
         {
-            const string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
+         
             string name = txtName.Text;
             using SqlConnection conn = new SqlConnection(strConn);
             conn.Open();
-            using SqlCommand cmd = new SqlCommand("SELECT Title FROM MovieList$ WHERE Title = @name", conn);
+            using SqlCommand cmd = new SqlCommand("SELECT Title FROM MovieList WHERE Title = @name", conn);
             SqlParameter parameter = new SqlParameter("@name", System.Data.SqlDbType.VarChar);
             parameter.Value = name;
             cmd.Parameters.Add(parameter);
@@ -158,13 +158,13 @@ namespace TeamProject
             //내림차순
             //매출순위
             //개봉일자
-            const string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
+          
             string name = txtName.Text;
             using SqlConnection conn = new SqlConnection(strConn);
             conn.Open();
             if (CB_Category.SelectedIndex == 0)//오름
             {
-                using SqlCommand cmd = new SqlCommand("SELECT Title FROM MovieList$ ORDER BY ReleaseDate ASC;", conn);
+                using SqlCommand cmd = new SqlCommand("SELECT Title FROM MovieList ORDER BY ReleaseDate ASC;", conn);
                 using SqlDataReader reader = await cmd.ExecuteReaderAsync();
                 fLPMain.Controls.Clear();
                 int i = 0;
@@ -181,7 +181,7 @@ namespace TeamProject
             }
             if (CB_Category.SelectedIndex == 1)//내림
             {
-                using SqlCommand cmd = new SqlCommand("SELECT Title FROM MovieList$ ORDER BY ReleaseDate DESC;", conn);
+                using SqlCommand cmd = new SqlCommand("SELECT Title FROM MovieList ORDER BY ReleaseDate DESC;", conn);
                 using SqlDataReader reader = await cmd.ExecuteReaderAsync();
 
                 fLPMain.Controls.Clear();
@@ -197,7 +197,7 @@ namespace TeamProject
             }
             if (CB_Category.SelectedIndex == 2)//매출
             {
-                using SqlCommand cmd = new SqlCommand("SELECT Title FROM MovieList$ ORDER BY Sales;", conn);
+                using SqlCommand cmd = new SqlCommand("SELECT Title FROM MovieList ORDER BY Sales;", conn);
                 using SqlDataReader reader = await cmd.ExecuteReaderAsync();
 
                 fLPMain.Controls.Clear();
@@ -213,7 +213,7 @@ namespace TeamProject
             }
             if (CB_Category.SelectedIndex == 3)//개봉
             {
-                using SqlCommand cmd = new SqlCommand("SELECT Title FROM MovieList$ ORDER BY ReleaseDate;", conn);
+                using SqlCommand cmd = new SqlCommand("SELECT Title FROM MovieList ORDER BY ReleaseDate;", conn);
                 using SqlDataReader reader = await cmd.ExecuteReaderAsync();
 
                 fLPMain.Controls.Clear();
