@@ -103,9 +103,11 @@ namespace TeamProject
             {
                 Text = $"[{rank}] {title}",
                 Location = new Point(0, 180),
-                AutoSize = false,
-                Size = new Size(120, 20),
-                TextAlign = ContentAlignment.MiddleCenter,
+                AutoSize = true,
+                AutoEllipsis = false,
+                Size = new Size(120, 40),
+                MaximumSize = new Size(120, 40),
+                TextAlign = ContentAlignment.TopCenter,
                 Font = new Font("Arial", 10, FontStyle.Bold)
             };
             titleLabel.DoubleClick += TitleLabel_DoubleClick;
@@ -176,16 +178,16 @@ namespace TeamProject
             string orderByColumn;
             switch (CB_Category.SelectedIndex)
             {
-                case 0: // 첫 번째 정렬 방식 (예: 이름으로 오름차순 정렬)
+                case 0: 
                     orderByColumn = "ReleaseDate ASC";
                     break;
-                case 1: // 두 번째 정렬 방식 (예: 이름으로 내림차순 정렬)
+                case 1: 
                     orderByColumn = "ReleaseDate DESC";
                     break;
-                case 2: // 두 번째 정렬 방식 (예: 이름으로 내림차순 정렬)
+                case 2: 
                     orderByColumn = "Sales";
                     break;
-                case 3: // 두 번째 정렬 방식 (예: 이름으로 내림차순 정렬)
+                case 3: 
                     orderByColumn = "ReleaseDate";
                     break;
                 default:
@@ -198,68 +200,6 @@ namespace TeamProject
                 DateTime endDate = dTPEnd.Value;
                 GetDataAndDisplay(startDate, endDate, orderByColumn);
                 return;
-            
-
-
-            string name = txtName.Text;
-            using SqlConnection conn = new SqlConnection(strConn);
-            conn.Open();
-            if (CB_Category.SelectedIndex == 0)//오름
-            {
-                using SqlCommand cmd = new SqlCommand("SELECT TOP 50 Title FROM MovieList ORDER BY ReleaseDate ASC;", conn);
-                using SqlDataReader reader = await cmd.ExecuteReaderAsync();
-                fLPMain.Controls.Clear();
-                rank = 0;
-                while (await reader.ReadAsync())
-                {
-                    string title = reader.GetString(0);
-                    string imageUrl = await GetPosterUrlAsync(title);
-                    AddMovieItem(title, imageUrl);
-                }
-
-            }
-            if (CB_Category.SelectedIndex == 1)//내림
-            {
-                using SqlCommand cmd = new SqlCommand("SELECT TOP 50 Title FROM MovieList ORDER BY ReleaseDate DESC;", conn);
-                using SqlDataReader reader = await cmd.ExecuteReaderAsync();
-
-                fLPMain.Controls.Clear();
-                rank = 0;
-                while (await reader.ReadAsync())
-                {
-                    string title = reader.GetString(0);
-                    string imageUrl = await GetPosterUrlAsync(title);
-                    AddMovieItem(title, imageUrl);
-                }
-            }
-            if (CB_Category.SelectedIndex == 2)//매출
-            {
-                using SqlCommand cmd = new SqlCommand("SELECT TOP 50 Title FROM MovieList ORDER BY Sales;", conn);
-                using SqlDataReader reader = await cmd.ExecuteReaderAsync();
-
-                fLPMain.Controls.Clear();
-                rank = 0;
-                while (await reader.ReadAsync())
-                {
-                    string title = reader.GetString(0);
-                    string imageUrl = await GetPosterUrlAsync(title);
-                    AddMovieItem(title, imageUrl);
-                }
-            }
-            if (CB_Category.SelectedIndex == 3)//개봉
-            {
-                using SqlCommand cmd = new SqlCommand("SELECT TOP 50 Title FROM MovieList ORDER BY ReleaseDate;", conn);
-                using SqlDataReader reader = await cmd.ExecuteReaderAsync();
-
-                fLPMain.Controls.Clear();
-                rank = 0;
-                while (await reader.ReadAsync())
-                {
-                    string title = reader.GetString(0);
-                    string imageUrl = await GetPosterUrlAsync(title);
-                    AddMovieItem(title, imageUrl);
-                }
-            }
         }
 
         private async void GetDataAndDisplay(DateTime startDate, DateTime endDate, string orderByColumn)
@@ -285,7 +225,6 @@ namespace TeamProject
                 AddMovieItem(title, imageUrl);
             }
         }
-
 
         private async void btnSearch_Click(object sender, EventArgs e)
         {
