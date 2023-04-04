@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            flowLayoutPanel = new FlowLayoutPanel();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            btnSearch = new Button();
-            btnLogin = new Button();
-            label4 = new Label();
-            fLPMain = new FlowLayoutPanel();
-            mypage = new Button();
-            dTPStart = new DateTimePicker();
-            dTPEnd = new DateTimePicker();
-            txtName = new TextBox();
-            CB_Category = new ComboBox();
-            label_id = new Label();
-            label_nn = new Label();
-            SuspendLayout();
+            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.fLPMain = new System.Windows.Forms.FlowLayoutPanel();
+            this.mypage = new System.Windows.Forms.Button();
+            this.dTPStart = new System.Windows.Forms.DateTimePicker();
+            this.dTPEnd = new System.Windows.Forms.DateTimePicker();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.CB_Category = new System.Windows.Forms.ComboBox();
+            this.label_id = new System.Windows.Forms.Label();
+            this.label_nn = new System.Windows.Forms.Label();
+            this.SuspendLayout();
             // 
             // flowLayoutPanel
             // 
-            flowLayoutPanel.Location = new Point(0, 0);
-            flowLayoutPanel.Name = "flowLayoutPanel";
-            flowLayoutPanel.Size = new Size(200, 100);
-            flowLayoutPanel.TabIndex = 0;
+            this.flowLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel.Name = "flowLayoutPanel";
+            this.flowLayoutPanel.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel.TabIndex = 0;
             // 
             // label1
             // 
