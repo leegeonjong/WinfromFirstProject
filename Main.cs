@@ -115,8 +115,18 @@ namespace TeamProject
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            if (btnLogin.Text == "로그아웃")
+            {
+                MessageBox.Show("로그아웃되었습니다.");
+                this.Close();
+                Main main = new Main();
+                main.Main_Load(sender, e);
+                main.Show();
+                return;
+            }
             LoginForm lg = new(this);
             lg.Show();
+        
         }
 
         private void Main_Load(object sender, EventArgs e)
