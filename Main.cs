@@ -19,7 +19,7 @@ namespace TeamProject
 {
     public partial class Main : Form
     {
-        
+
         public bool logStatus { get; set; }
         const string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
         SqlConnection conn;
@@ -30,10 +30,8 @@ namespace TeamProject
         public Main()
         {
             InitializeComponent();
-
-            CB_Category.SelectedIndex = 0;
             LoadMovieDataAsync();
-            
+            CB_Category.SelectedIndex = 0;
         }
 
         private async void LoadMovieDataAsync()
@@ -41,14 +39,15 @@ namespace TeamProject
             //Admin_Page adminPage = new Admin_Page();
             //adminPage.Show();
 
-           
+
             const string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
-            string name = "한국";
+            string Country = "한국";
+
             using SqlConnection conn = new SqlConnection(strConn);
             conn.Open();
-            using SqlCommand cmd = new SqlCommand("SELECT TOP 50 Title FROM MovieList$ WHERE Country = @name", conn);
-            SqlParameter parameter = new SqlParameter("@name", System.Data.SqlDbType.VarChar);
-            parameter.Value = name;
+            using SqlCommand cmd = new SqlCommand("SELECT TOP 50 Title FROM MovieList", conn);
+            SqlParameter parameter = new SqlParameter("@Country", System.Data.SqlDbType.VarChar);
+            parameter.Value = Country;
             cmd.Parameters.Add(parameter);
             using SqlDataReader reader = await cmd.ExecuteReaderAsync();
             rank = 0;
@@ -56,7 +55,7 @@ namespace TeamProject
             {
                 string title = reader.GetString(0);
                 string imageUrl = await GetPosterUrlAsync(title);
-                AddMovieItem(title, imageUrl);   
+                AddMovieItem(title, imageUrl);
             }
 
         }
@@ -64,16 +63,16 @@ namespace TeamProject
         public async Task<string> GetPosterUrlAsync(string title)
         {
             //https://api.themoviedb.org/3/discover/movie?api_key=9587124340afc34dae9ecf63d2710f6f&language=ko-KR
-            TMDbClient client = new TMDbClient("9587124340afc34dae9ecf63d2710f6f");
-            Movie movie = client.GetMovieAsync(299536).Result;
-            //Console.WriteLine($"Movie name: {movie.Title}\n\n");
-            
-            SearchContainer<SearchMovie> results = client.SearchMovieAsync("어벤져스").Result;
+            //TMDbClient client = new TMDbClient("9587124340afc34dae9ecf63d2710f6f");
+            //Movie movie = client.GetMovieAsync(299536).Result;
+            ////Console.WriteLine($"Movie name: {movie.Title}\n\n");
 
-            Console.WriteLine($"Got {results.Results.Count:N0} of {results.TotalResults:N0} results");
+            //SearchContainer<SearchMovie> results = client.SearchMovieAsync("어벤져스").Result;
+
+            //Console.WriteLine($"Got {results.Results.Count:N0} of {results.TotalResults:N0} results");
             //foreach (SearchMovie result in results.Results)
             //    Console.WriteLine($"| TItle: {result.Title,-45} | Poster Path: {result.PosterPath,-35} |{result.Id}");
-            return title;
+            return null;
         }
 
         private void AddMovieItem(string title, string posterUrl)
@@ -108,7 +107,7 @@ namespace TeamProject
 
         }
 
-       
+
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -116,7 +115,87 @@ namespace TeamProject
             lg.Show();
         }
 
+        private void Main_Load(object sender, EventArgs e)
+        {
+            logStatus = false;
+        }
 
+        private void Main_Load_1(object sender, EventArgs e)
+        {
+            logStatus = true;
+        }
+
+        private void Main_Load_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void CB_Category_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            //오름차순
+            //내림차순
+            //매출순위
+            //개봉일자
+            string name = txtName.Text;
+            using SqlConnection conn = new SqlConnection(strConn);
+            conn.Open();
+            if (CB_Category.SelectedIndex == 0)//오름
+            {
+                using SqlCommand cmd = new SqlCommand("SELECT TOP 50 Title FROM MovieList ORDER BY ReleaseDate ASC;", conn);
+                using SqlDataReader reader = await cmd.ExecuteReaderAsync();
+                fLPMain.Controls.Clear();
+                rank = 0;
+                while (await reader.ReadAsync())
+                {
+                    string title = reader.GetString(0);
+                    string imageUrl = await GetPosterUrlAsync(title);
+                    AddMovieItem(title, imageUrl);
+                }
+
+            }
+            if (CB_Category.SelectedIndex == 1)//내림
+            {
+                using SqlCommand cmd = new SqlCommand("SELECT TOP 50 Title FROM MovieList ORDER BY ReleaseDate DESC;", conn);
+                using SqlDataReader reader = await cmd.ExecuteReaderAsync();
+
+                fLPMain.Controls.Clear();
+                rank = 0;
+                while (await reader.ReadAsync())
+                {
+                    string title = reader.GetString(0);
+                    string imageUrl = await GetPosterUrlAsync(title);
+                    AddMovieItem(title, imageUrl);
+                }
+            }
+            if (CB_Category.SelectedIndex == 2)//매출
+            {
+                using SqlCommand cmd = new SqlCommand("SELECT TOP 50 Title FROM MovieList ORDER BY Sales;", conn);
+                using SqlDataReader reader = await cmd.ExecuteReaderAsync();
+
+                fLPMain.Controls.Clear();
+                rank = 0;
+                while (await reader.ReadAsync())
+                {
+                    string title = reader.GetString(0);
+                    string imageUrl = await GetPosterUrlAsync(title);
+                    AddMovieItem(title, imageUrl);
+                }
+            }
+            if (CB_Category.SelectedIndex == 3)//개봉
+            {
+                using SqlCommand cmd = new SqlCommand("SELECT TOP 50 Title FROM MovieList ORDER BY ReleaseDate;", conn);
+                using SqlDataReader reader = await cmd.ExecuteReaderAsync();
+
+                fLPMain.Controls.Clear();
+                rank = 0;
+                while (await reader.ReadAsync())
+                {
+                    string title = reader.GetString(0);
+                    string imageUrl = await GetPosterUrlAsync(title);
+                    AddMovieItem(title, imageUrl);
+                }
+            }
+        }
 
         private async void btnSearch_Click(object sender, EventArgs e)
         {
@@ -147,13 +226,14 @@ namespace TeamProject
                 }
             };
 
-            using SqlCommand cmd = new SqlCommand("SELECT Title FROM MovieList$ WHERE Title = @name", conn);
+            using SqlCommand cmd = new SqlCommand("SELECT TOP 50 Title FROM MovieList WHERE Title = @name", conn);
             SqlParameter parameter = new SqlParameter("@name", System.Data.SqlDbType.VarChar);
             parameter.Value = name;
             cmd.Parameters.Add(parameter);
 
             using SqlDataReader reader = await cmd.ExecuteReaderAsync();
             fLPMain.Controls.Clear();
+            rank = 0;
             while (await reader.ReadAsync())
             {
                 string title = reader.GetString(0);
@@ -161,92 +241,6 @@ namespace TeamProject
 
                 AddMovieItem(title, imageUrl);
             }
-        }
-
-        private async void CB_Category_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //오름차순
-            //내림차순
-            //매출순위
-            //개봉일자
-          
-            string name = txtName.Text;
-            using SqlConnection conn = new SqlConnection(strConn);
-            conn.Open();
-            if (CB_Category.SelectedIndex == 0)//오름
-            {
-                using SqlCommand cmd = new SqlCommand("SELECT Title FROM MovieList ORDER BY ReleaseDate ASC;", conn);
-                using SqlDataReader reader = await cmd.ExecuteReaderAsync();
-                fLPMain.Controls.Clear();
-                int i = 0;
-                while (await reader.ReadAsync())
-                {
-                    if (i == 100)
-                        return;
-                    string title = reader.GetString(0);
-                    string imageUrl = await GetPosterUrlAsync(title);
-
-                    AddMovieItem(title, imageUrl);
-                }
-
-            }
-            if (CB_Category.SelectedIndex == 1)//내림
-            {
-                using SqlCommand cmd = new SqlCommand("SELECT Title FROM MovieList ORDER BY ReleaseDate DESC;", conn);
-                using SqlDataReader reader = await cmd.ExecuteReaderAsync();
-
-                fLPMain.Controls.Clear();
-                int i = 0;
-                while (await reader.ReadAsync())
-                {
-                    if (i == 100)
-                        return;
-                    string title = reader.GetString(0);
-                    string imageUrl = await GetPosterUrlAsync(title);
-                    AddMovieItem(title, imageUrl);
-                }
-            }
-            if (CB_Category.SelectedIndex == 2)//매출
-            {
-                using SqlCommand cmd = new SqlCommand("SELECT Title FROM MovieList ORDER BY Sales;", conn);
-                using SqlDataReader reader = await cmd.ExecuteReaderAsync();
-
-                fLPMain.Controls.Clear();
-                int i = 0;
-                while (await reader.ReadAsync())
-                {
-                    if (i == 100)
-                        return;
-                    string title = reader.GetString(0);
-                    string imageUrl = await GetPosterUrlAsync(title);
-                    AddMovieItem(title, imageUrl);
-                }
-            }
-            if (CB_Category.SelectedIndex == 3)//개봉
-            {
-                using SqlCommand cmd = new SqlCommand("SELECT Title FROM MovieList ORDER BY ReleaseDate;", conn);
-                using SqlDataReader reader = await cmd.ExecuteReaderAsync();
-
-                fLPMain.Controls.Clear();
-                int i = 0;
-                while (await reader.ReadAsync())
-                {
-                    if (i == 100)
-                        return;
-                    string title = reader.GetString(0);
-                    string imageUrl = await GetPosterUrlAsync(title);
-                    AddMovieItem(title, imageUrl);
-                }
-            }
-        }
-        private void Main_Load(object sender, EventArgs e)
-        {
-            logStatus = false;
-        }
-
-        private void Main_Load_1(object sender, EventArgs e)
-        {
-            logStatus = true;
         }
     }
 }
