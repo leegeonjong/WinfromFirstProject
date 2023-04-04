@@ -69,10 +69,12 @@
             // 
             // TextId
             // 
-            TextId.Location = new Point(148, 83);
-            TextId.Name = "TextId";
-            TextId.Size = new Size(100, 23);
-            TextId.TabIndex = 3;
+            this.TextId.Location = new System.Drawing.Point(190, 111);
+            this.TextId.Margin = new System.Windows.Forms.Padding(4);
+            this.TextId.Name = "TextId";
+            this.TextId.Size = new System.Drawing.Size(127, 27);
+            this.TextId.TabIndex = 3;
+            this.TextId.TextChanged += new System.EventHandler(this.TextId_TextChanged);
             // 
             // TextPassword
             // 

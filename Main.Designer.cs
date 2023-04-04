@@ -161,6 +161,32 @@
             CB_Category.TabIndex = 17;
             CB_Category.SelectedIndexChanged += CB_Category_SelectedIndexChanged_1;
             // 
+            // nicknamelabel
+            // 
+            this.nicknamelabel.AutoSize = true;
+            this.nicknamelabel.Location = new System.Drawing.Point(1389, 110);
+            this.nicknamelabel.Name = "nicknamelabel";
+            this.nicknamelabel.Size = new System.Drawing.Size(0, 20);
+            this.nicknamelabel.TabIndex = 13;
+            // 
+            // idLabel
+            // 
+            this.idLabel.AutoSize = true;
+            this.idLabel.Location = new System.Drawing.Point(1389, 132);
+            this.idLabel.Name = "idLabel";
+            this.idLabel.Size = new System.Drawing.Size(0, 20);
+            this.idLabel.TabIndex = 14;
+            // 
+            // mypage
+            // 
+            this.mypage.Location = new System.Drawing.Point(1524, 70);
+            this.mypage.Name = "mypage";
+            this.mypage.Size = new System.Drawing.Size(94, 29);
+            this.mypage.TabIndex = 15;
+            this.mypage.Text = "마이페이지";
+            this.mypage.UseVisualStyleBackColor = true;
+            this.mypage.Visible = false;
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
