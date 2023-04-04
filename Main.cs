@@ -28,7 +28,7 @@ namespace TeamProject
         public int useruid { get; set; }
         public int movieuid { get; set; }
 
-
+       
         const string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
         SqlConnection conn;
         SqlDataReader reader;
@@ -81,6 +81,7 @@ namespace TeamProject
         }
         private void AddMovieItem(string title, string posterUrl)
         {
+           
             var panel = new Panel
             {
                 Size = new Size(120, 200),
@@ -119,7 +120,7 @@ namespace TeamProject
             if (sender is Label titleLabel)
             {
                 string movieTitle = titleLabel.Text;
-                movieuid = check1.FindMvUid(movieTitle);   
+                movieuid = check1.FindMvUid(movieTitle.Trim().Substring(movieTitle.IndexOf(']') + 1 ));   
                 
             }
         }

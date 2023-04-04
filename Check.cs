@@ -122,8 +122,9 @@ namespace TeamProject
             var db = new certification(strConn);
             SqlCommand cmd = db.GetSqlCommand();
             cmd.CommandText = $"SELECT MovieUID FROM MovieList " +
-                $"WHERE Title = '{Title}'";
-            return (int)cmd.ExecuteScalar();
+                $"WHERE Title = '{Title.Trim()}'";
+            object result = cmd.ExecuteScalar();
+            return Convert.ToInt32(result);
         }
 
     }
