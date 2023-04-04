@@ -41,22 +41,18 @@ namespace TeamProject
             LoadMovieDataAsync();
             CB_Category.SelectedIndex = 0;
         }
-
-        private async void LoadMovieDataAsync()
+        private async Task LoadMovieDataAsync()
         {
             //Admin_Page adminPage = new Admin_Page();
             //adminPage.Show();
-
-
-            const string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
             string Country = "한국";
-
+            const string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
             using SqlConnection conn = new SqlConnection(strConn);
-            conn.Open();
+            await conn.OpenAsync();
+
             using SqlCommand cmd = new SqlCommand("SELECT TOP 50 Title FROM MovieList WHERE Country = @Country", conn);
             SqlParameter parameter = new SqlParameter("@Country", System.Data.SqlDbType.VarChar);
             parameter.Value = Country;
-
             cmd.Parameters.Add(parameter);
             using SqlDataReader reader = await cmd.ExecuteReaderAsync();
             rank = 0;
@@ -83,7 +79,6 @@ namespace TeamProject
             //    Console.WriteLine($"| TItle: {result.Title,-45} | Poster Path: {result.PosterPath,-35} |{result.Id}");
             return null;
         }
-
         private void AddMovieItem(string title, string posterUrl)
         {
             var panel = new Panel
@@ -128,7 +123,6 @@ namespace TeamProject
                 
             }
         }
-   
 
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -146,12 +140,11 @@ namespace TeamProject
             lg.Show();
 
         }
-
         private void Main_Load(object sender, EventArgs e)
         {
             logStatus = false;
+            
         }
-
         public void Main_Load_1(object sender, EventArgs e)
         {
             logStatus = true;
@@ -162,9 +155,6 @@ namespace TeamProject
 
 
         }
-
-
-
         private async void CB_Category_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             //오름차순
@@ -178,16 +168,16 @@ namespace TeamProject
             string orderByColumn;
             switch (CB_Category.SelectedIndex)
             {
-                case 0: 
+                case 0:
                     orderByColumn = "ReleaseDate ASC";
                     break;
-                case 1: 
+                case 1:
                     orderByColumn = "ReleaseDate DESC";
                     break;
-                case 2: 
+                case 2:
                     orderByColumn = "Sales";
                     break;
-                case 3: 
+                case 3:
                     orderByColumn = "ReleaseDate";
                     break;
                 default:
@@ -195,11 +185,11 @@ namespace TeamProject
                     break;
 
             }
-            
-                DateTime startDate = dTPStart.Value;
-                DateTime endDate = dTPEnd.Value;
-                GetDataAndDisplay(startDate, endDate, orderByColumn);
-                return;
+
+            DateTime startDate = dTPStart.Value;
+            DateTime endDate = dTPEnd.Value;
+            GetDataAndDisplay(startDate, endDate, orderByColumn);
+            return;
         }
 
         private async void GetDataAndDisplay(DateTime startDate, DateTime endDate, string orderByColumn)
@@ -308,11 +298,10 @@ namespace TeamProject
             Admin_Page page = new Admin_Page(this);
             page.Show();
             page.Close();
-            MyPage mypage = new MyPage(page,this);
+            MyPage mypage = new MyPage(page, this);
             mypage.Show();
 
         }
-
 
     }
 }
