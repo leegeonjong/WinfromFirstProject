@@ -291,9 +291,10 @@ namespace TeamProject
 
         private void mypage_Click(object sender, EventArgs e)
         {
-          
+            Admin_Page page = new Admin_Page();
+            MyPage mypage = new MyPage(page);
+            mypage.Show();
 
-          
         }
     }
 }
