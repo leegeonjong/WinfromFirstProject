@@ -12,9 +12,18 @@ namespace TeamProject
 {
     public partial class Movie_Detail : Form
     {
+        String MovieTitle;
         public Movie_Detail()
         {
             InitializeComponent();
+            
         }
+        public Movie_Detail(string movieTitle)
+        {
+            InitializeComponent();
+            MovieTitle = movieTitle;
+            lbl1.Text = MovieTitle;
+        }
+        
     }
 }

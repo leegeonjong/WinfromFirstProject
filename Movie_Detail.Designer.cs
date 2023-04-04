@@ -28,12 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Movie_Detail";
+            lbl1 = new Label();
+            SuspendLayout();
+            // 
+            // lbl1
+            // 
+            lbl1.AutoSize = true;
+            lbl1.Location = new Point(298, 117);
+            lbl1.Name = "lbl1";
+            lbl1.Size = new Size(60, 25);
+            lbl1.TabIndex = 0;
+            lbl1.Text = "label1";
+            // 
+            // Movie_Detail
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(lbl1);
+            Name = "Movie_Detail";
+            Text = "Movie_Detail";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label lbl1;
     }
 }
