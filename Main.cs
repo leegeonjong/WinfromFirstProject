@@ -51,7 +51,7 @@ namespace TeamProject
             using SqlCommand cmd = new SqlCommand("SELECT TOP 50 Title FROM MovieList WHERE Country = @Country", conn);
             SqlParameter parameter = new SqlParameter("@Country", System.Data.SqlDbType.VarChar);
             parameter.Value = Country;
-            
+
             cmd.Parameters.Add(parameter);
             using SqlDataReader reader = await cmd.ExecuteReaderAsync();
             rank = 0;
@@ -127,15 +127,15 @@ namespace TeamProject
         public void Main_Load_1(object sender, EventArgs e)
         {
             logStatus = true;
-             btnLogin.Text = "·Î±×¾Æ¿ô";
+            btnLogin.Text = "·Î±×¾Æ¿ô";
             label_id.Text = userid;
             label_nn.Text = userNickname;
-            mypage.Visible= true;
-           
-  
+            mypage.Visible = true;
+
+
         }
 
-    
+
 
         private async void CB_Category_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -251,7 +251,7 @@ namespace TeamProject
         private void txtName_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-            { 
+            {
                 btnSearch_Click(sender, e);
             }
         }
@@ -259,6 +259,13 @@ namespace TeamProject
         private void Main_Load_2(object sender, EventArgs e)
         {
 
+        }
+
+        private void mypage_Click(object sender, EventArgs e)
+        {
+          
+
+          
         }
     }
 }
