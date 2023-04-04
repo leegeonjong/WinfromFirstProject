@@ -28,163 +28,190 @@
         /// </summary>
         private void InitializeComponent()
         {
-            flowLayoutPanel = new FlowLayoutPanel();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            btnSearch = new Button();
-            btnLogin = new Button();
-            label4 = new Label();
-            fLPMain = new FlowLayoutPanel();
-            btnLogout = new Button();
-            dTPStart = new DateTimePicker();
-            dTPEnd = new DateTimePicker();
-            txtName = new TextBox();
-            CB_Category = new ComboBox();
-            SuspendLayout();
+            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.fLPMain = new System.Windows.Forms.FlowLayoutPanel();
+            this.mypage = new System.Windows.Forms.Button();
+            this.dTPStart = new System.Windows.Forms.DateTimePicker();
+            this.dTPEnd = new System.Windows.Forms.DateTimePicker();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.CB_Category = new System.Windows.Forms.ComboBox();
+            this.label_id = new System.Windows.Forms.Label();
+            this.label_nn = new System.Windows.Forms.Label();
+            this.SuspendLayout();
             // 
             // flowLayoutPanel
             // 
-            flowLayoutPanel.Location = new Point(0, 0);
-            flowLayoutPanel.Name = "flowLayoutPanel";
-            flowLayoutPanel.Size = new Size(200, 100);
-            flowLayoutPanel.TabIndex = 0;
+            this.flowLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel.Name = "flowLayoutPanel";
+            this.flowLayoutPanel.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel.TabIndex = 0;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(456, 141);
-            label1.Name = "label1";
-            label1.Size = new Size(90, 25);
-            label1.TabIndex = 0;
-            label1.Text = "날짜 시작";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(410, 113);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "날짜 시작";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(732, 141);
-            label2.Name = "label2";
-            label2.Size = new Size(72, 25);
-            label2.TabIndex = 1;
-            label2.Text = "날짜 끝";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(659, 113);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "날짜 끝";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(1001, 141);
-            label3.Name = "label3";
-            label3.Size = new Size(126, 25);
-            label3.TabIndex = 5;
-            label3.Text = "영화이름 검색";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(901, 113);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(104, 20);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "영화이름 검색";
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(1389, 164);
-            btnSearch.Margin = new Padding(3, 2, 3, 2);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(100, 33);
-            btnSearch.TabIndex = 6;
-            btnSearch.Text = "검색";
-            btnSearch.UseVisualStyleBackColor = true;
-            btnSearch.Click += btnSearch_Click;
+            this.btnSearch.Location = new System.Drawing.Point(1250, 131);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(90, 26);
+            this.btnSearch.TabIndex = 6;
+            this.btnSearch.Text = "검색";
+            this.btnSearch.UseVisualStyleBackColor = true;
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(1261, 71);
-            btnLogin.Margin = new Padding(3, 2, 3, 2);
-            btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(111, 32);
-            btnLogin.TabIndex = 7;
-            btnLogin.Text = "로그인";
-            btnLogin.UseVisualStyleBackColor = true;
-            btnLogin.Click += btnLogin_Click;
+            this.btnLogin.Location = new System.Drawing.Point(1135, 57);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(100, 26);
+            this.btnLogin.TabIndex = 7;
+            this.btnLogin.Text = "로그인";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(253, 141);
-            label4.Name = "label4";
-            label4.Size = new Size(126, 25);
-            label4.TabIndex = 9;
-            label4.Text = "카테고리 선택";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(228, 113);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(104, 20);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "카테고리 선택";
             // 
             // fLPMain
             // 
-            fLPMain.AutoScroll = true;
-            fLPMain.Location = new Point(253, 205);
-            fLPMain.Margin = new Padding(3, 2, 3, 2);
-            fLPMain.Name = "fLPMain";
-            fLPMain.Size = new Size(1236, 604);
-            fLPMain.TabIndex = 12;
+            this.fLPMain.AutoScroll = true;
+            this.fLPMain.Location = new System.Drawing.Point(228, 164);
+            this.fLPMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.fLPMain.Name = "fLPMain";
+            this.fLPMain.Size = new System.Drawing.Size(1112, 483);
+            this.fLPMain.TabIndex = 12;
             // 
-            // btnLogout
+            // mypage
             // 
-            btnLogout.Location = new Point(1378, 71);
-            btnLogout.Margin = new Padding(3, 2, 3, 2);
-            btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(111, 32);
-            btnLogout.TabIndex = 13;
-            btnLogout.Text = "로그아웃";
-            btnLogout.UseVisualStyleBackColor = true;
-            btnLogout.Visible = false;
+            this.mypage.Location = new System.Drawing.Point(1240, 57);
+            this.mypage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mypage.Name = "mypage";
+            this.mypage.Size = new System.Drawing.Size(100, 26);
+            this.mypage.TabIndex = 13;
+            this.mypage.Text = "마이페이지";
+            this.mypage.UseVisualStyleBackColor = true;
+            this.mypage.Visible = false;
             // 
             // dTPStart
             // 
-            dTPStart.Location = new Point(456, 166);
-            dTPStart.Name = "dTPStart";
-            dTPStart.Size = new Size(270, 31);
-            dTPStart.TabIndex = 14;
+            this.dTPStart.Location = new System.Drawing.Point(410, 133);
+            this.dTPStart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dTPStart.Name = "dTPStart";
+            this.dTPStart.Size = new System.Drawing.Size(243, 27);
+            this.dTPStart.TabIndex = 14;
             // 
             // dTPEnd
             // 
-            dTPEnd.Location = new Point(732, 166);
-            dTPEnd.Name = "dTPEnd";
-            dTPEnd.Size = new Size(270, 31);
-            dTPEnd.TabIndex = 15;
+            this.dTPEnd.Location = new System.Drawing.Point(659, 133);
+            this.dTPEnd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dTPEnd.Name = "dTPEnd";
+            this.dTPEnd.Size = new System.Drawing.Size(243, 27);
+            this.dTPEnd.TabIndex = 15;
             // 
             // txtName
             // 
-            txtName.Location = new Point(1008, 166);
-            txtName.Name = "txtName";
-            txtName.PlaceholderText = "검색할 영화이름을 입력하세요";
-            txtName.Size = new Size(375, 31);
-            txtName.TabIndex = 16;
-            txtName.KeyDown += txtName_KeyDown;
+            this.txtName.Location = new System.Drawing.Point(907, 133);
+            this.txtName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtName.Name = "txtName";
+            this.txtName.PlaceholderText = "검색할 영화이름을 입력하세요";
+            this.txtName.Size = new System.Drawing.Size(338, 27);
+            this.txtName.TabIndex = 16;
             // 
             // CB_Category
             // 
-            CB_Category.FormattingEnabled = true;
-            CB_Category.Items.AddRange(new object[] { "오름차순", "내림차순", "매출일자", "개봉일자" });
-            CB_Category.Location = new Point(253, 165);
-            CB_Category.Name = "CB_Category";
-            CB_Category.Size = new Size(182, 33);
-            CB_Category.TabIndex = 17;
-            CB_Category.SelectedIndexChanged += CB_Category_SelectedIndexChanged_1;
+            this.CB_Category.FormattingEnabled = true;
+            this.CB_Category.Items.AddRange(new object[] {
+            "오름차순",
+            "내림차순",
+            "매출일자",
+            "개봉일자"});
+            this.CB_Category.Location = new System.Drawing.Point(228, 132);
+            this.CB_Category.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CB_Category.Name = "CB_Category";
+            this.CB_Category.Size = new System.Drawing.Size(164, 28);
+            this.CB_Category.TabIndex = 17;
             // 
-           
+            // label_id
+            // 
+            this.label_id.AutoSize = true;
+            this.label_id.Location = new System.Drawing.Point(1135, 99);
+            this.label_id.Name = "label_id";
+            this.label_id.Size = new System.Drawing.Size(16, 20);
+            this.label_id.TabIndex = 18;
+            this.label_id.Text = "v";
+            // 
+            // label_nn
+            // 
+            this.label_nn.AutoSize = true;
+            this.label_nn.Location = new System.Drawing.Point(1250, 99);
+            this.label_nn.Name = "label_nn";
+            this.label_nn.Size = new System.Drawing.Size(16, 20);
+            this.label_nn.TabIndex = 19;
+            this.label_nn.Text = "v";
+            // 
             // Main
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1899, 1022);
-            Controls.Add(CB_Category);
-            Controls.Add(txtName);
-            Controls.Add(dTPEnd);
-            Controls.Add(dTPStart);
-            Controls.Add(btnLogout);
-            Controls.Add(fLPMain);
-            Controls.Add(label4);
-            Controls.Add(btnLogin);
-            Controls.Add(btnSearch);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Margin = new Padding(3, 2, 3, 2);
-            Name = "Main";
-            Text = "Form1";
-            Load += Main_Load_2;
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1709, 818);
+            this.Controls.Add(this.label_nn);
+            this.Controls.Add(this.label_id);
+            this.Controls.Add(this.CB_Category);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.dTPEnd);
+            this.Controls.Add(this.dTPStart);
+            this.Controls.Add(this.mypage);
+            this.Controls.Add(this.fLPMain);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "Main";
+            this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Main_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -196,10 +223,14 @@
         private Button btnLogin;
         private Label label4;
         private FlowLayoutPanel fLPMain;
-        private Button btnLogout;
+        private Button mypage;
         private DateTimePicker dTPStart;
         private DateTimePicker dTPEnd;
         private TextBox txtName;
         private ComboBox CB_Category;
+        private Label lable_id;
+        private Label lable_nickname;
+        private Label label_id;
+        private Label label_nn;
     }
 }
