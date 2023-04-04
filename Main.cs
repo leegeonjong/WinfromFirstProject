@@ -48,15 +48,15 @@ namespace TeamProject
 
             using SqlDataReader reader = await cmd.ExecuteReaderAsync();
             int i = 0;
-            //while (await reader.ReadAsync())
-            //{
-            //    if (i == 100)
-            //        return;
-            //    string title = reader.GetString(0);
-            //    string imageUrl = await GetPosterUrlAsync(title);
-            //    AddMovieItem(title, imageUrl);
-            //    i++;
-            //}
+            while (await reader.ReadAsync())
+            {
+                if (i == 100)
+                    return;
+                string title = reader.GetString(0);
+                string imageUrl = await GetPosterUrlAsync(title);
+                AddMovieItem(title, imageUrl);
+                i++;
+            }
 
         }
 

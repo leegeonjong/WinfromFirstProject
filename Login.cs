@@ -47,8 +47,15 @@ namespace TeamProject
 
                 MessageBox.Show("로그인 성공");
                 MainForm.logStatus = true;
-                var mainForm = new Main();
-                mainForm.Show();
+                Main mainForm = new Main();
+                this.Hide();
+                mainForm.ShowDialog();
+                this.Close();
+        
+              
+                
+                
+                
             }
             else
             {
