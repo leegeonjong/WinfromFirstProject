@@ -127,9 +127,7 @@ namespace TeamProject
         {
             logStatus = true;
             btnLogin.Text = "·Î±×¾Æ¿ô";
-            nicknamelabel.Text = userNickname;
-            idLabel.Text = userid;
-            mypage.Visible = true;
+    
         }
 
         private void Main_Load_2(object sender, EventArgs e)
