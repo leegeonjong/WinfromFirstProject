@@ -91,13 +91,24 @@ namespace TeamProject
                 $"WHERE u_id = '{ID}' AND u_password= '{PW}'";
             return cmd.ExecuteScalar()?.ToString();
         }
-        //public int FindUid(string ID) { 
-        //    var db = new certification(strConn);
-        //    SqlCommand cmd = db.GetSqlCommand();
-        //    cmd.CommandText = $"SELECT u_uid FROM Project_User " +
-        //        $"WHERE u_id = '{ID}'";
-        //    return cmd.ExecuteScalar()?.ToString();
-        //}
+
+        public int FindUid(string ID)
+        {
+            var db = new certification(strConn);
+            SqlCommand cmd = db.GetSqlCommand();
+            cmd.CommandText = $"SELECT u_uid FROM Project_User " +
+                $"WHERE u_id = '{ID}'";
+            return (int)cmd.ExecuteScalar();
+        }
+
+        public int FindMvUid(string ID)
+        {
+            var db = new certification(strConn);
+            SqlCommand cmd = db.GetSqlCommand();
+            cmd.CommandText = $"SELECT MovieUID FROM MovieList " +
+                $"WHERE Title = '{ID}'";
+            return (int)cmd.ExecuteScalar();
+        }
 
     }
 }
