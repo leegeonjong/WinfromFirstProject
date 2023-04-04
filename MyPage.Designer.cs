@@ -31,17 +31,21 @@
             label5 = new Label();
             tab1 = new TabControl();
             tabPage1 = new TabPage();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            nnBox = new TextBox();
+            nameBox = new TextBox();
+            pwBox = new TextBox();
+            idBox = new TextBox();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             tabPage2 = new TabPage();
-            tabPage3 = new TabPage();
             label6 = new Label();
+            tabPage3 = new TabPage();
+            label7 = new Label();
+            lvBox = new TextBox();
+            label8 = new Label();
+            textBox1 = new TextBox();
             tab1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -70,10 +74,14 @@
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(textBox4);
-            tabPage1.Controls.Add(textBox3);
-            tabPage1.Controls.Add(textBox2);
             tabPage1.Controls.Add(textBox1);
+            tabPage1.Controls.Add(label8);
+            tabPage1.Controls.Add(lvBox);
+            tabPage1.Controls.Add(label7);
+            tabPage1.Controls.Add(nnBox);
+            tabPage1.Controls.Add(nameBox);
+            tabPage1.Controls.Add(pwBox);
+            tabPage1.Controls.Add(idBox);
             tabPage1.Controls.Add(label4);
             tabPage1.Controls.Add(label3);
             tabPage1.Controls.Add(label2);
@@ -86,38 +94,38 @@
             tabPage1.Text = "회원정보";
             tabPage1.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // nnBox
             // 
-            textBox4.Location = new Point(195, 228);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 11;
+            nnBox.Location = new Point(195, 237);
+            nnBox.Name = "nnBox";
+            nnBox.Size = new Size(100, 23);
+            nnBox.TabIndex = 11;
             // 
-            // textBox3
+            // nameBox
             // 
-            textBox3.Location = new Point(195, 170);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 10;
+            nameBox.Location = new Point(195, 151);
+            nameBox.Name = "nameBox";
+            nameBox.Size = new Size(100, 23);
+            nameBox.TabIndex = 10;
             // 
-            // textBox2
+            // pwBox
             // 
-            textBox2.Location = new Point(195, 115);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 9;
+            pwBox.Location = new Point(195, 108);
+            pwBox.Name = "pwBox";
+            pwBox.Size = new Size(100, 23);
+            pwBox.TabIndex = 9;
             // 
-            // textBox1
+            // idBox
             // 
-            textBox1.Location = new Point(195, 65);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 8;
+            idBox.Location = new Point(195, 65);
+            idBox.Name = "idBox";
+            idBox.Size = new Size(100, 23);
+            idBox.TabIndex = 8;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(31, 228);
+            label4.Location = new Point(31, 245);
             label4.Name = "label4";
             label4.Size = new Size(43, 15);
             label4.TabIndex = 7;
@@ -126,7 +134,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(31, 170);
+            label3.Location = new Point(31, 159);
             label3.Name = "label3";
             label3.Size = new Size(31, 15);
             label3.TabIndex = 6;
@@ -135,7 +143,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(31, 115);
+            label2.Location = new Point(31, 116);
             label2.Name = "label2";
             label2.Size = new Size(55, 15);
             label2.TabIndex = 5;
@@ -144,7 +152,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(31, 65);
+            label1.Location = new Point(31, 73);
             label1.Name = "label1";
             label1.Size = new Size(43, 15);
             label1.TabIndex = 4;
@@ -161,6 +169,15 @@
             tabPage2.Text = "내가 남긴 리뷰";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(140, 72);
+            label6.Name = "label6";
+            label6.Size = new Size(39, 15);
+            label6.TabIndex = 0;
+            label6.Text = "label6";
+            // 
             // tabPage3
             // 
             tabPage3.Location = new Point(4, 24);
@@ -170,14 +187,37 @@
             tabPage3.Text = "즐겨찾기";
             tabPage3.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // label7
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(140, 72);
-            label6.Name = "label6";
-            label6.Size = new Size(39, 15);
-            label6.TabIndex = 0;
-            label6.Text = "label6";
+            label7.AutoSize = true;
+            label7.Location = new Point(31, 288);
+            label7.Name = "label7";
+            label7.Size = new Size(31, 15);
+            label7.TabIndex = 12;
+            label7.Text = "레벨";
+            // 
+            // lvBox
+            // 
+            lvBox.Location = new Point(195, 280);
+            lvBox.Name = "lvBox";
+            lvBox.Size = new Size(100, 23);
+            lvBox.TabIndex = 13;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(31, 202);
+            label8.Name = "label8";
+            label8.Size = new Size(31, 15);
+            label8.TabIndex = 14;
+            label8.Text = "이름";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(195, 194);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(100, 23);
+            textBox1.TabIndex = 15;
             // 
             // MyPage
             // 
@@ -207,10 +247,14 @@
         private Label label2;
         private Label label1;
         private TabPage tabPage3;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox nnBox;
+        private TextBox nameBox;
+        private TextBox pwBox;
+        private TextBox idBox;
         private Label label6;
+        private TextBox lvBox;
+        private Label label7;
+        private TextBox textBox1;
+        private Label label8;
     }
 }

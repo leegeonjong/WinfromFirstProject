@@ -31,7 +31,7 @@
             flowLayoutPanel = new FlowLayoutPanel();
             label1 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
+            txtName = new TextBox();
             label3 = new Label();
             btnSearch = new Button();
             btnLogin = new Button();
@@ -67,13 +67,13 @@
             label2.TabIndex = 1;
             label2.Text = "날짜 끝";
             // 
-            // textBox1
+            // txtName
             // 
-            textBox1.Location = new Point(1134, 218);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(275, 31);
-            textBox1.TabIndex = 4;
+            txtName.Location = new Point(1134, 218);
+            txtName.Margin = new Padding(3, 2, 3, 2);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(275, 31);
+            txtName.TabIndex = 4;
             // 
             // label3
             // 
@@ -93,27 +93,29 @@
             btnSearch.TabIndex = 6;
             btnSearch.Text = "검색";
             btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(1543, 108);
+            btnLogin.Location = new Point(1543, 89);
             btnLogin.Margin = new Padding(3, 2, 3, 2);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(111, 32);
             btnLogin.TabIndex = 7;
             btnLogin.Text = "로그인";
             btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            btnLogin.Click += btnLogin_Click;
             // 
             // CB_Category
             // 
             CB_Category.FormattingEnabled = true;
-            CB_Category.Items.AddRange(new object[] { "오름차순", "내림차순", "관객숫자", "매출순위", "개봉일자" });
+            CB_Category.Items.AddRange(new object[] { "오름차순", "내림차순", "매출순위", "개봉일자" });
             CB_Category.Location = new Point(281, 218);
             CB_Category.Margin = new Padding(3, 2, 3, 2);
             CB_Category.Name = "CB_Category";
             CB_Category.Size = new Size(183, 33);
             CB_Category.TabIndex = 8;
+            CB_Category.SelectedIndexChanged += CB_Category_SelectedIndexChanged;
             // 
             // label4
             // 
@@ -142,6 +144,7 @@
             // 
             // fLPMain
             // 
+            fLPMain.AutoScroll = true;
             fLPMain.Location = new Point(281, 256);
             fLPMain.Margin = new Padding(3, 2, 3, 2);
             fLPMain.Name = "fLPMain";
@@ -161,7 +164,7 @@
             Controls.Add(btnLogin);
             Controls.Add(btnSearch);
             Controls.Add(label3);
-            Controls.Add(textBox1);
+            Controls.Add(txtName);
             Controls.Add(label2);
             Controls.Add(label1);
             Margin = new Padding(3, 2, 3, 2);
@@ -175,7 +178,7 @@
 
         private Label label1;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox txtName;
         private Label label3;
         private Button btnSearch;
         private Button btnLogin;
