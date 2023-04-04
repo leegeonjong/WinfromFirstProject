@@ -17,17 +17,16 @@ namespace TeamProject
     {
 
         string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
-
+        Main main;
         Admin_Page adminform;
-        Main mainform;
+      
 
-        public MyPage(Admin_Page form)
+        public MyPage(Admin_Page form, Main main)
         {
             InitializeComponent();
 
-            this.adminform = form;
-           
-
+            adminform = form;
+            this.main = main;
         }
 
         private void MyPage_Load(object sender, EventArgs e)
@@ -35,15 +34,35 @@ namespace TeamProject
             certification cert = new certification(strConn);
             SqlCommand cmd = cert.GetSqlCommand();
 
-            foreach (DataGridViewCell cell in adminform.memberView.SelectedCells)
+
+
+
+            if (main.useruid > 0)
             {
-                cell.OwningRow.Selected = true;
+                cmd.CommandText = "SELECT u_uid,u_id, u_password, u_name, u_phonenum, u_level, u_nickname FROM project_user WHERE u_uid = @u_uid";
+                cmd.Parameters.AddWithValue("@u_uid", main.useruid);
+                SqlDataReader reader1 = cmd.ExecuteReader();
+                while (reader1.Read())
+                {
+
+                    idBox.Text = reader1["u_id"].ToString();
+                    pwBox.Text = reader1["u_password"].ToString();
+                    nameBox.Text = reader1["u_name"].ToString();
+                    pnBox.Text = reader1["u_phonenum"].ToString();
+                    nnBox.Text = reader1["u_nickname"].ToString();
+                    lvBox.Text = reader1["u_level"].ToString();
+
+                }
+
+                // SqlDataReader 객체를 닫습니다.
+                reader1.Close();
+                return;
             }
 
-            string uid = adminform.memberView.SelectedCells[0].Value.ToString();
+
 
             cmd.CommandText = "SELECT u_uid,u_id, u_password, u_name, u_phonenum, u_level, u_nickname FROM project_user WHERE u_uid = @u_uid";
-            cmd.Parameters.AddWithValue("@u_uid", uid);
+            cmd.Parameters.AddWithValue("@u_uid", adminform.usuid);
 
             
 
@@ -80,7 +99,11 @@ namespace TeamProject
 
                 // SqlCommand 객체에 UPDATE 쿼리문 설정
                 cmd.CommandText = sql;
-                string uid = adminform.memberView.SelectedCells[0].Value.ToString();
+                int uid;
+                if (main.useruid > 0)
+                    uid = main.useruid;
+                else
+                    uid = adminform.usuid;
                 cmd.Parameters.AddWithValue("@u_uid", uid);
                 // UPDATE 쿼리문의 매개변수 값 설정
 
@@ -116,6 +139,20 @@ namespace TeamProject
             finally
             {
                 Cursor = Cursors.Default;
+            }
+            if (main.useruid > 0)
+            {
+                Main mainForm1 = new();
+                {
+                    Check check1 = new();
+
+                    mainForm1.userNickname = check1.Findid(main.useruid);
+                    mainForm1.userid = check1.Findnick(main.useruid);
+                }
+                main.Close();
+                mainForm1.Main_Load_1(sender, e);
+                mainForm1.Show();
+                this.Close();
             }
         }
 

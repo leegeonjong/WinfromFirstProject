@@ -96,6 +96,22 @@ namespace TeamProject
             SqlCommand cmd = db.GetSqlCommand();
             cmd.CommandText = $"SELECT u_uid FROM Project_User " +
                 $"WHERE u_id = '{ID}'";
+            return (int)cmd.ExecuteScalar();
+        }
+        public string Findid(int UID)
+        {
+            var db = new certification(strConn);
+            SqlCommand cmd = db.GetSqlCommand();
+            cmd.CommandText = $"SELECT u_id FROM Project_User " +
+                $"WHERE u_uid = '{UID}'";
+            return cmd.ExecuteScalar()?.ToString();
+        }
+        public string Findnick(int UID)
+        {
+            var db = new certification(strConn);
+            SqlCommand cmd = db.GetSqlCommand();
+            cmd.CommandText = $"SELECT u_nickname FROM Project_User " +
+                $"WHERE u_uid = '{UID}'";
             return cmd.ExecuteScalar()?.ToString();
         }
 

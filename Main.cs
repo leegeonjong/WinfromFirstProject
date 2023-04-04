@@ -24,8 +24,9 @@ namespace TeamProject
         public bool logStatus { get; set; }
         public string userNickname { get; set; }
         public string userid { get; set; }
-
         public int useruid { get; set; }
+
+
         const string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
         SqlConnection conn;
         SqlDataReader reader;
@@ -293,10 +294,16 @@ namespace TeamProject
 
         private void mypage_Click(object sender, EventArgs e)
         {
-            Admin_Page page = new Admin_Page();
-            MyPage mypage = new MyPage(page);
+            Check chk = new();
+            useruid = chk.FindUid(label_id.Text);
+            Admin_Page page = new Admin_Page(this);
+            page.Show();
+            page.Close();
+            MyPage mypage = new MyPage(page,this);
             mypage.Show();
 
         }
+
+
     }
 }
