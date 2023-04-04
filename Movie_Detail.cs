@@ -24,33 +24,11 @@ namespace TeamProject
         }
 
 
-        public void AddReview(int movieUid, string userUid, string comment, string rate)
-        {
-            Check check1 = new();
-            certification cert = new certification(strConn);
-            SqlCommand cmd = cert.GetSqlCommand();
-
-            int mvUid = check1.FindMvUid();
-           
-
-            comment = reviewBox.Text;
-            rate = rateBox.Text;
-
-            if (mvUid == 0)
-                throw new ArgumentException("영화가 존재하지 않습니다.");
-
-            if (uid == 0)
-                throw new ArgumentException("유저가 존재하지 않습니다.");
-
-            cmd.CommandText = $"INSERT INTO Review (m_uid, u_uid, r_content, r_rate) " +
-                  $"VALUES ('{movieUid}', '{userUid}', '{comment}' ,{rate})";
-            cmd.ExecuteNonQuery();
-
-        }
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddReview(MovieUid,UserId,reviewBox.Text,rateBox.Text);
+           
         }
     }
 }
