@@ -31,6 +31,10 @@
             label5 = new Label();
             tab1 = new TabControl();
             tabPage1 = new TabPage();
+            pnBox = new TextBox();
+            label8 = new Label();
+            lvBox = new TextBox();
+            label7 = new Label();
             nnBox = new TextBox();
             nameBox = new TextBox();
             pwBox = new TextBox();
@@ -42,10 +46,6 @@
             tabPage2 = new TabPage();
             label6 = new Label();
             tabPage3 = new TabPage();
-            label7 = new Label();
-            lvBox = new TextBox();
-            label8 = new Label();
-            textBox1 = new TextBox();
             tab1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -74,7 +74,7 @@
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(textBox1);
+            tabPage1.Controls.Add(pnBox);
             tabPage1.Controls.Add(label8);
             tabPage1.Controls.Add(lvBox);
             tabPage1.Controls.Add(label7);
@@ -93,6 +93,38 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "회원정보";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // pnBox
+            // 
+            pnBox.Location = new Point(195, 194);
+            pnBox.Name = "pnBox";
+            pnBox.Size = new Size(100, 23);
+            pnBox.TabIndex = 15;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(31, 202);
+            label8.Name = "label8";
+            label8.Size = new Size(67, 15);
+            label8.TabIndex = 14;
+            label8.Text = "휴대폰번호";
+            // 
+            // lvBox
+            // 
+            lvBox.Location = new Point(195, 280);
+            lvBox.Name = "lvBox";
+            lvBox.Size = new Size(100, 23);
+            lvBox.TabIndex = 13;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(31, 288);
+            label7.Name = "label7";
+            label7.Size = new Size(31, 15);
+            label7.TabIndex = 12;
+            label7.Text = "레벨";
             // 
             // nnBox
             // 
@@ -187,38 +219,6 @@
             tabPage3.Text = "즐겨찾기";
             tabPage3.UseVisualStyleBackColor = true;
             // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(31, 288);
-            label7.Name = "label7";
-            label7.Size = new Size(31, 15);
-            label7.TabIndex = 12;
-            label7.Text = "레벨";
-            // 
-            // lvBox
-            // 
-            lvBox.Location = new Point(195, 280);
-            lvBox.Name = "lvBox";
-            lvBox.Size = new Size(100, 23);
-            lvBox.TabIndex = 13;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(31, 202);
-            label8.Name = "label8";
-            label8.Size = new Size(31, 15);
-            label8.TabIndex = 14;
-            label8.Text = "이름";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(195, 194);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 15;
-            // 
             // MyPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -228,6 +228,7 @@
             Controls.Add(label5);
             Name = "MyPage";
             Text = "MyPage";
+            Load += MyPage_Load;
             tab1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
@@ -254,7 +255,7 @@
         private Label label6;
         private TextBox lvBox;
         private Label label7;
-        private TextBox textBox1;
+        private TextBox pnBox;
         private Label label8;
     }
 }

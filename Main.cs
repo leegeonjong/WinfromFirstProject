@@ -37,7 +37,7 @@ namespace TeamProject
             //Admin_Page adminPage = new Admin_Page();
             //adminPage.Show();
 
-            const string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
+           
             string name = "한국";
             using SqlConnection conn = new SqlConnection(strConn);
             conn.Open();
@@ -130,7 +130,7 @@ namespace TeamProject
 
         private async void btnSearch_Click(object sender, EventArgs e)
         {
-            const string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
+         
             string name = txtName.Text;
             using SqlConnection conn = new SqlConnection(strConn);
             conn.Open();
@@ -156,7 +156,7 @@ namespace TeamProject
             //내림차순
             //매출순위
             //개봉일자
-            const string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
+          
             string name = txtName.Text;
             using SqlConnection conn = new SqlConnection(strConn);
             conn.Open();

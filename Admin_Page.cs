@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TeamProject
 {
@@ -138,7 +139,7 @@ namespace TeamProject
             if (e.ColumnIndex == 0)
             {
                 // detailForm 객체 생성 및 화면에 표시
-                MyPage mypage = new MyPage();
+                MyPage mypage = new MyPage(this);
                 AddOwnedForm(mypage);
                 mypage.StartPosition = FormStartPosition.CenterScreen;
                 mypage.Show();
@@ -146,5 +147,26 @@ namespace TeamProject
 
             }
         }
+
+        private void btn_Search_Click(object sender, EventArgs e)
+        {
+            certification cert = new certification(strConn);
+            SqlCommand cmd = cert.GetSqlCommand();
+
+            string searchText = SearchBox.Text.Trim(); // 텍스트박스에서 검색어 가져오기
+            cmd.CommandText = "SELECT u_uid,u_id, u_password, u_name, u_phonenum, u_level, u_nickname FROM project_user WHERE u_id LIKE @searchText";
+            cmd.Parameters.AddWithValue("@searchText", "%" + searchText + "%"); // 검색어 매개변수 추가
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+
+            memberView.DataSource = dataTable;
+
+            // 리소스 정리
+            reader.Close();
+            cmd.Dispose();
+        }
     }
-    }
+}
