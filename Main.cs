@@ -10,6 +10,10 @@ using System.Net;
 using System.Text;
 using System.Xml;
 using MySqlX.XDevAPI;
+using TMDbLib.Client;
+using TMDbLib.Objects.General;
+using TMDbLib.Objects.Movies;
+using TMDbLib.Objects.Search;
 
 namespace TeamProject
 {
@@ -20,7 +24,7 @@ namespace TeamProject
         SqlConnection conn;
         SqlDataReader reader;
         private FlowLayoutPanel flowLayoutPanel;
-
+        int rank;
 
         public Main()
         {
@@ -33,58 +37,38 @@ namespace TeamProject
 
         private async void LoadMovieDataAsync()
         {
-            //Admin_Page adminPage = new Admin_Page();
-            //adminPage.Show();
-
             const string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
             string name = "한국";
             using SqlConnection conn = new SqlConnection(strConn);
             conn.Open();
-            using SqlCommand cmd = new SqlCommand("SELECT Title FROM MovieList$ WHERE Country = @name", conn);
+            using SqlCommand cmd = new SqlCommand("SELECT TOP 50 Title FROM MovieList$ WHERE Country = @name", conn);
             SqlParameter parameter = new SqlParameter("@name", System.Data.SqlDbType.VarChar);
             parameter.Value = name;
             cmd.Parameters.Add(parameter);
-
             using SqlDataReader reader = await cmd.ExecuteReaderAsync();
-            int i = 0;
+            rank = 0;
             while (await reader.ReadAsync())
             {
-                if (i == 100)
-                    return;
                 string title = reader.GetString(0);
                 string imageUrl = await GetPosterUrlAsync(title);
-                AddMovieItem(title, imageUrl);
-                i++;
+                AddMovieItem(title, imageUrl);   
             }
 
         }
 
         public async Task<string> GetPosterUrlAsync(string title)
         {
-            string your_client_id = "FXqKsjIoNLVFmlkXvTzt";
-            string your_client_secret = "RZVA7QWEda";
+            //https://api.themoviedb.org/3/discover/movie?api_key=9587124340afc34dae9ecf63d2710f6f&language=ko-KR
+            TMDbClient client = new TMDbClient("9587124340afc34dae9ecf63d2710f6f");
+            Movie movie = client.GetMovieAsync(299536).Result;
+            //Console.WriteLine($"Movie name: {movie.Title}\n\n");
+            
+            SearchContainer<SearchMovie> results = client.SearchMovieAsync("어벤져스").Result;
 
-            string apiUrl = $"https://openapi.naver.com/v1/search/movie.json?query={Uri.EscapeDataString(title)}";
-
-            using HttpClient client = new HttpClient();
-            client.DefaultRequestHeaders.Add("X-Naver-Client-Id", your_client_id);
-            client.DefaultRequestHeaders.Add("X-Naver-Client-Secret", your_client_secret);
-
-            HttpResponseMessage response = await client.GetAsync(apiUrl);
-            if (response.IsSuccessStatusCode)
-            {
-                string result = await response.Content.ReadAsStringAsync();
-                JObject json = JObject.Parse(result);
-                JArray items = (JArray)json["items"];
-
-                if (items.Count > 0)
-                {
-                    string imageUrl = (string)items[0]["image"];
-                    return imageUrl;
-                }
-            }
-
-            return null; // 영화 포스터를 찾을 수 없는 경우
+            Console.WriteLine($"Got {results.Results.Count:N0} of {results.TotalResults:N0} results");
+            //foreach (SearchMovie result in results.Results)
+            //    Console.WriteLine($"| TItle: {result.Title,-45} | Poster Path: {result.PosterPath,-35} |{result.Id}");
+            return title;
         }
 
         private void AddMovieItem(string title, string posterUrl)
@@ -103,10 +87,10 @@ namespace TeamProject
                 SizeMode = PictureBoxSizeMode.StretchImage
             };
             panel.Controls.Add(pictureBox);
-
+            rank++;
             var titleLabel = new Label
             {
-                Text = title,
+                Text = $"[{rank}] {title}",
                 Location = new Point(0, 180),
                 AutoSize = false,
                 Size = new Size(120, 20),
@@ -130,12 +114,37 @@ namespace TeamProject
             lg.Show();
         }
 
+
+
         private async void btnSearch_Click(object sender, EventArgs e)
         {
+            //paramBeginDate.Value = dtBegin.Value.ToString("yyyy-MM-dd");
+            if (txtName.Text.Length == 0)
+            {
+                MessageBox.Show("1글자 이상 검색하세요");
+                return;
+            }
+
             const string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
             string name = txtName.Text;
             using SqlConnection conn = new SqlConnection(strConn);
             conn.Open();
+
+            bool startDatePickerChanged = false;
+            bool endDatePickerChanged = false;
+            dTPStart.ValueChanged += (sender, e) => startDatePickerChanged = true;
+            dTPEnd.ValueChanged += (sender, e) => endDatePickerChanged = true;
+            btnSearch.Click += (sender, e) =>
+            {
+                if (startDatePickerChanged && endDatePickerChanged)
+                {
+                    DateTime startDate = dTPStart.Value;
+                    DateTime endDate = dTPEnd.Value;
+                    Console.WriteLine($"시작 날짜: {startDate}");
+                    // 시작 날짜를 사용하여 원하는 작업을 수행하세요.
+                }
+            };
+
             using SqlCommand cmd = new SqlCommand("SELECT Title FROM MovieList$ WHERE Title = @name", conn);
             SqlParameter parameter = new SqlParameter("@name", System.Data.SqlDbType.VarChar);
             parameter.Value = name;

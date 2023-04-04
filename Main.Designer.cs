@@ -37,9 +37,10 @@
             btnLogin = new Button();
             CB_Category = new ComboBox();
             label4 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
+            dTPStart = new DateTimePicker();
+            dTPEnd = new DateTimePicker();
             fLPMain = new FlowLayoutPanel();
+            btnLogout = new Button();
             SuspendLayout();
             // 
             // flowLayoutPanel
@@ -72,6 +73,7 @@
             txtName.Location = new Point(1134, 218);
             txtName.Margin = new Padding(3, 2, 3, 2);
             txtName.Name = "txtName";
+            txtName.PlaceholderText = "영화이름으로 검색하세요";
             txtName.Size = new Size(275, 31);
             txtName.TabIndex = 4;
             // 
@@ -97,7 +99,7 @@
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(1543, 89);
+            btnLogin.Location = new Point(1417, 91);
             btnLogin.Margin = new Padding(3, 2, 3, 2);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(111, 32);
@@ -126,21 +128,21 @@
             label4.TabIndex = 9;
             label4.Text = "카테고리 선택";
             // 
-            // dateTimePicker1
+            // dTPStart
             // 
-            dateTimePicker1.Location = new Point(599, 215);
-            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(263, 31);
-            dateTimePicker1.TabIndex = 10;
+            dTPStart.Location = new Point(599, 215);
+            dTPStart.Margin = new Padding(3, 2, 3, 2);
+            dTPStart.Name = "dTPStart";
+            dTPStart.Size = new Size(263, 31);
+            dTPStart.TabIndex = 10;
             // 
-            // dateTimePicker2
+            // dTPEnd
             // 
-            dateTimePicker2.Location = new Point(867, 218);
-            dateTimePicker2.Margin = new Padding(3, 2, 3, 2);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(263, 31);
-            dateTimePicker2.TabIndex = 11;
+            dTPEnd.Location = new Point(867, 218);
+            dTPEnd.Margin = new Padding(3, 2, 3, 2);
+            dTPEnd.Name = "dTPEnd";
+            dTPEnd.Size = new Size(263, 31);
+            dTPEnd.TabIndex = 11;
             // 
             // fLPMain
             // 
@@ -151,14 +153,26 @@
             fLPMain.Size = new Size(1373, 755);
             fLPMain.TabIndex = 12;
             // 
+            // btnLogout
+            // 
+            btnLogout.Location = new Point(1543, 91);
+            btnLogout.Margin = new Padding(3, 2, 3, 2);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(111, 32);
+            btnLogout.TabIndex = 13;
+            btnLogout.Text = "로그아웃";
+            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Visible = false;
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1899, 1022);
+            Controls.Add(btnLogout);
             Controls.Add(fLPMain);
-            Controls.Add(dateTimePicker2);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(dTPEnd);
+            Controls.Add(dTPStart);
             Controls.Add(label4);
             Controls.Add(CB_Category);
             Controls.Add(btnLogin);
@@ -184,8 +198,9 @@
         private Button btnLogin;
         private ComboBox CB_Category;
         private Label label4;
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker dTPStart;
+        private DateTimePicker dTPEnd;
         private FlowLayoutPanel fLPMain;
+        private Button btnLogout;
     }
 }
