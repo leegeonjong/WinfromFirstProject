@@ -31,6 +31,7 @@
             label5 = new Label();
             tab1 = new TabControl();
             tabPage1 = new TabPage();
+            btn_update = new Button();
             pnBox = new TextBox();
             label8 = new Label();
             lvBox = new TextBox();
@@ -46,7 +47,7 @@
             tabPage2 = new TabPage();
             label6 = new Label();
             tabPage3 = new TabPage();
-            btn_update = new Button();
+            btn_Cancel = new Button();
             tab1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -75,6 +76,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(btn_Cancel);
             tabPage1.Controls.Add(btn_update);
             tabPage1.Controls.Add(pnBox);
             tabPage1.Controls.Add(label8);
@@ -95,6 +97,16 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "회원정보";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btn_update
+            // 
+            btn_update.Location = new Point(108, 343);
+            btn_update.Name = "btn_update";
+            btn_update.Size = new Size(75, 23);
+            btn_update.TabIndex = 16;
+            btn_update.Text = "수정";
+            btn_update.UseVisualStyleBackColor = true;
+            btn_update.Click += btn_update_Click;
             // 
             // pnBox
             // 
@@ -221,15 +233,15 @@
             tabPage3.Text = "즐겨찾기";
             tabPage3.UseVisualStyleBackColor = true;
             // 
-            // btn_update
+            // btn_Cancel
             // 
-            btn_update.Location = new Point(108, 343);
-            btn_update.Name = "btn_update";
-            btn_update.Size = new Size(75, 23);
-            btn_update.TabIndex = 16;
-            btn_update.Text = "수정";
-            btn_update.UseVisualStyleBackColor = true;
-            btn_update.Click += btn_update_Click;
+            btn_Cancel.Location = new Point(220, 343);
+            btn_Cancel.Name = "btn_Cancel";
+            btn_Cancel.Size = new Size(75, 23);
+            btn_Cancel.TabIndex = 17;
+            btn_Cancel.Text = "취소하기";
+            btn_Cancel.UseVisualStyleBackColor = true;
+            btn_Cancel.Click += btn_Cancel_Click;
             // 
             // MyPage
             // 
@@ -270,5 +282,6 @@
         private TextBox pnBox;
         private Label label8;
         private Button btn_update;
+        private Button btn_Cancel;
     }
 }

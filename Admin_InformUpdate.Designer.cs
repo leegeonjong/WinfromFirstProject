@@ -187,6 +187,7 @@
             button2.TabIndex = 16;
             button2.Text = "취소";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Admin_InformUpdate
             // 

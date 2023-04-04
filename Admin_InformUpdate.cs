@@ -67,7 +67,7 @@ namespace TeamProject
                 // certification 인스턴스 생성 및 SqlCommand 객체 가져오기
                 certification cert = new certification(strConn);
                 SqlCommand cmd = cert.GetSqlCommand();
-                SqlCommand checkid = cert.GetSqlCommand();         
+                SqlCommand checkid = cert.GetSqlCommand();
 
                 checkid.CommandText = "SELECT COUNT(*) FROM project_user WHERE u_id = @u_id";
                 checkid.Parameters.AddWithValue("@u_id", IdBox.Text);
@@ -104,7 +104,7 @@ namespace TeamProject
 
                 if (rowsAffected > 0)
                 {
-                    
+
                     MessageBox.Show("데이터가 수정되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
                 }
@@ -126,11 +126,16 @@ namespace TeamProject
 
             }
 
-           
+
             finally
             {
                 Cursor = Cursors.Default;
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -46,7 +46,7 @@ namespace TeamProject
             string name = "ÇÑ±¹";
             using SqlConnection conn = new SqlConnection(strConn);
             conn.Open();
-            using SqlCommand cmd = new SqlCommand("SELECT TOP 50 Title FROM MovieList$ WHERE Country = @name", conn);
+            using SqlCommand cmd = new SqlCommand("SELECT TOP 50 Title FROM MovieList WHERE Country = @name", conn);
             SqlParameter parameter = new SqlParameter("@name", System.Data.SqlDbType.VarChar);
             parameter.Value = name;
             cmd.Parameters.Add(parameter);
@@ -147,7 +147,7 @@ namespace TeamProject
                 }
             };
 
-            using SqlCommand cmd = new SqlCommand("SELECT Title FROM MovieList$ WHERE Title = @name", conn);
+            using SqlCommand cmd = new SqlCommand("SELECT Title FROM MovieList WHERE Title = @name", conn);
             SqlParameter parameter = new SqlParameter("@name", System.Data.SqlDbType.VarChar);
             parameter.Value = name;
             cmd.Parameters.Add(parameter);
