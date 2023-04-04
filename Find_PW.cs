@@ -22,7 +22,7 @@ namespace TeamProject
             Check check = new Check();
             
             string pw;
-            pw = check.FindPW(NameBox.Text, IDBox.Text, PhoneNumbox.Text);
+            pw = check.FindPW(NameBox.Text.Trim(), IDBox.Text.Trim(), PhoneNumbox.Text.Trim());
             if (pw == null) {
                 MessageBox.Show("잘못된입력입니다");
             }

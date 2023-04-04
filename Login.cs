@@ -17,9 +17,11 @@ namespace TeamProject
     {
         
         string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
-        public LoginForm()
+        private Main MainForm;
+        public LoginForm(Main mainForm)
         {
             InitializeComponent();
+            MainForm = mainForm;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -27,13 +29,13 @@ namespace TeamProject
             var db = new certification(strConn);
             SqlCommand cmd = db.GetSqlCommand();
             Check check = new();
-            int result = check.LogIn(TextId.Text, TextPassword.Text);
+            int result = check.LogIn(TextId.Text.Trim(), TextPassword.Text.Trim());
             if (result == 1)
             {
               
 
                 // 현재 로그인한 사용자가 관리자인 경우에만 adminpage를 띄움
-                bool isAdmin = check.IsAdmin(TextId.Text);
+                bool isAdmin = check.IsAdmin(TextId.Text.Trim());
                 if (isAdmin)
                 {
                     MessageBox.Show("관리자 로그인 성공");
@@ -44,8 +46,16 @@ namespace TeamProject
                 }
 
                 MessageBox.Show("로그인 성공");
-
+                MainForm.logStatus = true;
+                Main mainForm = new Main();
+                this.Hide();
+                mainForm.ShowDialog();
                 this.Close();
+        
+              
+                
+                
+                
             }
             else
             {
