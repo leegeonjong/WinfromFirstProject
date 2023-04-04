@@ -17,9 +17,11 @@ namespace TeamProject
     {
         
         string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
-        public LoginForm()
+        private Main MainForm;
+        public LoginForm(Main mainForm)
         {
             InitializeComponent();
+            MainForm = mainForm;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -44,8 +46,9 @@ namespace TeamProject
                 }
 
                 MessageBox.Show("로그인 성공");
-
-                this.Close();
+                MainForm.logStatus = true;
+                var mainForm = new Main();
+                mainForm.Show();
             }
             else
             {
