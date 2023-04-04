@@ -91,7 +91,7 @@ namespace TeamProject
                 $"WHERE u_id = '{ID}' AND u_password= '{PW}'";
             return cmd.ExecuteScalar()?.ToString();
         }
-        public string FindUid(string ID) { 
+        public int FindUid(string ID) { 
             var db = new certification(strConn);
             SqlCommand cmd = db.GetSqlCommand();
             cmd.CommandText = $"SELECT u_uid FROM Project_User " +

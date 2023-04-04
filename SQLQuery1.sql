@@ -28,7 +28,7 @@ CREATE TABLE Review
   m_uid     int     NOT NULL,
   u_uid     int     NOT NULL,
   r_uid     int     NOT NULL IDENTITY(1,1),
-  r_content varchar,
+  r_content varchar(255),
   r_date    DATE    NOT NULL,
   r_rate    int     NOT NULL,
   CONSTRAINT PK_Review PRIMARY KEY (m_uid, u_uid)
@@ -48,7 +48,7 @@ CREATE TABLE Project_User
   u_isadmin  bit         NOT NULL,
   CONSTRAINT PK_User PRIMARY KEY (u_uid)
 )
-drop table movieList
+drop table Review
 
         
       select*from Project_User
