@@ -46,6 +46,7 @@
             tabPage2 = new TabPage();
             label6 = new Label();
             tabPage3 = new TabPage();
+            btn_update = new Button();
             tab1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -74,6 +75,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(btn_update);
             tabPage1.Controls.Add(pnBox);
             tabPage1.Controls.Add(label8);
             tabPage1.Controls.Add(lvBox);
@@ -219,6 +221,16 @@
             tabPage3.Text = "즐겨찾기";
             tabPage3.UseVisualStyleBackColor = true;
             // 
+            // btn_update
+            // 
+            btn_update.Location = new Point(108, 343);
+            btn_update.Name = "btn_update";
+            btn_update.Size = new Size(75, 23);
+            btn_update.TabIndex = 16;
+            btn_update.Text = "수정";
+            btn_update.UseVisualStyleBackColor = true;
+            btn_update.Click += btn_update_Click;
+            // 
             // MyPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -257,5 +269,6 @@
         private Label label7;
         private TextBox pnBox;
         private Label label8;
+        private Button btn_update;
     }
 }

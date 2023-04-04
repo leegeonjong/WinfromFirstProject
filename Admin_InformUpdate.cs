@@ -67,6 +67,18 @@ namespace TeamProject
                 // certification 인스턴스 생성 및 SqlCommand 객체 가져오기
                 certification cert = new certification(strConn);
                 SqlCommand cmd = cert.GetSqlCommand();
+                SqlCommand checkid = cert.GetSqlCommand();         
+
+                checkid.CommandText = "SELECT COUNT(*) FROM project_user WHERE u_id = @u_id";
+                checkid.Parameters.AddWithValue("@u_id", IdBox.Text);
+                checkid.Parameters.AddWithValue("@u_uid", UidBox.Text);
+                // 중복 검사 실행
+                int count = (int)checkid.ExecuteScalar();
+                if (count > 0)
+                {
+                    MessageBox.Show("이미 존재하는 아이디입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
                 // UPDATE 쿼리문 작성
                 string sql = "UPDATE project_user SET u_id = @u_id, u_password = @u_password, u_name = @u_name, u_phonenum = @u_phonenum, u_level = @u_level, u_nickname = @u_nickname WHERE u_uid = @u_uid";
@@ -103,8 +115,18 @@ namespace TeamProject
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (ex is SqlException sqlEx && (sqlEx.Number == 2601 || sqlEx.Number == 2627)) // unique key 제약조건 위반 시 발생하는 오류 번호
+                {
+                    MessageBox.Show("이미 존재하는 아이디입니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
+
+           
             finally
             {
                 Cursor = Cursors.Default;
