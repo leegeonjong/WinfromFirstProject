@@ -15,6 +15,7 @@ using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Search;
 using Microsoft.VisualBasic.Devices;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TeamProject
 {
@@ -108,12 +109,25 @@ namespace TeamProject
                 TextAlign = ContentAlignment.MiddleCenter,
                 Font = new Font("Arial", 10, FontStyle.Bold)
             };
+            titleLabel.DoubleClick += TitleLabel_DoubleClick;
             panel.Controls.Add(titleLabel);
 
             fLPMain.Controls.Add(panel);
 
         }
-
+        private void TitleLabel_DoubleClick(object sender, EventArgs e)
+        {
+            if (sender is Label titleLabel)
+            {
+                string movieTitle = titleLabel.Text;
+                ShowMovieDetailWindow(movieTitle);
+            }
+        }
+        private void ShowMovieDetailWindow(string movieTitle)
+        {
+            Movie_Detail detailForm = new Movie_Detail(movieTitle);
+            detailForm.Show();
+        }
 
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -129,7 +143,7 @@ namespace TeamProject
             }
             LoginForm lg = new(this);
             lg.Show();
-        
+
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -156,6 +170,38 @@ namespace TeamProject
             //내림차순
             //매출순위
             //개봉일자
+            bool startDTPChanged = false;
+            bool endDTPChanged = false;
+            dTPStart.ValueChanged += (sender, e) => startDTPChanged = true;
+            dTPEnd.ValueChanged += (sender, e) => endDTPChanged = true;
+            string orderByColumn;
+            switch (CB_Category.SelectedIndex)
+            {
+                case 0: // 첫 번째 정렬 방식 (예: 이름으로 오름차순 정렬)
+                    orderByColumn = "ReleaseDate ASC";
+                    break;
+                case 1: // 두 번째 정렬 방식 (예: 이름으로 내림차순 정렬)
+                    orderByColumn = "ReleaseDate DESC";
+                    break;
+                case 2: // 두 번째 정렬 방식 (예: 이름으로 내림차순 정렬)
+                    orderByColumn = "Sales";
+                    break;
+                case 3: // 두 번째 정렬 방식 (예: 이름으로 내림차순 정렬)
+                    orderByColumn = "ReleaseDate";
+                    break;
+                default:
+                    orderByColumn = "ReleaseDate ASC";
+                    break;
+
+            }
+            
+                DateTime startDate = dTPStart.Value;
+                DateTime endDate = dTPEnd.Value;
+                GetDataAndDisplay(startDate, endDate, orderByColumn);
+                return;
+            
+
+
             string name = txtName.Text;
             using SqlConnection conn = new SqlConnection(strConn);
             conn.Open();
@@ -217,6 +263,31 @@ namespace TeamProject
             }
         }
 
+        private async void GetDataAndDisplay(DateTime startDate, DateTime endDate, string orderByColumn)
+        {
+            const string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
+
+            using SqlConnection conn = new SqlConnection(strConn);
+            await conn.OpenAsync();
+
+            string query = $"SELECT TOP 50 Title FROM MovieList WHERE ReleaseDate BETWEEN @StartDate AND @EndDate ORDER BY {orderByColumn}";
+            using SqlCommand cmd = new SqlCommand(query, conn);
+
+            cmd.Parameters.AddWithValue("@StartDate", startDate);
+            cmd.Parameters.AddWithValue("@EndDate", endDate);
+
+            using SqlDataReader reader = await cmd.ExecuteReaderAsync();
+            fLPMain.Controls.Clear();
+            rank = 0;
+            while (await reader.ReadAsync())
+            {
+                string title = reader.GetString(0);
+                string imageUrl = await GetPosterUrlAsync(title);
+                AddMovieItem(title, imageUrl);
+            }
+        }
+
+
         private async void btnSearch_Click(object sender, EventArgs e)
         {
             //paramBeginDate.Value = dtBegin.Value.ToString("yyyy-MM-dd");
@@ -241,8 +312,7 @@ namespace TeamProject
                 {
                     DateTime startDate = dTPStart.Value;
                     DateTime endDate = dTPEnd.Value;
-                    Console.WriteLine($"시작 날짜: {startDate}");
-                    // 시작 날짜를 사용하여 원하는 작업을 수행하세요.
+
                     using SqlCommand cmd = new SqlCommand("SELECT Title FROM MovieList WHERE ReleaseDate BETWEEN @startDate AND @endDate", conn);
                     SqlParameter startParam = new SqlParameter("@startDate", System.Data.SqlDbType.Date);
                     startParam.Value = startDate;
@@ -261,6 +331,7 @@ namespace TeamProject
                         string imageUrl = await GetPosterUrlAsync(title);
                         AddMovieItem(title, imageUrl);
                     }
+                    return;
                 }
             };
 
