@@ -17,6 +17,8 @@ namespace TeamProject
     {
         
         public bool logStatus { get; set; }
+        public string userNickname { get; set; }
+        public string userid { get; set; }
         const string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
         SqlConnection conn;
         SqlDataReader reader;
@@ -231,9 +233,13 @@ namespace TeamProject
             logStatus = false;
         }
 
-        private void Main_Load_1(object sender, EventArgs e)
+        public void Main_Load_1(object sender, EventArgs e)
         {
             logStatus = true;
+            btnLogin.Text = "·Î±×¾Æ¿ô";
+            nicknamelabel.Text = userNickname;
+            idLabel.Text = userid;
+            mypage.Visible = true;
         }
     }
 }

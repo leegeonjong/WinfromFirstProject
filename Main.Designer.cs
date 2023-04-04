@@ -40,6 +40,9 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.fLPMain = new System.Windows.Forms.FlowLayoutPanel();
+            this.nicknamelabel = new System.Windows.Forms.Label();
+            this.idLabel = new System.Windows.Forms.Label();
+            this.mypage = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // flowLayoutPanel
@@ -153,11 +156,40 @@
             this.fLPMain.Size = new System.Drawing.Size(1236, 604);
             this.fLPMain.TabIndex = 12;
             // 
+            // nicknamelabel
+            // 
+            this.nicknamelabel.AutoSize = true;
+            this.nicknamelabel.Location = new System.Drawing.Point(1389, 110);
+            this.nicknamelabel.Name = "nicknamelabel";
+            this.nicknamelabel.Size = new System.Drawing.Size(0, 20);
+            this.nicknamelabel.TabIndex = 13;
+            // 
+            // idLabel
+            // 
+            this.idLabel.AutoSize = true;
+            this.idLabel.Location = new System.Drawing.Point(1389, 132);
+            this.idLabel.Name = "idLabel";
+            this.idLabel.Size = new System.Drawing.Size(0, 20);
+            this.idLabel.TabIndex = 14;
+            // 
+            // mypage
+            // 
+            this.mypage.Location = new System.Drawing.Point(1524, 70);
+            this.mypage.Name = "mypage";
+            this.mypage.Size = new System.Drawing.Size(94, 29);
+            this.mypage.TabIndex = 15;
+            this.mypage.Text = "마이페이지";
+            this.mypage.UseVisualStyleBackColor = true;
+            this.mypage.Visible = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1709, 818);
+            this.Controls.Add(this.mypage);
+            this.Controls.Add(this.idLabel);
+            this.Controls.Add(this.nicknamelabel);
             this.Controls.Add(this.fLPMain);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
@@ -191,5 +223,8 @@
         private DateTimePicker dateTimePicker1;
         private DateTimePicker dateTimePicker2;
         private FlowLayoutPanel fLPMain;
+        private Label nicknamelabel;
+        private Label idLabel;
+        private Button mypage;
     }
 }
