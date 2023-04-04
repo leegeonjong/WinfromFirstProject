@@ -39,7 +39,8 @@ namespace TeamProject
                     var adminPage = new Admin_Page();
                     adminPage.Show();
                 }
-
+                Main main = new Main();
+                main.logStatus = 1;
                 this.Close();
             }
             else

@@ -42,6 +42,7 @@
             this.PhnBox = new System.Windows.Forms.TextBox();
             this.nnBox = new System.Windows.Forms.TextBox();
             this.checkbtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -168,7 +169,7 @@
             // 
             // checkbtn
             // 
-            this.checkbtn.Location = new System.Drawing.Point(544, 125);
+            this.checkbtn.Location = new System.Drawing.Point(520, 125);
             this.checkbtn.Name = "checkbtn";
             this.checkbtn.Size = new System.Drawing.Size(94, 29);
             this.checkbtn.TabIndex = 13;
@@ -176,11 +177,22 @@
             this.checkbtn.UseVisualStyleBackColor = true;
             this.checkbtn.Click += new System.EventHandler(this.checkbtn_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(636, 125);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 29);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "ID 수정";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // join_membership
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(742, 600);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.checkbtn);
             this.Controls.Add(this.nnBox);
             this.Controls.Add(this.PhnBox);
@@ -219,5 +231,6 @@
         private TextBox PhnBox;
         private TextBox nnBox;
         private Button checkbtn;
+        private Button button1;
     }
 }

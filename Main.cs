@@ -25,7 +25,7 @@ namespace TeamProject
             InitializeComponent();
 
             LoadMovieDataAsync();
-
+            
         }
 
         private async void LoadMovieDataAsync()
