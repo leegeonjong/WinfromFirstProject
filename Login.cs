@@ -38,7 +38,7 @@ namespace TeamProject
                 if (isAdmin)
                 {
                     MessageBox.Show("관리자 로그인 성공");
-                    var adminPage = new Admin_Page();
+                    var adminPage = new Admin_Page(MainForm);
                     adminPage.Show();
                     this.Close();
                     return;

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,15 +13,19 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TeamProject
 {
+   
     public partial class Admin_Page : Form
     {
         string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
+        public int usuid { get; set; }
+        public int userUid { get; set; }
 
-        public static Admin_Page mainForm;
-
-        public Admin_Page()
+        
+        private Main MainForm;
+        public Admin_Page(Main mainForm)
         {
             InitializeComponent();
+            MainForm = mainForm;
         }
 
         private void Admin_Page_Load(object sender, EventArgs e)
@@ -134,18 +139,28 @@ namespace TeamProject
 
         private void memberView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            int rowIndex = e.RowIndex;
+            int colIndex = e.ColumnIndex;
 
-           
             if (e.ColumnIndex == 0)
             {
+                DataGridViewRow row = memberView.Rows[rowIndex];
+                usuid = (int)row.Cells[0].Value;
                 // detailForm 객체 생성 및 화면에 표시
-                MyPage mypage = new MyPage(this);
+                MyPage mypage = new MyPage(this,MainForm);
                 AddOwnedForm(mypage);
                 mypage.StartPosition = FormStartPosition.CenterScreen;
                 mypage.Show();
 
 
             }
+            MainForm.useruid = userUid;
+         
+
+         
+            
+
+         
         }
 
         private void btn_Search_Click(object sender, EventArgs e)
