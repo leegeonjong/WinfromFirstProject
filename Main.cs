@@ -127,14 +127,15 @@ namespace TeamProject
         public void Main_Load_1(object sender, EventArgs e)
         {
             logStatus = true;
-            btnLogin.Text = "·Î±×¾Æ¿ô";
+             btnLogin.Text = "·Î±×¾Æ¿ô";
+            label_id.Text = userid;
+            label_nn.Text = userNickname;
+            mypage.Visible= true;
+           
+  
+        }
+
     
-        }
-
-        private void Main_Load_2(object sender, EventArgs e)
-        {
-
-        }
 
         private async void CB_Category_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -268,7 +269,14 @@ namespace TeamProject
         private void txtName_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
+            { 
                 btnSearch_Click(sender, e);
+            }
+        }
+
+        private void Main_Load_2(object sender, EventArgs e)
+        {
+
         }
     }
 }
