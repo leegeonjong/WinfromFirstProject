@@ -22,7 +22,7 @@ namespace TeamProject
         {
             InitializeComponent();
             MovieTitle = movieTitle;
-            lbl1.Text = MovieTitle;
+            label1.Text = MovieTitle;
         }
         
     }

@@ -142,7 +142,7 @@ namespace TeamProject
             }
             LoginForm lg = new(this);
             lg.Show();
-        
+
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -193,14 +193,13 @@ namespace TeamProject
                     break;
 
             }
-            if (startDTPChanged && endDTPChanged)
-            {
+            
                 DateTime startDate = dTPStart.Value;
                 DateTime endDate = dTPEnd.Value;
                 GetDataAndDisplay(startDate, endDate, orderByColumn);
                 return;
-            }
-                
+            
+
 
             string name = txtName.Text;
             using SqlConnection conn = new SqlConnection(strConn);
