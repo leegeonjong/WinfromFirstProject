@@ -55,3 +55,6 @@ drop table Review
 	  select*from Review
 	  select*from Movie
 	  select*from Bookmark
+
+	  INSERT INTO Review (u_id, u_password, u_name, u_phonenum, u_level, u_nickname, u_isadmin)
+VALUES

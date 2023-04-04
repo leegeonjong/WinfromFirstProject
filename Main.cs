@@ -25,8 +25,12 @@ namespace TeamProject
         public bool logStatus { get; set; }
         public string userNickname { get; set; }
         public string userid { get; set; }
-        public int useruid { get; set; }
 
+        public int movieuid { get; set; }
+
+        public string movietitle { get; set; }  
+
+        public int useruid { get; set; }
 
         const string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
         SqlConnection conn;
@@ -114,17 +118,17 @@ namespace TeamProject
         }
         private void TitleLabel_DoubleClick(object sender, EventArgs e)
         {
+            Check check1 = new();
             if (sender is Label titleLabel)
             {
                 string movieTitle = titleLabel.Text;
-                ShowMovieDetailWindow(movieTitle);
+                movieuid = check1.FindMvUid(movieTitle);   
+                movietitle = titleLabel.Text;
+
             }
         }
-        private void ShowMovieDetailWindow(string movieTitle)
-        {
-            Movie_Detail detailForm = new Movie_Detail(movieTitle);
-            detailForm.Show();
-        }
+
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (btnLogin.Text == "·Î±×¾Æ¿ô")
