@@ -55,47 +55,49 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(456, 141);
+            label1.Location = new Point(319, 85);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(90, 25);
+            label1.Size = new Size(59, 15);
             label1.TabIndex = 0;
             label1.Text = "날짜 시작";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(732, 141);
+            label2.Location = new Point(513, 85);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(72, 25);
+            label2.Size = new Size(47, 15);
             label2.TabIndex = 1;
             label2.Text = "날짜 끝";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(1001, 141);
+            label3.Location = new Point(701, 85);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(126, 25);
+            label3.Size = new Size(83, 15);
             label3.TabIndex = 5;
             label3.Text = "영화이름 검색";
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(1389, 164);
-            btnSearch.Margin = new Padding(3, 2, 3, 2);
+            btnSearch.Location = new Point(972, 98);
+            btnSearch.Margin = new Padding(2, 2, 2, 2);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(100, 32);
+            btnSearch.Size = new Size(70, 20);
             btnSearch.TabIndex = 6;
             btnSearch.Text = "검색";
             btnSearch.UseVisualStyleBackColor = true;
-            btnSearch.Click += btnSearch_Click;
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(1261, 71);
-            btnLogin.Margin = new Padding(3, 2, 3, 2);
+            btnLogin.Location = new Point(883, 43);
+            btnLogin.Margin = new Padding(2, 2, 2, 2);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(111, 32);
+            btnLogin.Size = new Size(78, 20);
             btnLogin.TabIndex = 7;
             btnLogin.Text = "로그인";
             btnLogin.UseVisualStyleBackColor = true;
@@ -104,92 +106,94 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(253, 141);
+            label4.Location = new Point(177, 85);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(126, 25);
+            label4.Size = new Size(83, 15);
             label4.TabIndex = 9;
             label4.Text = "카테고리 선택";
             // 
             // fLPMain
             // 
             fLPMain.AutoScroll = true;
-            fLPMain.Location = new Point(253, 205);
-            fLPMain.Margin = new Padding(3, 2, 3, 2);
+            fLPMain.Location = new Point(177, 123);
+            fLPMain.Margin = new Padding(2, 2, 2, 2);
             fLPMain.Name = "fLPMain";
-            fLPMain.Size = new Size(1236, 604);
+            fLPMain.Size = new Size(865, 362);
             fLPMain.TabIndex = 12;
             // 
             // mypage
             // 
-            mypage.Location = new Point(1378, 71);
-            mypage.Margin = new Padding(3, 2, 3, 2);
+            mypage.Location = new Point(964, 43);
+            mypage.Margin = new Padding(2, 2, 2, 2);
             mypage.Name = "mypage";
-            mypage.Size = new Size(111, 32);
+            mypage.Size = new Size(78, 20);
             mypage.TabIndex = 13;
             mypage.Text = "마이페이지";
             mypage.UseVisualStyleBackColor = true;
             mypage.Visible = false;
+            mypage.Click += mypage_Click;
             // 
             // dTPStart
             // 
-            dTPStart.Location = new Point(466, 170);
-            dTPStart.Margin = new Padding(3, 2, 3, 2);
+            dTPStart.Location = new Point(319, 100);
+            dTPStart.Margin = new Padding(2, 2, 2, 2);
             dTPStart.Name = "dTPStart";
-            dTPStart.Size = new Size(270, 31);
+            dTPStart.Size = new Size(190, 23);
             dTPStart.TabIndex = 14;
             // 
             // dTPEnd
             // 
-            dTPEnd.Location = new Point(732, 166);
-            dTPEnd.Margin = new Padding(3, 2, 3, 2);
+            dTPEnd.Location = new Point(513, 100);
+            dTPEnd.Margin = new Padding(2, 2, 2, 2);
             dTPEnd.Name = "dTPEnd";
-            dTPEnd.Size = new Size(270, 31);
+            dTPEnd.Size = new Size(190, 23);
             dTPEnd.TabIndex = 15;
             // 
             // txtName
             // 
-            txtName.Location = new Point(1008, 166);
-            txtName.Margin = new Padding(3, 2, 3, 2);
+            txtName.Location = new Point(705, 100);
+            txtName.Margin = new Padding(2, 2, 2, 2);
             txtName.Name = "txtName";
             txtName.PlaceholderText = "검색할 영화이름을 입력하세요";
-            txtName.Size = new Size(375, 31);
+            txtName.Size = new Size(264, 23);
             txtName.TabIndex = 16;
-            txtName.KeyDown += txtName_KeyDown;
             // 
             // CB_Category
             // 
             CB_Category.FormattingEnabled = true;
             CB_Category.Items.AddRange(new object[] { "오름차순", "내림차순", "매출일자", "개봉일자" });
-            CB_Category.Location = new Point(253, 165);
-            CB_Category.Margin = new Padding(3, 2, 3, 2);
+            CB_Category.Location = new Point(177, 99);
+            CB_Category.Margin = new Padding(2, 2, 2, 2);
             CB_Category.Name = "CB_Category";
-            CB_Category.Size = new Size(182, 33);
+            CB_Category.Size = new Size(128, 23);
             CB_Category.TabIndex = 17;
-            CB_Category.SelectedIndexChanged += CB_Category_SelectedIndexChanged_1;
             // 
             // label_id
             // 
             label_id.AutoSize = true;
-            label_id.Location = new Point(1261, 124);
+            label_id.Location = new Point(883, 74);
+            label_id.Margin = new Padding(2, 0, 2, 0);
             label_id.Name = "label_id";
-            label_id.Size = new Size(21, 25);
+            label_id.Size = new Size(13, 15);
             label_id.TabIndex = 18;
             label_id.Text = "v";
             // 
             // label_nn
             // 
             label_nn.AutoSize = true;
-            label_nn.Location = new Point(1389, 124);
+            label_nn.Location = new Point(972, 74);
+            label_nn.Margin = new Padding(2, 0, 2, 0);
             label_nn.Name = "label_nn";
-            label_nn.Size = new Size(21, 25);
+            label_nn.Size = new Size(13, 15);
             label_nn.TabIndex = 19;
             label_nn.Text = "v";
             // 
             // Main
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1899, 1022);
+            ClientSize = new Size(1329, 614);
             Controls.Add(label_nn);
             Controls.Add(label_id);
             Controls.Add(CB_Category);
@@ -204,7 +208,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Margin = new Padding(3, 2, 3, 2);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "Main";
             Text = "Form1";
             Load += Main_Load;

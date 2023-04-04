@@ -135,7 +135,7 @@ namespace TeamProject
         private void memberView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
-
+           
             if (e.ColumnIndex == 0)
             {
                 // detailForm 객체 생성 및 화면에 표시

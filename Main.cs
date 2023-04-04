@@ -25,6 +25,8 @@ namespace TeamProject
         public bool logStatus { get; set; }
         public string userNickname { get; set; }
         public string userid { get; set; }
+
+        public int useruid { get; set; }
         const string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
         SqlConnection conn;
         SqlDataReader reader;
@@ -129,8 +131,18 @@ namespace TeamProject
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            if (btnLogin.Text == "로그아웃")
+            {
+                MessageBox.Show("로그아웃되었습니다.");
+                this.Close();
+                Main main = new Main();
+                main.Main_Load(sender, e);
+                main.Show();
+                return;
+            }
             LoginForm lg = new(this);
             lg.Show();
+        
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -348,6 +360,14 @@ namespace TeamProject
 
         private void Main_Load_2(object sender, EventArgs e)
         {
+
+        }
+
+        private void mypage_Click(object sender, EventArgs e)
+        {
+            Admin_Page page = new Admin_Page();
+            MyPage mypage = new MyPage(page);
+            mypage.Show();
 
         }
     }
