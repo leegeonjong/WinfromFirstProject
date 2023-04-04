@@ -46,9 +46,10 @@ namespace TeamProject
 
             using SqlConnection conn = new SqlConnection(strConn);
             conn.Open();
-            using SqlCommand cmd = new SqlCommand("SELECT TOP 50 Title FROM MovieList", conn);
+            using SqlCommand cmd = new SqlCommand("SELECT TOP 50 Title FROM MovieList WHERE Country = @Country", conn);
             SqlParameter parameter = new SqlParameter("@Country", System.Data.SqlDbType.VarChar);
             parameter.Value = Country;
+            
             cmd.Parameters.Add(parameter);
             using SqlDataReader reader = await cmd.ExecuteReaderAsync();
             rank = 0;
@@ -231,7 +232,6 @@ namespace TeamProject
             SqlParameter parameter = new SqlParameter("@name", System.Data.SqlDbType.VarChar);
             parameter.Value = "%" + name + "%";
             cmd.Parameters.Add(parameter);
-
             using SqlDataReader reader = await cmd.ExecuteReaderAsync();
             fLPMain.Controls.Clear();
             rank = 0;
@@ -239,7 +239,6 @@ namespace TeamProject
             {
                 string title = reader.GetString(0);
                 string imageUrl = await GetPosterUrlAsync(title);
-
                 AddMovieItem(title, imageUrl);
             }
         }
@@ -247,9 +246,7 @@ namespace TeamProject
         private void txtName_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-            {
                 btnSearch_Click(sender, e);
-            }
         }
     }
 }
