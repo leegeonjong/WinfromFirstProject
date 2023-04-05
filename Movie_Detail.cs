@@ -98,7 +98,7 @@ namespace TeamProject
             int rate = int.Parse(ratebox.Text);
 
             Check check = new Check();
-            check.Addcontentt(MovieUid, UseruId, reviewBox.Text, rate, d1);
+            
 
             if (reviewBox.Text.IsNullOrEmpty())
             {
@@ -128,7 +128,8 @@ namespace TeamProject
         {
             if (NickNameBox.Text.IsNullOrEmpty())
             {
-                MessageBox.Show("로그인하지않으면 리뷰를 남길 수 없습니다");
+                MessageBox.Show("로그인하지않으면 즐겨찾기 불가!");
+                return;
             }
             if (bookmarkstatus == false)
             {
@@ -139,7 +140,7 @@ namespace TeamProject
             if (bookmarkstatus == true)
             {
                 MessageBox.Show("즐겨찾기 해제");
-                bookmarkon.Image = Properties.Resources.bookmarkon;
+                bookmarkon.Image = Properties.Resources.bookmarkoff;
                 bookmarkstatus = false;
             }
 
