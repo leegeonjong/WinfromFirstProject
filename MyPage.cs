@@ -21,6 +21,7 @@ namespace TeamProject
         Main main;
         public string UserId;
         public int UserUid;
+        public int MovieUid;
 
 
         public MyPage(Admin_Page form, Main main)
@@ -31,6 +32,7 @@ namespace TeamProject
             this.main = main;
             UserId = main.userid;
             UserUid = main.useruid;
+            MovieUid = main.movieuid;
         }
 
         private void MyPage_Load(object sender, EventArgs e)
@@ -176,6 +178,7 @@ namespace TeamProject
 
             Check check = new Check();
             UserUid = check.FindUid(UserId);
+            MovieUid = check.FindMvUid(Title)
 
 
 

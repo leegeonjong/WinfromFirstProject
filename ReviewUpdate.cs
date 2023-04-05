@@ -17,15 +17,17 @@ namespace TeamProject
         string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
         MyPage mypage;
 
-        string UserId;
+    
         int UserUid;
+        int MovieUid;
 
         public ReviewUpdate(MyPage form)
         {
             InitializeComponent();
             this.mypage = form;
             UserUid = form.UserUid;
-            UserId = form.UserId;
+            MovieUid = form.MovieUid;
+           
 
             if (mypage.myReviewView.SelectedRows.Count > 0)
             {
@@ -83,12 +85,14 @@ namespace TeamProject
 
                 // UPDATE 쿼리문 작성
                 string sql = "UPDATE review SET " +
-                    "r_content = @r_content , r_rate = @r_rate, r_date = @r_date";
+                    "u_uid=@u_uid , MovieUID = @MovieUID , r_content = @r_content , r_rate = @r_rate, r_date = @r_date";
 
                 // SqlCommand 객체에 UPDATE 쿼리문 설정
                 cmd.CommandText = sql;
 
                 // UPDATE 쿼리문의 매개변수 값 설정
+                cmd.Parameters.AddWithValue("@u_uid", UserUid);
+                cmd.Parameters.AddWithValue("@MovieUID", MovieUid);
                 cmd.Parameters.AddWithValue("@r_content", rvBox.Text);
                 cmd.Parameters.AddWithValue("@r_rate", rtBox.Text);
                 cmd.Parameters.AddWithValue("@r_date", DateTime.Now);
