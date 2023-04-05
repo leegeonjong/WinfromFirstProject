@@ -64,5 +64,5 @@ VALUES
         
       select*from Project_User
 	  select*from Review
-	  select*from Movie
+	  select*from bookmark
 	  select*from MovieList
