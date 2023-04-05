@@ -20,7 +20,8 @@ namespace TeamProject
         int UseruId;
         int MovieUid;
         string username;
-
+        
+        
         bool bookmarkstatus;
 
 
@@ -43,13 +44,8 @@ namespace TeamProject
 
         private void Movie_Detail_Load(object sender, EventArgs e)
         {
-            Check check = new Check();
-
-
             //만약 즐겨찾기한경우라면 true
             bookmarkstatus = false;
-
-
             MovieTitle = check.FindMvName(MovieUid);
             labeltitle.Text = MovieTitle;
             if (MainForm.logStatus == true)
@@ -107,9 +103,8 @@ namespace TeamProject
             {
                 reviewBox.Text = "재밌어요";
             }
-
-
-
+            
+           
             if (check.countreview(MovieUid, UseruId) > 0)
             {
                 MessageBox.Show("이미 리뷰를 등록한 영화입니다");
@@ -120,6 +115,7 @@ namespace TeamProject
                 MessageBox.Show("리뷰등록!");
             }
 
+            DataViewLoad();
 
 
 
