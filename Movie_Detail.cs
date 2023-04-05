@@ -52,7 +52,7 @@ namespace TeamProject
             int rate = int.Parse(ratebox.Text);
            
             Check check= new Check();
-            check.Addcontentt(MovieUid, UseruId, reviewBox.Text,rate,d1);
+            check.Addcontentt(MovieUid, UseruId, reviewBox.Text, rate, d1);
         }
     }
 }

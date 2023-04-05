@@ -140,11 +140,11 @@ namespace TeamProject
 
             var db = new certification(strConn);
             SqlCommand cmd = db.GetSqlCommand();
-    
 
-            cmd.CommandText = $"INSERT INTO Review" +
-           $"(u_uid, MovieUID, r_content, r_rate,r_Date) " +
-           $"VALUES ('{uuid}', '{muid}', '{content}', '{rate}', '{date}'";
+
+            cmd.CommandText = $"INSERT INTO Review " +
+                    $"(u_uid, MovieUID, r_content, r_rate, r_date) " +
+                    $"VALUES ('{uuid}', '{muid}', '{content}', '{rate}', '{date.ToString("yyyy-MM-dd HH:mm:ss")}')";
 
             cmd.ExecuteNonQuery();
         }
