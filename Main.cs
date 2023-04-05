@@ -119,9 +119,10 @@ namespace TeamProject
             if (sender is Label titleLabel)
             {
                 string movieTitle = titleLabel.Text;
-                movieuid = check1.FindMvUid(movieTitle.Trim().Substring(movieTitle.IndexOf(']') + 1));
-
-            }
+                movieuid = check1.FindMvUid(movieTitle.Trim().Substring(movieTitle.IndexOf(']') + 1 ));
+                Movie_Detail MDT = new(this);
+                MDT.Show();
+             }
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -146,10 +147,12 @@ namespace TeamProject
         }
         public void Main_Load_1(object sender, EventArgs e)
         {
+            Check chk = new Check();
             logStatus = true;
             btnLogin.Text = "·Î±×¾Æ¿ô";
             label_id.Text = userid;
             label_nn.Text = userNickname;
+            useruid = chk.FindUid(label_id.Text);
             mypage.Visible = true;
 
 
@@ -276,6 +279,5 @@ namespace TeamProject
             mypage.Show();
 
         }
-
     }
 }

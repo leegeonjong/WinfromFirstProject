@@ -15,12 +15,15 @@ namespace TeamProject
     {
         string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
         string MovieTitle;
-        string UserId;
+        int UseruId;
         int MovieUid;
-        public Movie_Detail()
+        private Main MainForm;
+        public Movie_Detail(Main mainForm)
         {
             InitializeComponent();
-
+            MainForm = mainForm;
+            MovieUid = MainForm.movieuid;
+            UseruId= MainForm.useruid;
         }
 
 
@@ -29,6 +32,23 @@ namespace TeamProject
         private void button1_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void Movie_Detail_Load(object sender, EventArgs e)
+        {
+            Check check= new Check();
+            
+            MovieTitle = check.FindMvName(MovieUid);
+            labeltitle.Text = MovieTitle;
+            if (MainForm.logStatus == true)
+            {
+                NickNameBox.Text = MainForm.userNickname;
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
