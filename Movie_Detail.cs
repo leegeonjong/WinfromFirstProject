@@ -90,6 +90,10 @@ namespace TeamProject
 
         private void bookmarkon_Click(object sender, EventArgs e)
         {
+            if (NickNameBox.Text.IsNullOrEmpty())
+            {
+                MessageBox.Show("로그인하지않으면 리뷰를 남길 수 없습니다");
+            }
             if (bookmarkstatus == false)
             {
                 MessageBox.Show("즐겨찾기 추가");
@@ -98,7 +102,7 @@ namespace TeamProject
             }
             if (bookmarkstatus == true)
             {
-                MessageBox.Show("즐겨찾기 추가");
+                MessageBox.Show("즐겨찾기 해제");
                 bookmarkon.Image = Properties.Resources.bookmarkon;
                 bookmarkstatus = false;
             }
