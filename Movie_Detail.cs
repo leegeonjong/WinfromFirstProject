@@ -43,9 +43,6 @@ namespace TeamProject
 
         private void Movie_Detail_Load(object sender, EventArgs e)
         {
-            Check check = new Check();
-
-
             //만약 즐겨찾기한경우라면 true
             bookmarkstatus = false;
             Check check= new Check();
