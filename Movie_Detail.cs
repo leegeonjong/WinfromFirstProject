@@ -23,7 +23,7 @@ namespace TeamProject
         
         
         bool bookmarkstatus;
-        
+
 
         private Main MainForm;
         public Movie_Detail(Main mainForm)
@@ -72,7 +72,7 @@ namespace TeamProject
             MovieTitle = check.FindMvName(MovieUid);
             cmd.CommandText = $"SELECT u.u_nickname, r.r_rate, r.r_content, r.r_date " +
                               $"FROM review r " +
-                              $"INNER JOIN project_user u ON r.u_uid = u.u_uid " +                            
+                              $"INNER JOIN project_user u ON r.u_uid = u.u_uid " +
                               $"WHERE r.MovieUID = {MovieUid}";
 
             SqlDataReader reader = cmd.ExecuteReader();
@@ -124,7 +124,7 @@ namespace TeamProject
 
         }
 
-     
+
 
         private void bookmarkon_Click(object sender, EventArgs e)
         {
