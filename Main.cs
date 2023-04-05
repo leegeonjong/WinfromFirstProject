@@ -104,7 +104,6 @@ namespace TeamProject
                 AutoSize = true,
                 AutoEllipsis = false,
                 Size = new Size(120, 40),
-                MaximumSize = new Size(120, 40),
                 TextAlign = ContentAlignment.TopCenter,
                 Font = new Font("Arial", 10, FontStyle.Bold)
             };
