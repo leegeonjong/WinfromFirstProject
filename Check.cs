@@ -174,8 +174,8 @@ namespace TeamProject
         {
             var db = new certification(strConn);
             SqlCommand cmd = db.GetSqlCommand();
-            cmd.CommandText = $"INSERT INTO Project_User" +
-                $"(u_id, u_password, u_name, u_phonenum, u_nickname) " +
+            cmd.CommandText = $"INSERT INTO Bookmark" +
+                $"(u_id, MovieUID,) " +
                // $"VALUES ('{i}', '{i2}', '{i3}', '{i4}', '{i5}') ";
             cmd.ExecuteNonQuery();
         }
