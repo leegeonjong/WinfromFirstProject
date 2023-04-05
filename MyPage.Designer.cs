@@ -46,9 +46,11 @@
             label2 = new Label();
             label1 = new Label();
             tabPage2 = new TabPage();
+            btn_reviewclose = new Button();
+            btn_reviewUpdate = new Button();
+            myReviewView = new DataGridView();
             label6 = new Label();
             tabPage3 = new TabPage();
-            myReviewView = new DataGridView();
             tab1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -94,7 +96,7 @@
             tabPage1.Controls.Add(label1);
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3, 3, 3, 3);
+            tabPage1.Padding = new Padding(3);
             tabPage1.Size = new Size(752, 383);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "회원정보";
@@ -108,6 +110,7 @@
             btn_Cancel.TabIndex = 17;
             btn_Cancel.Text = "취소하기";
             btn_Cancel.UseVisualStyleBackColor = true;
+            btn_Cancel.Click += btn_Cancel_Click;
             // 
             // btn_update
             // 
@@ -117,6 +120,7 @@
             btn_update.TabIndex = 16;
             btn_update.Text = "수정";
             btn_update.UseVisualStyleBackColor = true;
+            btn_update.Click += btn_update_Click;
             // 
             // pnBox
             // 
@@ -216,15 +220,47 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(btn_reviewclose);
+            tabPage2.Controls.Add(btn_reviewUpdate);
             tabPage2.Controls.Add(myReviewView);
             tabPage2.Controls.Add(label6);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3, 3, 3, 3);
+            tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(752, 383);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "내가 남긴 리뷰";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btn_reviewclose
+            // 
+            btn_reviewclose.Location = new Point(638, 20);
+            btn_reviewclose.Name = "btn_reviewclose";
+            btn_reviewclose.Size = new Size(75, 23);
+            btn_reviewclose.TabIndex = 3;
+            btn_reviewclose.Text = "닫기";
+            btn_reviewclose.UseVisualStyleBackColor = true;
+            btn_reviewclose.Click += btn_reviewclose_Click;
+            // 
+            // btn_reviewUpdate
+            // 
+            btn_reviewUpdate.Location = new Point(527, 20);
+            btn_reviewUpdate.Name = "btn_reviewUpdate";
+            btn_reviewUpdate.Size = new Size(75, 23);
+            btn_reviewUpdate.TabIndex = 2;
+            btn_reviewUpdate.Text = "수정하기";
+            btn_reviewUpdate.UseVisualStyleBackColor = true;
+            btn_reviewUpdate.Click += btn_reviewUpdate_Click;
+            // 
+            // myReviewView
+            // 
+            myReviewView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            myReviewView.Dock = DockStyle.Bottom;
+            myReviewView.Location = new Point(3, 60);
+            myReviewView.Name = "myReviewView";
+            myReviewView.RowTemplate.Height = 25;
+            myReviewView.Size = new Size(746, 320);
+            myReviewView.TabIndex = 1;
             // 
             // label6
             // 
@@ -244,16 +280,6 @@
             tabPage3.Text = "즐겨찾기";
             tabPage3.UseVisualStyleBackColor = true;
             // 
-            // myReviewView
-            // 
-            myReviewView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            myReviewView.Dock = DockStyle.Bottom;
-            myReviewView.Location = new Point(3, 60);
-            myReviewView.Name = "myReviewView";
-            myReviewView.RowTemplate.Height = 25;
-            myReviewView.Size = new Size(746, 320);
-            myReviewView.TabIndex = 1;
-            // 
             // MyPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -263,6 +289,7 @@
             Controls.Add(label5);
             Name = "MyPage";
             Text = "MyPage";
+            Load += MyPage_Load;
             tab1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
@@ -294,6 +321,8 @@
         private Label label8;
         private Button btn_update;
         private Button btn_Cancel;
-        private DataGridView myReviewView;
+        private Button btn_reviewclose;
+        private Button btn_reviewUpdate;
+        public DataGridView myReviewView;
     }
 }
