@@ -19,7 +19,7 @@ namespace TeamProject
         string MovieTitle;
         int UseruId;
         int MovieUid;
-        string username;
+       
         
         
         bool bookmarkstatus;
@@ -44,10 +44,19 @@ namespace TeamProject
 
         private void Movie_Detail_Load(object sender, EventArgs e)
         {
+            
             Check check = new Check();
+            bookmarkstatus = check.bookmarkis(MovieUid, UseruId);
+            if (bookmarkstatus== true)
+            {
+                book.Image = Properties.Resources.bookmarkon;
+            }
+            else if (bookmarkstatus == false)
+            {
+                book.Image = Properties.Resources.bookmarkoff;
+            }
 
-            //만약 즐겨찾기한경우라면 true
-            bookmarkstatus = false;
+
             MovieTitle = check.FindMvName(MovieUid);
             labeltitle.Text = MovieTitle;
             if (MainForm.logStatus == true)
@@ -60,6 +69,7 @@ namespace TeamProject
 
         private void DataViewLoad()
         {
+            
 
             certification cert = new certification(strConn);
             SqlCommand cmd = cert.GetSqlCommand();
@@ -99,7 +109,7 @@ namespace TeamProject
             int rate = int.Parse(ratebox.Text);
 
             Check check = new Check();
-            check.Addcontentt(MovieUid, UseruId, reviewBox.Text, rate, d1);
+            
 
             if (reviewBox.Text.IsNullOrEmpty())
             {
@@ -125,27 +135,33 @@ namespace TeamProject
 
 
 
-        private void bookmarkon_Click(object sender, EventArgs e)
+    
+
+        private void book_Click(object sender, EventArgs e)
         {
+            Check check = new Check();
             if (NickNameBox.Text.IsNullOrEmpty())
             {
-                MessageBox.Show("로그인하지않으면 리뷰를 남길 수 없습니다");
+                MessageBox.Show("로그인하지않으면 즐겨찾기 불가!");
+                return;
             }
             if (bookmarkstatus == false)
             {
                 MessageBox.Show("즐겨찾기 추가");
-                bookmarkon.Image = Properties.Resources.bookmarkon;
+
+                book.Image = Properties.Resources.bookmarkon;
+               
+                check.bookmarkon(MovieUid, UseruId, bookmarkstatus);
                 bookmarkstatus = true;
             }
-            if (bookmarkstatus == true)
+            else if (bookmarkstatus == true)
             {
                 MessageBox.Show("즐겨찾기 해제");
-                bookmarkon.Image = Properties.Resources.bookmarkon;
+                
+                book.Image = Properties.Resources.bookmarkoff;
+                check.bookmarkon(MovieUid, UseruId, bookmarkstatus);
                 bookmarkstatus = false;
             }
-
-
-
         }
     }
 }

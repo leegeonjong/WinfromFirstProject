@@ -17,9 +17,12 @@ namespace TeamProject
     {
 
         string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
-        Main main;
         Admin_Page adminform;
-      
+        Main main;
+        public string UserId;
+        public int UserUid;
+        public int MovieUid;
+
 
         public MyPage(Admin_Page form, Main main)
         {
@@ -27,10 +30,15 @@ namespace TeamProject
 
             adminform = form;
             this.main = main;
+            UserId = main.userid;
+            UserUid = main.useruid;
+            MovieUid = main.movieuid;
         }
 
         private void MyPage_Load(object sender, EventArgs e)
         {
+            DataViewLoad();
+
             certification cert = new certification(strConn);
             SqlCommand cmd = cert.GetSqlCommand();
 
@@ -64,7 +72,7 @@ namespace TeamProject
             cmd.CommandText = "SELECT u_uid,u_id, u_password, u_name, u_phonenum, u_level, u_nickname FROM project_user WHERE u_uid = @u_uid";
             cmd.Parameters.AddWithValue("@u_uid", adminform.usuid);
 
-            
+
 
 
             SqlDataReader reader = cmd.ExecuteReader();
@@ -159,6 +167,77 @@ namespace TeamProject
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+
+        private void DataViewLoad()
+        {
+
+            certification cert = new certification(strConn);
+            SqlCommand cmd = cert.GetSqlCommand();
+
+            Check check = new Check();
+            UserUid = check.FindUid(UserId);
+            MovieUid = check.FindMvUid(Title)
+
+
+
+            cmd.CommandText = $"SELECT u.u_nickname, m.title, r.r_rate, r.r_content, r.r_date " +
+                                $"FROM review r " +
+                                $"INNER JOIN project_user u ON r.u_uid = u.u_uid " +
+                                $"INNER JOIN MovieList M ON r.MovieUID = m.MovieUID " +
+                                $"WHERE u.u_uid = {UserUid}";
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+
+            myReviewView.DataSource = dataTable;
+
+            // 리소스 정리
+            reader.Close();
+            cmd.Dispose();
+
+        }
+
+        public void LoadReviewView()
+        {
+            certification cert = new certification(strConn);
+            SqlCommand cmd = cert.GetSqlCommand();
+
+            cmd.CommandText = $"SELECT u.u_nickname, m.title, r.r_rate, r.r_content, r.r_date " +
+                                $"FROM review r " +
+                                $"INNER JOIN project_user u ON r.u_uid = u.u_uid " +
+                                $"INNER JOIN MovieList M ON r.MovieUID = m.MovieUID " +
+                                $"WHERE u.u_uid = {UserUid}";
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+
+            myReviewView.DataSource = dataTable;
+
+            // 리소스 정리
+            reader.Close();
+            cmd.Dispose();
+
+        }
+
+        private void btn_reviewclose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btn_reviewUpdate_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewCell cell in myReviewView.SelectedCells)
+            {
+                cell.OwningRow.Selected = true;
+            }
+
+            ReviewUpdate updatePage = new ReviewUpdate(this);
+            updatePage.Show();
         }
     }
 }

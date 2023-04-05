@@ -4,6 +4,7 @@ using static System.ComponentModel.Design.ObjectSelectorEditor;
 using System.Xml.Linq;
 using static Azure.Core.HttpHeader;
 using System;
+using System.Security.Cryptography;
 
 namespace TeamProject
 {
@@ -158,9 +159,9 @@ namespace TeamProject
             string result = cmd.ExecuteScalar()?.ToString();
             return result;
         }
-        public int countreview(int muid, int uuid) 
+        public int countreview(int muid, int uuid)
         {
-            int counter=0 ; 
+            int counter = 0;
             var db = new certification(strConn);
             SqlCommand cmd = db.GetSqlCommand();
             cmd.CommandText = "SELECT COUNT(*) FROM Review WHERE MovieUID=@muid AND u_uid=@uuid";
@@ -168,26 +169,44 @@ namespace TeamProject
             cmd.Parameters.AddWithValue("@uuid", uuid);
             int count = (int)cmd.ExecuteScalar();
             return count;
-           
+
         }
-        public void bookmarkon(int muid, int uuid) 
+        public void bookmarkon(int muid, int uuid, bool book)
+         {
+            var db = new certification(strConn);
+            SqlCommand cmd = db.GetSqlCommand();
+            if (book == false)
+            {
+                cmd.CommandText = $"INSERT INTO Bookmark" +
+                      $"(MOVIEUID, u_id, b_isbookmark) " +
+                      $"VALUES ({muid}, {uuid}, '{book}')";
+            }
+            if (book == true)
+            {
+                cmd.CommandText = $"DELETE FROM Bookmark WHERE u_id = '{uuid}' AND MovieUID = {muid}; ";
+            }
+
+            cmd.ExecuteNonQuery();
+        }
+        public bool bookmarkis(int muid, int uuid)
         {
             var db = new certification(strConn);
             SqlCommand cmd = db.GetSqlCommand();
-            cmd.CommandText = $"INSERT INTO Bookmark" +
-                $"(u_id, MovieUID,) " +
-               // $"VALUES ('{i}', '{i2}', '{i3}', '{i4}', '{i5}') ";
-            cmd.ExecuteNonQuery();
-        }
+            cmd.CommandText = $"SELECT b_isbookmark FROM bookmark " +
+                              $"WHERE movieuid = '{muid}' and u_id = '{uuid}'";
+            object result = cmd.ExecuteScalar();
 
+            if (result == null || result == "")
+            {
+                
+                return false;
+            }
+            else
+            {
+                
+                return true;
+            }
+        }
     }
 
-}
-//u_uid int NOT NULL IDENTITY(1,1),
-//  u_id varchar(20) NOT NULL,
-//  u_password varchar(20) NOT NULL,
-//  u_name     varchar(10) NOT NULL,
-//  u_phonenum varchar     NOT NULL,
-//  u_level    int         NOT NULL DEFAULT 1,
-//  u_nickname varchar     NOT NULL,
-//  u_isadmin  bit         NOT NULL DEFAULT 0,
+ }
