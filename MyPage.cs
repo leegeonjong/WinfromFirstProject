@@ -19,7 +19,7 @@ namespace TeamProject
         string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
         Main main;
         Admin_Page adminform;
-      
+
 
         public MyPage(Admin_Page form, Main main)
         {
@@ -64,7 +64,7 @@ namespace TeamProject
             cmd.CommandText = "SELECT u_uid,u_id, u_password, u_name, u_phonenum, u_level, u_nickname FROM project_user WHERE u_uid = @u_uid";
             cmd.Parameters.AddWithValue("@u_uid", adminform.usuid);
 
-            
+
 
 
             SqlDataReader reader = cmd.ExecuteReader();
@@ -159,6 +159,27 @@ namespace TeamProject
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+
+        private void DataViewLoad()
+        {
+
+            certification cert = new certification(strConn);
+            SqlCommand cmd = cert.GetSqlCommand();
+
+            cmd.CommandText = "SELECT  FROM review";
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+
+            myReviewView.DataSource = dataTable;
+
+            // 리소스 정리
+            reader.Close();
+            cmd.Dispose();
+
         }
     }
 }
