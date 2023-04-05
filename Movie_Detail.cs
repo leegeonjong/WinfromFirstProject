@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,9 @@ namespace TeamProject
         string MovieTitle;
         int UseruId;
         int MovieUid;
+        bool bookmarkstatus;
+        
+
         private Main MainForm;
         public Movie_Detail(Main mainForm)
         {
@@ -37,6 +41,8 @@ namespace TeamProject
 
         private void Movie_Detail_Load(object sender, EventArgs e)
         {
+            //만약 즐겨찾기한경우라면 true
+            bookmarkstatus = false;
             Check check= new Check();
             
             MovieTitle = check.FindMvName(MovieUid);
@@ -72,11 +78,25 @@ namespace TeamProject
             else
             {
                 check.Addcontentt(MovieUid, UseruId, reviewBox.Text, rate, d1);
+                MessageBox.Show("리뷰등록!");
             }
 
           
             
-            MessageBox.Show("리뷰등록!");
+            
+        }
+
+     
+
+        private void bookmarkon_Click(object sender, EventArgs e)
+        {
+            if (bookmarkstatus == false)
+            {
+                MessageBox.Show("즐겨찾기 추가");
+                bookmarkon.Image = Properties.Resources.bookmarkon;
+            }
+            
+           
         }
     }
 }

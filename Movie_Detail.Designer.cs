@@ -38,9 +38,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.NickNameBox = new System.Windows.Forms.TextBox();
             this.reviewBox = new System.Windows.Forms.TextBox();
+            this.bookmarkon = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookmarkon)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -73,7 +75,7 @@
             // 
             this.labeltitle.AutoSize = true;
             this.labeltitle.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labeltitle.Location = new System.Drawing.Point(285, 37);
+            this.labeltitle.Location = new System.Drawing.Point(213, 37);
             this.labeltitle.Name = "labeltitle";
             this.labeltitle.Size = new System.Drawing.Size(78, 41);
             this.labeltitle.TabIndex = 3;
@@ -152,11 +154,24 @@
             this.reviewBox.TabIndex = 0;
             this.reviewBox.Text = "comment";
             // 
+            // bookmarkon
+            // 
+            this.bookmarkon.BackgroundImage = global::TeamProject.Properties.Resources.pngwing_com;
+            this.bookmarkon.Image = global::TeamProject.Properties.Resources.bookmarkoff;
+            this.bookmarkon.Location = new System.Drawing.Point(30, 66);
+            this.bookmarkon.Name = "bookmarkon";
+            this.bookmarkon.Size = new System.Drawing.Size(40, 31);
+            this.bookmarkon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bookmarkon.TabIndex = 6;
+            this.bookmarkon.TabStop = false;
+            this.bookmarkon.Click += new System.EventHandler(this.bookmarkon_Click);
+            // 
             // Movie_Detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(680, 803);
+            this.Controls.Add(this.bookmarkon);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labeltitle);
             this.Controls.Add(this.label2);
@@ -169,6 +184,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookmarkon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,5 +202,6 @@
         private TextBox reviewBox;
         private DataGridView dataGridView1;
         private ComboBox ratebox;
+        private PictureBox bookmarkon;
     }
 }
