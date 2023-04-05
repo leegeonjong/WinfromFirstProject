@@ -31,9 +31,11 @@ namespace TeamProject
 
         private void MyPage_Load(object sender, EventArgs e)
         {
+           
+
             certification cert = new certification(strConn);
             SqlCommand cmd = cert.GetSqlCommand();
-
+           
 
 
 
@@ -167,8 +169,11 @@ namespace TeamProject
 
             certification cert = new certification(strConn);
             SqlCommand cmd = cert.GetSqlCommand();
+          
 
-            cmd.CommandText = "SELECT  FROM review";
+          
+
+            cmd.CommandText = "SELECT u_uid , MOVIEUID , r_content , r_rate , r_date  FROM review";
             SqlDataReader reader = cmd.ExecuteReader();
 
             DataTable dataTable = new DataTable();
