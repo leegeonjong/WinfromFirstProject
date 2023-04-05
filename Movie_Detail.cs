@@ -15,7 +15,7 @@ namespace TeamProject
     {
         string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
         string MovieTitle;
-        string UserId;
+        int UseruId;
         int MovieUid;
         private Main MainForm;
         public Movie_Detail(Main mainForm)
@@ -23,6 +23,7 @@ namespace TeamProject
             InitializeComponent();
             MainForm = mainForm;
             MovieUid = MainForm.movieuid;
+            UseruId= MainForm.useruid;
         }
 
 
@@ -43,6 +44,11 @@ namespace TeamProject
             {
                 NickNameBox.Text = MainForm.userNickname;
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

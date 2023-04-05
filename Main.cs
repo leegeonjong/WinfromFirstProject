@@ -149,10 +149,12 @@ namespace TeamProject
         }
         public void Main_Load_1(object sender, EventArgs e)
         {
+            Check chk = new Check();
             logStatus = true;
             btnLogin.Text = "·Î±×¾Æ¿ô";
             label_id.Text = userid;
             label_nn.Text = userNickname;
+            useruid = chk.FindUid(label_id.Text);
             mypage.Visible = true;
 
 

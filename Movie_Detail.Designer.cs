@@ -33,11 +33,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.labeltitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ratebox = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.NickNameBox = new System.Windows.Forms.TextBox();
             this.reviewBox = new System.Windows.Forms.TextBox();
-            this.ratebox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -87,47 +87,11 @@
             this.panel1.Controls.Add(this.NickNameBox);
             this.panel1.Controls.Add(this.reviewBox);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 414);
+            this.panel1.Location = new System.Drawing.Point(0, 433);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(680, 389);
+            this.panel1.Size = new System.Drawing.Size(680, 370);
             this.panel1.TabIndex = 4;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(30, 175);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(582, 185);
-            this.dataGridView1.TabIndex = 3;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(516, 52);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 31);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "등록";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // NickNameBox
-            // 
-            this.NickNameBox.Location = new System.Drawing.Point(150, 54);
-            this.NickNameBox.Margin = new System.Windows.Forms.Padding(4);
-            this.NickNameBox.Name = "NickNameBox";
-            this.NickNameBox.Size = new System.Drawing.Size(127, 27);
-            this.NickNameBox.TabIndex = 1;
-            // 
-            // reviewBox
-            // 
-            this.reviewBox.Location = new System.Drawing.Point(285, 54);
-            this.reviewBox.Margin = new System.Windows.Forms.Padding(4);
-            this.reviewBox.Name = "reviewBox";
-            this.reviewBox.Size = new System.Drawing.Size(217, 27);
-            this.reviewBox.TabIndex = 0;
             // 
             // ratebox
             // 
@@ -143,11 +107,50 @@
             "8",
             "9",
             "10"});
-            this.ratebox.Location = new System.Drawing.Point(85, 52);
+            this.ratebox.Location = new System.Drawing.Point(12, 52);
             this.ratebox.Name = "ratebox";
             this.ratebox.Size = new System.Drawing.Size(58, 28);
             this.ratebox.TabIndex = 4;
             this.ratebox.Text = "별점";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 118);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.Size = new System.Drawing.Size(680, 252);
+            this.dataGridView1.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(561, 48);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(96, 31);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "등록";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // NickNameBox
+            // 
+            this.NickNameBox.Location = new System.Drawing.Point(91, 53);
+            this.NickNameBox.Margin = new System.Windows.Forms.Padding(4);
+            this.NickNameBox.Name = "NickNameBox";
+            this.NickNameBox.Size = new System.Drawing.Size(104, 27);
+            this.NickNameBox.TabIndex = 1;
+            // 
+            // reviewBox
+            // 
+            this.reviewBox.Location = new System.Drawing.Point(213, 52);
+            this.reviewBox.Margin = new System.Windows.Forms.Padding(4);
+            this.reviewBox.Name = "reviewBox";
+            this.reviewBox.Size = new System.Drawing.Size(276, 27);
+            this.reviewBox.TabIndex = 0;
+            this.reviewBox.Text = "comment";
             // 
             // Movie_Detail
             // 
