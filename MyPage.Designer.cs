@@ -46,6 +46,8 @@
             label2 = new Label();
             label1 = new Label();
             tabPage2 = new TabPage();
+            btn_reviewclose = new Button();
+            btn_reviewUpdate = new Button();
             myReviewView = new DataGridView();
             label6 = new Label();
             tabPage3 = new TabPage();
@@ -218,6 +220,8 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(btn_reviewclose);
+            tabPage2.Controls.Add(btn_reviewUpdate);
             tabPage2.Controls.Add(myReviewView);
             tabPage2.Controls.Add(label6);
             tabPage2.Location = new Point(4, 24);
@@ -227,6 +231,26 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "내가 남긴 리뷰";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btn_reviewclose
+            // 
+            btn_reviewclose.Location = new Point(638, 20);
+            btn_reviewclose.Name = "btn_reviewclose";
+            btn_reviewclose.Size = new Size(75, 23);
+            btn_reviewclose.TabIndex = 3;
+            btn_reviewclose.Text = "닫기";
+            btn_reviewclose.UseVisualStyleBackColor = true;
+            btn_reviewclose.Click += btn_reviewclose_Click;
+            // 
+            // btn_reviewUpdate
+            // 
+            btn_reviewUpdate.Location = new Point(527, 20);
+            btn_reviewUpdate.Name = "btn_reviewUpdate";
+            btn_reviewUpdate.Size = new Size(75, 23);
+            btn_reviewUpdate.TabIndex = 2;
+            btn_reviewUpdate.Text = "수정하기";
+            btn_reviewUpdate.UseVisualStyleBackColor = true;
+            btn_reviewUpdate.Click += btn_reviewUpdate_Click;
             // 
             // myReviewView
             // 
@@ -297,6 +321,8 @@
         private Label label8;
         private Button btn_update;
         private Button btn_Cancel;
-        private DataGridView myReviewView;
+        private Button btn_reviewclose;
+        private Button btn_reviewUpdate;
+        public DataGridView myReviewView;
     }
 }
