@@ -126,6 +126,15 @@ namespace TeamProject
             object result = cmd.ExecuteScalar();
             return Convert.ToInt32(result);
         }
+        public string FindMvName(int uid)
+        {
+            var db = new certification(strConn);
+            SqlCommand cmd = db.GetSqlCommand();
+            cmd.CommandText = $"SELECT Title FROM MovieList " +
+                $"WHERE MovieUid = '{uid}'";
+            string result = cmd.ExecuteScalar()?.ToString();
+            return result;
+        }
 
     }
 }

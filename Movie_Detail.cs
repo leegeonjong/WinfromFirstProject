@@ -17,10 +17,12 @@ namespace TeamProject
         string MovieTitle;
         string UserId;
         int MovieUid;
-        public Movie_Detail()
+        private Main MainForm;
+        public Movie_Detail(Main mainForm)
         {
             InitializeComponent();
-
+            MainForm = mainForm;
+            MovieUid = MainForm.movieuid;
         }
 
 
@@ -29,6 +31,18 @@ namespace TeamProject
         private void button1_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void Movie_Detail_Load(object sender, EventArgs e)
+        {
+            Check check= new Check();
+            
+            MovieTitle = check.FindMvName(MovieUid);
+            labeltitle.Text = MovieTitle;
+            if (MainForm.logStatus == true)
+            {
+                NickNameBox.Text = MainForm.userNickname;
+            }
         }
     }
 }

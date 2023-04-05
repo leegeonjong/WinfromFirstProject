@@ -28,111 +28,147 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            panel1 = new Panel();
-            button1 = new Button();
-            rateBox = new TextBox();
-            reviewBox = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel1.SuspendLayout();
-            SuspendLayout();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labeltitle = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.NickNameBox = new System.Windows.Forms.TextBox();
+            this.reviewBox = new System.Windows.Forms.TextBox();
+            this.ratebox = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.SuspendLayout();
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(23, 77);
-            pictureBox1.Margin = new Padding(2);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(175, 200);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            this.pictureBox1.Location = new System.Drawing.Point(30, 103);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(225, 267);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(222, 100);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(107, 15);
-            label1.TabIndex = 1;
-            label1.Text = "상세정보들 넣을곳";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(285, 133);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(134, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "상세정보들 넣을곳";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(222, 142);
-            label2.Margin = new Padding(2, 0, 2, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(107, 15);
-            label2.TabIndex = 2;
-            label2.Text = "상세정보들 넣을곳";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(285, 189);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(134, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "상세정보들 넣을곳";
             // 
-            // label3
+            // labeltitle
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("맑은 고딕", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(222, 28);
-            label3.Margin = new Padding(2, 0, 2, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(62, 32);
-            label3.TabIndex = 3;
-            label3.Text = "제목";
+            this.labeltitle.AutoSize = true;
+            this.labeltitle.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labeltitle.Location = new System.Drawing.Point(285, 37);
+            this.labeltitle.Name = "labeltitle";
+            this.labeltitle.Size = new System.Drawing.Size(78, 41);
+            this.labeltitle.TabIndex = 3;
+            this.labeltitle.Text = "제목";
             // 
             // panel1
             // 
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(rateBox);
-            panel1.Controls.Add(reviewBox);
-            panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 310);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(529, 292);
-            panel1.TabIndex = 4;
+            this.panel1.Controls.Add(this.ratebox);
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.NickNameBox);
+            this.panel1.Controls.Add(this.reviewBox);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 414);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(680, 389);
+            this.panel1.TabIndex = 4;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(30, 175);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.Size = new System.Drawing.Size(582, 185);
+            this.dataGridView1.TabIndex = 3;
             // 
             // button1
             // 
-            button1.Location = new Point(401, 39);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 2;
-            button1.Text = "등록";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            this.button1.Location = new System.Drawing.Point(516, 52);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(96, 31);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "등록";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // rateBox
+            // NickNameBox
             // 
-            rateBox.Location = new Point(23, 39);
-            rateBox.Name = "rateBox";
-            rateBox.Size = new Size(100, 23);
-            rateBox.TabIndex = 1;
+            this.NickNameBox.Location = new System.Drawing.Point(150, 54);
+            this.NickNameBox.Margin = new System.Windows.Forms.Padding(4);
+            this.NickNameBox.Name = "NickNameBox";
+            this.NickNameBox.Size = new System.Drawing.Size(127, 27);
+            this.NickNameBox.TabIndex = 1;
             // 
             // reviewBox
             // 
-            reviewBox.Location = new Point(159, 39);
-            reviewBox.Name = "reviewBox";
-            reviewBox.Size = new Size(170, 23);
-            reviewBox.TabIndex = 0;
+            this.reviewBox.Location = new System.Drawing.Point(285, 54);
+            this.reviewBox.Margin = new System.Windows.Forms.Padding(4);
+            this.reviewBox.Name = "reviewBox";
+            this.reviewBox.Size = new System.Drawing.Size(217, 27);
+            this.reviewBox.TabIndex = 0;
+            // 
+            // ratebox
+            // 
+            this.ratebox.FormattingEnabled = true;
+            this.ratebox.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.ratebox.Location = new System.Drawing.Point(85, 52);
+            this.ratebox.Name = "ratebox";
+            this.ratebox.Size = new System.Drawing.Size(58, 28);
+            this.ratebox.TabIndex = 4;
+            this.ratebox.Text = "별점";
             // 
             // Movie_Detail
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(529, 602);
-            Controls.Add(panel1);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(pictureBox1);
-            Margin = new Padding(2);
-            Name = "Movie_Detail";
-            Text = "Movie_Detail";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(680, 803);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.labeltitle);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
+            this.Name = "Movie_Detail";
+            this.Text = "Movie_Detail";
+            this.Load += new System.EventHandler(this.Movie_Detail_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -140,10 +176,12 @@
         private PictureBox pictureBox1;
         private Label label1;
         private Label label2;
-        private Label label3;
+        private Label labeltitle;
         private Panel panel1;
         private Button button1;
-        private TextBox rateBox;
+        private TextBox NickNameBox;
         private TextBox reviewBox;
+        private DataGridView dataGridView1;
+        private ComboBox ratebox;
     }
 }

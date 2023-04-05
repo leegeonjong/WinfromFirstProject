@@ -28,7 +28,7 @@ CREATE TABLE Review
   m_uid     int     NOT NULL,
   u_uid     int     NOT NULL,
   r_uid     int     NOT NULL IDENTITY(1,1),
-  r_content varchar(255),
+  r_content varchar,
   r_date    DATE    NOT NULL,
   r_rate    int     NOT NULL,
   CONSTRAINT PK_Review PRIMARY KEY (m_uid, u_uid)
@@ -36,24 +36,33 @@ CREATE TABLE Review
 
 
 
-CREATE TABLE Project_User
+CREATE TABLE project_user
 (
   u_uid      int         NOT NULL IDENTITY(1,1),
   u_id       varchar(20) NOT NULL,
   u_password varchar(20) NOT NULL,
-  u_name     varchar(10) NOT NULL,
-  u_phonenum varchar     NOT NULL,
+  u_name     varchar(20) NOT NULL,
+  u_phonenum varchar(20)     NOT NULL,
   u_level    int         NOT NULL DEFAULT 1,
-  u_nickname varchar     NOT NULL,
-  u_isadmin  bit         NOT NULL,
+  u_nickname varchar(20)     NOT NULL,
+  u_isadmin  bit         NOT NULL DEFAULT 0,
   CONSTRAINT PK_User PRIMARY KEY (u_uid)
 )
-drop table Review
+drop table Project_User
+
+ INSERT INTO project_user (u_id, u_password, u_name, u_phonenum, u_level, u_nickname, u_isadmin)
+VALUES
+('admin', 'admin1234', '관리자', '01099999999', 10, '관리자',3),
+('kdh', 'kdh1234', '김동후', '01091946962', 1, '동후', 0),
+
+('kkk', 'kdh12345', '김동구', '01091946962', 1, '동구', 0),
+('hhh', 'kdh12344', '김후후', '01091946962', 1, '후후', 0),
+('bbb', 'kdh12343', '김주후', '01091946962', 1, '주후', 0),
+('zzz', 'kdh12342', '김부후', '01091946962', 1, '부후', 0),
+('nnn', 'kdh12341', '김루후', '01091946962', 1, '루후', 0);
 
         
       select*from Project_User
 	  select*from Review
 	  select*from Movie
-	  select*from Bookmark
-
-	  INSERT INTO Review (u_id, u_password, u_name, u_phonenum, u_level, u_nickname, u_isadmin);
+	  select*from MovieList

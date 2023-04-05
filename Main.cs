@@ -120,9 +120,10 @@ namespace TeamProject
             if (sender is Label titleLabel)
             {
                 string movieTitle = titleLabel.Text;
-                movieuid = check1.FindMvUid(movieTitle.Trim().Substring(movieTitle.IndexOf(']') + 1 ));   
-                
-            }
+                movieuid = check1.FindMvUid(movieTitle.Trim().Substring(movieTitle.IndexOf(']') + 1 ));
+                Movie_Detail MDT = new(this);
+                MDT.Show();
+             }
         }
 
 
@@ -303,6 +304,5 @@ namespace TeamProject
             mypage.Show();
 
         }
-
     }
 }
