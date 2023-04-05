@@ -48,7 +48,11 @@ namespace TeamProject
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
+            DateTime d1 = DateTime.Now;
+            int rate = int.Parse(ratebox.Text);
+           
+            Check check= new Check();
+            check.Addcontentt(MovieUid, UseruId, reviewBox.Text,rate,d1);
         }
     }
 }

@@ -128,6 +128,7 @@
             this.mypage.Text = "마이페이지";
             this.mypage.UseVisualStyleBackColor = true;
             this.mypage.Visible = false;
+            this.mypage.Click += new System.EventHandler(this.mypage_Click);
             // 
             // dTPStart
             // 
@@ -156,13 +157,17 @@
             // 
             // CB_Category
             // 
-            CB_Category.FormattingEnabled = true;
-            CB_Category.Items.AddRange(new object[] { "매출액 순서", "오름차순", "내림차순", "최신 작품순", "예전 작품순" });
-            CB_Category.Location = new Point(253, 165);
-            CB_Category.Name = "CB_Category";
-            CB_Category.Size = new Size(181, 33);
-            CB_Category.TabIndex = 17;
-            CB_Category.SelectedIndexChanged += CB_Category_SelectedIndexChanged_1;
+            this.CB_Category.FormattingEnabled = true;
+            this.CB_Category.Items.AddRange(new object[] {
+            "매출액 순서",
+            "오름차순",
+            "내림차순",
+            "최신 작품순",
+            "예전 작품순"});
+            this.CB_Category.Location = new System.Drawing.Point(253, 165);
+            this.CB_Category.Name = "CB_Category";
+            this.CB_Category.Size = new System.Drawing.Size(181, 28);
+            this.CB_Category.TabIndex = 17;
             // 
             // label_id
             // 

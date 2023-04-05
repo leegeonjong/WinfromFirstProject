@@ -135,15 +135,17 @@ namespace TeamProject
             string result = cmd.ExecuteScalar()?.ToString();
             return result;
         }
-        public void Addcontentt(int muid, int uuid, string content, DateTime date, int rate)
+        public void Addcontentt(int muid, int uuid, string content, int rate, DateTime date)
         {
 
             var db = new certification(strConn);
             SqlCommand cmd = db.GetSqlCommand();
-            cmd.CommandText = $"INSERT INTO Project_User" +
-                $"(u_id, u_password, u_name, u_phonenum, u_nickname) " +
-                $"VALUES ('{i}', '{i2}', '{i3}', '{i4}', '{i5}') " +
-           
+    
+
+            cmd.CommandText = $"INSERT INTO Review" +
+           $"(u_uid, MovieUID, r_content, r_rate,r_Date) " +
+           $"VALUES ('{uuid}', '{muid}', '{content}', '{rate}', '{date}'";
+
             cmd.ExecuteNonQuery();
         }
 
