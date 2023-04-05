@@ -16,6 +16,7 @@ using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Search;
 using Microsoft.VisualBasic.Devices;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Security.Policy;
 
 namespace TeamProject
 {
@@ -59,24 +60,51 @@ namespace TeamProject
             while (await reader.ReadAsync())
             {
                 string title = reader.GetString(0);
-                string imageUrl = await GetPosterUrlAsync(title);
+                string imageUrl = await SearchMovie(title);
                 AddMovieItem(title, imageUrl);
             }
 
         }
 
-        public async Task<string> GetPosterUrlAsync(string title)
+        public async Task<string> SearchMovie(string title)
         {
-            //https://api.themoviedb.org/3/discover/movie?api_key=9587124340afc34dae9ecf63d2710f6f&language=ko-KR
-            //TMDbClient client = new TMDbClient("9587124340afc34dae9ecf63d2710f6f");
-            //Movie movie = client.GetMovieAsync(299536).Result;
-            ////Console.WriteLine($"Movie name: {movie.Title}\n\n");
+            string jsonResult = await RequestKMDbAPIAsync(title);
 
-            //SearchContainer<SearchMovie> results = client.SearchMovieAsync("어벤져스").Result;
+            if (jsonResult != null)
+            {
+                JObject movieData = JObject.Parse(jsonResult);
+                int totalCount = (int)movieData["TotalCount"];
 
-            //Console.WriteLine($"Got {results.Results.Count:N0} of {results.TotalResults:N0} results");
-            //foreach (SearchMovie result in results.Results)
-            //    Console.WriteLine($"| TItle: {result.Title,-45} | Poster Path: {result.PosterPath,-35} |{result.Id}");
+                JArray movies = (JArray)movieData["Data"][0]["Result"];
+
+                // 첫 번째 결과만 처리
+                JObject firstMovie = (JObject)movies[0];
+                string Title = (string)firstMovie["title"];
+                string imageData = (string)firstMovie["posters"];
+                string[] imageUrls = imageData.Split('|');
+                string url = imageUrls[0];
+
+                return url; // 여기서 URL을 반환합니다.
+            }
+
+            return null;
+        }
+        public async Task<string> RequestKMDbAPIAsync(string query)
+        {
+            string apiKey = "P28PN59FB6LVB4301Z83";
+            string apiUrl = $" http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&detail=Y&query={query}&ServiceKey={apiKey}";
+
+            using (var httpClient = new HttpClient())
+            {
+                HttpResponseMessage response = await httpClient.GetAsync(apiUrl);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string jsonResult = await response.Content.ReadAsStringAsync();
+                    return jsonResult;
+                }
+            }
+
             return null;
         }
         private void AddMovieItem(string title, string posterUrl)
@@ -119,10 +147,10 @@ namespace TeamProject
             if (sender is Label titleLabel)
             {
                 string movieTitle = titleLabel.Text;
-                movieuid = check1.FindMvUid(movieTitle.Trim().Substring(movieTitle.IndexOf(']') + 1 ));
+                movieuid = check1.FindMvUid(movieTitle.Trim().Substring(movieTitle.IndexOf(']') + 1));
                 Movie_Detail MDT = new(this);
                 MDT.Show();
-             }
+            }
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -193,7 +221,7 @@ namespace TeamProject
             while (await reader.ReadAsync())
             {
                 string title = reader.GetString(0);
-                string imageUrl = await GetPosterUrlAsync(title);
+                string imageUrl = await SearchMovie(title);
                 AddMovieItem(title, imageUrl);
             }
         }
@@ -238,7 +266,7 @@ namespace TeamProject
                     while (await reader.ReadAsync())
                     {
                         string title = reader.GetString(0);
-                        string imageUrl = await GetPosterUrlAsync(title);
+                        string imageUrl = await SearchMovie(title);
                         AddMovieItem(title, imageUrl);
                     }
                     return;
@@ -255,7 +283,7 @@ namespace TeamProject
             while (await reader.ReadAsync())
             {
                 string title = reader.GetString(0);
-                string imageUrl = await GetPosterUrlAsync(title);
+                string imageUrl = await SearchMovie(title);
                 AddMovieItem(title, imageUrl);
             }
         }

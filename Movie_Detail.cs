@@ -24,7 +24,7 @@ namespace TeamProject
             InitializeComponent();
             MainForm = mainForm;
             MovieUid = MainForm.movieuid;
-            UseruId= MainForm.useruid;
+            UseruId = MainForm.useruid;
         }
 
 
