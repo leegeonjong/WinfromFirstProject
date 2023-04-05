@@ -94,9 +94,17 @@ namespace TeamProject
             {
                 MessageBox.Show("즐겨찾기 추가");
                 bookmarkon.Image = Properties.Resources.bookmarkon;
+                bookmarkstatus = true;
             }
-            
-           
+            if (bookmarkstatus == true)
+            {
+                MessageBox.Show("즐겨찾기 추가");
+                bookmarkon.Image = Properties.Resources.bookmarkon;
+                bookmarkstatus = false;
+            }
+
+
+
         }
     }
 }

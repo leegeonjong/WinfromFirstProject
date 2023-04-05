@@ -142,6 +142,7 @@
             this.NickNameBox.Location = new System.Drawing.Point(91, 53);
             this.NickNameBox.Margin = new System.Windows.Forms.Padding(4);
             this.NickNameBox.Name = "NickNameBox";
+            this.NickNameBox.ReadOnly = true;
             this.NickNameBox.Size = new System.Drawing.Size(104, 27);
             this.NickNameBox.TabIndex = 1;
             // 
