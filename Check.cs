@@ -149,6 +149,15 @@ namespace TeamProject
 
             cmd.ExecuteNonQuery();
         }
+        public string FinduserName(int uid)
+        {
+            var db = new certification(strConn);
+            SqlCommand cmd = db.GetSqlCommand();
+            cmd.CommandText = $"SELECT u_nickname FROM project_user " +
+                $"WHERE u_uid = '{uid}'";
+            string result = cmd.ExecuteScalar()?.ToString();
+            return result;
+        }
         public int countreview(int muid, int uuid) 
         {
             int counter=0 ; 
