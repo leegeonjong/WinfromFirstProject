@@ -3,6 +3,7 @@ using Microsoft.Data.SqlClient;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 using System.Xml.Linq;
 using static Azure.Core.HttpHeader;
+using System;
 
 namespace TeamProject
 {
@@ -157,8 +158,21 @@ namespace TeamProject
             string result = cmd.ExecuteScalar()?.ToString();
             return result;
         }
+        public int countreview(int muid, int uuid) 
+        {
+            int counter=0 ; 
+            var db = new certification(strConn);
+            SqlCommand cmd = db.GetSqlCommand();
+            cmd.CommandText = "SELECT COUNT(*) FROM Review WHERE MovieUID=@muid AND u_uid=@uuid";
+            cmd.Parameters.AddWithValue("@muid", muid);
+            cmd.Parameters.AddWithValue("@uuid", uuid);
+            int count = (int)cmd.ExecuteScalar();
+            return count;
+           
+        }
 
     }
+
 }
 //u_uid int NOT NULL IDENTITY(1,1),
 //  u_id varchar(20) NOT NULL,

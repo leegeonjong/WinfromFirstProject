@@ -144,6 +144,18 @@
             reviewBox.TabIndex = 0;
             reviewBox.Text = "comment";
             // 
+            // bookmarkon
+            // 
+            this.bookmarkon.BackgroundImage = global::TeamProject.Properties.Resources.pngwing_com;
+            this.bookmarkon.Image = global::TeamProject.Properties.Resources.bookmarkoff;
+            this.bookmarkon.Location = new System.Drawing.Point(30, 66);
+            this.bookmarkon.Name = "bookmarkon";
+            this.bookmarkon.Size = new System.Drawing.Size(40, 31);
+            this.bookmarkon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bookmarkon.TabIndex = 6;
+            this.bookmarkon.TabStop = false;
+            this.bookmarkon.Click += new System.EventHandler(this.bookmarkon_Click);
+            // 
             // Movie_Detail
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -178,5 +190,6 @@
         private TextBox reviewBox;
         private DataGridView ReviewView;
         private ComboBox ratebox;
+        private PictureBox bookmarkon;
     }
 }

@@ -1,8 +1,10 @@
 ﻿using Microsoft.Data.SqlClient;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,6 +21,9 @@ namespace TeamProject
         int MovieUid;
         string username;
         
+        bool bookmarkstatus;
+        
+
         private Main MainForm;
         public Movie_Detail(Main mainForm)
         {
@@ -41,6 +46,10 @@ namespace TeamProject
             Check check = new Check();
 
 
+            //만약 즐겨찾기한경우라면 true
+            bookmarkstatus = false;
+            Check check= new Check();
+            
             MovieTitle = check.FindMvName(MovieUid);
             labeltitle.Text = MovieTitle;
             if (MainForm.logStatus == true)
@@ -83,10 +92,50 @@ namespace TeamProject
         private void button1_Click_1(object sender, EventArgs e)
         {
             DateTime d1 = DateTime.Now;
+            if (ratebox.Text == "별점")
+            {
+                MessageBox.Show("별점을 입력해주세요!!");
+                return;
+            }
+
             int rate = int.Parse(ratebox.Text);
 
             Check check = new Check();
             check.Addcontentt(MovieUid, UseruId, reviewBox.Text, rate, d1);
+
+            if (reviewBox.Text.IsNullOrEmpty())
+            {
+                reviewBox.Text = "재밌어요";
+            }
+            
+           
+                Check check= new Check();
+            if (check.countreview(MovieUid, UseruId) > 0)
+            {
+                MessageBox.Show("이미 리뷰를 등록한 영화입니다");
+            }
+            else
+            {
+                check.Addcontentt(MovieUid, UseruId, reviewBox.Text, rate, d1);
+                MessageBox.Show("리뷰등록!");
+            }
+
+          
+            
+            
+        }
+
+     
+
+        private void bookmarkon_Click(object sender, EventArgs e)
+        {
+            if (bookmarkstatus == false)
+            {
+                MessageBox.Show("즐겨찾기 추가");
+                bookmarkon.Image = Properties.Resources.bookmarkon;
+            }
+            
+           
         }
     }
 }
