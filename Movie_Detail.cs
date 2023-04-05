@@ -21,8 +21,9 @@ namespace TeamProject
         int MovieUid;
         string username;
         
-        bool bookmarkstatus;
         
+        bool bookmarkstatus;
+
 
         private Main MainForm;
         public Movie_Detail(Main mainForm)
@@ -45,8 +46,6 @@ namespace TeamProject
         {
             //만약 즐겨찾기한경우라면 true
             bookmarkstatus = false;
-            Check check= new Check();
-            
             MovieTitle = check.FindMvName(MovieUid);
             labeltitle.Text = MovieTitle;
             if (MainForm.logStatus == true)
@@ -70,7 +69,7 @@ namespace TeamProject
             MovieTitle = check.FindMvName(MovieUid);
             cmd.CommandText = $"SELECT u.u_nickname, r.r_rate, r.r_content, r.r_date " +
                               $"FROM review r " +
-                              $"INNER JOIN project_user u ON r.u_uid = u.u_uid " +                            
+                              $"INNER JOIN project_user u ON r.u_uid = u.u_uid " +
                               $"WHERE r.MovieUID = {MovieUid}";
 
             SqlDataReader reader = cmd.ExecuteReader();
@@ -106,7 +105,6 @@ namespace TeamProject
             }
             
            
-                Check check= new Check();
             if (check.countreview(MovieUid, UseruId) > 0)
             {
                 MessageBox.Show("이미 리뷰를 등록한 영화입니다");
@@ -117,12 +115,13 @@ namespace TeamProject
                 MessageBox.Show("리뷰등록!");
             }
 
-          
-            
-            
+            DataViewLoad();
+
+
+
         }
 
-     
+
 
         private void bookmarkon_Click(object sender, EventArgs e)
         {

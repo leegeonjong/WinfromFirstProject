@@ -121,7 +121,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(436, 36);
+            button1.Location = new Point(419, 38);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 2;
@@ -131,32 +131,20 @@
             // 
             // NickNameBox
             // 
-            this.NickNameBox.Location = new System.Drawing.Point(91, 53);
-            this.NickNameBox.Margin = new System.Windows.Forms.Padding(4);
-            this.NickNameBox.Name = "NickNameBox";
-            this.NickNameBox.ReadOnly = true;
-            this.NickNameBox.Size = new System.Drawing.Size(104, 27);
-            this.NickNameBox.TabIndex = 1;
+            NickNameBox.Location = new Point(61, 39);
+            NickNameBox.Margin = new Padding(4);
+            NickNameBox.Name = "NickNameBox";
+            NickNameBox.ReadOnly = true;
+            NickNameBox.Size = new Size(104, 23);
+            NickNameBox.TabIndex = 1;
             // 
             // reviewBox
             // 
-            reviewBox.Location = new Point(166, 39);
+            reviewBox.Location = new Point(172, 39);
             reviewBox.Name = "reviewBox";
             reviewBox.Size = new Size(216, 23);
             reviewBox.TabIndex = 0;
             reviewBox.Text = "comment";
-            // 
-            // bookmarkon
-            // 
-            this.bookmarkon.BackgroundImage = global::TeamProject.Properties.Resources.pngwing_com;
-            this.bookmarkon.Image = global::TeamProject.Properties.Resources.bookmarkoff;
-            this.bookmarkon.Location = new System.Drawing.Point(30, 66);
-            this.bookmarkon.Name = "bookmarkon";
-            this.bookmarkon.Size = new System.Drawing.Size(40, 31);
-            this.bookmarkon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bookmarkon.TabIndex = 6;
-            this.bookmarkon.TabStop = false;
-            this.bookmarkon.Click += new System.EventHandler(this.bookmarkon_Click);
             // 
             // Movie_Detail
             // 
