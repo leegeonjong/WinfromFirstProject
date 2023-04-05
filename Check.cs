@@ -149,6 +149,15 @@ namespace TeamProject
 
             cmd.ExecuteNonQuery();
         }
+        public string FinduserName(int uid)
+        {
+            var db = new certification(strConn);
+            SqlCommand cmd = db.GetSqlCommand();
+            cmd.CommandText = $"SELECT u_nickname FROM project_user " +
+                $"WHERE u_uid = '{uid}'";
+            string result = cmd.ExecuteScalar()?.ToString();
+            return result;
+        }
         public int countreview(int muid, int uuid) 
         {
             int counter=0 ; 
@@ -160,6 +169,15 @@ namespace TeamProject
             int count = (int)cmd.ExecuteScalar();
             return count;
            
+        }
+        public void bookmarkon(int muid, int uuid) 
+        {
+            var db = new certification(strConn);
+            SqlCommand cmd = db.GetSqlCommand();
+            cmd.CommandText = $"INSERT INTO Project_User" +
+                $"(u_id, u_password, u_name, u_phonenum, u_nickname) " +
+               // $"VALUES ('{i}', '{i2}', '{i3}', '{i4}', '{i5}') ";
+            cmd.ExecuteNonQuery();
         }
 
     }
