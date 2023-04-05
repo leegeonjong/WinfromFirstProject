@@ -28,7 +28,7 @@ namespace TeamProject
         public int useruid { get; set; }
         public int movieuid { get; set; }
 
-       
+
         const string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
         SqlConnection conn;
         SqlDataReader reader;
@@ -81,7 +81,7 @@ namespace TeamProject
         }
         private void AddMovieItem(string title, string posterUrl)
         {
-           
+
             var panel = new Panel
             {
                 Size = new Size(120, 200),
@@ -126,7 +126,6 @@ namespace TeamProject
              }
         }
 
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (btnLogin.Text == "로그아웃")
@@ -145,7 +144,7 @@ namespace TeamProject
         private void Main_Load(object sender, EventArgs e)
         {
             logStatus = false;
-            
+
         }
         public void Main_Load_1(object sender, EventArgs e)
         {
@@ -161,35 +160,15 @@ namespace TeamProject
         }
         private async void CB_Category_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            //오름차순
-            //내림차순
-            //매출순위
-            //개봉일자
-            bool startDTPChanged = false;
-            bool endDTPChanged = false;
-            dTPStart.ValueChanged += (sender, e) => startDTPChanged = true;
-            dTPEnd.ValueChanged += (sender, e) => endDTPChanged = true;
-            string orderByColumn;
-            switch (CB_Category.SelectedIndex)
+            string orderByColumn = "Title ASC"; //기본정렬값
+            orderByColumn = CB_Category.SelectedIndex switch
             {
-                case 0:
-                    orderByColumn = "ReleaseDate ASC";
-                    break;
-                case 1:
-                    orderByColumn = "ReleaseDate DESC";
-                    break;
-                case 2:
-                    orderByColumn = "Sales";
-                    break;
-                case 3:
-                    orderByColumn = "ReleaseDate";
-                    break;
-                default:
-                    orderByColumn = "ReleaseDate ASC";
-                    break;
-
-            }
-
+                0 => "Sales",           //매출액 순서
+                1 => "Title ASC",       //오름차순
+                2 => "Title DESC",      //내림차순
+                3 => "ReleaseDate DESC",//최신 작품순
+                4 => "ReleaseDate ASC", //예전 작품순
+            };
             DateTime startDate = dTPStart.Value;
             DateTime endDate = dTPEnd.Value;
             GetDataAndDisplay(startDate, endDate, orderByColumn);
@@ -288,11 +267,6 @@ namespace TeamProject
             {
                 btnSearch_Click(sender, e);
             }
-        }
-
-        private void Main_Load_2(object sender, EventArgs e)
-        {
-
         }
 
         private void mypage_Click(object sender, EventArgs e)
