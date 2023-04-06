@@ -21,17 +21,18 @@ namespace TeamProject
         int UserUid;
         int MovieUid;
 
-        public ReviewUpdate(MyPage form)
+        public ReviewUpdate(MyPage mypage)
         {
             InitializeComponent();
-            this.mypage = form;
-            UserUid = form.UserUid;
-            MovieUid = form.MovieUid;
+            this.mypage = mypage;
+            UserUid = mypage.UserUid;
+           
+            
            
 
-            if (mypage.myReviewView.SelectedRows.Count > 0)
+            if (this.mypage.myReviewView.SelectedRows.Count > 0)
             {
-                DataGridViewRow selectedRow = mypage.myReviewView.SelectedRows[0];
+                DataGridViewRow selectedRow = this.mypage.myReviewView.SelectedRows[0];
                 nnBox.Text = selectedRow.Cells["u_nickname"].Value.ToString();
                 mnBox.Text = selectedRow.Cells["Title"].Value.ToString();
             }
@@ -46,10 +47,11 @@ namespace TeamProject
         {
             certification cert = new certification(strConn);
             SqlCommand cmd = cert.GetSqlCommand();
+            Check check = new Check();  
 
             string uid = mypage.myReviewView.SelectedRows[0].Cells[0].Value.ToString();
 
-           
+           MovieUid= check.FindMvUid(mnBox.Text);
 
 
             cmd.CommandText = $"SELECT u.u_nickname, m.title, r.r_rate, r.r_content, r.r_date " +
@@ -85,14 +87,14 @@ namespace TeamProject
 
                 // UPDATE 쿼리문 작성
                 string sql = "UPDATE review SET " +
-                    "u_uid=@u_uid , MovieUID = @MovieUID , r_content = @r_content , r_rate = @r_rate, r_date = @r_date";
+                    "r_content = @r_content , r_rate = @r_rate, r_date = @r_date WHERE u_uid=@u_uid AND MovieUid=@MovieUid";
 
                 // SqlCommand 객체에 UPDATE 쿼리문 설정
                 cmd.CommandText = sql;
 
                 // UPDATE 쿼리문의 매개변수 값 설정
                 cmd.Parameters.AddWithValue("@u_uid", UserUid);
-                cmd.Parameters.AddWithValue("@MovieUID", MovieUid);
+                cmd.Parameters.AddWithValue("@MovieUid", MovieUid);
                 cmd.Parameters.AddWithValue("@r_content", rvBox.Text);
                 cmd.Parameters.AddWithValue("@r_rate", rtBox.Text);
                 cmd.Parameters.AddWithValue("@r_date", DateTime.Now);
@@ -103,8 +105,6 @@ namespace TeamProject
 
                 mypage.LoadReviewView();
                 mypage.Refresh();
-
-
 
 
                 if (rowsAffected > 0)

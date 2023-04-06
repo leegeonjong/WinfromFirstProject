@@ -20,8 +20,8 @@ namespace TeamProject
         Admin_Page adminform;
         Main main;
         public string UserId;
-        public int UserUid;
-        public int MovieUid;
+        public int UserUid { get; set; }
+      
 
 
         public MyPage(Admin_Page form, Main main)
@@ -32,7 +32,7 @@ namespace TeamProject
             this.main = main;
             UserId = main.userid;
             UserUid = main.useruid;
-            MovieUid = main.movieuid;
+           
         }
 
         private void MyPage_Load(object sender, EventArgs e)
@@ -178,7 +178,7 @@ namespace TeamProject
 
             Check check = new Check();
             UserUid = check.FindUid(UserId);
-            MovieUid = check.FindMvUid(Title)
+          
 
 
 
@@ -235,8 +235,9 @@ namespace TeamProject
             {
                 cell.OwningRow.Selected = true;
             }
-
+            Main main = new Main();
             ReviewUpdate updatePage = new ReviewUpdate(this);
+
             updatePage.Show();
         }
     }
