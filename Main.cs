@@ -179,7 +179,7 @@ namespace TeamProject
             fLPMain.Controls.Add(panel);
 
         }
-        private void TitleLabel_DoubleClick(object sender, EventArgs e)
+        private void TitleLabel_DoubleClick(object sender, EventArgs e)//
         {
             Check check1 = new();
             if (sender is Label titleLabel)
