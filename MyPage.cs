@@ -205,6 +205,9 @@ namespace TeamProject
             myReviewView.Columns["r_content"].HeaderText = "내 리뷰";
             myReviewView.Columns["r_date"].HeaderText = "리뷰를 남긴 날짜";
 
+            myReviewView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 160, 220);
+            myReviewView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
             foreach (DataGridViewColumn column in myReviewView.Columns)
             {
                 column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;

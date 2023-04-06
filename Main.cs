@@ -233,9 +233,10 @@ namespace TeamProject
             logStatus = true;
             btnLogin.Text = "·Î±×¾Æ¿ô";
             label_id.Text = userid;
-            label_nn.Text = userNickname;
+            label_nn.Text = userNickname + " ´Ô ¹Ý°©½À´Ï´Ù";
             useruid = chk.FindUid(label_id.Text);
             mypage.Visible = true;
+            label_id.Visible = false;
 
 
         }
@@ -364,6 +365,6 @@ namespace TeamProject
 
         }
 
-    
+
     }
 }

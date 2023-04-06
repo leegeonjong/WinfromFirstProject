@@ -134,7 +134,7 @@
             // 
             IDBox.BackColor = Color.White;
             IDBox.BorderStyle = BorderStyle.None;
-            IDBox.Location = new Point(136, 124);
+            IDBox.Location = new Point(137, 140);
             IDBox.Name = "IDBox";
             IDBox.Size = new Size(180, 18);
             IDBox.TabIndex = 8;
@@ -143,7 +143,7 @@
             // 
             PWbox.BackColor = Color.White;
             PWbox.BorderStyle = BorderStyle.None;
-            PWbox.Location = new Point(140, 171);
+            PWbox.Location = new Point(137, 186);
             PWbox.Name = "PWbox";
             PWbox.Size = new Size(180, 18);
             PWbox.TabIndex = 9;
@@ -152,7 +152,7 @@
             // 
             NameBox.BackColor = Color.White;
             NameBox.BorderStyle = BorderStyle.None;
-            NameBox.Location = new Point(140, 218);
+            NameBox.Location = new Point(140, 233);
             NameBox.Name = "NameBox";
             NameBox.Size = new Size(180, 18);
             NameBox.TabIndex = 10;
@@ -161,7 +161,7 @@
             // 
             PhnBox.BackColor = Color.White;
             PhnBox.BorderStyle = BorderStyle.None;
-            PhnBox.Location = new Point(140, 265);
+            PhnBox.Location = new Point(137, 280);
             PhnBox.Name = "PhnBox";
             PhnBox.Size = new Size(180, 18);
             PhnBox.TabIndex = 11;
@@ -170,7 +170,7 @@
             // 
             nnBox.BackColor = Color.White;
             nnBox.BorderStyle = BorderStyle.None;
-            nnBox.Location = new Point(140, 312);
+            nnBox.Location = new Point(140, 327);
             nnBox.Name = "nnBox";
             nnBox.Size = new Size(180, 18);
             nnBox.TabIndex = 12;
@@ -229,7 +229,7 @@
             // panel2
             // 
             panel2.BackColor = Color.Black;
-            panel2.Location = new Point(136, 156);
+            panel2.Location = new Point(137, 160);
             panel2.Name = "panel2";
             panel2.Size = new Size(180, 1);
             panel2.TabIndex = 16;
@@ -237,7 +237,7 @@
             // panel3
             // 
             panel3.BackColor = Color.Black;
-            panel3.Location = new Point(137, 203);
+            panel3.Location = new Point(137, 206);
             panel3.Name = "panel3";
             panel3.Size = new Size(180, 1);
             panel3.TabIndex = 17;
@@ -245,7 +245,7 @@
             // panel4
             // 
             panel4.BackColor = Color.Black;
-            panel4.Location = new Point(140, 250);
+            panel4.Location = new Point(140, 253);
             panel4.Name = "panel4";
             panel4.Size = new Size(180, 1);
             panel4.TabIndex = 18;
@@ -253,7 +253,7 @@
             // panel5
             // 
             panel5.BackColor = Color.Black;
-            panel5.Location = new Point(140, 297);
+            panel5.Location = new Point(137, 300);
             panel5.Name = "panel5";
             panel5.Size = new Size(180, 1);
             panel5.TabIndex = 19;
@@ -261,7 +261,7 @@
             // panel6
             // 
             panel6.BackColor = Color.Black;
-            panel6.Location = new Point(140, 344);
+            panel6.Location = new Point(140, 347);
             panel6.Name = "panel6";
             panel6.Size = new Size(180, 1);
             panel6.TabIndex = 20;
