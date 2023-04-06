@@ -51,16 +51,20 @@
             myReviewView = new DataGridView();
             label6 = new Label();
             tabPage3 = new TabPage();
+            myBookmarkView = new DataGridView();
+            label9 = new Label();
             tab1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)myReviewView).BeginInit();
+            tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)myBookmarkView).BeginInit();
             SuspendLayout();
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(322, 21);
+            label5.Location = new Point(342, 21);
             label5.Name = "label5";
             label5.Size = new Size(67, 15);
             label5.TabIndex = 4;
@@ -273,12 +277,33 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(myBookmarkView);
+            tabPage3.Controls.Add(label9);
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
             tabPage3.Size = new Size(752, 383);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "즐겨찾기";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // myBookmarkView
+            // 
+            myBookmarkView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            myBookmarkView.Dock = DockStyle.Bottom;
+            myBookmarkView.Location = new Point(0, 69);
+            myBookmarkView.Name = "myBookmarkView";
+            myBookmarkView.RowTemplate.Height = 25;
+            myBookmarkView.Size = new Size(752, 314);
+            myBookmarkView.TabIndex = 1;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(318, 23);
+            label9.Name = "label9";
+            label9.Size = new Size(127, 15);
+            label9.TabIndex = 0;
+            label9.Text = "내가 즐겨찾기 한 목록";
             // 
             // MyPage
             // 
@@ -296,6 +321,9 @@
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)myReviewView).EndInit();
+            tabPage3.ResumeLayout(false);
+            tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)myBookmarkView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -324,5 +352,7 @@
         private Button btn_reviewclose;
         private Button btn_reviewUpdate;
         public DataGridView myReviewView;
+        private Label label9;
+        private DataGridView myBookmarkView;
     }
 }
