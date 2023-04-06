@@ -195,7 +195,11 @@ namespace TeamProject
                 if (titleIndex >= 0)
                 {
                     title = title.Substring(titleIndex + 1).Trim();
-                    posterUrl = ((PictureBox)titleLabel.Parent.Controls[0]).ImageLocation;
+                    Control firstControl = titleLabel.Parent.Controls[0];
+                    if (firstControl is PictureBox pictureBox)
+                    {
+                        posterUrl = pictureBox.ImageLocation;
+                    }
                 }
 
                 MDT.SetMovieDetails(title, posterUrl); // Movie_Detail form에 영화 제목과 포스터 URL 전달
