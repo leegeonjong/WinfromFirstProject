@@ -87,9 +87,16 @@ namespace TeamProject
 
                 string dateString = (string)Movie["repRlsDate"];
 
-                DateTime date = DateTime.ParseExact(dateString, "yyyyMMdd", CultureInfo.InvariantCulture);
-                string formattedDate = date.ToString("yyyy년 MM월 dd일");
-                lblDate.Text = formattedDate;                       //개봉일자
+                if (!string.IsNullOrEmpty(dateString))
+                {
+                    DateTime date = DateTime.ParseExact(dateString, "yyyyMMdd", CultureInfo.InvariantCulture);
+                    string formattedDate = date.ToString("yyyy년 MM월 dd일");
+                    lblDate.Text = formattedDate;
+                }
+                else
+                {
+                    lblDate.Text = "날짜 정보 없음";
+                }
                 lblRuntime.Text = (string)Movie["runtime"] + "(분)";
 
                 // 영화감독 이름 추출
@@ -103,7 +110,7 @@ namespace TeamProject
 
                 // 추출한 데이터를 레이블에 할당합니다.
                 lblDirector.Text = directorNames;
-                lblActor.Text = actorNames;
+                txtlActor.Text = actorNames;
                 txtplot.Text = plotText;
             }
 
@@ -185,6 +192,7 @@ namespace TeamProject
             else
             {
                 check.Addcontentt(MovieUid, UseruId, reviewBox.Text, rate, d1);
+                check.UpdateAvgRate(MovieUid);
                 MessageBox.Show("리뷰등록!");
             }
 

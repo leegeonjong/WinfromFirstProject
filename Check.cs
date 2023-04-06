@@ -5,6 +5,7 @@ using System.Xml.Linq;
 using static Azure.Core.HttpHeader;
 using System;
 using System.Security.Cryptography;
+using System.Windows.Forms;
 
 namespace TeamProject
 {
@@ -208,6 +209,48 @@ namespace TeamProject
                 return true;
             }
         }
-    }
+        public void addrate(int mvuid, int rated)
+        {
+            var db = new certification(strConn);
+            SqlCommand cmd = db.GetSqlCommand();
+            cmd.CommandText = $"SELECT COUNT(*) FROM review WHERE movieuid = {mvuid}";
+            int ratecount = (int)cmd.ExecuteScalar();
+            cmd.CommandText = $"SELECT RATEAVG FROM movielist WHERE movieuid = @uid";
+            cmd.Parameters.AddWithValue("@uid", mvuid);
+            float rate = Convert.ToSingle(cmd.ExecuteScalar());
+            if (rate == 0)
+            {
+                cmd.CommandText = "UPDATE movielist SET RATEAVG = @rated WHERE movieuid = @uid";
+                cmd.Parameters.AddWithValue("@rated", rated);
+                cmd.ExecuteNonQuery();
+            }
+            else
+            {
+                float ratenew = (rate * (ratecount-1) + rated) / (ratecount);
+                cmd.CommandText = "UPDATE movielist SET RATEAVG = @rated WHERE movieuid = @uid";
+                cmd.Parameters.AddWithValue("@rated", Convert.ToSingle(ratenew));
+                cmd.ExecuteNonQuery();
+            }
+        }
+        public void UpdateAvgRate(int movieUid)
+        {
+           
+            var db = new certification(strConn);
+            SqlCommand cmd = db.GetSqlCommand();
+            cmd.CommandText = $"SELECT SUM(r_rate) FROM review WHERE movieuid = {movieUid}";
+            double sumRate = Convert.ToDouble(cmd.ExecuteScalar());
 
+          
+            cmd.CommandText = $"SELECT COUNT(*) FROM review WHERE movieuid = {movieUid}";
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            double avgRate = sumRate / count;
+
+          
+            cmd.CommandText = $"UPDATE movielist SET rateavg = {avgRate} WHERE movieuid = {movieUid}";
+            cmd.ExecuteNonQuery();
+        }
+    }
  }
+
+
+ 

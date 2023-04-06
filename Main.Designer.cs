@@ -43,6 +43,7 @@
             CB_Category = new ComboBox();
             label_id = new Label();
             label_nn = new Label();
+            label5 = new Label();
             SuspendLayout();
             // 
             // flowLayoutPanel
@@ -55,7 +56,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(456, 142);
+            label1.Location = new Point(224, 134);
             label1.Name = "label1";
             label1.Size = new Size(90, 25);
             label1.TabIndex = 0;
@@ -64,7 +65,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(733, 142);
+            label2.Location = new Point(501, 134);
             label2.Name = "label2";
             label2.Size = new Size(72, 25);
             label2.TabIndex = 1;
@@ -73,7 +74,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(1001, 142);
+            label3.Location = new Point(769, 134);
             label3.Name = "label3";
             label3.Size = new Size(126, 25);
             label3.TabIndex = 5;
@@ -81,7 +82,7 @@
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(1389, 162);
+            btnSearch.Location = new Point(1157, 154);
             btnSearch.Margin = new Padding(3, 2, 3, 2);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(100, 32);
@@ -92,7 +93,7 @@
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(1261, 72);
+            btnLogin.Location = new Point(1029, 64);
             btnLogin.Margin = new Padding(3, 2, 3, 2);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(111, 32);
@@ -104,7 +105,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(253, 142);
+            label4.Location = new Point(21, 134);
             label4.Name = "label4";
             label4.Size = new Size(126, 25);
             label4.TabIndex = 9;
@@ -113,15 +114,15 @@
             // fLPMain
             // 
             fLPMain.AutoScroll = true;
-            fLPMain.Location = new Point(253, 205);
+            fLPMain.Location = new Point(21, 197);
             fLPMain.Margin = new Padding(3, 2, 3, 2);
             fLPMain.Name = "fLPMain";
-            fLPMain.Size = new Size(1236, 602);
+            fLPMain.Size = new Size(1331, 602);
             fLPMain.TabIndex = 12;
             // 
             // mypage
             // 
-            mypage.Location = new Point(1377, 72);
+            mypage.Location = new Point(1145, 64);
             mypage.Margin = new Padding(3, 2, 3, 2);
             mypage.Name = "mypage";
             mypage.Size = new Size(111, 32);
@@ -133,7 +134,7 @@
             // 
             // dTPStart
             // 
-            dTPStart.Location = new Point(456, 168);
+            dTPStart.Location = new Point(224, 160);
             dTPStart.Margin = new Padding(3, 2, 3, 2);
             dTPStart.Name = "dTPStart";
             dTPStart.Size = new Size(270, 31);
@@ -141,7 +142,7 @@
             // 
             // dTPEnd
             // 
-            dTPEnd.Location = new Point(733, 168);
+            dTPEnd.Location = new Point(501, 160);
             dTPEnd.Margin = new Padding(3, 2, 3, 2);
             dTPEnd.Name = "dTPEnd";
             dTPEnd.Size = new Size(270, 31);
@@ -149,7 +150,7 @@
             // 
             // txtName
             // 
-            txtName.Location = new Point(1007, 168);
+            txtName.Location = new Point(775, 160);
             txtName.Margin = new Padding(3, 2, 3, 2);
             txtName.Name = "txtName";
             txtName.PlaceholderText = "검색할 영화이름을 입력하세요";
@@ -161,7 +162,7 @@
             // 
             CB_Category.FormattingEnabled = true;
             CB_Category.Items.AddRange(new object[] { "매출액 순서", "오름차순", "내림차순", "최신 작품순", "예전 작품순" });
-            CB_Category.Location = new Point(253, 166);
+            CB_Category.Location = new Point(21, 158);
             CB_Category.Margin = new Padding(3, 4, 3, 4);
             CB_Category.Name = "CB_Category";
             CB_Category.Size = new Size(201, 33);
@@ -171,7 +172,7 @@
             // label_id
             // 
             label_id.AutoSize = true;
-            label_id.Location = new Point(1261, 122);
+            label_id.Location = new Point(1029, 114);
             label_id.Name = "label_id";
             label_id.Size = new Size(21, 25);
             label_id.TabIndex = 18;
@@ -180,16 +181,27 @@
             // label_nn
             // 
             label_nn.AutoSize = true;
-            label_nn.Location = new Point(1389, 122);
+            label_nn.Location = new Point(1157, 114);
             label_nn.Name = "label_nn";
             label_nn.Size = new Size(0, 25);
             label_nn.TabIndex = 19;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("맑은 고딕", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(523, 32);
+            label5.Name = "label5";
+            label5.Size = new Size(197, 54);
+            label5.TabIndex = 20;
+            label5.Text = "영화 리뷰";
             // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1899, 1022);
+            ClientSize = new Size(1373, 815);
+            Controls.Add(label5);
             Controls.Add(label_nn);
             Controls.Add(label_id);
             Controls.Add(CB_Category);
@@ -206,6 +218,7 @@
             Controls.Add(label1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Main";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             ResumeLayout(false);
             PerformLayout();
@@ -229,5 +242,6 @@
         private Label lable_nickname;
         private Label label_id;
         private Label label_nn;
+        private Label label5;
     }
 }
