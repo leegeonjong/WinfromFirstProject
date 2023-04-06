@@ -54,6 +54,7 @@
             button1 = new Button();
             myBookmarkView = new DataGridView();
             label10 = new Label();
+            btn_bmdelete = new Button();
             tab1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -301,6 +302,7 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(btn_bmdelete);
             tabPage3.Controls.Add(button1);
             tabPage3.Controls.Add(myBookmarkView);
             tabPage3.Controls.Add(label10);
@@ -313,7 +315,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(666, 41);
+            button1.Location = new Point(672, 41);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 2;
@@ -339,6 +341,16 @@
             label10.Size = new Size(71, 15);
             label10.TabIndex = 0;
             label10.Text = "내 즐겨찾기";
+            // 
+            // btn_bmdelete
+            // 
+            btn_bmdelete.Location = new Point(552, 41);
+            btn_bmdelete.Name = "btn_bmdelete";
+            btn_bmdelete.Size = new Size(102, 23);
+            btn_bmdelete.TabIndex = 3;
+            btn_bmdelete.Text = "즐겨찾기 삭제";
+            btn_bmdelete.UseVisualStyleBackColor = true;
+            btn_bmdelete.Click += btn_bmdelete_Click;
             // 
             // MyPage
             // 
@@ -392,5 +404,6 @@
 
         private Label label10;
         private Button button1;
+        private Button btn_bmdelete;
     }
 }

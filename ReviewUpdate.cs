@@ -92,18 +92,36 @@ namespace TeamProject
                 // SqlCommand 객체에 UPDATE 쿼리문 설정
                 cmd.CommandText = sql;
 
+                string rateString = rtBox.Text;
+                int rate;
+                if (!int.TryParse(rateString, out rate))
+                {
+                    MessageBox.Show("평점은 자연수만 입력 가능합니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (rate > 10 || rate < 0)
+                {
+                    MessageBox.Show("평점은 1~10까지의 자연수만 입력가능합니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+
                 // UPDATE 쿼리문의 매개변수 값 설정
                 cmd.Parameters.AddWithValue("@u_uid", UserUid);
                 cmd.Parameters.AddWithValue("@MovieUid", MovieUid);
                 cmd.Parameters.AddWithValue("@r_content", rvBox.Text);
-                cmd.Parameters.AddWithValue("@r_rate", rtBox.Text);
+                cmd.Parameters.AddWithValue("@r_rate", rate);
                 cmd.Parameters.AddWithValue("@r_date", DateTime.Now);
-               
+
+            
+
+              
 
                 // UPDATE 쿼리문 실행
                 int rowsAffected = cmd.ExecuteNonQuery();
 
-                mypage.LoadReviewView();
+                mypage.ReviewView();
                 mypage.Refresh();
 
 
