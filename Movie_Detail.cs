@@ -129,6 +129,7 @@ namespace TeamProject
             else
             {
                 check.Addcontentt(MovieUid, UseruId, reviewBox.Text, rate, d1);
+                check.UpdateAvgRate(MovieUid);
                 MessageBox.Show("리뷰등록!");
             }
 
