@@ -178,9 +178,9 @@
             lbl2.AutoSize = true;
             lbl2.Location = new Point(407, 160);
             lbl2.Name = "lbl2";
-            lbl2.Size = new Size(58, 25);
+            lbl2.Size = new Size(100, 25);
             lbl2.TabIndex = 6;
-            lbl2.Text = "평점: ";
+            lbl2.Text = "별점 평균: ";
             // 
             // lbl4
             // 

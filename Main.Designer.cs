@@ -161,7 +161,7 @@
             // CB_Category
             // 
             CB_Category.FormattingEnabled = true;
-            CB_Category.Items.AddRange(new object[] { "매출액 순서", "오름차순", "내림차순", "최신 작품순", "예전 작품순" });
+            CB_Category.Items.AddRange(new object[] { "매출액 순서", "오름차순", "내림차순", "최신 작품순", "예전 작품순", "별점 높은순", "별점 낮은순?" });
             CB_Category.Location = new Point(21, 158);
             CB_Category.Margin = new Padding(3, 4, 3, 4);
             CB_Category.Name = "CB_Category";

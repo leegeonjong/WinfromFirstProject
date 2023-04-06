@@ -80,13 +80,9 @@ namespace TeamProject
             {
                 JObject movieData = JObject.Parse(jsonResult);
                 JArray movies = (JArray)movieData["Data"][0]["Result"];
-
-                // 첫 번째 결과만 처리
                 JObject Movie = (JObject)movies[0];
                 lblGenre.Text = (string)Movie["genre"];
-
                 string dateString = (string)Movie["repRlsDate"];
-
                 if (!string.IsNullOrEmpty(dateString))
                 {
                     DateTime date = DateTime.ParseExact(dateString, "yyyyMMdd", CultureInfo.InvariantCulture);
@@ -98,20 +94,37 @@ namespace TeamProject
                     lblDate.Text = "날짜 정보 없음";
                 }
                 lblRuntime.Text = (string)Movie["runtime"] + "(분)";
-
                 // 영화감독 이름 추출
                 string directorNames = string.Join(", ", Movie["directors"]["director"].Select(d => d["directorNm"].ToString()));
-
                 // 출연배우 이름 추출
                 string actorNames = string.Join(", ", Movie["actors"]["actor"].Select(a => a["actorNm"].ToString()));
-
                 // 줄거리 추출
                 string plotText = Movie["plots"]["plot"].FirstOrDefault(p => p["plotLang"].ToString() == "한국어")?["plotText"].ToString();
-
                 // 추출한 데이터를 레이블에 할당합니다.
                 lblDirector.Text = directorNames;
                 txtlActor.Text = actorNames;
                 txtplot.Text = plotText;
+
+                //별점 출력
+                using SqlConnection conn = new SqlConnection(strConn);
+                await conn.OpenAsync();
+
+                using SqlCommand cmd = new SqlCommand("SELECT RateAvg FROM MovieList WHERE Title = @title", conn);
+                SqlParameter parameter = new SqlParameter("@title", System.Data.SqlDbType.VarChar);
+                parameter.Value = title;
+                cmd.Parameters.Add(parameter);
+                using SqlDataReader reader = await cmd.ExecuteReaderAsync();
+
+                if (await reader.ReadAsync())
+                {
+                    int rateAvg = reader.GetInt32(0);
+                    lblScore.Text = rateAvg.ToString();
+                }
+                else
+                {
+                    lblScore.Text = "별점 정보 없음";
+                }
+
             }
 
             return null;
@@ -158,6 +171,8 @@ namespace TeamProject
             dataTable.Load(reader);
 
             ReviewView.DataSource = dataTable;
+
+
 
             // 리소스 정리
             reader.Close();
