@@ -30,7 +30,6 @@
         {
             btn_Cancel = new Button();
             btn_Update = new Button();
-            rtBox = new TextBox();
             rvBox = new TextBox();
             mnBox = new TextBox();
             nnBox = new TextBox();
@@ -39,6 +38,7 @@
             label3 = new Label();
             label2 = new Label();
             lblreview = new Label();
+            rtBox = new ComboBox();
             SuspendLayout();
             // 
             // btn_Cancel
@@ -61,18 +61,12 @@
             btn_Update.UseVisualStyleBackColor = true;
             btn_Update.Click += btn_Update_Click;
             // 
-            // rtBox
-            // 
-            rtBox.Location = new Point(171, 202);
-            rtBox.Name = "rtBox";
-            rtBox.Size = new Size(146, 23);
-            rtBox.TabIndex = 28;
-            // 
             // rvBox
             // 
-            rvBox.Location = new Point(171, 161);
+            rvBox.Location = new Point(171, 212);
+            rvBox.Multiline = true;
             rvBox.Name = "rvBox";
-            rvBox.Size = new Size(146, 23);
+            rvBox.Size = new Size(190, 103);
             rvBox.TabIndex = 27;
             // 
             // mnBox
@@ -80,7 +74,7 @@
             mnBox.Location = new Point(171, 121);
             mnBox.Name = "mnBox";
             mnBox.ReadOnly = true;
-            mnBox.Size = new Size(146, 23);
+            mnBox.Size = new Size(190, 23);
             mnBox.TabIndex = 26;
             // 
             // nnBox
@@ -88,13 +82,13 @@
             nnBox.Location = new Point(171, 79);
             nnBox.Name = "nnBox";
             nnBox.ReadOnly = true;
-            nnBox.Size = new Size(146, 23);
+            nnBox.Size = new Size(190, 23);
             nnBox.TabIndex = 25;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(43, 202);
+            label5.Location = new Point(52, 159);
             label5.Name = "label5";
             label5.Size = new Size(31, 15);
             label5.TabIndex = 21;
@@ -103,7 +97,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(43, 161);
+            label4.Location = new Point(52, 212);
             label4.Name = "label4";
             label4.Size = new Size(31, 15);
             label4.TabIndex = 20;
@@ -136,14 +130,23 @@
             lblreview.TabIndex = 17;
             lblreview.Text = "리뷰 수정하기";
             // 
+            // rtBox
+            // 
+            rtBox.FormattingEnabled = true;
+            rtBox.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" });
+            rtBox.Location = new Point(171, 159);
+            rtBox.Name = "rtBox";
+            rtBox.Size = new Size(190, 23);
+            rtBox.TabIndex = 34;
+            // 
             // ReviewUpdate
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(433, 450);
+            Controls.Add(rtBox);
             Controls.Add(btn_Cancel);
             Controls.Add(btn_Update);
-            Controls.Add(rtBox);
             Controls.Add(rvBox);
             Controls.Add(mnBox);
             Controls.Add(nnBox);
@@ -153,7 +156,7 @@
             Controls.Add(label2);
             Controls.Add(lblreview);
             Name = "ReviewUpdate";
-            Text = "ReviewUpdate";
+            Text = "리뷰 수정";
             Load += ReviewUpdate_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -163,7 +166,6 @@
 
         private Button btn_Cancel;
         private Button btn_Update;
-        private TextBox rtBox;
         private TextBox rvBox;
         private TextBox mnBox;
         private TextBox nnBox;
@@ -172,5 +174,6 @@
         private Label label3;
         private Label label2;
         private Label lblreview;
+        private ComboBox rtBox;
     }
 }
