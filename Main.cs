@@ -249,6 +249,8 @@ namespace TeamProject
                 2 => "Title DESC",      //내림차순
                 3 => "ReleaseDate DESC",//최신 작품순
                 4 => "ReleaseDate ASC", //예전 작품순
+                5 => "RateAvg DESC",
+                6 => "RateAvg ASC",
             };
             DateTime startDate = dTPStart.Value;
             DateTime endDate = dTPEnd.Value;

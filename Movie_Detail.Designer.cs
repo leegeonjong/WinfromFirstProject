@@ -59,10 +59,9 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(9, 80);
-            pictureBox1.Margin = new Padding(2);
+            pictureBox1.Location = new Point(13, 133);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(271, 291);
+            pictureBox1.Size = new Size(387, 485);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -70,20 +69,18 @@
             // lbl3
             // 
             lbl3.AutoSize = true;
-            lbl3.Location = new Point(284, 111);
-            lbl3.Margin = new Padding(2, 0, 2, 0);
+            lbl3.Location = new Point(406, 185);
             lbl3.Name = "lbl3";
-            lbl3.Size = new Size(70, 15);
+            lbl3.Size = new Size(106, 25);
             lbl3.TabIndex = 1;
             lbl3.Text = "개봉 일자 : ";
             // 
             // lbl1
             // 
             lbl1.AutoSize = true;
-            lbl1.Location = new Point(284, 81);
-            lbl1.Margin = new Padding(2, 0, 2, 0);
+            lbl1.Location = new Point(406, 135);
             lbl1.Name = "lbl1";
-            lbl1.Size = new Size(38, 15);
+            lbl1.Size = new Size(58, 25);
             lbl1.TabIndex = 2;
             lbl1.Text = "장르: ";
             // 
@@ -91,10 +88,9 @@
             // 
             labeltitle.AutoSize = true;
             labeltitle.Font = new Font("맑은 고딕", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            labeltitle.Location = new Point(81, 34);
-            labeltitle.Margin = new Padding(2, 0, 2, 0);
+            labeltitle.Location = new Point(116, 57);
             labeltitle.Name = "labeltitle";
-            labeltitle.Size = new Size(62, 32);
+            labeltitle.Size = new Size(92, 48);
             labeltitle.TabIndex = 3;
             labeltitle.Text = "제목";
             // 
@@ -106,19 +102,19 @@
             panel1.Controls.Add(NickNameBox);
             panel1.Controls.Add(reviewBox);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 390);
+            panel1.Location = new Point(0, 650);
+            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(664, 345);
+            panel1.Size = new Size(949, 575);
             panel1.TabIndex = 4;
             // 
             // ratebox
             // 
             ratebox.FormattingEnabled = true;
             ratebox.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" });
-            ratebox.Location = new Point(123, 17);
-            ratebox.Margin = new Padding(2);
+            ratebox.Location = new Point(176, 28);
             ratebox.Name = "ratebox";
-            ratebox.Size = new Size(46, 23);
+            ratebox.Size = new Size(64, 33);
             ratebox.TabIndex = 4;
             ratebox.Text = "별점";
             // 
@@ -126,19 +122,19 @@
             // 
             ReviewView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             ReviewView.Dock = DockStyle.Bottom;
-            ReviewView.Location = new Point(0, 93);
-            ReviewView.Margin = new Padding(2);
+            ReviewView.Location = new Point(0, 155);
             ReviewView.Name = "ReviewView";
             ReviewView.RowHeadersWidth = 51;
             ReviewView.RowTemplate.Height = 29;
-            ReviewView.Size = new Size(664, 252);
+            ReviewView.Size = new Size(949, 420);
             ReviewView.TabIndex = 3;
             // 
             // button1
             // 
-            button1.Location = new Point(473, 17);
+            button1.Location = new Point(676, 28);
+            button1.Margin = new Padding(4, 5, 4, 5);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(107, 38);
             button1.TabIndex = 2;
             button1.Text = "등록";
             button1.UseVisualStyleBackColor = true;
@@ -146,29 +142,29 @@
             // 
             // NickNameBox
             // 
-            NickNameBox.Location = new Point(13, 17);
-            NickNameBox.Margin = new Padding(4);
+            NickNameBox.Location = new Point(19, 28);
+            NickNameBox.Margin = new Padding(6, 7, 6, 7);
             NickNameBox.Name = "NickNameBox";
             NickNameBox.ReadOnly = true;
-            NickNameBox.Size = new Size(104, 23);
+            NickNameBox.Size = new Size(147, 31);
             NickNameBox.TabIndex = 1;
             // 
             // reviewBox
             // 
-            reviewBox.Location = new Point(186, 17);
+            reviewBox.Location = new Point(266, 28);
+            reviewBox.Margin = new Padding(4, 5, 4, 5);
             reviewBox.Multiline = true;
             reviewBox.Name = "reviewBox";
-            reviewBox.Size = new Size(261, 59);
+            reviewBox.Size = new Size(371, 96);
             reviewBox.TabIndex = 0;
             reviewBox.Text = "comment";
             // 
             // book
             // 
             book.Image = Properties.Resources.bookmarkoff;
-            book.Location = new Point(0, 28);
-            book.Margin = new Padding(2);
+            book.Location = new Point(0, 47);
             book.Name = "book";
-            book.Size = new Size(58, 46);
+            book.Size = new Size(83, 77);
             book.SizeMode = PictureBoxSizeMode.Zoom;
             book.TabIndex = 5;
             book.TabStop = false;
@@ -177,130 +173,118 @@
             // lbl2
             // 
             lbl2.AutoSize = true;
-            lbl2.Location = new Point(285, 96);
-            lbl2.Margin = new Padding(2, 0, 2, 0);
+            lbl2.Location = new Point(407, 160);
             lbl2.Name = "lbl2";
-            lbl2.Size = new Size(38, 15);
+            lbl2.Size = new Size(100, 25);
             lbl2.TabIndex = 6;
             lbl2.Text = "별점 평균: ";
             // 
             // lbl4
             // 
             lbl4.AutoSize = true;
-            lbl4.Location = new Point(284, 126);
-            lbl4.Margin = new Padding(2, 0, 2, 0);
+            lbl4.Location = new Point(406, 210);
             lbl4.Name = "lbl4";
-            lbl4.Size = new Size(70, 15);
+            lbl4.Size = new Size(106, 25);
             lbl4.TabIndex = 7;
             lbl4.Text = "영화 감독 : ";
             // 
             // lbl5
             // 
             lbl5.AutoSize = true;
-            lbl5.Location = new Point(285, 141);
-            lbl5.Margin = new Padding(2, 0, 2, 0);
+            lbl5.Location = new Point(407, 235);
             lbl5.Name = "lbl5";
-            lbl5.Size = new Size(70, 15);
+            lbl5.Size = new Size(106, 25);
             lbl5.TabIndex = 8;
             lbl5.Text = "출연 배우 : ";
             // 
             // lbl7
             // 
             lbl7.AutoSize = true;
-            lbl7.Location = new Point(285, 188);
-            lbl7.Margin = new Padding(2, 0, 2, 0);
+            lbl7.Location = new Point(407, 313);
             lbl7.Name = "lbl7";
-            lbl7.Size = new Size(54, 15);
+            lbl7.Size = new Size(82, 25);
             lbl7.TabIndex = 9;
             lbl7.Text = "줄거리 : ";
             // 
             // lbl6
             // 
             lbl6.AutoSize = true;
-            lbl6.Location = new Point(284, 66);
-            lbl6.Margin = new Padding(2, 0, 2, 0);
+            lbl6.Location = new Point(406, 110);
             lbl6.Name = "lbl6";
-            lbl6.Size = new Size(70, 15);
+            lbl6.Size = new Size(106, 25);
             lbl6.TabIndex = 10;
             lbl6.Text = "러닝 타임 : ";
             // 
             // txtplot
             // 
-            txtplot.Location = new Point(296, 229);
-            txtplot.Margin = new Padding(2);
+            txtplot.Location = new Point(422, 381);
             txtplot.Multiline = true;
             txtplot.Name = "txtplot";
             txtplot.ReadOnly = true;
             txtplot.ScrollBars = ScrollBars.Both;
-            txtplot.Size = new Size(352, 144);
+            txtplot.Size = new Size(501, 237);
             txtplot.TabIndex = 11;
             // 
             // lblRuntime
             // 
             lblRuntime.AutoSize = true;
-            lblRuntime.Location = new Point(363, 66);
-            lblRuntime.Margin = new Padding(2, 0, 2, 0);
+            lblRuntime.Location = new Point(519, 110);
             lblRuntime.Name = "lblRuntime";
-            lblRuntime.Size = new Size(43, 15);
+            lblRuntime.Size = new Size(66, 25);
             lblRuntime.TabIndex = 12;
             lblRuntime.Text = "준비중";
             // 
             // lblDirector
             // 
             lblDirector.AutoSize = true;
-            lblDirector.Location = new Point(363, 126);
-            lblDirector.Margin = new Padding(2, 0, 2, 0);
+            lblDirector.Location = new Point(519, 210);
             lblDirector.Name = "lblDirector";
-            lblDirector.Size = new Size(43, 15);
+            lblDirector.Size = new Size(66, 25);
             lblDirector.TabIndex = 14;
             lblDirector.Text = "준비중";
             // 
             // lblDate
             // 
             lblDate.AutoSize = true;
-            lblDate.Location = new Point(363, 111);
-            lblDate.Margin = new Padding(2, 0, 2, 0);
+            lblDate.Location = new Point(519, 185);
             lblDate.Name = "lblDate";
-            lblDate.Size = new Size(43, 15);
+            lblDate.Size = new Size(66, 25);
             lblDate.TabIndex = 15;
             lblDate.Text = "준비중";
             // 
             // lblScore
             // 
             lblScore.AutoSize = true;
-            lblScore.Location = new Point(363, 96);
-            lblScore.Margin = new Padding(2, 0, 2, 0);
+            lblScore.Location = new Point(519, 160);
             lblScore.Name = "lblScore";
-            lblScore.Size = new Size(43, 15);
+            lblScore.Size = new Size(66, 25);
             lblScore.TabIndex = 16;
             lblScore.Text = "준비중";
             // 
             // lblGenre
             // 
             lblGenre.AutoSize = true;
-            lblGenre.Location = new Point(363, 81);
-            lblGenre.Margin = new Padding(2, 0, 2, 0);
+            lblGenre.Location = new Point(519, 135);
             lblGenre.Name = "lblGenre";
-            lblGenre.Size = new Size(43, 15);
+            lblGenre.Size = new Size(66, 25);
             lblGenre.TabIndex = 17;
             lblGenre.Text = "준비중";
             // 
             // txtlActor
             // 
-            txtlActor.Location = new Point(362, 142);
-            txtlActor.Margin = new Padding(2);
+            txtlActor.Location = new Point(517, 237);
             txtlActor.Multiline = true;
             txtlActor.Name = "txtlActor";
             txtlActor.ReadOnly = true;
             txtlActor.ScrollBars = ScrollBars.Both;
-            txtlActor.Size = new Size(293, 62);
+            txtlActor.Size = new Size(417, 101);
             txtlActor.TabIndex = 18;
             // 
             // Movie_Detail
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(664, 735);
+            ClientSize = new Size(949, 1225);
             Controls.Add(txtlActor);
             Controls.Add(lblGenre);
             Controls.Add(lblScore);
@@ -320,7 +304,6 @@
             Controls.Add(lbl3);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(2);
             Name = "Movie_Detail";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Movie_Detail";
