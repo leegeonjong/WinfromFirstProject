@@ -46,11 +46,11 @@
             lbl6 = new Label();
             txtplot = new TextBox();
             lblRuntime = new Label();
-            lblActor = new Label();
             lblDirector = new Label();
             lblDate = new Label();
             lblScore = new Label();
             lblGenre = new Label();
+            txtlActor = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ReviewView).BeginInit();
@@ -212,7 +212,7 @@
             // lbl6
             // 
             lbl6.AutoSize = true;
-            lbl6.Location = new Point(407, 288);
+            lbl6.Location = new Point(406, 110);
             lbl6.Name = "lbl6";
             lbl6.Size = new Size(106, 25);
             lbl6.TabIndex = 10;
@@ -223,6 +223,7 @@
             txtplot.Location = new Point(406, 341);
             txtplot.Multiline = true;
             txtplot.Name = "txtplot";
+            txtplot.ReadOnly = true;
             txtplot.ScrollBars = ScrollBars.Both;
             txtplot.Size = new Size(530, 325);
             txtplot.TabIndex = 11;
@@ -230,20 +231,11 @@
             // lblRuntime
             // 
             lblRuntime.AutoSize = true;
-            lblRuntime.Location = new Point(519, 288);
+            lblRuntime.Location = new Point(519, 110);
             lblRuntime.Name = "lblRuntime";
             lblRuntime.Size = new Size(66, 25);
             lblRuntime.TabIndex = 12;
             lblRuntime.Text = "준비중";
-            // 
-            // lblActor
-            // 
-            lblActor.AutoSize = true;
-            lblActor.Location = new Point(519, 235);
-            lblActor.Name = "lblActor";
-            lblActor.Size = new Size(66, 25);
-            lblActor.TabIndex = 13;
-            lblActor.Text = "준비중";
             // 
             // lblDirector
             // 
@@ -281,16 +273,26 @@
             lblGenre.TabIndex = 17;
             lblGenre.Text = "준비중";
             // 
+            // txtlActor
+            // 
+            txtlActor.Location = new Point(519, 235);
+            txtlActor.Multiline = true;
+            txtlActor.Name = "txtlActor";
+            txtlActor.ReadOnly = true;
+            txtlActor.ScrollBars = ScrollBars.Both;
+            txtlActor.Size = new Size(417, 100);
+            txtlActor.TabIndex = 18;
+            // 
             // Movie_Detail
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(949, 1249);
+            Controls.Add(txtlActor);
             Controls.Add(lblGenre);
             Controls.Add(lblScore);
             Controls.Add(lblDate);
             Controls.Add(lblDirector);
-            Controls.Add(lblActor);
             Controls.Add(lblRuntime);
             Controls.Add(txtplot);
             Controls.Add(lbl6);
@@ -304,8 +306,10 @@
             Controls.Add(lbl1);
             Controls.Add(lbl3);
             Controls.Add(pictureBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 4, 3, 4);
             Name = "Movie_Detail";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Movie_Detail";
             Load += Movie_Detail_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -338,10 +342,10 @@
         private Label lbl6;
         private TextBox txtplot;
         private Label lblRuntime;
-        private Label lblActor;
         private Label lblDirector;
         private Label lblDate;
         private Label lblScore;
         private Label lblGenre;
+        private TextBox txtlActor;
     }
 }
