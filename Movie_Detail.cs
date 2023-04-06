@@ -1,15 +1,18 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TMDbLib.Objects.Search;
 
 namespace TeamProject
 {
@@ -19,11 +22,8 @@ namespace TeamProject
         string MovieTitle;
         int UseruId;
         int MovieUid;
-       
-        
-        
-        bool bookmarkstatus;
 
+        bool bookmarkstatus;
 
         private Main MainForm;
         public Movie_Detail(Main mainForm)
@@ -35,11 +35,11 @@ namespace TeamProject
         }
         public void SetMovieDetails(string movieTitle, string moviePosterUrl)
         {
-            // 여기에서 영화 제목 및 포스터 URL을 사용하여 Movie_Detail form에 표시할 수 있습니다.
-            // 예: movieTitleLabel.Text = movieTitle;
-            // 예: moviePosterPictureBox.ImageLocation = moviePosterUrl;
+            //영화 포스터
             pictureBox1.ImageLocation = moviePosterUrl;
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,12 +47,11 @@ namespace TeamProject
 
         }
 
-        private void Movie_Detail_Load(object sender, EventArgs e)
+        private async void Movie_Detail_Load(object sender, EventArgs e)
         {
-            
             Check check = new Check();
             bookmarkstatus = check.bookmarkis(MovieUid, UseruId);
-            if (bookmarkstatus== true)
+            if (bookmarkstatus == true)
             {
                 book.Image = Properties.Resources.bookmarkon;
             }
@@ -69,12 +68,69 @@ namespace TeamProject
                 NickNameBox.Text = MainForm.userNickname;
             }
 
+            await SearchMovie(MovieTitle);
+
             DataViewLoad();
         }
+        public async Task<string> SearchMovie(string title)
+        {
+            string jsonResult = await RequestKMDbAPIAsync(title);
 
+            if (jsonResult != null)
+            {
+                JObject movieData = JObject.Parse(jsonResult);
+                JArray movies = (JArray)movieData["Data"][0]["Result"];
+
+                // 첫 번째 결과만 처리
+                JObject Movie = (JObject)movies[0];
+                lblGenre.Text = (string)Movie["genre"];
+
+                string dateString = (string)Movie["repRlsDate"];
+
+                DateTime date = DateTime.ParseExact(dateString, "yyyyMMdd", CultureInfo.InvariantCulture);
+                string formattedDate = date.ToString("yyyy년 MM월 dd일");
+                lblDate.Text = formattedDate;                       //개봉일자
+                lblRuntime.Text = (string)Movie["runtime"] + "(분)";
+
+                // 영화감독 이름 추출
+                string directorNames = string.Join(", ", Movie["directors"]["director"].Select(d => d["directorNm"].ToString()));
+
+                // 출연배우 이름 추출
+                string actorNames = string.Join(", ", Movie["actors"]["actor"].Select(a => a["actorNm"].ToString()));
+
+                // 줄거리 추출
+                string plotText = Movie["plots"]["plot"].FirstOrDefault(p => p["plotLang"].ToString() == "한국어")?["plotText"].ToString();
+
+                // 추출한 데이터를 레이블에 할당합니다.
+                lblDirector.Text = directorNames;
+                lblActor.Text = actorNames;
+                txtplot.Text = plotText;
+            }
+
+            return null;
+        }
+        public async Task<string> RequestKMDbAPIAsync(string query)
+        {
+            string apiKey = "P28PN59FB6LVB4301Z83";
+            string apiUrl = $" http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&detail=Y" +
+                $"&title={query}&ServiceKey={apiKey}";
+
+            using (var httpClient = new HttpClient())
+            {
+                HttpResponseMessage response = await httpClient.GetAsync(apiUrl);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string jsonResult = await response.Content.ReadAsStringAsync();
+                    return jsonResult;
+                }
+            }
+
+            return null;
+        }
         private void DataViewLoad()
         {
-            
+
 
             certification cert = new certification(strConn);
             SqlCommand cmd = cert.GetSqlCommand();
@@ -114,14 +170,14 @@ namespace TeamProject
             int rate = int.Parse(ratebox.Text);
 
             Check check = new Check();
-            
+
 
             if (reviewBox.Text.IsNullOrEmpty())
             {
                 reviewBox.Text = "재밌어요";
             }
-            
-           
+
+
             if (check.countreview(MovieUid, UseruId) > 0)
             {
                 MessageBox.Show("이미 리뷰를 등록한 영화입니다");
@@ -138,10 +194,6 @@ namespace TeamProject
 
         }
 
-
-
-    
-
         private void book_Click(object sender, EventArgs e)
         {
             Check check = new Check();
@@ -155,14 +207,14 @@ namespace TeamProject
                 MessageBox.Show("즐겨찾기 추가");
 
                 book.Image = Properties.Resources.bookmarkon;
-               
+
                 check.bookmarkon(MovieUid, UseruId, bookmarkstatus);
                 bookmarkstatus = true;
             }
             else if (bookmarkstatus == true)
             {
                 MessageBox.Show("즐겨찾기 해제");
-                
+
                 book.Image = Properties.Resources.bookmarkoff;
                 check.bookmarkon(MovieUid, UseruId, bookmarkstatus);
                 bookmarkstatus = false;
