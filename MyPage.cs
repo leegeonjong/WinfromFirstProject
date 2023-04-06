@@ -173,6 +173,7 @@ namespace TeamProject
 
         private void ReviewView()
         {
+            myReviewView.AllowUserToAddRows = false;
 
             certification cert = new certification(strConn);
             SqlCommand cmd = cert.GetSqlCommand();
@@ -193,6 +194,19 @@ namespace TeamProject
             dataTable.Load(reader);
 
             myReviewView.DataSource = dataTable;
+
+            myReviewView.Columns["u_nickname"].HeaderText = "닉네임";
+
+            myReviewView.Columns["title"].HeaderText = "영화 제목";
+            myReviewView.Columns["r_rate"].HeaderText = "내 평점";
+            myReviewView.Columns["r_content"].HeaderText = "내 리뷰";
+            myReviewView.Columns["r_date"].HeaderText = "리뷰를 남긴 날짜";
+
+            foreach (DataGridViewColumn column in myReviewView.Columns)
+            {
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;              
+            }
+
 
             // 리소스 정리
             reader.Close();
@@ -225,7 +239,7 @@ namespace TeamProject
 
         private void BookmarkView()
         {
-
+            myBookmarkView.AllowUserToAddRows = false;
             certification cert = new certification(strConn);
             SqlCommand cmd = cert.GetSqlCommand();
 
@@ -233,7 +247,7 @@ namespace TeamProject
             UserUid = check.FindUid(UserId);
 
 
-            cmd.CommandText = $"SELECT M.title, B_isbookmark " +
+            cmd.CommandText = $"SELECT M.title " +
                                 $"FROM Bookmark b " +
                                 $"INNER JOIN project_user u ON b.u_uid = u.u_uid " +
                                 $"INNER JOIN MovieList M ON b.MovieUID = m.MovieUID " +
@@ -245,6 +259,15 @@ namespace TeamProject
             dataTable.Load(reader);
 
             myBookmarkView.DataSource = dataTable;
+
+            myBookmarkView.Columns["Title"].HeaderText = "영화제목";
+           
+
+            foreach (DataGridViewColumn column in myBookmarkView.Columns)
+            {
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
+
 
             // 리소스 정리
             reader.Close();
@@ -268,5 +291,7 @@ namespace TeamProject
 
             updatePage.Show();
         }
+
+
     }
 }
