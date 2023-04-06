@@ -62,10 +62,11 @@
             // TextId
             // 
             TextId.BorderStyle = BorderStyle.None;
+            TextId.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             TextId.Location = new Point(78, 25);
             TextId.Margin = new Padding(4);
             TextId.Name = "TextId";
-            TextId.Size = new Size(247, 16);
+            TextId.Size = new Size(247, 18);
             TextId.TabIndex = 3;
             // 
             // btID
@@ -176,9 +177,10 @@
             // TextPassword
             // 
             TextPassword.BorderStyle = BorderStyle.None;
+            TextPassword.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             TextPassword.Location = new Point(78, 78);
             TextPassword.Name = "TextPassword";
-            TextPassword.Size = new Size(247, 16);
+            TextPassword.Size = new Size(247, 18);
             TextPassword.TabIndex = 4;
             // 
             // panel2

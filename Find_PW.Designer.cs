@@ -28,126 +28,181 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblName = new System.Windows.Forms.Label();
-            this.lblID = new System.Windows.Forms.Label();
-            this.NameBox = new System.Windows.Forms.TextBox();
-            this.IDBox = new System.Windows.Forms.TextBox();
-            this.lblPhonenum = new System.Windows.Forms.Label();
-            this.PhoneNumbox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(172, 89);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "비밀번호 찾기";
+            lblName = new Label();
+            lblID = new Label();
+            NameBox = new TextBox();
+            IDBox = new TextBox();
+            lblPhonenum = new Label();
+            PhoneNumbox = new TextBox();
+            button1 = new Button();
+            button2 = new Button();
+            panel9 = new Panel();
+            label1 = new Label();
+            panel2 = new Panel();
+            panel1 = new Panel();
+            panel3 = new Panel();
+            panel9.SuspendLayout();
+            SuspendLayout();
             // 
             // lblName
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(66, 171);
-            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(39, 20);
-            this.lblName.TabIndex = 1;
-            this.lblName.Text = "이름";
+            lblName.AutoSize = true;
+            lblName.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblName.Location = new Point(37, 117);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(34, 17);
+            lblName.TabIndex = 1;
+            lblName.Text = "이름";
             // 
             // lblID
             // 
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(66, 251);
-            this.lblID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(54, 20);
-            this.lblID.TabIndex = 2;
-            this.lblID.Text = "아이디";
+            lblID.AutoSize = true;
+            lblID.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblID.Location = new Point(30, 185);
+            lblID.Name = "lblID";
+            lblID.Size = new Size(47, 17);
+            lblID.TabIndex = 2;
+            lblID.Text = "아이디";
             // 
             // NameBox
             // 
-            this.NameBox.Location = new System.Drawing.Point(206, 167);
-            this.NameBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.NameBox.Name = "NameBox";
-            this.NameBox.Size = new System.Drawing.Size(127, 27);
-            this.NameBox.TabIndex = 3;
+            NameBox.BorderStyle = BorderStyle.None;
+            NameBox.Location = new Point(126, 100);
+            NameBox.Name = "NameBox";
+            NameBox.Size = new Size(167, 18);
+            NameBox.TabIndex = 3;
             // 
             // IDBox
             // 
-            this.IDBox.Location = new System.Drawing.Point(206, 247);
-            this.IDBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.IDBox.Name = "IDBox";
-            this.IDBox.Size = new System.Drawing.Size(127, 27);
-            this.IDBox.TabIndex = 4;
+            IDBox.BorderStyle = BorderStyle.None;
+            IDBox.Location = new Point(126, 168);
+            IDBox.Name = "IDBox";
+            IDBox.Size = new Size(167, 18);
+            IDBox.TabIndex = 4;
             // 
             // lblPhonenum
             // 
-            this.lblPhonenum.AutoSize = true;
-            this.lblPhonenum.Location = new System.Drawing.Point(66, 323);
-            this.lblPhonenum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPhonenum.Name = "lblPhonenum";
-            this.lblPhonenum.Size = new System.Drawing.Size(89, 20);
-            this.lblPhonenum.TabIndex = 5;
-            this.lblPhonenum.Text = "휴대폰 번호";
+            lblPhonenum.AutoSize = true;
+            lblPhonenum.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblPhonenum.Location = new Point(14, 249);
+            lblPhonenum.Name = "lblPhonenum";
+            lblPhonenum.Size = new Size(78, 17);
+            lblPhonenum.TabIndex = 5;
+            lblPhonenum.Text = "휴대폰 번호";
             // 
             // PhoneNumbox
             // 
-            this.PhoneNumbox.Location = new System.Drawing.Point(206, 335);
-            this.PhoneNumbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.PhoneNumbox.Name = "PhoneNumbox";
-            this.PhoneNumbox.Size = new System.Drawing.Size(127, 27);
-            this.PhoneNumbox.TabIndex = 6;
+            PhoneNumbox.BorderStyle = BorderStyle.None;
+            PhoneNumbox.Location = new Point(126, 232);
+            PhoneNumbox.Name = "PhoneNumbox";
+            PhoneNumbox.Size = new Size(167, 18);
+            PhoneNumbox.TabIndex = 6;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(66, 436);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "확인";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.BackColor = Color.FromArgb(108, 160, 220);
+            button1.FlatAppearance.BorderColor = Color.FromArgb(108, 160, 220);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(110, 315);
+            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(83, 29);
+            button1.TabIndex = 7;
+            button1.Text = "조회하기";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(239, 436);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 29);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "닫기";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            button2.BackColor = Color.FromArgb(108, 160, 220);
+            button2.FlatAppearance.BorderColor = Color.FromArgb(108, 160, 220);
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(224, 315);
+            button2.Margin = new Padding(2, 2, 2, 2);
+            button2.Name = "button2";
+            button2.Size = new Size(83, 29);
+            button2.TabIndex = 8;
+            button2.Text = "닫기";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // panel9
+            // 
+            panel9.BackColor = Color.FromArgb(108, 160, 220);
+            panel9.Controls.Add(label1);
+            panel9.Dock = DockStyle.Top;
+            panel9.Location = new Point(0, 0);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(369, 46);
+            panel9.TabIndex = 22;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(126, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(146, 30);
+            label1.TabIndex = 0;
+            label1.Text = "비밀번호 찾기";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(108, 160, 220);
+            panel2.Location = new Point(126, 133);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(167, 1);
+            panel2.TabIndex = 23;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(108, 160, 220);
+            panel1.Location = new Point(126, 201);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(167, 1);
+            panel1.TabIndex = 24;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(108, 160, 220);
+            panel3.Location = new Point(126, 265);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(167, 1);
+            panel3.TabIndex = 25;
             // 
             // Find_PW
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 600);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.PhoneNumbox);
-            this.Controls.Add(this.lblPhonenum);
-            this.Controls.Add(this.IDBox);
-            this.Controls.Add(this.NameBox);
-            this.Controls.Add(this.lblID);
-            this.Controls.Add(this.lblName);
-            this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Find_PW";
-            this.Text = "비밀번호 찾기";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 17F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(369, 385);
+            Controls.Add(panel3);
+            Controls.Add(panel1);
+            Controls.Add(panel2);
+            Controls.Add(panel9);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(PhoneNumbox);
+            Controls.Add(lblPhonenum);
+            Controls.Add(IDBox);
+            Controls.Add(NameBox);
+            Controls.Add(lblID);
+            Controls.Add(lblName);
+            Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            Name = "Find_PW";
+            Text = "비밀번호 찾기";
+            panel9.ResumeLayout(false);
+            panel9.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private Label label1;
         private Label lblName;
         private Label lblID;
         private TextBox NameBox;
@@ -156,5 +211,10 @@
         private TextBox PhoneNumbox;
         private Button button1;
         private Button button2;
+        private Panel panel9;
+        private Label label1;
+        private Panel panel2;
+        private Panel panel1;
+        private Panel panel3;
     }
 }

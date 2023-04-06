@@ -20,10 +20,11 @@ namespace TeamProject
         private void button1_Click(object sender, EventArgs e)
         {
             Check check = new Check();
-            
+
             string pw;
             pw = check.FindPW(NameBox.Text.Trim(), IDBox.Text.Trim(), PhoneNumbox.Text.Trim());
-            if (pw == null) {
+            if (pw == null)
+            {
                 MessageBox.Show("잘못된입력입니다");
             }
             else { MessageBox.Show(pw); }

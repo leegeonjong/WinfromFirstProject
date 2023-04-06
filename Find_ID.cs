@@ -21,8 +21,8 @@ namespace TeamProject
         private void btn_Result_Click(object sender, EventArgs e)
         {
             Check check = new Check();
-          
-            
+
+
             id = check.FindID(NameBox.Text.Trim(), PhonenumBox.Text.Trim());
             if (id == null)
             {
@@ -30,7 +30,7 @@ namespace TeamProject
             }
             else
                 MessageBox.Show(id);
-            
+
         }
 
         private void btn_Cancel_Click(object sender, EventArgs e)
