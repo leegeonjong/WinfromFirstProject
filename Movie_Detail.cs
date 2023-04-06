@@ -42,11 +42,6 @@ namespace TeamProject
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private async void Movie_Detail_Load(object sender, EventArgs e)
         {
             Check check = new Check();
@@ -210,11 +205,13 @@ namespace TeamProject
             if (NickNameBox.Text.IsNullOrEmpty())
             {
                 MessageBox.Show("로그인후 별점과 comment를 남겨주세요");
+                return;
             }
 
             if (check.countreview(MovieUid, UseruId) > 0)
             {
                 MessageBox.Show("이미 리뷰를 등록한 영화입니다");
+                return;
             }
             else
             {
