@@ -244,7 +244,7 @@ namespace TeamProject
             string orderByColumn = "Title ASC"; //기본정렬값
             orderByColumn = CB_Category.SelectedIndex switch
             {
-                0 => "Sales",           //매출액 순서
+                0 => "Sales DESC",           //매출액 순서
                 1 => "Title ASC",       //오름차순
                 2 => "Title DESC",      //내림차순
                 3 => "ReleaseDate DESC",//최신 작품순
