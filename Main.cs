@@ -94,7 +94,8 @@ namespace TeamProject
         public async Task<string> RequestKMDbAPIAsync(string query)
         {
             string apiKey = "P28PN59FB6LVB4301Z83";
-            string apiUrl = $" http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&detail=Y&query={query}&ServiceKey={apiKey}";
+            string apiUrl = $" http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&detail=Y" +
+                $"&title={query}&ServiceKey={apiKey}";
 
             using (var httpClient = new HttpClient())
             {
