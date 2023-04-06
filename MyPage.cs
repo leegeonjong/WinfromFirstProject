@@ -158,8 +158,8 @@ namespace TeamProject
                 {
                     Check check1 = new();
 
-                    mainForm1.userNickname = check1.Findid(main.useruid);
-                    mainForm1.userid = check1.Findnick(main.useruid);
+                    mainForm1.userid = check1.Findid(main.useruid);
+                    mainForm1.userNickname = check1.Findnick(main.useruid);
                 }
                 main.Close();
                 mainForm1.Main_Load_1(sender, e);
