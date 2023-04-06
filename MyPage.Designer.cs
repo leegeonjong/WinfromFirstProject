@@ -51,6 +51,7 @@
             myReviewView = new DataGridView();
             label6 = new Label();
             tabPage3 = new TabPage();
+            btn_bmdelete = new Button();
             button1 = new Button();
             myBookmarkView = new DataGridView();
             label10 = new Label();
@@ -118,6 +119,7 @@
             btn_Cancel.TabIndex = 17;
             btn_Cancel.Text = "취소하기";
             btn_Cancel.UseVisualStyleBackColor = true;
+            btn_Cancel.Click += btn_Cancel_Click;
             // 
             // btn_update
             // 
@@ -128,6 +130,7 @@
             btn_update.TabIndex = 16;
             btn_update.Text = "수정";
             btn_update.UseVisualStyleBackColor = true;
+            btn_update.Click += btn_update_Click;
             // 
             // pnBox
             // 
@@ -301,6 +304,7 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(btn_bmdelete);
             tabPage3.Controls.Add(button1);
             tabPage3.Controls.Add(myBookmarkView);
             tabPage3.Controls.Add(label10);
@@ -311,9 +315,19 @@
             tabPage3.Text = "즐겨찾기";
             tabPage3.UseVisualStyleBackColor = true;
             // 
+            // btn_bmdelete
+            // 
+            btn_bmdelete.Location = new Point(552, 41);
+            btn_bmdelete.Name = "btn_bmdelete";
+            btn_bmdelete.Size = new Size(102, 23);
+            btn_bmdelete.TabIndex = 3;
+            btn_bmdelete.Text = "즐겨찾기 삭제";
+            btn_bmdelete.UseVisualStyleBackColor = true;
+            btn_bmdelete.Click += btn_bmdelete_Click;
+            // 
             // button1
             // 
-            button1.Location = new Point(666, 41);
+            button1.Location = new Point(672, 41);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 2;
@@ -392,5 +406,6 @@
 
         private Label label10;
         private Button button1;
+        private Button btn_bmdelete;
     }
 }

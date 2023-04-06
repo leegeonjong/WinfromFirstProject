@@ -22,6 +22,8 @@ namespace TeamProject
         public string UserId;
         public int UserUid { get; set; }
 
+        int MovieUid;
+
 
 
         public MyPage(Admin_Page form, Main main)
@@ -32,6 +34,7 @@ namespace TeamProject
             this.main = main;
             UserId = main.userid;
             UserUid = main.useruid;
+            MovieUid = main.movieuid;
 
         }
 
@@ -171,7 +174,7 @@ namespace TeamProject
         }
 
 
-        private void ReviewView()
+        public void ReviewView()
         {
             myReviewView.AllowUserToAddRows = false;
 
@@ -204,7 +207,7 @@ namespace TeamProject
 
             foreach (DataGridViewColumn column in myReviewView.Columns)
             {
-                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;              
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
 
 
@@ -214,32 +217,11 @@ namespace TeamProject
 
         }
 
-        public void LoadReviewView()
-        {
-            certification cert = new certification(strConn);
-            SqlCommand cmd = cert.GetSqlCommand();
-
-            cmd.CommandText = $"SELECT u.u_nickname, m.title, r.r_rate, r.r_content, r.r_date " +
-                                $"FROM review r " +
-                                $"INNER JOIN project_user u ON r.u_uid = u.u_uid " +
-                                $"INNER JOIN MovieList M ON r.MovieUID = m.MovieUID " +
-                                $"WHERE u.u_uid = {UserUid}";
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            DataTable dataTable = new DataTable();
-            dataTable.Load(reader);
-
-            myReviewView.DataSource = dataTable;
-
-            // 리소스 정리
-            reader.Close();
-            cmd.Dispose();
-
-        }
 
         private void BookmarkView()
         {
             myBookmarkView.AllowUserToAddRows = false;
+
             certification cert = new certification(strConn);
             SqlCommand cmd = cert.GetSqlCommand();
 
@@ -261,7 +243,7 @@ namespace TeamProject
             myBookmarkView.DataSource = dataTable;
 
             myBookmarkView.Columns["Title"].HeaderText = "영화제목";
-           
+
 
             foreach (DataGridViewColumn column in myBookmarkView.Columns)
             {
@@ -272,8 +254,8 @@ namespace TeamProject
             // 리소스 정리
             reader.Close();
             cmd.Dispose();
-
         }
+
 
         private void btn_reviewclose_Click(object sender, EventArgs e)
         {
@@ -292,6 +274,62 @@ namespace TeamProject
             updatePage.Show();
         }
 
+        private void btn_bmdelete_Click(object sender, EventArgs e)
+        {
 
+            Check check = new Check();
+            string movietitle = myBookmarkView.SelectedCells[0].Value.ToString();
+            UserUid = check.FindUid(UserId);
+            MovieUid = check.FindMvUid(movietitle);
+
+            try
+            {
+                foreach (DataGridViewCell cell in myBookmarkView.SelectedCells)
+                {
+                    cell.OwningRow.Selected = true;
+                }
+
+                Cursor = Cursors.WaitCursor;
+
+                if (myBookmarkView.SelectedRows.Count == 0) return; // 삭제하려는 row가 선택되어 있지 않으면 return
+
+
+                // 삭제전에 확인
+                if (MessageBox.Show($"{myBookmarkView.SelectedRows.Count}개의 즐겨찾기를 삭제할까요?", "삭제확인"
+                     , MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK)
+                { return; }
+
+                using SqlConnection conn = new(strConn);
+                conn.Open();
+
+                string sql = $"DELETE FROM Bookmark WHERE u_uid = '{UserUid}' AND MovieUID = {MovieUid}; ";
+
+                int cnt = 0;
+
+                foreach (DataGridViewRow row in myBookmarkView.SelectedRows)
+                {
+                    string uid = row.Cells[0].Value.ToString();  // PK 값은 첫번째 컬럼
+                    using SqlCommand cmd = new(sql, conn);
+                    cmd.Parameters.AddWithValue("@u_uid", uid);
+
+                    int result = cmd.ExecuteNonQuery();
+                    if (result > 0)
+                    {
+                        cnt += result;
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error"
+                    , MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
+            }
+            BookmarkView();
+        }
     }
 }
