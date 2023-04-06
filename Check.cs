@@ -178,22 +178,23 @@ namespace TeamProject
             if (book == false)
             {
                 cmd.CommandText = $"INSERT INTO Bookmark" +
-                      $"(MOVIEUID, u_id, b_isbookmark) " +
+                      $"(MOVIEUID, u_uid, b_isbookmark) " +
                       $"VALUES ({muid}, {uuid}, '{book}')";
             }
             if (book == true)
             {
-                cmd.CommandText = $"DELETE FROM Bookmark WHERE u_id = '{uuid}' AND MovieUID = {muid}; ";
+                cmd.CommandText = $"DELETE FROM Bookmark WHERE u_uid = '{uuid}' AND MovieUID = {muid}; ";
             }
 
             cmd.ExecuteNonQuery();
         }
+
         public bool bookmarkis(int muid, int uuid)
         {
             var db = new certification(strConn);
             SqlCommand cmd = db.GetSqlCommand();
             cmd.CommandText = $"SELECT b_isbookmark FROM bookmark " +
-                              $"WHERE movieuid = '{muid}' and u_id = '{uuid}'";
+                              $"WHERE movieuid = '{muid}' and u_uid = '{uuid}'";
             object result = cmd.ExecuteScalar();
 
             if (result == null || result == "")
