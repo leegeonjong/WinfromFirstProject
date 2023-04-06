@@ -28,44 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label5 = new System.Windows.Forms.Label();
-            this.tab1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btn_Cancel = new System.Windows.Forms.Button();
-            this.btn_update = new System.Windows.Forms.Button();
-            this.pnBox = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lvBox = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.nnBox = new System.Windows.Forms.TextBox();
-            this.nameBox = new System.Windows.Forms.TextBox();
-            this.pwBox = new System.Windows.Forms.TextBox();
-            this.idBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btn_reviewclose = new System.Windows.Forms.Button();
-            this.btn_reviewUpdate = new System.Windows.Forms.Button();
-            this.myReviewView = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tab1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.myReviewView)).BeginInit();
-            this.SuspendLayout();
+            label5 = new Label();
+            tab1 = new TabControl();
+            tabPage1 = new TabPage();
+            btn_Cancel = new Button();
+            btn_update = new Button();
+            pnBox = new TextBox();
+            label8 = new Label();
+            lvBox = new TextBox();
+            label7 = new Label();
+            nnBox = new TextBox();
+            nameBox = new TextBox();
+            pwBox = new TextBox();
+            idBox = new TextBox();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            tabPage2 = new TabPage();
+            btn_reviewclose = new Button();
+            btn_reviewUpdate = new Button();
+            myReviewView = new DataGridView();
+            label6 = new Label();
+            tabPage3 = new TabPage();
+            tab1.SuspendLayout();
+            tabPage1.SuspendLayout();
+            tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)myReviewView).BeginInit();
+            SuspendLayout();
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(414, 28);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 20);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "마이페이지";
+            label5.AutoSize = true;
+            label5.Location = new Point(322, 21);
+            label5.Name = "label5";
+            label5.Size = new Size(67, 15);
+            label5.TabIndex = 4;
+            label5.Text = "마이페이지";
             // 
             // tab1
             // 
@@ -294,33 +293,50 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(969, 515);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "즐겨찾기";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            tabPage3.Location = new Point(4, 24);
+            tabPage3.Name = "tabPage3";
+            tabPage3.Size = new Size(752, 383);
+            tabPage3.TabIndex = 2;
+            tabPage3.Text = "즐겨찾기";
+            tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // myBookmarkView
+            // 
+            myBookmarkView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            myBookmarkView.Dock = DockStyle.Bottom;
+            myBookmarkView.Location = new Point(0, 69);
+            myBookmarkView.Name = "myBookmarkView";
+            myBookmarkView.RowTemplate.Height = 25;
+            myBookmarkView.Size = new Size(752, 314);
+            myBookmarkView.TabIndex = 1;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(318, 23);
+            label9.Name = "label9";
+            label9.Size = new Size(127, 15);
+            label9.TabIndex = 0;
+            label9.Text = "내가 즐겨찾기 한 목록";
             // 
             // MyPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(977, 600);
-            this.Controls.Add(this.tab1);
-            this.Controls.Add(this.label5);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "MyPage";
-            this.Text = "MyPage";
-            this.tab1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.myReviewView)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(760, 450);
+            Controls.Add(tab1);
+            Controls.Add(label5);
+            Name = "MyPage";
+            Text = "MyPage";
+            Load += MyPage_Load;
+            tab1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
+            tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)myReviewView).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -347,5 +363,7 @@
         private Button btn_reviewclose;
         private Button btn_reviewUpdate;
         public DataGridView myReviewView;
+        private Label label9;
+        private DataGridView myBookmarkView;
     }
 }

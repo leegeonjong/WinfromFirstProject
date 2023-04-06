@@ -21,7 +21,7 @@ namespace TeamProject
         Main main;
         public string UserId;
         public int UserUid { get; set; }
-      
+
 
 
         public MyPage(Admin_Page form, Main main)
@@ -32,12 +32,13 @@ namespace TeamProject
             this.main = main;
             UserId = main.userid;
             UserUid = main.useruid;
-           
+
         }
 
         private void MyPage_Load(object sender, EventArgs e)
         {
-            DataViewLoad();
+            ReviewView();
+            BookmarkView();
 
             certification cert = new certification(strConn);
             SqlCommand cmd = cert.GetSqlCommand();
@@ -170,7 +171,7 @@ namespace TeamProject
         }
 
 
-        private void DataViewLoad()
+        private void ReviewView()
         {
 
             certification cert = new certification(strConn);
@@ -178,8 +179,6 @@ namespace TeamProject
 
             Check check = new Check();
             UserUid = check.FindUid(UserId);
-          
-
 
 
             cmd.CommandText = $"SELECT u.u_nickname, m.title, r.r_rate, r.r_content, r.r_date " +
@@ -217,6 +216,35 @@ namespace TeamProject
             dataTable.Load(reader);
 
             myReviewView.DataSource = dataTable;
+
+            // 리소스 정리
+            reader.Close();
+            cmd.Dispose();
+
+        }
+
+        private void BookmarkView()
+        {
+
+            certification cert = new certification(strConn);
+            SqlCommand cmd = cert.GetSqlCommand();
+
+            Check check = new Check();
+            UserUid = check.FindUid(UserId);
+
+
+            cmd.CommandText = $"SELECT M.title, B_isbookmark " +
+                                $"FROM Bookmark b " +
+                                $"INNER JOIN project_user u ON b.u_uid = u.u_uid " +
+                                $"INNER JOIN MovieList M ON b.MovieUID = m.MovieUID " +
+                                $"WHERE u.u_uid = {UserUid}";
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+
+            myBookmarkView.DataSource = dataTable;
 
             // 리소스 정리
             reader.Close();

@@ -187,6 +187,18 @@ namespace TeamProject
                 string movieTitle = titleLabel.Text;
                 movieuid = check1.FindMvUid(movieTitle.Trim().Substring(movieTitle.IndexOf(']') + 1));
                 Movie_Detail MDT = new(this);
+
+                // 영화 제목과 포스터 URL 가져오기
+                string title = titleLabel.Text;
+                int titleIndex = title.IndexOf(']');
+                string posterUrl = "";
+                if (titleIndex >= 0)
+                {
+                    title = title.Substring(titleIndex + 1).Trim();
+                    posterUrl = ((PictureBox)titleLabel.Parent.Controls[0]).ImageLocation;
+                }
+
+                MDT.SetMovieDetails(title, posterUrl); // Movie_Detail form에 영화 제목과 포스터 URL 전달
                 MDT.Show();
             }
         }
