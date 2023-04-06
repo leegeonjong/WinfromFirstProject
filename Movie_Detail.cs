@@ -184,6 +184,10 @@ namespace TeamProject
                 reviewBox.Text = "재밌어요";
             }
 
+            if (NickNameBox.Text.IsNullOrEmpty())
+            {
+                MessageBox.Show("로그인후 별점과 comment를 남겨주세요");
+            }
 
             if (check.countreview(MovieUid, UseruId) > 0)
             {
