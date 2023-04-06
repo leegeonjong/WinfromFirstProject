@@ -137,7 +137,7 @@ namespace TeamProject
         }
         private void DataViewLoad()
         {
-
+            ReviewView.AllowUserToAddRows = false;
 
             certification cert = new certification(strConn);
             SqlCommand cmd = cert.GetSqlCommand();
@@ -158,6 +158,16 @@ namespace TeamProject
             dataTable.Load(reader);
 
             ReviewView.DataSource = dataTable;
+
+            ReviewView.Columns["u_nickname"].HeaderText = "닉네임";
+            ReviewView.Columns["r_rate"].HeaderText = "평점";
+            ReviewView.Columns["r_content"].HeaderText = "리뷰";
+            ReviewView.Columns["r_date"].HeaderText = "리뷰를 남긴 날짜";
+
+            foreach (DataGridViewColumn column in ReviewView.Columns)
+            {
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
 
             // 리소스 정리
             reader.Close();
