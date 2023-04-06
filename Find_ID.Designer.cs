@@ -44,24 +44,26 @@
             // NameBox
             // 
             NameBox.BorderStyle = BorderStyle.None;
-            NameBox.Location = new Point(167, 98);
+            NameBox.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            NameBox.Location = new Point(167, 105);
             NameBox.Name = "NameBox";
-            NameBox.Size = new Size(127, 16);
+            NameBox.Size = new Size(127, 18);
             NameBox.TabIndex = 1;
             // 
             // PhonenumBox
             // 
             PhonenumBox.BorderStyle = BorderStyle.None;
-            PhonenumBox.Location = new Point(167, 163);
+            PhonenumBox.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            PhonenumBox.Location = new Point(167, 170);
             PhonenumBox.Name = "PhonenumBox";
-            PhonenumBox.Size = new Size(127, 16);
+            PhonenumBox.Size = new Size(127, 18);
             PhonenumBox.TabIndex = 2;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(72, 111);
+            label2.Location = new Point(85, 111);
             label2.Name = "label2";
             label2.Size = new Size(34, 17);
             label2.TabIndex = 3;
@@ -71,7 +73,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(53, 176);
+            label3.Location = new Point(72, 176);
             label3.Name = "label3";
             label3.Size = new Size(78, 17);
             label3.TabIndex = 4;
@@ -79,24 +81,32 @@
             // 
             // btn_Result
             // 
+            btn_Result.BackColor = Color.FromArgb(108, 160, 220);
+            btn_Result.FlatAppearance.BorderColor = Color.FromArgb(108, 160, 220);
             btn_Result.FlatStyle = FlatStyle.Flat;
-            btn_Result.Location = new Point(132, 274);
+            btn_Result.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Result.ForeColor = Color.White;
+            btn_Result.Location = new Point(151, 274);
             btn_Result.Name = "btn_Result";
-            btn_Result.Size = new Size(75, 23);
+            btn_Result.Size = new Size(73, 25);
             btn_Result.TabIndex = 5;
             btn_Result.Text = "조회하기";
-            btn_Result.UseVisualStyleBackColor = true;
+            btn_Result.UseVisualStyleBackColor = false;
             btn_Result.Click += btn_Result_Click;
             // 
             // btn_Cancel
             // 
+            btn_Cancel.BackColor = Color.FromArgb(108, 160, 220);
+            btn_Cancel.FlatAppearance.BorderColor = Color.FromArgb(108, 160, 220);
             btn_Cancel.FlatStyle = FlatStyle.Flat;
+            btn_Cancel.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Cancel.ForeColor = Color.White;
             btn_Cancel.Location = new Point(241, 274);
             btn_Cancel.Name = "btn_Cancel";
-            btn_Cancel.Size = new Size(75, 23);
+            btn_Cancel.Size = new Size(55, 25);
             btn_Cancel.TabIndex = 6;
             btn_Cancel.Text = "취소";
-            btn_Cancel.UseVisualStyleBackColor = true;
+            btn_Cancel.UseVisualStyleBackColor = false;
             btn_Cancel.Click += btn_Cancel_Click;
             // 
             // panel9

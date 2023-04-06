@@ -236,10 +236,11 @@
             // pnBox
             // 
             pnBox.BorderStyle = BorderStyle.None;
+            pnBox.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             pnBox.Location = new Point(306, 266);
             pnBox.Margin = new Padding(4);
             pnBox.Name = "pnBox";
-            pnBox.Size = new Size(127, 16);
+            pnBox.Size = new Size(127, 18);
             pnBox.TabIndex = 15;
             // 
             // label8
@@ -257,11 +258,12 @@
             // 
             lvBox.BackColor = Color.White;
             lvBox.BorderStyle = BorderStyle.None;
+            lvBox.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             lvBox.Location = new Point(306, 380);
             lvBox.Margin = new Padding(4);
             lvBox.Name = "lvBox";
             lvBox.ReadOnly = true;
-            lvBox.Size = new Size(127, 16);
+            lvBox.Size = new Size(127, 18);
             lvBox.TabIndex = 13;
             // 
             // label7
@@ -278,37 +280,41 @@
             // nnBox
             // 
             nnBox.BorderStyle = BorderStyle.None;
+            nnBox.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             nnBox.Location = new Point(306, 323);
             nnBox.Margin = new Padding(4);
             nnBox.Name = "nnBox";
-            nnBox.Size = new Size(127, 16);
+            nnBox.Size = new Size(127, 18);
             nnBox.TabIndex = 11;
             // 
             // nameBox
             // 
             nameBox.BorderStyle = BorderStyle.None;
+            nameBox.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             nameBox.Location = new Point(306, 208);
             nameBox.Margin = new Padding(4);
             nameBox.Name = "nameBox";
-            nameBox.Size = new Size(127, 16);
+            nameBox.Size = new Size(127, 18);
             nameBox.TabIndex = 10;
             // 
             // pwBox
             // 
             pwBox.BorderStyle = BorderStyle.None;
+            pwBox.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             pwBox.Location = new Point(306, 151);
             pwBox.Margin = new Padding(4);
             pwBox.Name = "pwBox";
-            pwBox.Size = new Size(127, 16);
+            pwBox.Size = new Size(127, 18);
             pwBox.TabIndex = 9;
             // 
             // idBox
             // 
             idBox.BorderStyle = BorderStyle.None;
+            idBox.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             idBox.Location = new Point(306, 98);
             idBox.Margin = new Padding(4);
             idBox.Name = "idBox";
-            idBox.Size = new Size(127, 16);
+            idBox.Size = new Size(127, 18);
             idBox.TabIndex = 8;
             // 
             // label4
