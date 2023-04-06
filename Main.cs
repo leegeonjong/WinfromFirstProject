@@ -179,7 +179,7 @@ namespace TeamProject
             fLPMain.Controls.Add(panel);
 
         }
-        private void TitleLabel_DoubleClick(object sender, EventArgs e)
+        private void TitleLabel_DoubleClick(object sender, EventArgs e)//
         {
             Check check1 = new();
             if (sender is Label titleLabel)
@@ -244,11 +244,13 @@ namespace TeamProject
             string orderByColumn = "Title ASC"; //기본정렬값
             orderByColumn = CB_Category.SelectedIndex switch
             {
-                0 => "Sales",           //매출액 순서
+                0 => "Sales DESC",           //매출액 순서
                 1 => "Title ASC",       //오름차순
                 2 => "Title DESC",      //내림차순
                 3 => "ReleaseDate DESC",//최신 작품순
                 4 => "ReleaseDate ASC", //예전 작품순
+                5 => "RateAvg DESC",
+                6 => "RateAvg ASC",
             };
             DateTime startDate = dTPStart.Value;
             DateTime endDate = dTPEnd.Value;
@@ -361,5 +363,7 @@ namespace TeamProject
             mypage.Show();
 
         }
+
+    
     }
 }
