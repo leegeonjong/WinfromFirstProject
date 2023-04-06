@@ -86,10 +86,30 @@ namespace TeamProject
                 string[] imageUrls = imageData.Split('|');
                 string url = imageUrls[0];
 
-                return url; // 여기서 URL을 반환합니다.
+                // 이미지 URL이 유효한지 확인
+                if (IsValidImageUrl(url))
+                {
+                    return url; // 여기서 URL을 반환합니다.
+                }
             }
 
-            return null;
+            return "이미지 없음";
+        }
+        private bool IsValidImageUrl(string url)
+        {
+            try
+            {
+                var request = WebRequest.Create(url) as HttpWebRequest;
+                request.Method = "HEAD";
+                using (var response = request.GetResponse() as HttpWebResponse)
+                {
+                    return response.StatusCode == HttpStatusCode.OK;
+                }
+            }
+            catch
+            {
+                return false;
+            }
         }
         public async Task<string> RequestKMDbAPIAsync(string query)
         {
@@ -110,23 +130,38 @@ namespace TeamProject
 
             return null;
         }
-        private void AddMovieItem(string title, string posterUrl)
+        private void AddMovieItem(string title, string imageUrlOrText)
         {
-
             var panel = new Panel
             {
                 Size = new Size(120, 200),
                 Margin = new Padding(5)
             };
 
-            var pictureBox = new PictureBox
+            if (imageUrlOrText == "이미지 없음")
             {
-                Size = new Size(120, 180),
-                Location = new Point(0, 0),
-                ImageLocation = posterUrl,
-                SizeMode = PictureBoxSizeMode.StretchImage
-            };
-            panel.Controls.Add(pictureBox);
+                var noImageLabel = new Label
+                {
+                    Text = "이미지 없음",
+                    Location = new Point(0, 0),
+                    Size = new Size(120, 180),
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Font = new Font("Arial", 10, FontStyle.Bold)
+                };
+                panel.Controls.Add(noImageLabel);
+            }
+            else
+            {
+                var pictureBox = new PictureBox
+                {
+                    Size = new Size(120, 180),
+                    Location = new Point(0, 0),
+                    ImageLocation = imageUrlOrText,
+                    SizeMode = PictureBoxSizeMode.StretchImage
+                };
+                panel.Controls.Add(pictureBox);
+            }
+
             rank++;
             var titleLabel = new Label
             {
@@ -152,6 +187,18 @@ namespace TeamProject
                 string movieTitle = titleLabel.Text;
                 movieuid = check1.FindMvUid(movieTitle.Trim().Substring(movieTitle.IndexOf(']') + 1));
                 Movie_Detail MDT = new(this);
+
+                // 영화 제목과 포스터 URL 가져오기
+                string title = titleLabel.Text;
+                int titleIndex = title.IndexOf(']');
+                string posterUrl = "";
+                if (titleIndex >= 0)
+                {
+                    title = title.Substring(titleIndex + 1).Trim();
+                    posterUrl = ((PictureBox)titleLabel.Parent.Controls[0]).ImageLocation;
+                }
+
+                MDT.SetMovieDetails(title, posterUrl); // Movie_Detail form에 영화 제목과 포스터 URL 전달
                 MDT.Show();
             }
         }
