@@ -217,7 +217,7 @@ namespace TeamProject
 
         }
 
-  
+
         private void BookmarkView()
         {
             myBookmarkView.AllowUserToAddRows = false;
@@ -276,12 +276,12 @@ namespace TeamProject
 
         private void btn_bmdelete_Click(object sender, EventArgs e)
         {
-           
+
             Check check = new Check();
             string movietitle = myBookmarkView.SelectedCells[0].Value.ToString();
             UserUid = check.FindUid(UserId);
             MovieUid = check.FindMvUid(movietitle);
-                 
+
             try
             {
                 foreach (DataGridViewCell cell in myBookmarkView.SelectedCells)
@@ -318,7 +318,7 @@ namespace TeamProject
                         cnt += result;
                     }
                 }
-               
+
             }
             catch (Exception ex)
             {

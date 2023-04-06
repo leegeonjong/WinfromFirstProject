@@ -28,303 +28,310 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbl3 = new System.Windows.Forms.Label();
-            this.lbl1 = new System.Windows.Forms.Label();
-            this.labeltitle = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.ratebox = new System.Windows.Forms.ComboBox();
-            this.ReviewView = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.NickNameBox = new System.Windows.Forms.TextBox();
-            this.reviewBox = new System.Windows.Forms.TextBox();
-            this.book = new System.Windows.Forms.PictureBox();
-            this.lbl2 = new System.Windows.Forms.Label();
-            this.lbl4 = new System.Windows.Forms.Label();
-            this.lbl5 = new System.Windows.Forms.Label();
-            this.lbl7 = new System.Windows.Forms.Label();
-            this.lbl6 = new System.Windows.Forms.Label();
-            this.txtplot = new System.Windows.Forms.TextBox();
-            this.lblRuntime = new System.Windows.Forms.Label();
-            this.lblDirector = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.lblScore = new System.Windows.Forms.Label();
-            this.lblGenre = new System.Windows.Forms.Label();
-            this.txtlActor = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ReviewView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.book)).BeginInit();
-            this.SuspendLayout();
+            pictureBox1 = new PictureBox();
+            lbl3 = new Label();
+            lbl1 = new Label();
+            labeltitle = new Label();
+            panel1 = new Panel();
+            ratebox = new ComboBox();
+            ReviewView = new DataGridView();
+            button1 = new Button();
+            NickNameBox = new TextBox();
+            reviewBox = new TextBox();
+            book = new PictureBox();
+            lbl2 = new Label();
+            lbl4 = new Label();
+            lbl5 = new Label();
+            lbl7 = new Label();
+            lbl6 = new Label();
+            txtplot = new TextBox();
+            lblRuntime = new Label();
+            lblDirector = new Label();
+            lblDate = new Label();
+            lblScore = new Label();
+            lblGenre = new Label();
+            txtlActor = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ReviewView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)book).BeginInit();
+            SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 107);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(348, 388);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Location = new Point(9, 80);
+            pictureBox1.Margin = new Padding(2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(271, 291);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // lbl3
             // 
-            this.lbl3.AutoSize = true;
-            this.lbl3.Location = new System.Drawing.Point(365, 148);
-            this.lbl3.Name = "lbl3";
-            this.lbl3.Size = new System.Drawing.Size(87, 20);
-            this.lbl3.TabIndex = 1;
-            this.lbl3.Text = "개봉 일자 : ";
+            lbl3.AutoSize = true;
+            lbl3.Location = new Point(284, 111);
+            lbl3.Margin = new Padding(2, 0, 2, 0);
+            lbl3.Name = "lbl3";
+            lbl3.Size = new Size(70, 15);
+            lbl3.TabIndex = 1;
+            lbl3.Text = "개봉 일자 : ";
             // 
             // lbl1
             // 
-            this.lbl1.AutoSize = true;
-            this.lbl1.Location = new System.Drawing.Point(365, 108);
-            this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(47, 20);
-            this.lbl1.TabIndex = 2;
-            this.lbl1.Text = "장르: ";
+            lbl1.AutoSize = true;
+            lbl1.Location = new Point(284, 81);
+            lbl1.Margin = new Padding(2, 0, 2, 0);
+            lbl1.Name = "lbl1";
+            lbl1.Size = new Size(38, 15);
+            lbl1.TabIndex = 2;
+            lbl1.Text = "장르: ";
             // 
             // labeltitle
             // 
-            this.labeltitle.AutoSize = true;
-            this.labeltitle.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labeltitle.Location = new System.Drawing.Point(104, 46);
-            this.labeltitle.Name = "labeltitle";
-            this.labeltitle.Size = new System.Drawing.Size(78, 41);
-            this.labeltitle.TabIndex = 3;
-            this.labeltitle.Text = "제목";
+            labeltitle.AutoSize = true;
+            labeltitle.Font = new Font("맑은 고딕", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            labeltitle.Location = new Point(81, 34);
+            labeltitle.Margin = new Padding(2, 0, 2, 0);
+            labeltitle.Name = "labeltitle";
+            labeltitle.Size = new Size(62, 32);
+            labeltitle.TabIndex = 3;
+            labeltitle.Text = "제목";
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.ratebox);
-            this.panel1.Controls.Add(this.ReviewView);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.NickNameBox);
-            this.panel1.Controls.Add(this.reviewBox);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 520);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(854, 460);
-            this.panel1.TabIndex = 4;
+            panel1.Controls.Add(ratebox);
+            panel1.Controls.Add(ReviewView);
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(NickNameBox);
+            panel1.Controls.Add(reviewBox);
+            panel1.Dock = DockStyle.Bottom;
+            panel1.Location = new Point(0, 390);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(664, 345);
+            panel1.TabIndex = 4;
             // 
             // ratebox
             // 
-            this.ratebox.FormattingEnabled = true;
-            this.ratebox.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10"});
-            this.ratebox.Location = new System.Drawing.Point(12, 52);
-            this.ratebox.Name = "ratebox";
-            this.ratebox.Size = new System.Drawing.Size(58, 28);
-            this.ratebox.TabIndex = 4;
-            this.ratebox.Text = "별점";
+            ratebox.FormattingEnabled = true;
+            ratebox.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" });
+            ratebox.Location = new Point(123, 17);
+            ratebox.Margin = new Padding(2);
+            ratebox.Name = "ratebox";
+            ratebox.Size = new Size(46, 23);
+            ratebox.TabIndex = 4;
+            ratebox.Text = "별점";
             // 
             // ReviewView
             // 
-            this.ReviewView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ReviewView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ReviewView.Location = new System.Drawing.Point(0, 124);
-            this.ReviewView.Name = "ReviewView";
-            this.ReviewView.RowHeadersWidth = 51;
-            this.ReviewView.RowTemplate.Height = 29;
-            this.ReviewView.Size = new System.Drawing.Size(854, 336);
-            this.ReviewView.TabIndex = 3;
+            ReviewView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            ReviewView.Dock = DockStyle.Bottom;
+            ReviewView.Location = new Point(0, 93);
+            ReviewView.Margin = new Padding(2);
+            ReviewView.Name = "ReviewView";
+            ReviewView.RowHeadersWidth = 51;
+            ReviewView.RowTemplate.Height = 29;
+            ReviewView.Size = new Size(664, 252);
+            ReviewView.TabIndex = 3;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(720, 48);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 31);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "등록";
-            this.button1.UseVisualStyleBackColor = true;
+            button1.Location = new Point(473, 17);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 2;
+            button1.Text = "등록";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
             // 
             // NickNameBox
             // 
-            this.NickNameBox.Location = new System.Drawing.Point(78, 52);
-            this.NickNameBox.Margin = new System.Windows.Forms.Padding(5);
-            this.NickNameBox.Name = "NickNameBox";
-            this.NickNameBox.ReadOnly = true;
-            this.NickNameBox.Size = new System.Drawing.Size(133, 27);
-            this.NickNameBox.TabIndex = 1;
+            NickNameBox.Location = new Point(13, 17);
+            NickNameBox.Margin = new Padding(4);
+            NickNameBox.Name = "NickNameBox";
+            NickNameBox.ReadOnly = true;
+            NickNameBox.Size = new Size(104, 23);
+            NickNameBox.TabIndex = 1;
             // 
             // reviewBox
             // 
-            this.reviewBox.Location = new System.Drawing.Point(221, 52);
-            this.reviewBox.Margin = new System.Windows.Forms.Padding(4);
-            this.reviewBox.Name = "reviewBox";
-            this.reviewBox.Size = new System.Drawing.Size(400, 27);
-            this.reviewBox.TabIndex = 0;
-            this.reviewBox.Text = "comment";
+            reviewBox.Location = new Point(186, 17);
+            reviewBox.Multiline = true;
+            reviewBox.Name = "reviewBox";
+            reviewBox.Size = new Size(261, 59);
+            reviewBox.TabIndex = 0;
+            reviewBox.Text = "comment";
             // 
             // book
             // 
-            this.book.Image = global::TeamProject.Properties.Resources.bookmarkoff;
-            this.book.Location = new System.Drawing.Point(0, 38);
-            this.book.Name = "book";
-            this.book.Size = new System.Drawing.Size(75, 62);
-            this.book.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.book.TabIndex = 5;
-            this.book.TabStop = false;
+            book.Image = Properties.Resources.bookmarkoff;
+            book.Location = new Point(0, 28);
+            book.Margin = new Padding(2);
+            book.Name = "book";
+            book.Size = new Size(58, 46);
+            book.SizeMode = PictureBoxSizeMode.Zoom;
+            book.TabIndex = 5;
+            book.TabStop = false;
+            book.Click += book_Click;
             // 
             // lbl2
             // 
-            this.lbl2.AutoSize = true;
-            this.lbl2.Location = new System.Drawing.Point(366, 128);
-            this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(47, 20);
-            this.lbl2.TabIndex = 6;
-            this.lbl2.Text = "평점: ";
+            lbl2.AutoSize = true;
+            lbl2.Location = new Point(285, 96);
+            lbl2.Margin = new Padding(2, 0, 2, 0);
+            lbl2.Name = "lbl2";
+            lbl2.Size = new Size(38, 15);
+            lbl2.TabIndex = 6;
+            lbl2.Text = "평점: ";
             // 
             // lbl4
             // 
-            this.lbl4.AutoSize = true;
-            this.lbl4.Location = new System.Drawing.Point(365, 168);
-            this.lbl4.Name = "lbl4";
-            this.lbl4.Size = new System.Drawing.Size(87, 20);
-            this.lbl4.TabIndex = 7;
-            this.lbl4.Text = "영화 감독 : ";
+            lbl4.AutoSize = true;
+            lbl4.Location = new Point(284, 126);
+            lbl4.Margin = new Padding(2, 0, 2, 0);
+            lbl4.Name = "lbl4";
+            lbl4.Size = new Size(70, 15);
+            lbl4.TabIndex = 7;
+            lbl4.Text = "영화 감독 : ";
             // 
             // lbl5
             // 
-            this.lbl5.AutoSize = true;
-            this.lbl5.Location = new System.Drawing.Point(366, 188);
-            this.lbl5.Name = "lbl5";
-            this.lbl5.Size = new System.Drawing.Size(87, 20);
-            this.lbl5.TabIndex = 8;
-            this.lbl5.Text = "출연 배우 : ";
+            lbl5.AutoSize = true;
+            lbl5.Location = new Point(285, 141);
+            lbl5.Margin = new Padding(2, 0, 2, 0);
+            lbl5.Name = "lbl5";
+            lbl5.Size = new Size(70, 15);
+            lbl5.TabIndex = 8;
+            lbl5.Text = "출연 배우 : ";
             // 
             // lbl7
             // 
-            this.lbl7.AutoSize = true;
-            this.lbl7.Location = new System.Drawing.Point(366, 250);
-            this.lbl7.Name = "lbl7";
-            this.lbl7.Size = new System.Drawing.Size(67, 20);
-            this.lbl7.TabIndex = 9;
-            this.lbl7.Text = "줄거리 : ";
+            lbl7.AutoSize = true;
+            lbl7.Location = new Point(285, 188);
+            lbl7.Margin = new Padding(2, 0, 2, 0);
+            lbl7.Name = "lbl7";
+            lbl7.Size = new Size(54, 15);
+            lbl7.TabIndex = 9;
+            lbl7.Text = "줄거리 : ";
             // 
             // lbl6
             // 
-            this.lbl6.AutoSize = true;
-            this.lbl6.Location = new System.Drawing.Point(365, 88);
-            this.lbl6.Name = "lbl6";
-            this.lbl6.Size = new System.Drawing.Size(87, 20);
-            this.lbl6.TabIndex = 10;
-            this.lbl6.Text = "러닝 타임 : ";
+            lbl6.AutoSize = true;
+            lbl6.Location = new Point(284, 66);
+            lbl6.Margin = new Padding(2, 0, 2, 0);
+            lbl6.Name = "lbl6";
+            lbl6.Size = new Size(70, 15);
+            lbl6.TabIndex = 10;
+            lbl6.Text = "러닝 타임 : ";
             // 
             // txtplot
             // 
-            this.txtplot.Location = new System.Drawing.Point(380, 305);
-            this.txtplot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtplot.Multiline = true;
-            this.txtplot.Name = "txtplot";
-            this.txtplot.ReadOnly = true;
-            this.txtplot.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtplot.Size = new System.Drawing.Size(452, 190);
-            this.txtplot.TabIndex = 11;
+            txtplot.Location = new Point(296, 229);
+            txtplot.Margin = new Padding(2);
+            txtplot.Multiline = true;
+            txtplot.Name = "txtplot";
+            txtplot.ReadOnly = true;
+            txtplot.ScrollBars = ScrollBars.Both;
+            txtplot.Size = new Size(352, 144);
+            txtplot.TabIndex = 11;
             // 
             // lblRuntime
             // 
-            this.lblRuntime.AutoSize = true;
-            this.lblRuntime.Location = new System.Drawing.Point(467, 88);
-            this.lblRuntime.Name = "lblRuntime";
-            this.lblRuntime.Size = new System.Drawing.Size(54, 20);
-            this.lblRuntime.TabIndex = 12;
-            this.lblRuntime.Text = "준비중";
+            lblRuntime.AutoSize = true;
+            lblRuntime.Location = new Point(363, 66);
+            lblRuntime.Margin = new Padding(2, 0, 2, 0);
+            lblRuntime.Name = "lblRuntime";
+            lblRuntime.Size = new Size(43, 15);
+            lblRuntime.TabIndex = 12;
+            lblRuntime.Text = "준비중";
             // 
             // lblDirector
             // 
-            this.lblDirector.AutoSize = true;
-            this.lblDirector.Location = new System.Drawing.Point(467, 168);
-            this.lblDirector.Name = "lblDirector";
-            this.lblDirector.Size = new System.Drawing.Size(54, 20);
-            this.lblDirector.TabIndex = 14;
-            this.lblDirector.Text = "준비중";
+            lblDirector.AutoSize = true;
+            lblDirector.Location = new Point(363, 126);
+            lblDirector.Margin = new Padding(2, 0, 2, 0);
+            lblDirector.Name = "lblDirector";
+            lblDirector.Size = new Size(43, 15);
+            lblDirector.TabIndex = 14;
+            lblDirector.Text = "준비중";
             // 
             // lblDate
             // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(467, 148);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(54, 20);
-            this.lblDate.TabIndex = 15;
-            this.lblDate.Text = "준비중";
+            lblDate.AutoSize = true;
+            lblDate.Location = new Point(363, 111);
+            lblDate.Margin = new Padding(2, 0, 2, 0);
+            lblDate.Name = "lblDate";
+            lblDate.Size = new Size(43, 15);
+            lblDate.TabIndex = 15;
+            lblDate.Text = "준비중";
             // 
             // lblScore
             // 
-            this.lblScore.AutoSize = true;
-            this.lblScore.Location = new System.Drawing.Point(467, 128);
-            this.lblScore.Name = "lblScore";
-            this.lblScore.Size = new System.Drawing.Size(54, 20);
-            this.lblScore.TabIndex = 16;
-            this.lblScore.Text = "준비중";
+            lblScore.AutoSize = true;
+            lblScore.Location = new Point(363, 96);
+            lblScore.Margin = new Padding(2, 0, 2, 0);
+            lblScore.Name = "lblScore";
+            lblScore.Size = new Size(43, 15);
+            lblScore.TabIndex = 16;
+            lblScore.Text = "준비중";
             // 
             // lblGenre
             // 
-            this.lblGenre.AutoSize = true;
-            this.lblGenre.Location = new System.Drawing.Point(467, 108);
-            this.lblGenre.Name = "lblGenre";
-            this.lblGenre.Size = new System.Drawing.Size(54, 20);
-            this.lblGenre.TabIndex = 17;
-            this.lblGenre.Text = "준비중";
+            lblGenre.AutoSize = true;
+            lblGenre.Location = new Point(363, 81);
+            lblGenre.Margin = new Padding(2, 0, 2, 0);
+            lblGenre.Name = "lblGenre";
+            lblGenre.Size = new Size(43, 15);
+            lblGenre.TabIndex = 17;
+            lblGenre.Text = "준비중";
             // 
             // txtlActor
             // 
-            this.txtlActor.Location = new System.Drawing.Point(466, 190);
-            this.txtlActor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtlActor.Multiline = true;
-            this.txtlActor.Name = "txtlActor";
-            this.txtlActor.ReadOnly = true;
-            this.txtlActor.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtlActor.Size = new System.Drawing.Size(376, 81);
-            this.txtlActor.TabIndex = 18;
+            txtlActor.Location = new Point(362, 142);
+            txtlActor.Margin = new Padding(2);
+            txtlActor.Multiline = true;
+            txtlActor.Name = "txtlActor";
+            txtlActor.ReadOnly = true;
+            txtlActor.ScrollBars = ScrollBars.Both;
+            txtlActor.Size = new Size(293, 62);
+            txtlActor.TabIndex = 18;
             // 
             // Movie_Detail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 980);
-            this.Controls.Add(this.txtlActor);
-            this.Controls.Add(this.lblGenre);
-            this.Controls.Add(this.lblScore);
-            this.Controls.Add(this.lblDate);
-            this.Controls.Add(this.lblDirector);
-            this.Controls.Add(this.lblRuntime);
-            this.Controls.Add(this.txtplot);
-            this.Controls.Add(this.lbl6);
-            this.Controls.Add(this.lbl7);
-            this.Controls.Add(this.lbl5);
-            this.Controls.Add(this.lbl4);
-            this.Controls.Add(this.lbl2);
-            this.Controls.Add(this.book);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.labeltitle);
-            this.Controls.Add(this.lbl1);
-            this.Controls.Add(this.lbl3);
-            this.Controls.Add(this.pictureBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Movie_Detail";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Movie_Detail";
-            this.Load += new System.EventHandler(this.Movie_Detail_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ReviewView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.book)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(664, 735);
+            Controls.Add(txtlActor);
+            Controls.Add(lblGenre);
+            Controls.Add(lblScore);
+            Controls.Add(lblDate);
+            Controls.Add(lblDirector);
+            Controls.Add(lblRuntime);
+            Controls.Add(txtplot);
+            Controls.Add(lbl6);
+            Controls.Add(lbl7);
+            Controls.Add(lbl5);
+            Controls.Add(lbl4);
+            Controls.Add(lbl2);
+            Controls.Add(book);
+            Controls.Add(panel1);
+            Controls.Add(labeltitle);
+            Controls.Add(lbl1);
+            Controls.Add(lbl3);
+            Controls.Add(pictureBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(2);
+            Name = "Movie_Detail";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Movie_Detail";
+            Load += Movie_Detail_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ReviewView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)book).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
