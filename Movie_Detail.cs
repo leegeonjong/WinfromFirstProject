@@ -183,7 +183,7 @@ namespace TeamProject
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private async void button1_Click_1(object sender, EventArgs e)
         {
             DateTime d1 = DateTime.Now;
             if (ratebox.Text == "별점")
@@ -218,6 +218,7 @@ namespace TeamProject
                 check.Addcontentt(MovieUid, UseruId, reviewBox.Text, rate, d1);
                 check.UpdateAvgRate(MovieUid);
                 MessageBox.Show("리뷰등록!");
+                await SearchMovie(MovieTitle);
             }
 
             DataViewLoad();
