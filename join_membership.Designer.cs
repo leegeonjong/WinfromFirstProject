@@ -28,196 +28,280 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnJoin = new System.Windows.Forms.Button();
-            this.Quitbtn = new System.Windows.Forms.Button();
-            this.IDBox = new System.Windows.Forms.TextBox();
-            this.PWbox = new System.Windows.Forms.TextBox();
-            this.NameBox = new System.Windows.Forms.TextBox();
-            this.PhnBox = new System.Windows.Forms.TextBox();
-            this.nnBox = new System.Windows.Forms.TextBox();
-            this.checkbtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(284, 40);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "회원가입";
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            btnJoin = new Button();
+            Quitbtn = new Button();
+            IDBox = new TextBox();
+            PWbox = new TextBox();
+            NameBox = new TextBox();
+            PhnBox = new TextBox();
+            nnBox = new TextBox();
+            checkbtn = new Button();
+            button1 = new Button();
+            panel1 = new Panel();
+            label1 = new Label();
+            panel2 = new Panel();
+            panel3 = new Panel();
+            panel4 = new Panel();
+            panel5 = new Panel();
+            panel6 = new Panel();
+            panel1.SuspendLayout();
+            SuspendLayout();
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(161, 137);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(24, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "ID";
+            label2.AutoSize = true;
+            label2.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(51, 140);
+            label2.Name = "label2";
+            label2.Size = new Size(22, 17);
+            label2.TabIndex = 1;
+            label2.Text = "ID";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(161, 197);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "비밀번호";
+            label3.AutoSize = true;
+            label3.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(45, 187);
+            label3.Name = "label3";
+            label3.Size = new Size(60, 17);
+            label3.TabIndex = 2;
+            label3.Text = "비밀번호";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(161, 317);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "전화번호";
+            label4.AutoSize = true;
+            label4.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(45, 281);
+            label4.Name = "label4";
+            label4.Size = new Size(60, 17);
+            label4.TabIndex = 3;
+            label4.Text = "전화번호";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(161, 257);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 20);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "이름";
+            label5.AutoSize = true;
+            label5.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(51, 234);
+            label5.Name = "label5";
+            label5.Size = new Size(34, 17);
+            label5.TabIndex = 4;
+            label5.Text = "이름";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(161, 377);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 20);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "닉네임";
+            label6.AutoSize = true;
+            label6.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(45, 328);
+            label6.Name = "label6";
+            label6.Size = new Size(47, 17);
+            label6.TabIndex = 5;
+            label6.Text = "닉네임";
             // 
             // btnJoin
             // 
-            this.btnJoin.Location = new System.Drawing.Point(172, 436);
-            this.btnJoin.Margin = new System.Windows.Forms.Padding(4);
-            this.btnJoin.Name = "btnJoin";
-            this.btnJoin.Size = new System.Drawing.Size(96, 31);
-            this.btnJoin.TabIndex = 6;
-            this.btnJoin.Text = "가입하기";
-            this.btnJoin.UseVisualStyleBackColor = true;
-            this.btnJoin.Click += new System.EventHandler(this.btnJoin_Click);
+            btnJoin.BackColor = Color.FromArgb(108, 160, 220);
+            btnJoin.FlatStyle = FlatStyle.Flat;
+            btnJoin.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnJoin.ForeColor = Color.White;
+            btnJoin.Location = new Point(86, 411);
+            btnJoin.Name = "btnJoin";
+            btnJoin.Size = new Size(111, 37);
+            btnJoin.TabIndex = 6;
+            btnJoin.Text = "가입하기";
+            btnJoin.UseVisualStyleBackColor = false;
+            btnJoin.Click += btnJoin_Click;
             // 
             // Quitbtn
             // 
-            this.Quitbtn.Location = new System.Drawing.Point(397, 436);
-            this.Quitbtn.Margin = new System.Windows.Forms.Padding(4);
-            this.Quitbtn.Name = "Quitbtn";
-            this.Quitbtn.Size = new System.Drawing.Size(96, 31);
-            this.Quitbtn.TabIndex = 7;
-            this.Quitbtn.Text = "나가기";
-            this.Quitbtn.UseVisualStyleBackColor = true;
-            this.Quitbtn.Click += new System.EventHandler(this.Quitbtn_Click);
+            Quitbtn.BackColor = Color.FromArgb(108, 160, 220);
+            Quitbtn.FlatStyle = FlatStyle.Flat;
+            Quitbtn.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            Quitbtn.ForeColor = Color.White;
+            Quitbtn.Location = new Point(231, 411);
+            Quitbtn.Name = "Quitbtn";
+            Quitbtn.Size = new Size(111, 37);
+            Quitbtn.TabIndex = 7;
+            Quitbtn.Text = "나가기";
+            Quitbtn.UseVisualStyleBackColor = false;
+            Quitbtn.Click += Quitbtn_Click;
             // 
             // IDBox
             // 
-            this.IDBox.Location = new System.Drawing.Point(386, 127);
-            this.IDBox.Margin = new System.Windows.Forms.Padding(4);
-            this.IDBox.Name = "IDBox";
-            this.IDBox.Size = new System.Drawing.Size(127, 27);
-            this.IDBox.TabIndex = 8;
+            IDBox.BackColor = Color.White;
+            IDBox.BorderStyle = BorderStyle.None;
+            IDBox.Location = new Point(136, 124);
+            IDBox.Name = "IDBox";
+            IDBox.Size = new Size(180, 18);
+            IDBox.TabIndex = 8;
             // 
             // PWbox
             // 
-            this.PWbox.Location = new System.Drawing.Point(386, 187);
-            this.PWbox.Margin = new System.Windows.Forms.Padding(4);
-            this.PWbox.Name = "PWbox";
-            this.PWbox.Size = new System.Drawing.Size(127, 27);
-            this.PWbox.TabIndex = 9;
+            PWbox.BackColor = Color.White;
+            PWbox.BorderStyle = BorderStyle.None;
+            PWbox.Location = new Point(140, 171);
+            PWbox.Name = "PWbox";
+            PWbox.Size = new Size(180, 18);
+            PWbox.TabIndex = 9;
             // 
             // NameBox
             // 
-            this.NameBox.Location = new System.Drawing.Point(386, 247);
-            this.NameBox.Margin = new System.Windows.Forms.Padding(4);
-            this.NameBox.Name = "NameBox";
-            this.NameBox.Size = new System.Drawing.Size(127, 27);
-            this.NameBox.TabIndex = 10;
+            NameBox.BackColor = Color.White;
+            NameBox.BorderStyle = BorderStyle.None;
+            NameBox.Location = new Point(140, 218);
+            NameBox.Name = "NameBox";
+            NameBox.Size = new Size(180, 18);
+            NameBox.TabIndex = 10;
             // 
             // PhnBox
             // 
-            this.PhnBox.Location = new System.Drawing.Point(386, 307);
-            this.PhnBox.Margin = new System.Windows.Forms.Padding(4);
-            this.PhnBox.Name = "PhnBox";
-            this.PhnBox.Size = new System.Drawing.Size(127, 27);
-            this.PhnBox.TabIndex = 11;
+            PhnBox.BackColor = Color.White;
+            PhnBox.BorderStyle = BorderStyle.None;
+            PhnBox.Location = new Point(140, 265);
+            PhnBox.Name = "PhnBox";
+            PhnBox.Size = new Size(180, 18);
+            PhnBox.TabIndex = 11;
             // 
             // nnBox
             // 
-            this.nnBox.Location = new System.Drawing.Point(386, 367);
-            this.nnBox.Margin = new System.Windows.Forms.Padding(4);
-            this.nnBox.Name = "nnBox";
-            this.nnBox.Size = new System.Drawing.Size(127, 27);
-            this.nnBox.TabIndex = 12;
+            nnBox.BackColor = Color.White;
+            nnBox.BorderStyle = BorderStyle.None;
+            nnBox.Location = new Point(140, 312);
+            nnBox.Name = "nnBox";
+            nnBox.Size = new Size(180, 18);
+            nnBox.TabIndex = 12;
             // 
             // checkbtn
             // 
-            this.checkbtn.Location = new System.Drawing.Point(520, 125);
-            this.checkbtn.Name = "checkbtn";
-            this.checkbtn.Size = new System.Drawing.Size(94, 29);
-            this.checkbtn.TabIndex = 13;
-            this.checkbtn.Text = "중복검사";
-            this.checkbtn.UseVisualStyleBackColor = true;
-            this.checkbtn.Click += new System.EventHandler(this.checkbtn_Click);
+            checkbtn.BackColor = Color.FromArgb(108, 160, 220);
+            checkbtn.FlatStyle = FlatStyle.Flat;
+            checkbtn.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            checkbtn.ForeColor = Color.White;
+            checkbtn.Location = new Point(349, 124);
+            checkbtn.Margin = new Padding(2);
+            checkbtn.Name = "checkbtn";
+            checkbtn.Size = new Size(83, 33);
+            checkbtn.TabIndex = 13;
+            checkbtn.Text = "중복검사";
+            checkbtn.UseVisualStyleBackColor = false;
+            checkbtn.Click += checkbtn_Click;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(636, 125);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "ID 수정";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.BackColor = Color.FromArgb(108, 160, 220);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(349, 161);
+            button1.Margin = new Padding(2);
+            button1.Name = "button1";
+            button1.Size = new Size(83, 33);
+            button1.TabIndex = 14;
+            button1.Text = "ID 수정";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(108, 160, 220);
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(469, 70);
+            panel1.TabIndex = 15;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(189, 21);
+            label1.Name = "label1";
+            label1.Size = new Size(97, 30);
+            label1.TabIndex = 0;
+            label1.Text = "회원가입";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Black;
+            panel2.Location = new Point(136, 156);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(180, 1);
+            panel2.TabIndex = 16;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Black;
+            panel3.Location = new Point(137, 203);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(180, 1);
+            panel3.TabIndex = 17;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.Black;
+            panel4.Location = new Point(140, 250);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(180, 1);
+            panel4.TabIndex = 18;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.Black;
+            panel5.Location = new Point(140, 297);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(180, 1);
+            panel5.TabIndex = 19;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.Black;
+            panel6.Location = new Point(140, 344);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(180, 1);
+            panel6.TabIndex = 20;
             // 
             // join_membership
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(742, 600);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.checkbtn);
-            this.Controls.Add(this.nnBox);
-            this.Controls.Add(this.PhnBox);
-            this.Controls.Add(this.NameBox);
-            this.Controls.Add(this.PWbox);
-            this.Controls.Add(this.IDBox);
-            this.Controls.Add(this.Quitbtn);
-            this.Controls.Add(this.btnJoin);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "join_membership";
-            this.Text = "Form3";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 17F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(469, 478);
+            Controls.Add(panel6);
+            Controls.Add(panel5);
+            Controls.Add(panel4);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            Controls.Add(button1);
+            Controls.Add(checkbtn);
+            Controls.Add(nnBox);
+            Controls.Add(PhnBox);
+            Controls.Add(NameBox);
+            Controls.Add(PWbox);
+            Controls.Add(IDBox);
+            Controls.Add(Quitbtn);
+            Controls.Add(btnJoin);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            Name = "join_membership";
+            Text = "Form3";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;
@@ -232,5 +316,12 @@
         private TextBox nnBox;
         private Button checkbtn;
         private Button button1;
+        private Panel panel1;
+        private Label label1;
+        private Panel panel2;
+        private Panel panel3;
+        private Panel panel4;
+        private Panel panel5;
+        private Panel panel6;
     }
 }

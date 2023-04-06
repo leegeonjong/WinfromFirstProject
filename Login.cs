@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.DataFormats;
+using System.Runtime.InteropServices;
 
 namespace TeamProject
 {
@@ -18,6 +19,8 @@ namespace TeamProject
 
         string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
         private Main MainForm;
+
+
 
         public LoginForm(Main mainForm)
         {
@@ -85,6 +88,11 @@ namespace TeamProject
         private void btCancle_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 
