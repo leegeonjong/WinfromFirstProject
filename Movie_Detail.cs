@@ -117,7 +117,7 @@ namespace TeamProject
 
                 if (await reader.ReadAsync())
                 {
-                    int rateAvg = reader.GetInt32(0);
+                    double rateAvg = reader.GetDouble(0);
                     lblScore.Text = rateAvg.ToString();
                 }
                 else
