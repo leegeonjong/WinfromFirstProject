@@ -51,14 +51,15 @@
             myReviewView = new DataGridView();
             label6 = new Label();
             tabPage3 = new TabPage();
+            button1 = new Button();
+            myBookmarkView = new DataGridView();
             label10 = new Label();
-            this.myBookmarkView = new DataGridView();
             tab1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)myReviewView).BeginInit();
             tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)this.myBookmarkView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)myBookmarkView).BeginInit();
             SuspendLayout();
             // 
             // label5
@@ -103,7 +104,7 @@
             tabPage1.Margin = new Padding(4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(4);
-            tabPage1.Size = new Size(752, 520);
+            tabPage1.Size = new Size(766, 520);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "회원정보";
             tabPage1.UseVisualStyleBackColor = true;
@@ -261,16 +262,18 @@
             btn_reviewclose.TabIndex = 3;
             btn_reviewclose.Text = "닫기";
             btn_reviewclose.UseVisualStyleBackColor = true;
+            btn_reviewclose.Click += btn_Cancel_Click;
             // 
             // btn_reviewUpdate
             // 
-            btn_reviewUpdate.Location = new Point(473, 27);
+            btn_reviewUpdate.Location = new Point(543, 27);
             btn_reviewUpdate.Margin = new Padding(4);
             btn_reviewUpdate.Name = "btn_reviewUpdate";
             btn_reviewUpdate.Size = new Size(96, 31);
             btn_reviewUpdate.TabIndex = 2;
             btn_reviewUpdate.Text = "수정하기";
             btn_reviewUpdate.UseVisualStyleBackColor = true;
+            btn_reviewUpdate.Click += btn_reviewUpdate_Click;
             // 
             // myReviewView
             // 
@@ -280,7 +283,7 @@
             myReviewView.Location = new Point(4, 80);
             myReviewView.Margin = new Padding(4);
             myReviewView.Name = "myReviewView";
-            myReviewView.RowHeadersWidth = 51;
+            myReviewView.RowHeadersWidth = 5;
             myReviewView.RowTemplate.Height = 25;
             myReviewView.Size = new Size(739, 427);
             myReviewView.TabIndex = 1;
@@ -288,16 +291,18 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(219, 35);
+            label6.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(295, 33);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new Size(87, 15);
+            label6.Size = new Size(140, 25);
             label6.TabIndex = 0;
             label6.Text = "내가 남긴 리뷰";
             // 
             // tabPage3
             // 
-            tabPage3.Controls.Add(this.myBookmarkView);
+            tabPage3.Controls.Add(button1);
+            tabPage3.Controls.Add(myBookmarkView);
             tabPage3.Controls.Add(label10);
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
@@ -305,6 +310,26 @@
             tabPage3.TabIndex = 2;
             tabPage3.Text = "즐겨찾기";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(666, 41);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 2;
+            button1.Text = "닫기";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += btn_Cancel_Click;
+            // 
+            // myBookmarkView
+            // 
+            myBookmarkView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            myBookmarkView.Dock = DockStyle.Bottom;
+            myBookmarkView.Location = new Point(0, 86);
+            myBookmarkView.Name = "myBookmarkView";
+            myBookmarkView.RowTemplate.Height = 25;
+            myBookmarkView.Size = new Size(766, 434);
+            myBookmarkView.TabIndex = 1;
             // 
             // label10
             // 
@@ -314,16 +339,6 @@
             label10.Size = new Size(71, 15);
             label10.TabIndex = 0;
             label10.Text = "내 즐겨찾기";
-            // 
-            // myBookmarkView
-            // 
-            this.myBookmarkView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.myBookmarkView.Dock = DockStyle.Bottom;
-            this.myBookmarkView.Location = new Point(0, 86);
-            this.myBookmarkView.Name = "myBookmarkView";
-            this.myBookmarkView.RowTemplate.Height = 25;
-            this.myBookmarkView.Size = new Size(766, 434);
-            this.myBookmarkView.TabIndex = 1;
             // 
             // MyPage
             // 
@@ -343,7 +358,7 @@
             ((System.ComponentModel.ISupportInitialize)myReviewView).EndInit();
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)this.myBookmarkView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)myBookmarkView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -374,7 +389,8 @@
         public DataGridView myReviewView;
         private Label label9;
         private DataGridView myBookmarkView;
-       
+
         private Label label10;
+        private Button button1;
     }
 }
