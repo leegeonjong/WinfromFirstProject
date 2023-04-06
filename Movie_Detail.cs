@@ -33,9 +33,14 @@ namespace TeamProject
             MovieUid = MainForm.movieuid;
             UseruId = MainForm.useruid;
         }
-
-
-
+        public void SetMovieDetails(string movieTitle, string moviePosterUrl)
+        {
+            // 여기에서 영화 제목 및 포스터 URL을 사용하여 Movie_Detail form에 표시할 수 있습니다.
+            // 예: movieTitleLabel.Text = movieTitle;
+            // 예: moviePosterPictureBox.ImageLocation = moviePosterUrl;
+            pictureBox1.ImageLocation = moviePosterUrl;
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
