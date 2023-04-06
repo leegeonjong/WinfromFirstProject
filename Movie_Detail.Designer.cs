@@ -60,7 +60,7 @@
             // pictureBox1
             // 
             pictureBox1.Location = new Point(0, 80);
-            pictureBox1.Margin = new Padding(2, 2, 2, 2);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(280, 320);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -116,7 +116,7 @@
             ratebox.FormattingEnabled = true;
             ratebox.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" });
             ratebox.Location = new Point(9, 39);
-            ratebox.Margin = new Padding(2, 2, 2, 2);
+            ratebox.Margin = new Padding(2);
             ratebox.Name = "ratebox";
             ratebox.Size = new Size(46, 23);
             ratebox.TabIndex = 4;
@@ -127,7 +127,7 @@
             ReviewView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             ReviewView.Dock = DockStyle.Bottom;
             ReviewView.Location = new Point(0, 93);
-            ReviewView.Margin = new Padding(2, 2, 2, 2);
+            ReviewView.Margin = new Padding(2);
             ReviewView.Name = "ReviewView";
             ReviewView.RowHeadersWidth = 51;
             ReviewView.RowTemplate.Height = 29;
@@ -147,7 +147,7 @@
             // NickNameBox
             // 
             NickNameBox.Location = new Point(61, 39);
-            NickNameBox.Margin = new Padding(4, 4, 4, 4);
+            NickNameBox.Margin = new Padding(4);
             NickNameBox.Name = "NickNameBox";
             NickNameBox.ReadOnly = true;
             NickNameBox.Size = new Size(104, 23);
@@ -156,6 +156,7 @@
             // reviewBox
             // 
             reviewBox.Location = new Point(172, 39);
+            reviewBox.Multiline = true;
             reviewBox.Name = "reviewBox";
             reviewBox.Size = new Size(216, 23);
             reviewBox.TabIndex = 0;
@@ -165,7 +166,7 @@
             // 
             book.Image = Properties.Resources.bookmarkoff;
             book.Location = new Point(0, 29);
-            book.Margin = new Padding(2, 2, 2, 2);
+            book.Margin = new Padding(2);
             book.Name = "book";
             book.Size = new Size(58, 47);
             book.SizeMode = PictureBoxSizeMode.Zoom;
@@ -226,7 +227,7 @@
             // txtplot
             // 
             txtplot.Location = new Point(284, 205);
-            txtplot.Margin = new Padding(2, 2, 2, 2);
+            txtplot.Margin = new Padding(2);
             txtplot.Multiline = true;
             txtplot.Name = "txtplot";
             txtplot.ReadOnly = true;
@@ -287,7 +288,7 @@
             // txtlActor
             // 
             txtlActor.Location = new Point(363, 141);
-            txtlActor.Margin = new Padding(2, 2, 2, 2);
+            txtlActor.Margin = new Padding(2);
             txtlActor.Multiline = true;
             txtlActor.Name = "txtlActor";
             txtlActor.ReadOnly = true;
@@ -319,7 +320,7 @@
             Controls.Add(lbl3);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "Movie_Detail";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Movie_Detail";

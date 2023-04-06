@@ -17,7 +17,7 @@ namespace TeamProject
         string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
         MyPage mypage;
 
-    
+
         int UserUid;
         int MovieUid;
 
@@ -26,9 +26,9 @@ namespace TeamProject
             InitializeComponent();
             this.mypage = mypage;
             UserUid = mypage.UserUid;
-           
-            
-           
+
+
+
 
             if (this.mypage.myReviewView.SelectedRows.Count > 0)
             {
@@ -47,11 +47,11 @@ namespace TeamProject
         {
             certification cert = new certification(strConn);
             SqlCommand cmd = cert.GetSqlCommand();
-            Check check = new Check();  
+            Check check = new Check();
 
             string uid = mypage.myReviewView.SelectedRows[0].Cells[0].Value.ToString();
 
-           MovieUid= check.FindMvUid(mnBox.Text);
+            MovieUid = check.FindMvUid(mnBox.Text);
 
 
             cmd.CommandText = $"SELECT u.u_nickname, m.title, r.r_rate, r.r_content, r.r_date " +
@@ -114,9 +114,9 @@ namespace TeamProject
                 cmd.Parameters.AddWithValue("@r_rate", rate);
                 cmd.Parameters.AddWithValue("@r_date", DateTime.Now);
 
-            
 
-              
+
+
 
                 // UPDATE 쿼리문 실행
                 int rowsAffected = cmd.ExecuteNonQuery();
@@ -136,7 +136,7 @@ namespace TeamProject
                     MessageBox.Show("데이터 수정에 실패하였습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-           
+
 
             finally
             {
