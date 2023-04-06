@@ -99,7 +99,7 @@
             tab1.Margin = new Padding(4);
             tab1.Name = "tab1";
             tab1.SelectedIndex = 0;
-            tab1.Size = new Size(592, 548);
+            tab1.Size = new Size(559, 548);
             tab1.TabIndex = 5;
             // 
             // tabPage1
@@ -130,7 +130,7 @@
             tabPage1.Margin = new Padding(4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(4);
-            tabPage1.Size = new Size(584, 520);
+            tabPage1.Size = new Size(551, 520);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "회원정보";
             // 
@@ -189,7 +189,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(4, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(576, 66);
+            panel1.Size = new Size(543, 66);
             panel1.TabIndex = 18;
             // 
             // label9
@@ -392,6 +392,7 @@
             btn_reviewUpdate.BackColor = Color.FromArgb(108, 190, 250);
             btn_reviewUpdate.FlatAppearance.BorderColor = Color.FromArgb(108, 190, 250);
             btn_reviewUpdate.FlatStyle = FlatStyle.Flat;
+            btn_reviewUpdate.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btn_reviewUpdate.ForeColor = Color.White;
             btn_reviewUpdate.Location = new Point(386, 7);
             btn_reviewUpdate.Margin = new Padding(4);
@@ -407,6 +408,7 @@
             btn_reviewclose.BackColor = Color.FromArgb(108, 190, 250);
             btn_reviewclose.FlatAppearance.BorderColor = Color.FromArgb(108, 160, 220);
             btn_reviewclose.FlatStyle = FlatStyle.Flat;
+            btn_reviewclose.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btn_reviewclose.ForeColor = Color.White;
             btn_reviewclose.Location = new Point(496, 7);
             btn_reviewclose.Margin = new Padding(4);
@@ -442,6 +444,7 @@
             // 
             myReviewView.BackgroundColor = Color.White;
             myReviewView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            myReviewView.EnableHeadersVisualStyles = false;
             myReviewView.GridColor = Color.LightGray;
             myReviewView.Location = new Point(4, 53);
             myReviewView.Margin = new Padding(4);
@@ -539,7 +542,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(592, 552);
+            ClientSize = new Size(559, 552);
             Controls.Add(tab1);
             Controls.Add(label5);
             Name = "MyPage";
