@@ -1,6 +1,6 @@
 ﻿namespace TeamProject
 {
-    partial class Admin_InformUpdate
+    partial class memberDetail
     {
         /// <summary>
         /// Required designer variable.
@@ -41,8 +41,7 @@
             NameBox = new TextBox();
             nnBox = new TextBox();
             pnBox = new TextBox();
-            lvBox = new TextBox();
-            btn_Update = new Button();
+            rvBox = new TextBox();
             button2 = new Button();
             panel1 = new Panel();
             label9 = new Label();
@@ -53,6 +52,9 @@
             panel6 = new Panel();
             panel7 = new Panel();
             panel8 = new Panel();
+            label1 = new Label();
+            panel9 = new Panel();
+            textBox1 = new TextBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -122,9 +124,9 @@
             label8.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label8.Location = new Point(41, 318);
             label8.Name = "label8";
-            label8.Size = new Size(59, 15);
+            label8.Size = new Size(115, 15);
             label8.TabIndex = 7;
-            label8.Text = "회원 레벨";
+            label8.Text = "회원이 남긴 리뷰 수";
             // 
             // UidBox
             // 
@@ -138,66 +140,63 @@
             // 
             // IdBox
             // 
+            IdBox.BackColor = Color.White;
             IdBox.BorderStyle = BorderStyle.None;
             IdBox.Location = new Point(169, 114);
             IdBox.Name = "IdBox";
+            IdBox.ReadOnly = true;
             IdBox.Size = new Size(163, 16);
             IdBox.TabIndex = 9;
             // 
             // PwBox
             // 
+            PwBox.BackColor = Color.White;
             PwBox.BorderStyle = BorderStyle.None;
             PwBox.Location = new Point(169, 154);
             PwBox.Name = "PwBox";
+            PwBox.ReadOnly = true;
             PwBox.Size = new Size(160, 16);
             PwBox.TabIndex = 10;
             // 
             // NameBox
             // 
+            NameBox.BackColor = Color.White;
             NameBox.BorderStyle = BorderStyle.None;
             NameBox.Location = new Point(169, 195);
             NameBox.Name = "NameBox";
+            NameBox.ReadOnly = true;
             NameBox.Size = new Size(160, 16);
             NameBox.TabIndex = 11;
             // 
             // nnBox
             // 
+            nnBox.BackColor = Color.White;
             nnBox.BorderStyle = BorderStyle.None;
             nnBox.Location = new Point(169, 234);
             nnBox.Name = "nnBox";
+            nnBox.ReadOnly = true;
             nnBox.Size = new Size(160, 16);
             nnBox.TabIndex = 12;
             // 
             // pnBox
             // 
+            pnBox.BackColor = Color.White;
             pnBox.BorderStyle = BorderStyle.None;
             pnBox.Location = new Point(169, 274);
             pnBox.Name = "pnBox";
+            pnBox.ReadOnly = true;
             pnBox.Size = new Size(163, 16);
             pnBox.TabIndex = 13;
             // 
-            // lvBox
+            // rvBox
             // 
-            lvBox.BorderStyle = BorderStyle.None;
-            lvBox.Location = new Point(169, 318);
-            lvBox.Name = "lvBox";
-            lvBox.Size = new Size(160, 16);
-            lvBox.TabIndex = 14;
-            // 
-            // btn_Update
-            // 
-            btn_Update.BackColor = Color.FromArgb(108, 160, 220);
-            btn_Update.FlatAppearance.BorderColor = Color.FromArgb(108, 160, 220);
-            btn_Update.FlatStyle = FlatStyle.Flat;
-            btn_Update.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Update.ForeColor = Color.White;
-            btn_Update.Location = new Point(160, 387);
-            btn_Update.Name = "btn_Update";
-            btn_Update.Size = new Size(75, 33);
-            btn_Update.TabIndex = 15;
-            btn_Update.Text = "확인";
-            btn_Update.UseVisualStyleBackColor = false;
-            btn_Update.Click += btn_Update_Click;
+            rvBox.BackColor = Color.White;
+            rvBox.BorderStyle = BorderStyle.None;
+            rvBox.Location = new Point(169, 318);
+            rvBox.Name = "rvBox";
+            rvBox.ReadOnly = true;
+            rvBox.Size = new Size(160, 16);
+            rvBox.TabIndex = 14;
             // 
             // button2
             // 
@@ -206,11 +205,11 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(257, 387);
+            button2.Location = new Point(396, 394);
             button2.Name = "button2";
             button2.Size = new Size(75, 33);
             button2.TabIndex = 16;
-            button2.Text = "취소";
+            button2.Text = "확인";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
@@ -232,9 +231,9 @@
             label9.Location = new Point(160, 9);
             label9.Margin = new Padding(4, 0, 4, 0);
             label9.Name = "label9";
-            label9.Size = new Size(146, 30);
+            label9.Size = new Size(188, 30);
             label9.TabIndex = 0;
-            label9.Text = "회원정보 수정";
+            label9.Text = "회원정보 상세보기";
             // 
             // panel2
             // 
@@ -299,12 +298,41 @@
             panel8.Size = new Size(163, 1);
             panel8.TabIndex = 26;
             // 
-            // Admin_InformUpdate
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(41, 364);
+            label1.Name = "label1";
+            label1.Size = new Size(111, 15);
+            label1.TabIndex = 27;
+            label1.Text = "회원의 즐겨찾기 수";
+            // 
+            // panel9
+            // 
+            panel9.BackColor = Color.FromArgb(108, 160, 220);
+            panel9.Location = new Point(169, 378);
+            panel9.Margin = new Padding(4);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(163, 1);
+            panel9.TabIndex = 28;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(169, 353);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(163, 23);
+            textBox1.TabIndex = 29;
+            // 
+            // memberDetail
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(501, 450);
+            Controls.Add(textBox1);
+            Controls.Add(panel9);
+            Controls.Add(label1);
             Controls.Add(panel8);
             Controls.Add(panel7);
             Controls.Add(panel6);
@@ -314,8 +342,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(button2);
-            Controls.Add(btn_Update);
-            Controls.Add(lvBox);
+            Controls.Add(rvBox);
             Controls.Add(pnBox);
             Controls.Add(nnBox);
             Controls.Add(NameBox);
@@ -329,7 +356,7 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Name = "Admin_InformUpdate";
+            Name = "memberDetail";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "회원정보 수정";
             Load += Admin_InformUpdate_Load;
@@ -353,8 +380,7 @@
         private TextBox NameBox;
         private TextBox nnBox;
         private TextBox pnBox;
-        private TextBox lvBox;
-        private Button btn_Update;
+        private TextBox rvBox;
         private Button button2;
         private Panel panel1;
         private Label label9;
@@ -365,5 +391,8 @@
         private Panel panel6;
         private Panel panel7;
         private Panel panel8;
+        private Label label1;
+        private Panel panel9;
+        private TextBox textBox1;
     }
 }

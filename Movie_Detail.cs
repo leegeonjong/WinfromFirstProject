@@ -108,9 +108,7 @@ namespace TeamProject
                 await conn.OpenAsync();
 
                 using SqlCommand cmd = new SqlCommand("SELECT RateAvg FROM MovieList WHERE Title = @title", conn);
-                SqlParameter parameter = new SqlParameter("@title", System.Data.SqlDbType.VarChar);
-                parameter.Value = title;
-                cmd.Parameters.Add(parameter);
+                cmd.Parameters.AddWithValue("@title", title);
                 using SqlDataReader reader = await cmd.ExecuteReaderAsync();
                 
                 if (await reader.ReadAsync())
