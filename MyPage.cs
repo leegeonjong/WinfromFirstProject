@@ -23,7 +23,7 @@ namespace TeamProject
         public int UserUid { get; set; }
 
         int MovieUid;
-
+        int aduseruid;
 
 
         public MyPage(Admin_Page form, Main main)
@@ -35,13 +35,16 @@ namespace TeamProject
             UserId = main.userid;
             UserUid = main.useruid;
             MovieUid = main.movieuid;
+            aduseruid = form.userUid;
             myReviewView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 190, 250);
             myReviewView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            myBookmarkView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 190, 250);
+            myBookmarkView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
 
         }
 
-        private void MyPage_Load(object sender, EventArgs e)
+        public void MyPage_Load(object sender, EventArgs e)
         {
             ReviewView();
             BookmarkView();
@@ -179,46 +182,79 @@ namespace TeamProject
             SqlCommand cmd = cert.GetSqlCommand();
 
             Check check = new Check();
+
             UserUid = check.FindUid(UserId);
 
-           
-            cmd.CommandText = $"SELECT  m.title, u.u_nickname, r.r_rate, r.r_content, r.r_date " +
+
+            if (main.useruid > 0)
+            {
+
+                cmd.CommandText = $"SELECT  m.title, u.u_nickname, r.r_rate, r.r_content, r.r_date " +
                                 $"FROM review r " +
                                 $"INNER JOIN project_user u ON r.u_uid = u.u_uid " +
                                 $"INNER JOIN MovieList M ON r.MovieUID = m.MovieUID " +
                                 $"WHERE u.u_uid = {UserUid}";
 
-            SqlDataReader reader = cmd.ExecuteReader();
+                SqlDataReader reader = cmd.ExecuteReader();
 
-            DataTable dataTable = new DataTable();
-            dataTable.Load(reader);
+                DataTable dataTable = new DataTable();
+                dataTable.Load(reader);
 
-            myReviewView.DataSource = dataTable;
-
-
-            myReviewView.Columns["title"].HeaderText = "영화 제목";
-            myReviewView.Columns["u_nickname"].HeaderText = "닉네임";          
-            myReviewView.Columns["r_rate"].HeaderText = "내 평점";
-            myReviewView.Columns["r_content"].HeaderText = "내 리뷰";
-            myReviewView.Columns["r_date"].HeaderText = "리뷰를 남긴 날짜";
+                myReviewView.DataSource = dataTable;
 
 
-            foreach (DataGridViewColumn column in myReviewView.Columns)
-            {
-                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                myReviewView.Columns["title"].HeaderText = "영화 제목";
+                myReviewView.Columns["u_nickname"].HeaderText = "닉네임";
+                myReviewView.Columns["r_rate"].HeaderText = "내 평점";
+                myReviewView.Columns["r_content"].HeaderText = "내 리뷰";
+                myReviewView.Columns["r_date"].HeaderText = "리뷰를 남긴 날짜";
+
+
+                foreach (DataGridViewColumn column in myReviewView.Columns)
+                {
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+                reader.Close();
+                cmd.Dispose();
+                return;
             }
 
+            {
+
+                cmd.CommandText = $"SELECT  m.title, u.u_nickname, r.r_rate, r.r_content, r.r_date " +
+                                $"FROM review r " +
+                                $"INNER JOIN project_user u ON r.u_uid = u.u_uid " +
+                                $"INNER JOIN MovieList M ON r.MovieUID = m.MovieUID " +
+                                $"WHERE u.u_uid = {adminform.usuid}";
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                DataTable dataTable = new DataTable();
+                dataTable.Load(reader);
+
+                myReviewView.DataSource = dataTable;
 
 
+                myReviewView.Columns["title"].HeaderText = "영화 제목";
+                myReviewView.Columns["u_nickname"].HeaderText = "닉네임";
+                myReviewView.Columns["r_rate"].HeaderText = "내 평점";
+                myReviewView.Columns["r_content"].HeaderText = "내 리뷰";
+                myReviewView.Columns["r_date"].HeaderText = "리뷰를 남긴 날짜";
 
-            // 리소스 정리
-            reader.Close();
-            cmd.Dispose();
+
+                foreach (DataGridViewColumn column in myReviewView.Columns)
+                {
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+                reader.Close();
+                cmd.Dispose();
+            }
+
 
         }
 
 
-        private void BookmarkView()
+        public void BookmarkView()
         {
             myBookmarkView.AllowUserToAddRows = false;
 
@@ -228,32 +264,63 @@ namespace TeamProject
             Check check = new Check();
             UserUid = check.FindUid(UserId);
 
-
-            cmd.CommandText = $"SELECT M.title " +
+            if (main.useruid > 0)
+            {
+                cmd.CommandText = $"SELECT M.title " +
                                 $"FROM Bookmark b " +
                                 $"INNER JOIN project_user u ON b.u_uid = u.u_uid " +
                                 $"INNER JOIN MovieList M ON b.MovieUID = m.MovieUID " +
                                 $"WHERE u.u_uid = {UserUid}";
 
-            SqlDataReader reader = cmd.ExecuteReader();
+                SqlDataReader reader = cmd.ExecuteReader();
 
-            DataTable dataTable = new DataTable();
-            dataTable.Load(reader);
+                DataTable dataTable = new DataTable();
+                dataTable.Load(reader);
 
-            myBookmarkView.DataSource = dataTable;
+                myBookmarkView.DataSource = dataTable;
 
-            myBookmarkView.Columns["Title"].HeaderText = "영화제목";
+                myBookmarkView.Columns["Title"].HeaderText = "영화제목";
 
 
-            foreach (DataGridViewColumn column in myBookmarkView.Columns)
-            {
-                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                foreach (DataGridViewColumn column in myBookmarkView.Columns)
+                {
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+
+
+                // 리소스 정리
+                reader.Close();
+                cmd.Dispose();
+                return;
             }
 
+            {
+                cmd.CommandText = $"SELECT M.title " +
+                            $"FROM Bookmark b " +
+                            $"INNER JOIN project_user u ON b.u_uid = u.u_uid " +
+                            $"INNER JOIN MovieList M ON b.MovieUID = m.MovieUID " +
+                            $"WHERE u.u_uid = {adminform.usuid}";
 
-            // 리소스 정리
-            reader.Close();
-            cmd.Dispose();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                DataTable dataTable = new DataTable();
+                dataTable.Load(reader);
+
+                myBookmarkView.DataSource = dataTable;
+
+                myBookmarkView.Columns["Title"].HeaderText = "영화제목";
+
+
+                foreach (DataGridViewColumn column in myBookmarkView.Columns)
+                {
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+
+
+                // 리소스 정리
+                reader.Close();
+                cmd.Dispose();
+            }
         }
 
 
