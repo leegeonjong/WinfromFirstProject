@@ -23,7 +23,7 @@ namespace TeamProject
         public int UserUid { get; set; }
 
         int MovieUid;
-        int aduseruid;
+        
 
 
         public MyPage(Admin_Page form, Main main)
@@ -35,7 +35,7 @@ namespace TeamProject
             UserId = main.userid;
             UserUid = main.useruid;
             MovieUid = main.movieuid;
-            aduseruid = form.userUid;
+            
             myReviewView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 190, 250);
             myReviewView.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 190, 250);
             myReviewView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;

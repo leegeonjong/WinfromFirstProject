@@ -30,11 +30,14 @@ namespace TeamProject
             memberView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 190, 250);
             memberView.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 190, 250);
             memberView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+           
         }
 
         private void Admin_Page_Load(object sender, EventArgs e)
         {
             DataViewLoad();
+
+         
         }
 
         private void DataViewLoad()

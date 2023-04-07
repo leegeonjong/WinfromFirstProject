@@ -16,12 +16,13 @@ namespace TeamProject
     {
         string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
         MyPage mypage;
+        Admin_Page adminform;
 
 
         int UserUid;
         int MovieUid;
 
-        public ReviewUpdate(MyPage mypage)
+        public ReviewUpdate(Admin_Page admin ,MyPage mypage)
         {
             InitializeComponent();
             this.mypage = mypage;
@@ -45,6 +46,7 @@ namespace TeamProject
 
         private void ReviewUpdate_Load(object sender, EventArgs e)
         {
+            adminform.usid = UserUid;
             certification cert = new certification(strConn);
             SqlCommand cmd = cert.GetSqlCommand();
             Check check = new Check();

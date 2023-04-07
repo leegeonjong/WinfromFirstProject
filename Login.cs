@@ -43,8 +43,9 @@ namespace TeamProject
                 {
                     Check check1 = new();
                     MessageBox.Show("관리자 로그인 성공");
-                    main.userid = TextId.Text.Trim();
+                    main.userid = TextId.Text.Trim();                   
                     main.Main_AdminLoad(sender, e);
+                    MainForm.Hide();
                     main.Show();
                     this.Close();
                     return;
