@@ -152,20 +152,12 @@ namespace TeamProject
                 DataGridViewRow row = memberView.Rows[rowIndex];
                 usuid = (int)row.Cells[0].Value;
                 // detailForm 객체 생성 및 화면에 표시
-                MyPage mypage = new MyPage(this,MainForm);
-                AddOwnedForm(mypage);
+                MyPage mypage = new MyPage(this,MainForm);              
                 mypage.StartPosition = FormStartPosition.CenterScreen;
-                mypage.Show();
-
-
+                mypage.Show();                
+                
             }
-            MainForm.useruid = userUid;
-         
-
-         
-            
-
-         
+            MainForm.useruid = userUid;                                
         }
 
         private void btn_Search_Click(object sender, EventArgs e)

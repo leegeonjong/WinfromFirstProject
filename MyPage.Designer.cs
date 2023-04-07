@@ -105,7 +105,7 @@
             tab1.Margin = new Padding(4);
             tab1.Name = "tab1";
             tab1.SelectedIndex = 0;
-            tab1.Size = new Size(818, 548);
+            tab1.Size = new Size(599, 548);
             tab1.TabIndex = 5;
             // 
             // tabPage1
@@ -471,7 +471,7 @@
             tabPage2.Margin = new Padding(4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(4);
-            tabPage2.Size = new Size(810, 520);
+            tabPage2.Size = new Size(591, 520);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "내가 남긴 리뷰";
             tabPage2.UseVisualStyleBackColor = true;
@@ -485,7 +485,7 @@
             panel11.Dock = DockStyle.Bottom;
             panel11.Location = new Point(4, 477);
             panel11.Name = "panel11";
-            panel11.Size = new Size(802, 39);
+            panel11.Size = new Size(583, 39);
             panel11.TabIndex = 22;
             // 
             // btn_reviewDelete
@@ -543,7 +543,7 @@
             panel8.Dock = DockStyle.Top;
             panel8.Location = new Point(4, 4);
             panel8.Name = "panel8";
-            panel8.Size = new Size(802, 42);
+            panel8.Size = new Size(583, 42);
             panel8.TabIndex = 19;
             // 
             // label11
@@ -579,7 +579,7 @@
             tabPage3.Controls.Add(myBookmarkView);
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(810, 520);
+            tabPage3.Size = new Size(591, 520);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "즐겨찾기";
             tabPage3.UseVisualStyleBackColor = true;
@@ -590,9 +590,9 @@
             panel10.Controls.Add(btn_bmdelete);
             panel10.Controls.Add(button1);
             panel10.Dock = DockStyle.Bottom;
-            panel10.Location = new Point(0, 477);
+            panel10.Location = new Point(0, 481);
             panel10.Name = "panel10";
-            panel10.Size = new Size(810, 43);
+            panel10.Size = new Size(591, 39);
             panel10.TabIndex = 21;
             // 
             // btn_bmdelete
@@ -602,10 +602,10 @@
             btn_bmdelete.FlatStyle = FlatStyle.Flat;
             btn_bmdelete.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btn_bmdelete.ForeColor = Color.White;
-            btn_bmdelete.Location = new Point(467, 7);
+            btn_bmdelete.Location = new Point(346, 8);
             btn_bmdelete.Margin = new Padding(4);
             btn_bmdelete.Name = "btn_bmdelete";
-            btn_bmdelete.Size = new Size(131, 36);
+            btn_bmdelete.Size = new Size(102, 27);
             btn_bmdelete.TabIndex = 3;
             btn_bmdelete.Text = "즐겨찾기 삭제";
             btn_bmdelete.UseVisualStyleBackColor = false;
@@ -618,10 +618,10 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(606, 7);
+            button1.Location = new Point(470, 8);
             button1.Margin = new Padding(4);
             button1.Name = "button1";
-            button1.Size = new Size(96, 36);
+            button1.Size = new Size(102, 27);
             button1.TabIndex = 2;
             button1.Text = "닫기";
             button1.UseVisualStyleBackColor = false;
@@ -634,7 +634,7 @@
             panel9.Dock = DockStyle.Top;
             panel9.Location = new Point(0, 0);
             panel9.Name = "panel9";
-            panel9.Size = new Size(810, 46);
+            panel9.Size = new Size(591, 46);
             panel9.TabIndex = 20;
             // 
             // label6
@@ -642,7 +642,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(324, 7);
+            label6.Location = new Point(233, 5);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(125, 30);
@@ -653,19 +653,19 @@
             // 
             myBookmarkView.BackgroundColor = Color.White;
             myBookmarkView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            myBookmarkView.Location = new Point(4, 43);
+            myBookmarkView.Location = new Point(4, 53);
             myBookmarkView.Margin = new Padding(4);
             myBookmarkView.Name = "myBookmarkView";
             myBookmarkView.RowHeadersWidth = 51;
             myBookmarkView.RowTemplate.Height = 25;
-            myBookmarkView.Size = new Size(798, 427);
+            myBookmarkView.Size = new Size(583, 413);
             myBookmarkView.TabIndex = 1;
             // 
             // MyPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(818, 552);
+            ClientSize = new Size(599, 552);
             Controls.Add(tab1);
             Controls.Add(label5);
             Name = "MyPage";
