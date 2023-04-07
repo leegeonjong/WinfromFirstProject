@@ -65,6 +65,13 @@
             panel9 = new Panel();
             label6 = new Label();
             myBookmarkView = new DataGridView();
+            button2 = new Button();
+            button3 = new Button();
+            button_update = new Button();
+            button4 = new Button();
+            button5 = new Button();
+            button6 = new Button();
+            button7 = new Button();
             tab1.SuspendLayout();
             tabPage1.SuspendLayout();
             panel1.SuspendLayout();
@@ -104,6 +111,13 @@
             // tabPage1
             // 
             tabPage1.BackColor = Color.White;
+            tabPage1.Controls.Add(button7);
+            tabPage1.Controls.Add(button6);
+            tabPage1.Controls.Add(button5);
+            tabPage1.Controls.Add(button4);
+            tabPage1.Controls.Add(button_update);
+            tabPage1.Controls.Add(button3);
+            tabPage1.Controls.Add(button2);
             tabPage1.Controls.Add(panel6);
             tabPage1.Controls.Add(panel5);
             tabPage1.Controls.Add(panel4);
@@ -126,7 +140,7 @@
             tabPage1.Margin = new Padding(4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(4);
-            tabPage1.Size = new Size(929, 520);
+            tabPage1.Size = new Size(810, 520);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "회원정보";
             // 
@@ -182,7 +196,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(4, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(921, 66);
+            panel1.Size = new Size(802, 66);
             panel1.TabIndex = 18;
             // 
             // label9
@@ -340,7 +354,7 @@
             tabPage2.Margin = new Padding(4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(4);
-            tabPage2.Size = new Size(929, 520);
+            tabPage2.Size = new Size(810, 520);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "내가 남긴 리뷰";
             tabPage2.UseVisualStyleBackColor = true;
@@ -354,7 +368,7 @@
             panel11.Dock = DockStyle.Bottom;
             panel11.Location = new Point(4, 477);
             panel11.Name = "panel11";
-            panel11.Size = new Size(921, 39);
+            panel11.Size = new Size(802, 39);
             panel11.TabIndex = 22;
             // 
             // btn_reviewDelete
@@ -411,7 +425,7 @@
             panel8.Dock = DockStyle.Top;
             panel8.Location = new Point(4, 4);
             panel8.Name = "panel8";
-            panel8.Size = new Size(921, 42);
+            panel8.Size = new Size(802, 42);
             panel8.TabIndex = 19;
             // 
             // label11
@@ -437,7 +451,7 @@
             myReviewView.Name = "myReviewView";
             myReviewView.RowHeadersWidth = 5;
             myReviewView.RowTemplate.Height = 25;
-            myReviewView.Size = new Size(576, 417);
+            myReviewView.Size = new Size(802, 417);
             myReviewView.TabIndex = 1;
             // 
             // tabPage3
@@ -529,6 +543,113 @@
             myBookmarkView.Size = new Size(798, 427);
             myBookmarkView.TabIndex = 1;
             // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(108, 190, 250);
+            button2.FlatAppearance.BorderColor = Color.FromArgb(108, 190, 250);
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(559, 109);
+            button2.Margin = new Padding(4);
+            button2.Name = "button2";
+            button2.Size = new Size(102, 27);
+            button2.TabIndex = 23;
+            button2.Text = "삭제하기";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(108, 190, 250);
+            button3.FlatAppearance.BorderColor = Color.FromArgb(108, 160, 220);
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(430, 466);
+            button3.Margin = new Padding(4);
+            button3.Name = "button3";
+            button3.Size = new Size(102, 27);
+            button3.TabIndex = 24;
+            button3.Text = "닫기";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += btn_Cancel_Click;
+            // 
+            // button_update
+            // 
+            button_update.BackColor = Color.FromArgb(108, 190, 250);
+            button_update.FlatAppearance.BorderColor = Color.FromArgb(108, 190, 250);
+            button_update.FlatStyle = FlatStyle.Flat;
+            button_update.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button_update.ForeColor = Color.White;
+            button_update.Location = new Point(207, 466);
+            button_update.Margin = new Padding(4);
+            button_update.Name = "button_update";
+            button_update.Size = new Size(102, 27);
+            button_update.TabIndex = 25;
+            button_update.Text = "수정하기";
+            button_update.UseVisualStyleBackColor = false;
+            button_update.Click += btn_update_Click;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.FromArgb(108, 190, 250);
+            button4.FlatAppearance.BorderColor = Color.FromArgb(108, 190, 250);
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button4.ForeColor = Color.White;
+            button4.Location = new Point(559, 183);
+            button4.Margin = new Padding(4);
+            button4.Name = "button4";
+            button4.Size = new Size(102, 27);
+            button4.TabIndex = 26;
+            button4.Text = "삭제하기";
+            button4.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.FromArgb(108, 190, 250);
+            button5.FlatAppearance.BorderColor = Color.FromArgb(108, 190, 250);
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button5.ForeColor = Color.White;
+            button5.Location = new Point(559, 259);
+            button5.Margin = new Padding(4);
+            button5.Name = "button5";
+            button5.Size = new Size(102, 27);
+            button5.TabIndex = 27;
+            button5.Text = "삭제하기";
+            button5.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            button6.BackColor = Color.FromArgb(108, 190, 250);
+            button6.FlatAppearance.BorderColor = Color.FromArgb(108, 190, 250);
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button6.ForeColor = Color.White;
+            button6.Location = new Point(559, 330);
+            button6.Margin = new Padding(4);
+            button6.Name = "button6";
+            button6.Size = new Size(102, 27);
+            button6.TabIndex = 28;
+            button6.Text = "삭제하기";
+            button6.UseVisualStyleBackColor = false;
+            // 
+            // button7
+            // 
+            button7.BackColor = Color.FromArgb(108, 190, 250);
+            button7.FlatAppearance.BorderColor = Color.FromArgb(108, 190, 250);
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button7.ForeColor = Color.White;
+            button7.Location = new Point(559, 413);
+            button7.Margin = new Padding(4);
+            button7.Name = "button7";
+            button7.Size = new Size(102, 27);
+            button7.TabIndex = 29;
+            button7.Text = "삭제하기";
+            button7.UseVisualStyleBackColor = false;
+            // 
             // MyPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -596,5 +717,12 @@
         private Panel panel11;
         private Panel panel10;
         private Button btn_reviewDelete;
+        private Button button7;
+        private Button button6;
+        private Button button5;
+        private Button button4;
+        private Button button_update;
+        private Button button3;
+        private Button button2;
     }
 }
