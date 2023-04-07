@@ -105,7 +105,7 @@
             tab1.Margin = new Padding(4);
             tab1.Name = "tab1";
             tab1.SelectedIndex = 0;
-            tab1.Size = new Size(818, 548);
+            tab1.Size = new Size(608, 548);
             tab1.TabIndex = 5;
             // 
             // tabPage1
@@ -140,14 +140,14 @@
             tabPage1.Margin = new Padding(4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(4);
-            tabPage1.Size = new Size(810, 520);
+            tabPage1.Size = new Size(600, 520);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "회원정보";
             // 
             // panel6
             // 
             panel6.BackColor = Color.FromArgb(108, 160, 220);
-            panel6.Location = new Point(369, 434);
+            panel6.Location = new Point(220, 432);
             panel6.Margin = new Padding(4);
             panel6.Name = "panel6";
             panel6.Size = new Size(163, 1);
@@ -156,7 +156,7 @@
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(108, 160, 220);
-            panel5.Location = new Point(369, 357);
+            panel5.Location = new Point(220, 355);
             panel5.Margin = new Padding(4);
             panel5.Name = "panel5";
             panel5.Size = new Size(163, 1);
@@ -165,7 +165,7 @@
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(108, 160, 220);
-            panel4.Location = new Point(369, 281);
+            panel4.Location = new Point(220, 279);
             panel4.Margin = new Padding(4);
             panel4.Name = "panel4";
             panel4.Size = new Size(163, 1);
@@ -174,7 +174,7 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(108, 160, 220);
-            panel3.Location = new Point(369, 205);
+            panel3.Location = new Point(220, 203);
             panel3.Margin = new Padding(4);
             panel3.Name = "panel3";
             panel3.Size = new Size(163, 1);
@@ -183,7 +183,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(108, 160, 220);
-            panel2.Location = new Point(369, 135);
+            panel2.Location = new Point(220, 133);
             panel2.Margin = new Padding(4);
             panel2.Name = "panel2";
             panel2.Size = new Size(163, 1);
@@ -196,7 +196,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(4, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(802, 66);
+            panel1.Size = new Size(592, 66);
             panel1.TabIndex = 18;
             // 
             // label9
@@ -204,7 +204,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = Color.White;
-            label9.Location = new Point(329, 21);
+            label9.Location = new Point(182, 16);
             label9.Margin = new Padding(4, 0, 4, 0);
             label9.Name = "label9";
             label9.Size = new Size(83, 30);
@@ -243,7 +243,7 @@
             // 
             pnBox.BorderStyle = BorderStyle.None;
             pnBox.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            pnBox.Location = new Point(369, 325);
+            pnBox.Location = new Point(220, 323);
             pnBox.Margin = new Padding(5);
             pnBox.Name = "pnBox";
             pnBox.Size = new Size(163, 18);
@@ -253,7 +253,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(200, 335);
+            label8.Location = new Point(51, 333);
             label8.Margin = new Padding(5, 0, 5, 0);
             label8.Name = "label8";
             label8.Size = new Size(73, 17);
@@ -264,7 +264,7 @@
             // 
             nnBox.BorderStyle = BorderStyle.None;
             nnBox.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            nnBox.Location = new Point(369, 401);
+            nnBox.Location = new Point(220, 399);
             nnBox.Margin = new Padding(5);
             nnBox.Name = "nnBox";
             nnBox.Size = new Size(163, 18);
@@ -274,7 +274,7 @@
             // 
             nameBox.BorderStyle = BorderStyle.None;
             nameBox.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            nameBox.Location = new Point(369, 247);
+            nameBox.Location = new Point(220, 245);
             nameBox.Margin = new Padding(5);
             nameBox.Name = "nameBox";
             nameBox.Size = new Size(163, 18);
@@ -284,7 +284,7 @@
             // 
             pwBox.BorderStyle = BorderStyle.None;
             pwBox.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            pwBox.Location = new Point(369, 171);
+            pwBox.Location = new Point(220, 169);
             pwBox.Margin = new Padding(5);
             pwBox.Name = "pwBox";
             pwBox.Size = new Size(163, 18);
@@ -294,7 +294,7 @@
             // 
             idBox.BorderStyle = BorderStyle.None;
             idBox.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            idBox.Location = new Point(369, 101);
+            idBox.Location = new Point(220, 99);
             idBox.Margin = new Padding(5);
             idBox.Name = "idBox";
             idBox.Size = new Size(163, 18);
@@ -304,7 +304,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(216, 413);
+            label4.Location = new Point(67, 411);
             label4.Margin = new Padding(5, 0, 5, 0);
             label4.Name = "label4";
             label4.Size = new Size(47, 17);
@@ -315,7 +315,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(224, 259);
+            label3.Location = new Point(75, 257);
             label3.Margin = new Padding(5, 0, 5, 0);
             label3.Name = "label3";
             label3.Size = new Size(34, 17);
@@ -326,7 +326,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(207, 183);
+            label2.Location = new Point(58, 181);
             label2.Margin = new Padding(5, 0, 5, 0);
             label2.Name = "label2";
             label2.Size = new Size(60, 17);
@@ -337,7 +337,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(216, 106);
+            label1.Location = new Point(67, 104);
             label1.Margin = new Padding(5, 0, 5, 0);
             label1.Name = "label1";
             label1.Size = new Size(47, 17);
@@ -354,7 +354,7 @@
             tabPage2.Margin = new Padding(4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(4);
-            tabPage2.Size = new Size(810, 520);
+            tabPage2.Size = new Size(600, 520);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "내가 남긴 리뷰";
             tabPage2.UseVisualStyleBackColor = true;
@@ -368,7 +368,7 @@
             panel11.Dock = DockStyle.Bottom;
             panel11.Location = new Point(4, 477);
             panel11.Name = "panel11";
-            panel11.Size = new Size(802, 39);
+            panel11.Size = new Size(592, 39);
             panel11.TabIndex = 22;
             // 
             // btn_reviewDelete
@@ -385,6 +385,7 @@
             btn_reviewDelete.TabIndex = 4;
             btn_reviewDelete.Text = "삭제하기";
             btn_reviewDelete.UseVisualStyleBackColor = false;
+            btn_reviewDelete.Click += btn_reviewDelete_Click;
             // 
             // btn_reviewUpdate
             // 
@@ -425,7 +426,7 @@
             panel8.Dock = DockStyle.Top;
             panel8.Location = new Point(4, 4);
             panel8.Name = "panel8";
-            panel8.Size = new Size(802, 42);
+            panel8.Size = new Size(592, 42);
             panel8.TabIndex = 19;
             // 
             // label11
@@ -433,7 +434,7 @@
             label11.AutoSize = true;
             label11.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(207, 5);
+            label11.Location = new Point(213, 5);
             label11.Margin = new Padding(4, 0, 4, 0);
             label11.Name = "label11";
             label11.Size = new Size(153, 30);
@@ -461,7 +462,7 @@
             tabPage3.Controls.Add(myBookmarkView);
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(810, 520);
+            tabPage3.Size = new Size(600, 520);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "즐겨찾기";
             tabPage3.UseVisualStyleBackColor = true;
@@ -474,7 +475,7 @@
             panel10.Dock = DockStyle.Bottom;
             panel10.Location = new Point(0, 477);
             panel10.Name = "panel10";
-            panel10.Size = new Size(810, 43);
+            panel10.Size = new Size(600, 43);
             panel10.TabIndex = 21;
             // 
             // btn_bmdelete
@@ -484,7 +485,7 @@
             btn_bmdelete.FlatStyle = FlatStyle.Flat;
             btn_bmdelete.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btn_bmdelete.ForeColor = Color.White;
-            btn_bmdelete.Location = new Point(467, 7);
+            btn_bmdelete.Location = new Point(346, 7);
             btn_bmdelete.Margin = new Padding(4);
             btn_bmdelete.Name = "btn_bmdelete";
             btn_bmdelete.Size = new Size(131, 36);
@@ -500,7 +501,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(606, 7);
+            button1.Location = new Point(495, 7);
             button1.Margin = new Padding(4);
             button1.Name = "button1";
             button1.Size = new Size(96, 36);
@@ -516,7 +517,7 @@
             panel9.Dock = DockStyle.Top;
             panel9.Location = new Point(0, 0);
             panel9.Name = "panel9";
-            panel9.Size = new Size(810, 46);
+            panel9.Size = new Size(600, 46);
             panel9.TabIndex = 20;
             // 
             // label6
@@ -524,7 +525,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(324, 7);
+            label6.Location = new Point(222, 9);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(125, 30);
@@ -540,7 +541,7 @@
             myBookmarkView.Name = "myBookmarkView";
             myBookmarkView.RowHeadersWidth = 51;
             myBookmarkView.RowTemplate.Height = 25;
-            myBookmarkView.Size = new Size(798, 427);
+            myBookmarkView.Size = new Size(587, 427);
             myBookmarkView.TabIndex = 1;
             // 
             // button2
@@ -550,7 +551,7 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(559, 109);
+            button2.Location = new Point(410, 107);
             button2.Margin = new Padding(4);
             button2.Name = "button2";
             button2.Size = new Size(102, 27);
@@ -565,7 +566,7 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button3.ForeColor = Color.White;
-            button3.Location = new Point(430, 466);
+            button3.Location = new Point(281, 464);
             button3.Margin = new Padding(4);
             button3.Name = "button3";
             button3.Size = new Size(102, 27);
@@ -581,7 +582,7 @@
             button_update.FlatStyle = FlatStyle.Flat;
             button_update.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button_update.ForeColor = Color.White;
-            button_update.Location = new Point(207, 466);
+            button_update.Location = new Point(58, 464);
             button_update.Margin = new Padding(4);
             button_update.Name = "button_update";
             button_update.Size = new Size(102, 27);
@@ -597,7 +598,7 @@
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button4.ForeColor = Color.White;
-            button4.Location = new Point(559, 183);
+            button4.Location = new Point(410, 181);
             button4.Margin = new Padding(4);
             button4.Name = "button4";
             button4.Size = new Size(102, 27);
@@ -612,7 +613,7 @@
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button5.ForeColor = Color.White;
-            button5.Location = new Point(559, 259);
+            button5.Location = new Point(410, 257);
             button5.Margin = new Padding(4);
             button5.Name = "button5";
             button5.Size = new Size(102, 27);
@@ -627,7 +628,7 @@
             button6.FlatStyle = FlatStyle.Flat;
             button6.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button6.ForeColor = Color.White;
-            button6.Location = new Point(559, 330);
+            button6.Location = new Point(410, 328);
             button6.Margin = new Padding(4);
             button6.Name = "button6";
             button6.Size = new Size(102, 27);
@@ -642,7 +643,7 @@
             button7.FlatStyle = FlatStyle.Flat;
             button7.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button7.ForeColor = Color.White;
-            button7.Location = new Point(559, 413);
+            button7.Location = new Point(410, 411);
             button7.Margin = new Padding(4);
             button7.Name = "button7";
             button7.Size = new Size(102, 27);
@@ -654,7 +655,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(818, 552);
+            ClientSize = new Size(608, 552);
             Controls.Add(tab1);
             Controls.Add(label5);
             Name = "MyPage";
