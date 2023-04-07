@@ -244,13 +244,13 @@ namespace TeamProject
             string orderByColumn = "Title ASC"; //기본정렬값
             orderByColumn = CB_Category.SelectedIndex switch
             {
-                0 => "Sales DESC",           //매출액 순서
+                0 => "Sales DESC",      //매출액 순서
                 1 => "Title ASC",       //오름차순
                 2 => "Title DESC",      //내림차순
                 3 => "ReleaseDate DESC",//최신 작품순
                 4 => "ReleaseDate ASC", //예전 작품순
-                5 => "RateAvg DESC",
-                6 => "RateAvg ASC",
+                5 => "RateAvg DESC",    //리뷰 많은순
+                6 => "RateAvg ASC",     //리뷰 적은순
             };
             DateTime startDate = dTPStart.Value;
             DateTime endDate = dTPEnd.Value;
