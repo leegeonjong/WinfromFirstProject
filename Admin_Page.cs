@@ -147,7 +147,7 @@ namespace TeamProject
             int rowIndex = e.RowIndex;
             int colIndex = e.ColumnIndex;
 
-            if (e.ColumnIndex == 0)
+            if (colIndex == 0)
             {
                 DataGridViewRow row = memberView.Rows[rowIndex];
                 usuid = (int)row.Cells[0].Value;
