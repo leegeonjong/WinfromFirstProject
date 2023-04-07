@@ -370,5 +370,62 @@ namespace TeamProject
         {
             nnBox.ReadOnly = false;
         }
+
+        private void btn_reviewDelete_Click(object sender, EventArgs e)
+        {
+            Check check = new Check();
+            string movietitle = myReviewView.SelectedCells[1].Value.ToString();
+            UserUid = check.FindUid(UserId);
+            MovieUid = check.FindMvUid(movietitle);
+
+            try
+            {
+                foreach (DataGridViewCell cell in myReviewView.SelectedCells)
+                {
+                    cell.OwningRow.Selected = true;
+                }
+
+                Cursor = Cursors.WaitCursor;
+
+                if (myReviewView.SelectedRows.Count == 0) return; // 삭제하려는 row가 선택되어 있지 않으면 return
+
+
+                // 삭제전에 확인
+                if (MessageBox.Show($"{myReviewView.SelectedRows.Count}개의 리뷰를 삭제할까요?", "삭제확인"
+                     , MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK)
+                { return; }
+
+                using SqlConnection conn = new(strConn);
+                conn.Open();
+
+                string sql = $"DELETE FROM Review WHERE u_uid = '{UserUid}' AND MovieUID = {MovieUid}; ";
+
+                int cnt = 0;
+
+                foreach (DataGridViewRow row in myReviewView.SelectedRows)
+                {
+                    string uid = row.Cells[0].Value.ToString();  // PK 값은 첫번째 컬럼
+                    using SqlCommand cmd = new(sql, conn);
+                    cmd.Parameters.AddWithValue("@u_uid", uid);
+
+                    int result = cmd.ExecuteNonQuery();
+                    if (result > 0)
+                    {
+                        cnt += result;
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error"
+                    , MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
+            }
+            ReviewView();
+        }
     }
 }
