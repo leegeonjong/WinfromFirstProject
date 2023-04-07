@@ -62,7 +62,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(41, 80);
+            label2.Location = new Point(100, 74);
             label2.Name = "label2";
             label2.Size = new Size(55, 15);
             label2.TabIndex = 1;
@@ -72,7 +72,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(41, 114);
+            label3.Location = new Point(100, 108);
             label3.Name = "label3";
             label3.Size = new Size(48, 15);
             label3.TabIndex = 2;
@@ -82,7 +82,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(41, 154);
+            label4.Location = new Point(100, 148);
             label4.Name = "label4";
             label4.Size = new Size(83, 15);
             label4.TabIndex = 3;
@@ -92,7 +92,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(41, 195);
+            label5.Location = new Point(100, 189);
             label5.Name = "label5";
             label5.Size = new Size(59, 15);
             label5.TabIndex = 4;
@@ -102,7 +102,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(41, 237);
+            label6.Location = new Point(100, 231);
             label6.Name = "label6";
             label6.Size = new Size(71, 15);
             label6.TabIndex = 5;
@@ -112,7 +112,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(41, 274);
+            label7.Location = new Point(100, 268);
             label7.Name = "label7";
             label7.Size = new Size(95, 15);
             label7.TabIndex = 6;
@@ -122,7 +122,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(41, 318);
+            label8.Location = new Point(100, 312);
             label8.Name = "label8";
             label8.Size = new Size(115, 15);
             label8.TabIndex = 7;
@@ -132,7 +132,7 @@
             // 
             UidBox.BackColor = Color.White;
             UidBox.BorderStyle = BorderStyle.None;
-            UidBox.Location = new Point(169, 77);
+            UidBox.Location = new Point(228, 71);
             UidBox.Name = "UidBox";
             UidBox.ReadOnly = true;
             UidBox.Size = new Size(163, 16);
@@ -142,7 +142,7 @@
             // 
             IdBox.BackColor = Color.White;
             IdBox.BorderStyle = BorderStyle.None;
-            IdBox.Location = new Point(169, 114);
+            IdBox.Location = new Point(228, 108);
             IdBox.Name = "IdBox";
             IdBox.ReadOnly = true;
             IdBox.Size = new Size(163, 16);
@@ -152,7 +152,7 @@
             // 
             PwBox.BackColor = Color.White;
             PwBox.BorderStyle = BorderStyle.None;
-            PwBox.Location = new Point(169, 154);
+            PwBox.Location = new Point(228, 148);
             PwBox.Name = "PwBox";
             PwBox.ReadOnly = true;
             PwBox.Size = new Size(160, 16);
@@ -162,7 +162,7 @@
             // 
             NameBox.BackColor = Color.White;
             NameBox.BorderStyle = BorderStyle.None;
-            NameBox.Location = new Point(169, 195);
+            NameBox.Location = new Point(228, 189);
             NameBox.Name = "NameBox";
             NameBox.ReadOnly = true;
             NameBox.Size = new Size(160, 16);
@@ -172,7 +172,7 @@
             // 
             nnBox.BackColor = Color.White;
             nnBox.BorderStyle = BorderStyle.None;
-            nnBox.Location = new Point(169, 234);
+            nnBox.Location = new Point(228, 228);
             nnBox.Name = "nnBox";
             nnBox.ReadOnly = true;
             nnBox.Size = new Size(160, 16);
@@ -182,7 +182,7 @@
             // 
             pnBox.BackColor = Color.White;
             pnBox.BorderStyle = BorderStyle.None;
-            pnBox.Location = new Point(169, 274);
+            pnBox.Location = new Point(228, 268);
             pnBox.Name = "pnBox";
             pnBox.ReadOnly = true;
             pnBox.Size = new Size(163, 16);
@@ -192,7 +192,7 @@
             // 
             rvBox.BackColor = Color.White;
             rvBox.BorderStyle = BorderStyle.None;
-            rvBox.Location = new Point(169, 318);
+            rvBox.Location = new Point(228, 312);
             rvBox.Name = "rvBox";
             rvBox.ReadOnly = true;
             rvBox.Size = new Size(160, 16);
@@ -205,7 +205,7 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(396, 394);
+            button2.Location = new Point(387, 399);
             button2.Name = "button2";
             button2.Size = new Size(75, 33);
             button2.TabIndex = 16;
@@ -238,7 +238,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(108, 160, 220);
-            panel2.Location = new Point(169, 102);
+            panel2.Location = new Point(228, 96);
             panel2.Margin = new Padding(4);
             panel2.Name = "panel2";
             panel2.Size = new Size(163, 1);
@@ -247,7 +247,7 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(108, 160, 220);
-            panel3.Location = new Point(169, 136);
+            panel3.Location = new Point(228, 130);
             panel3.Margin = new Padding(4);
             panel3.Name = "panel3";
             panel3.Size = new Size(163, 1);
@@ -256,7 +256,7 @@
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(108, 160, 220);
-            panel4.Location = new Point(169, 176);
+            panel4.Location = new Point(228, 170);
             panel4.Margin = new Padding(4);
             panel4.Name = "panel4";
             panel4.Size = new Size(163, 1);
@@ -265,7 +265,7 @@
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(108, 160, 220);
-            panel5.Location = new Point(169, 217);
+            panel5.Location = new Point(228, 211);
             panel5.Margin = new Padding(4);
             panel5.Name = "panel5";
             panel5.Size = new Size(163, 1);
@@ -274,7 +274,7 @@
             // panel6
             // 
             panel6.BackColor = Color.FromArgb(108, 160, 220);
-            panel6.Location = new Point(169, 256);
+            panel6.Location = new Point(228, 250);
             panel6.Margin = new Padding(4);
             panel6.Name = "panel6";
             panel6.Size = new Size(163, 1);
@@ -283,7 +283,7 @@
             // panel7
             // 
             panel7.BackColor = Color.FromArgb(108, 160, 220);
-            panel7.Location = new Point(169, 296);
+            panel7.Location = new Point(228, 290);
             panel7.Margin = new Padding(4);
             panel7.Name = "panel7";
             panel7.Size = new Size(163, 1);
@@ -292,7 +292,7 @@
             // panel8
             // 
             panel8.BackColor = Color.FromArgb(108, 160, 220);
-            panel8.Location = new Point(169, 340);
+            panel8.Location = new Point(228, 334);
             panel8.Margin = new Padding(4);
             panel8.Name = "panel8";
             panel8.Size = new Size(163, 1);
@@ -302,7 +302,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(41, 364);
+            label1.Location = new Point(100, 358);
             label1.Name = "label1";
             label1.Size = new Size(111, 15);
             label1.TabIndex = 27;
@@ -311,7 +311,7 @@
             // panel9
             // 
             panel9.BackColor = Color.FromArgb(108, 160, 220);
-            panel9.Location = new Point(169, 378);
+            panel9.Location = new Point(228, 372);
             panel9.Margin = new Padding(4);
             panel9.Name = "panel9";
             panel9.Size = new Size(163, 1);
@@ -319,7 +319,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(169, 353);
+            textBox1.Location = new Point(228, 347);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(163, 23);
             textBox1.TabIndex = 29;
@@ -329,7 +329,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(501, 450);
+            ClientSize = new Size(501, 472);
             Controls.Add(textBox1);
             Controls.Add(panel9);
             Controls.Add(label1);

@@ -168,6 +168,7 @@ namespace TeamProject
                 TextAlign = ContentAlignment.TopCenter,
                 Font = new Font("Arial", 10)
             };
+
             titleLabel.DoubleClick += TitleLabel_DoubleClick;
             panel.Controls.Add(titleLabel);
 
