@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label5 = new Label();
             tab1 = new TabControl();
             tabPage1 = new TabPage();
             nmcomp = new Button();
@@ -90,27 +89,17 @@
             ((System.ComponentModel.ISupportInitialize)myBookmarkView).BeginInit();
             SuspendLayout();
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(353, 28);
-            label5.Margin = new Padding(4, 0, 4, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(67, 15);
-            label5.TabIndex = 4;
-            label5.Text = "마이페이지";
-            // 
             // tab1
             // 
             tab1.Controls.Add(tabPage1);
             tab1.Controls.Add(tabPage2);
             tab1.Controls.Add(tabPage3);
             tab1.Dock = DockStyle.Bottom;
-            tab1.Location = new Point(0, 47);
+            tab1.Location = new Point(0, 1);
             tab1.Margin = new Padding(4);
             tab1.Name = "tab1";
             tab1.SelectedIndex = 0;
-            tab1.Size = new Size(818, 540);
+            tab1.Size = new Size(818, 586);
             tab1.TabIndex = 5;
             // 
             // tabPage1
@@ -150,7 +139,7 @@
             tabPage1.Margin = new Padding(4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(4);
-            tabPage1.Size = new Size(810, 512);
+            tabPage1.Size = new Size(810, 558);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "회원정보";
             // 
@@ -562,7 +551,7 @@
             tabPage2.Margin = new Padding(4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(4);
-            tabPage2.Size = new Size(810, 512);
+            tabPage2.Size = new Size(810, 558);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "내가 남긴 리뷰";
             tabPage2.UseVisualStyleBackColor = true;
@@ -574,7 +563,7 @@
             panel11.Controls.Add(btn_reviewUpdate);
             panel11.Controls.Add(btn_reviewclose);
             panel11.Dock = DockStyle.Bottom;
-            panel11.Location = new Point(4, 469);
+            panel11.Location = new Point(4, 515);
             panel11.Name = "panel11";
             panel11.Size = new Size(802, 39);
             panel11.TabIndex = 22;
@@ -670,7 +659,7 @@
             tabPage3.Controls.Add(myBookmarkView);
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(810, 512);
+            tabPage3.Size = new Size(810, 558);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "즐겨찾기";
             tabPage3.UseVisualStyleBackColor = true;
@@ -681,7 +670,7 @@
             panel10.Controls.Add(btn_bmdelete);
             panel10.Controls.Add(button1);
             panel10.Dock = DockStyle.Bottom;
-            panel10.Location = new Point(0, 469);
+            panel10.Location = new Point(0, 515);
             panel10.Name = "panel10";
             panel10.Size = new Size(810, 43);
             panel10.TabIndex = 21;
@@ -758,7 +747,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(818, 587);
             Controls.Add(tab1);
-            Controls.Add(label5);
             Name = "MyPage";
             Text = "MyPage";
             Load += MyPage_Load;
@@ -778,11 +766,9 @@
             panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)myBookmarkView).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-        private Label label5;
         private TabControl tab1;
         private TabPage tabPage1;
         private TabPage tabPage2;
