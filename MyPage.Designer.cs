@@ -99,7 +99,7 @@
             tab1.Margin = new Padding(4);
             tab1.Name = "tab1";
             tab1.SelectedIndex = 0;
-            tab1.Size = new Size(559, 548);
+            tab1.Size = new Size(593, 548);
             tab1.TabIndex = 5;
             // 
             // tabPage1
@@ -130,7 +130,7 @@
             tabPage1.Margin = new Padding(4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(4);
-            tabPage1.Size = new Size(551, 520);
+            tabPage1.Size = new Size(585, 520);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "회원정보";
             // 
@@ -189,7 +189,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(4, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(543, 66);
+            panel1.Size = new Size(577, 66);
             panel1.TabIndex = 18;
             // 
             // label9
@@ -371,7 +371,7 @@
             tabPage2.Margin = new Padding(4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(4);
-            tabPage2.Size = new Size(584, 520);
+            tabPage2.Size = new Size(585, 520);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "내가 남긴 리뷰";
             tabPage2.UseVisualStyleBackColor = true;
@@ -384,7 +384,7 @@
             panel11.Dock = DockStyle.Bottom;
             panel11.Location = new Point(4, 477);
             panel11.Name = "panel11";
-            panel11.Size = new Size(576, 39);
+            panel11.Size = new Size(577, 39);
             panel11.TabIndex = 22;
             // 
             // btn_reviewUpdate
@@ -426,7 +426,7 @@
             panel8.Dock = DockStyle.Top;
             panel8.Location = new Point(4, 4);
             panel8.Name = "panel8";
-            panel8.Size = new Size(576, 42);
+            panel8.Size = new Size(577, 42);
             panel8.TabIndex = 19;
             // 
             // label11
@@ -461,7 +461,7 @@
             tabPage3.Controls.Add(myBookmarkView);
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(584, 520);
+            tabPage3.Size = new Size(585, 520);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "즐겨찾기";
             tabPage3.UseVisualStyleBackColor = true;
@@ -474,7 +474,7 @@
             panel10.Dock = DockStyle.Bottom;
             panel10.Location = new Point(0, 477);
             panel10.Name = "panel10";
-            panel10.Size = new Size(584, 43);
+            panel10.Size = new Size(585, 43);
             panel10.TabIndex = 21;
             // 
             // btn_bmdelete
@@ -514,7 +514,7 @@
             panel9.Dock = DockStyle.Top;
             panel9.Location = new Point(0, 0);
             panel9.Name = "panel9";
-            panel9.Size = new Size(584, 46);
+            panel9.Size = new Size(585, 46);
             panel9.TabIndex = 20;
             // 
             // label6
@@ -542,7 +542,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(559, 552);
+            ClientSize = new Size(593, 552);
             Controls.Add(tab1);
             Controls.Add(label5);
             Name = "MyPage";

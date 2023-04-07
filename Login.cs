@@ -38,11 +38,14 @@ namespace TeamProject
             {
                 // 현재 로그인한 사용자가 관리자인 경우에만 adminpage를 띄움
                 bool isAdmin = check.IsAdmin(TextId.Text.Trim());
+                Main main = new Main(); 
                 if (isAdmin)
                 {
+                    Check check1 = new();
                     MessageBox.Show("관리자 로그인 성공");
-                    var adminPage = new Admin_Page(MainForm);
-                    adminPage.Show();
+                    main.userid = TextId.Text.Trim();
+                    main.Main_AdminLoad(sender, e);
+                    main.Show();
                     this.Close();
                     return;
                 }
