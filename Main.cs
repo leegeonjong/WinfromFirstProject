@@ -180,7 +180,13 @@ namespace TeamProject
             if (sender is Label titleLabel)
             {
                 string movieTitle = titleLabel.Text;
-                movieuid = check1.FindMvUid(movieTitle.Trim().Substring(movieTitle.IndexOf(']') + 1));
+
+                int startIndex = movieTitle.IndexOf(']') + 2;
+                int endIndex = movieTitle.LastIndexOf('[') - 1;
+                string extractedTitle = movieTitle.Substring(startIndex, endIndex - startIndex);
+
+                //movieuid = check1.FindMvUid(movieTitle.Trim().Substring(movieTitle.IndexOf(']') + 1));
+                movieuid = check1.FindMvUid(extractedTitle);
                 Movie_Detail MDT = new(this);
 
                 // 영화 제목과 포스터 URL 가져오기
