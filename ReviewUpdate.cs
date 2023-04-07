@@ -21,19 +21,16 @@ namespace TeamProject
 
         int UserUid;
         int MovieUid;
-        int adUserUid;
+       
 
         public ReviewUpdate(Admin_Page admin, MyPage mypage)
         {
             InitializeComponent();
             this.mypage = mypage;
+            this.admin = admin;
             UserUid = mypage.UserUid;
-            adUserUid = admin.usuid;
 
-
-
-
-            if (this.mypage.myReviewView.SelectedRows.Count > 0)
+            if (mypage.myReviewView.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = this.mypage.myReviewView.SelectedRows[0];
                 nnBox.Text = selectedRow.Cells["u_nickname"].Value.ToString();
@@ -53,58 +50,32 @@ namespace TeamProject
             SqlCommand cmd = cert.GetSqlCommand();
             Check check = new Check();
 
-            string uid = mypage.myReviewView.SelectedRows[0].Cells[0].Value.ToString();
-            string uid2 = admin.memberView.SelectedRows[0].Cells[0].Value.ToString();
-
             MovieUid = check.FindMvUid(mnBox.Text);
-            if (admin.usuid > 0)
+            UserUid = check.FindUid(mypage.idBox.Text);
+
+          
+
+            cmd.CommandText = $"SELECT u.u_nickname, m.title, r.r_rate, r.r_content, r.r_date " +
+                                $"FROM review r " +
+                                $"INNER JOIN project_user u ON r.u_uid = u.u_uid " +
+                                $"INNER JOIN MovieList M ON r.MovieUID = m.MovieUID " +
+                                $"WHERE u.u_uid =@u_uid";
+            cmd.Parameters.AddWithValue("@u_uid", UserUid);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+
+            while (reader.Read())
             {
+                rvBox.Text = reader["r_content"].ToString();
+                rtBox.Text = reader["r_rate"].ToString();
 
-                cmd.CommandText = $"SELECT u.u_nickname, m.title, r.r_rate, r.r_content, r.r_date " +
-                                    $"FROM review r " +
-                                    $"INNER JOIN project_user u ON r.u_uid = u.u_uid " +
-                                    $"INNER JOIN MovieList M ON r.MovieUID = m.MovieUID " +
-                                    $"WHERE u.u_uid =@u_uid";
-                cmd.Parameters.AddWithValue("@u_uid", admin.usuid);
-
-                SqlDataReader reader = cmd.ExecuteReader();
-
-
-                while (reader.Read())
-                {
-                    rvBox.Text = reader["r_content"].ToString();
-                    rtBox.Text = reader["r_rate"].ToString();
-
-                }
-                reader.Close();
-                return;
             }
-            else
-            {
-                cmd.CommandText = $"SELECT u.u_nickname, m.title, r.r_rate, r.r_content, r.r_date " +
-                                    $"FROM review r " +
-                                    $"INNER JOIN project_user u ON r.u_uid = u.u_uid " +
-                                    $"INNER JOIN MovieList M ON r.MovieUID = m.MovieUID " +
-                                    $"WHERE u.u_uid =@u_uid";
-                cmd.Parameters.AddWithValue("@u_uid", admin.usuid);
-
-                SqlDataReader reader = cmd.ExecuteReader();
-
-
-                while (reader.Read())
-                {
-                    rvBox.Text = reader["r_content"].ToString();
-                    rtBox.Text = reader["r_rate"].ToString();
-
-                }
-                reader.Close();
-
-            
-        
+            reader.Close();         
 
         }// SqlDataReader 객체를 닫습니다.
-
-    }
+    
+    
 
     private void btn_Update_Click(object sender, EventArgs e)
     {
@@ -127,16 +98,10 @@ namespace TeamProject
             int rate;
             if (!int.TryParse(rateString, out rate))
             {
-                MessageBox.Show("평점은 자연수만 입력 가능합니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("평점은 꼭 입력해주세요.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            if (rate > 10 || rate < 0)
-            {
-                MessageBox.Show("평점은 1~10까지의 자연수만 입력가능합니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
+    
 
             // UPDATE 쿼리문의 매개변수 값 설정
             cmd.Parameters.AddWithValue("@u_uid", UserUid);
