@@ -35,6 +35,9 @@ namespace TeamProject
             UserId = main.userid;
             UserUid = main.useruid;
             MovieUid = main.movieuid;
+            myReviewView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 190, 250);
+            myReviewView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
 
         }
 
@@ -198,6 +201,8 @@ namespace TeamProject
 
             myReviewView.DataSource = dataTable;
 
+
+
             myReviewView.Columns["u_nickname"].HeaderText = "닉네임";
 
             myReviewView.Columns["title"].HeaderText = "영화 제목";
@@ -205,13 +210,13 @@ namespace TeamProject
             myReviewView.Columns["r_content"].HeaderText = "내 리뷰";
             myReviewView.Columns["r_date"].HeaderText = "리뷰를 남긴 날짜";
 
-            myReviewView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 160, 220);
-            myReviewView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
             foreach (DataGridViewColumn column in myReviewView.Columns)
             {
                 column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
+
+
 
 
             // 리소스 정리

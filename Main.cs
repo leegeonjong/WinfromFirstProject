@@ -240,6 +240,21 @@ namespace TeamProject
 
 
         }
+
+        public void Main_AdminLoad(object sender, EventArgs e)
+        {
+            Check chk = new Check();
+            logStatus = true;
+            btnLogin.Text = "로그아웃";
+            label_id.Text = userid;
+            label_nn.Text = userNickname + " 관리자님 반갑습니다";
+            useruid = chk.FindUid(label_id.Text);
+            mypage.Visible = true;
+            btn_managingMember.Visible = true;         
+            label_id.Visible = false;
+
+
+        }
         private async void CB_Category_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             string orderByColumn = "Title ASC"; //기본정렬값
@@ -365,6 +380,10 @@ namespace TeamProject
 
         }
 
-
+        private void btn_managingMember_Click(object sender, EventArgs e)
+        {
+            Admin_Page adminpage = new Admin_Page(this);
+            adminpage.Show();
+        }
     }
 }

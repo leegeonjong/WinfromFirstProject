@@ -90,46 +90,48 @@
             // 
             // tab1
             // 
-            this.tab1.Controls.Add(this.tabPage1);
-            this.tab1.Controls.Add(this.tabPage2);
-            this.tab1.Controls.Add(this.tabPage3);
-            this.tab1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tab1.Location = new System.Drawing.Point(0, 5);
-            this.tab1.Margin = new System.Windows.Forms.Padding(5);
-            this.tab1.Name = "tab1";
-            this.tab1.SelectedIndex = 0;
-            this.tab1.Size = new System.Drawing.Size(761, 731);
-            this.tab1.TabIndex = 5;
+            tab1.Controls.Add(tabPage1);
+            tab1.Controls.Add(tabPage2);
+            tab1.Controls.Add(tabPage3);
+            tab1.Dock = DockStyle.Bottom;
+            tab1.Location = new Point(0, 4);
+            tab1.Margin = new Padding(4);
+            tab1.Name = "tab1";
+            tab1.SelectedIndex = 0;
+            tab1.Size = new Size(593, 548);
+            tab1.TabIndex = 5;
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.White;
-            this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.panel6);
-            this.tabPage1.Controls.Add(this.panel5);
-            this.tabPage1.Controls.Add(this.panel4);
-            this.tabPage1.Controls.Add(this.panel3);
-            this.tabPage1.Controls.Add(this.panel2);
-            this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Controls.Add(this.btn_Cancel);
-            this.tabPage1.Controls.Add(this.btn_update);
-            this.tabPage1.Controls.Add(this.pnBox);
-            this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.nnBox);
-            this.tabPage1.Controls.Add(this.nameBox);
-            this.tabPage1.Controls.Add(this.pwBox);
-            this.tabPage1.Controls.Add(this.idBox);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(5);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(5);
-            this.tabPage1.Size = new System.Drawing.Size(753, 698);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "회원정보";
+            tabPage1.BackColor = Color.White;
+            tabPage1.Controls.Add(panel7);
+            tabPage1.Controls.Add(panel6);
+            tabPage1.Controls.Add(panel5);
+            tabPage1.Controls.Add(panel4);
+            tabPage1.Controls.Add(panel3);
+            tabPage1.Controls.Add(panel2);
+            tabPage1.Controls.Add(panel1);
+            tabPage1.Controls.Add(btn_Cancel);
+            tabPage1.Controls.Add(btn_update);
+            tabPage1.Controls.Add(pnBox);
+            tabPage1.Controls.Add(label8);
+            tabPage1.Controls.Add(lvBox);
+            tabPage1.Controls.Add(label7);
+            tabPage1.Controls.Add(nnBox);
+            tabPage1.Controls.Add(nameBox);
+            tabPage1.Controls.Add(pwBox);
+            tabPage1.Controls.Add(idBox);
+            tabPage1.Controls.Add(label4);
+            tabPage1.Controls.Add(label3);
+            tabPage1.Controls.Add(label2);
+            tabPage1.Controls.Add(label1);
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Margin = new Padding(4);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(4);
+            tabPage1.Size = new Size(585, 520);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "회원정보";
             // 
             // button2
             // 
@@ -193,14 +195,13 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(160)))), ((int)(((byte)(220)))));
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(5, 5);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(743, 88);
-            this.panel1.TabIndex = 18;
+            panel1.BackColor = Color.FromArgb(108, 160, 220);
+            panel1.Controls.Add(label9);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(4, 4);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(577, 66);
+            panel1.TabIndex = 18;
             // 
             // label9
             // 
@@ -349,69 +350,71 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.panel11);
-            this.tabPage2.Controls.Add(this.panel8);
-            this.tabPage2.Controls.Add(this.myReviewView);
-            this.tabPage2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(5);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(5);
-            this.tabPage2.Size = new System.Drawing.Size(753, 698);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "내가 남긴 리뷰";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            tabPage2.Controls.Add(panel11);
+            tabPage2.Controls.Add(panel8);
+            tabPage2.Controls.Add(myReviewView);
+            tabPage2.ForeColor = SystemColors.ControlText;
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Margin = new Padding(4);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(4);
+            tabPage2.Size = new Size(585, 520);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "내가 남긴 리뷰";
+            tabPage2.UseVisualStyleBackColor = true;
             // 
             // panel11
             // 
-            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(160)))), ((int)(((byte)(220)))));
-            this.panel11.Controls.Add(this.btn_reviewUpdate);
-            this.panel11.Controls.Add(this.btn_reviewclose);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel11.Location = new System.Drawing.Point(5, 641);
-            this.panel11.Margin = new System.Windows.Forms.Padding(4);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(743, 52);
-            this.panel11.TabIndex = 22;
+            panel11.BackColor = Color.FromArgb(108, 160, 220);
+            panel11.Controls.Add(btn_reviewUpdate);
+            panel11.Controls.Add(btn_reviewclose);
+            panel11.Dock = DockStyle.Bottom;
+            panel11.Location = new Point(4, 477);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(577, 39);
+            panel11.TabIndex = 22;
             // 
             // btn_reviewUpdate
             // 
-            this.btn_reviewUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
-            this.btn_reviewUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
-            this.btn_reviewUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_reviewUpdate.ForeColor = System.Drawing.Color.White;
-            this.btn_reviewUpdate.Location = new System.Drawing.Point(496, 9);
-            this.btn_reviewUpdate.Margin = new System.Windows.Forms.Padding(5);
-            this.btn_reviewUpdate.Name = "btn_reviewUpdate";
-            this.btn_reviewUpdate.Size = new System.Drawing.Size(131, 36);
-            this.btn_reviewUpdate.TabIndex = 2;
-            this.btn_reviewUpdate.Text = "수정하기";
-            this.btn_reviewUpdate.UseVisualStyleBackColor = false;
+            btn_reviewUpdate.BackColor = Color.FromArgb(108, 190, 250);
+            btn_reviewUpdate.FlatAppearance.BorderColor = Color.FromArgb(108, 190, 250);
+            btn_reviewUpdate.FlatStyle = FlatStyle.Flat;
+            btn_reviewUpdate.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_reviewUpdate.ForeColor = Color.White;
+            btn_reviewUpdate.Location = new Point(386, 7);
+            btn_reviewUpdate.Margin = new Padding(4);
+            btn_reviewUpdate.Name = "btn_reviewUpdate";
+            btn_reviewUpdate.Size = new Size(102, 27);
+            btn_reviewUpdate.TabIndex = 2;
+            btn_reviewUpdate.Text = "수정하기";
+            btn_reviewUpdate.UseVisualStyleBackColor = false;
+            btn_reviewUpdate.Click += btn_reviewUpdate_Click;
             // 
             // btn_reviewclose
             // 
-            this.btn_reviewclose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
-            this.btn_reviewclose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(160)))), ((int)(((byte)(220)))));
-            this.btn_reviewclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_reviewclose.ForeColor = System.Drawing.Color.White;
-            this.btn_reviewclose.Location = new System.Drawing.Point(638, 9);
-            this.btn_reviewclose.Margin = new System.Windows.Forms.Padding(5);
-            this.btn_reviewclose.Name = "btn_reviewclose";
-            this.btn_reviewclose.Size = new System.Drawing.Size(96, 36);
-            this.btn_reviewclose.TabIndex = 3;
-            this.btn_reviewclose.Text = "닫기";
-            this.btn_reviewclose.UseVisualStyleBackColor = false;
+            btn_reviewclose.BackColor = Color.FromArgb(108, 190, 250);
+            btn_reviewclose.FlatAppearance.BorderColor = Color.FromArgb(108, 160, 220);
+            btn_reviewclose.FlatStyle = FlatStyle.Flat;
+            btn_reviewclose.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_reviewclose.ForeColor = Color.White;
+            btn_reviewclose.Location = new Point(496, 7);
+            btn_reviewclose.Margin = new Padding(4);
+            btn_reviewclose.Name = "btn_reviewclose";
+            btn_reviewclose.Size = new Size(75, 27);
+            btn_reviewclose.TabIndex = 3;
+            btn_reviewclose.Text = "닫기";
+            btn_reviewclose.UseVisualStyleBackColor = false;
+            btn_reviewclose.Click += btn_Cancel_Click;
             // 
             // panel8
             // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(160)))), ((int)(((byte)(220)))));
-            this.panel8.Controls.Add(this.label11);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(5, 5);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(743, 56);
-            this.panel8.TabIndex = 19;
+            panel8.BackColor = Color.FromArgb(108, 160, 220);
+            panel8.Controls.Add(label11);
+            panel8.Dock = DockStyle.Top;
+            panel8.Location = new Point(4, 4);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(577, 42);
+            panel8.TabIndex = 19;
             // 
             // label11
             // 
@@ -427,41 +430,40 @@
             // 
             // myReviewView
             // 
-            this.myReviewView.BackgroundColor = System.Drawing.Color.White;
-            this.myReviewView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.myReviewView.GridColor = System.Drawing.Color.LightGray;
-            this.myReviewView.Location = new System.Drawing.Point(5, 71);
-            this.myReviewView.Margin = new System.Windows.Forms.Padding(5);
-            this.myReviewView.Name = "myReviewView";
-            this.myReviewView.RowHeadersWidth = 5;
-            this.myReviewView.RowTemplate.Height = 25;
-            this.myReviewView.Size = new System.Drawing.Size(741, 556);
-            this.myReviewView.TabIndex = 1;
+            myReviewView.BackgroundColor = Color.White;
+            myReviewView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            myReviewView.EnableHeadersVisualStyles = false;
+            myReviewView.GridColor = Color.LightGray;
+            myReviewView.Location = new Point(4, 53);
+            myReviewView.Margin = new Padding(4);
+            myReviewView.Name = "myReviewView";
+            myReviewView.RowHeadersWidth = 5;
+            myReviewView.RowTemplate.Height = 25;
+            myReviewView.Size = new Size(576, 417);
+            myReviewView.TabIndex = 1;
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.panel10);
-            this.tabPage3.Controls.Add(this.panel9);
-            this.tabPage3.Controls.Add(this.myBookmarkView);
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(753, 698);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "즐겨찾기";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            tabPage3.Controls.Add(panel10);
+            tabPage3.Controls.Add(panel9);
+            tabPage3.Controls.Add(myBookmarkView);
+            tabPage3.Location = new Point(4, 24);
+            tabPage3.Name = "tabPage3";
+            tabPage3.Size = new Size(585, 520);
+            tabPage3.TabIndex = 2;
+            tabPage3.Text = "즐겨찾기";
+            tabPage3.UseVisualStyleBackColor = true;
             // 
             // panel10
             // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(160)))), ((int)(((byte)(220)))));
-            this.panel10.Controls.Add(this.btn_bmdelete);
-            this.panel10.Controls.Add(this.button1);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel10.Location = new System.Drawing.Point(0, 641);
-            this.panel10.Margin = new System.Windows.Forms.Padding(4);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(753, 57);
-            this.panel10.TabIndex = 21;
+            panel10.BackColor = Color.FromArgb(108, 160, 220);
+            panel10.Controls.Add(btn_bmdelete);
+            panel10.Controls.Add(button1);
+            panel10.Dock = DockStyle.Bottom;
+            panel10.Location = new Point(0, 477);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(585, 43);
+            panel10.TabIndex = 21;
             // 
             // btn_bmdelete
             // 
@@ -495,14 +497,13 @@
             // 
             // panel9
             // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(160)))), ((int)(((byte)(220)))));
-            this.panel9.Controls.Add(this.label6);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(0, 0);
-            this.panel9.Margin = new System.Windows.Forms.Padding(4);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(753, 61);
-            this.panel9.TabIndex = 20;
+            panel9.BackColor = Color.FromArgb(108, 160, 220);
+            panel9.Controls.Add(label6);
+            panel9.Dock = DockStyle.Top;
+            panel9.Location = new Point(0, 0);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(585, 46);
+            panel9.TabIndex = 20;
             // 
             // label6
             // 
@@ -530,32 +531,31 @@
             // 
             // MyPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(761, 736);
-            this.Controls.Add(this.tab1);
-            this.Controls.Add(this.label5);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "MyPage";
-            this.Text = "MyPage";
-            this.tab1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.myReviewView)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.myBookmarkView)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(593, 552);
+            Controls.Add(tab1);
+            Controls.Add(label5);
+            Name = "MyPage";
+            Text = "MyPage";
+            Load += MyPage_Load;
+            tab1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            tabPage2.ResumeLayout(false);
+            panel11.ResumeLayout(false);
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)myReviewView).EndInit();
+            tabPage3.ResumeLayout(false);
+            panel10.ResumeLayout(false);
+            panel9.ResumeLayout(false);
+            panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)myBookmarkView).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

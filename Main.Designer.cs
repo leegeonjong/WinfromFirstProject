@@ -44,6 +44,7 @@
             label_nn = new Label();
             label5 = new Label();
             panel1 = new Panel();
+            btn_managingMember = new Button();
             label_id = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -203,7 +204,7 @@
             label_nn.AutoSize = true;
             label_nn.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label_nn.ForeColor = Color.White;
-            label_nn.Location = new Point(673, 35);
+            label_nn.Location = new Point(657, 36);
             label_nn.Margin = new Padding(2, 0, 2, 0);
             label_nn.Name = "label_nn";
             label_nn.Size = new Size(0, 15);
@@ -223,6 +224,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(108, 160, 220);
+            panel1.Controls.Add(btn_managingMember);
             panel1.Controls.Add(label_id);
             panel1.Controls.Add(label_nn);
             panel1.Controls.Add(mypage);
@@ -234,12 +236,29 @@
             panel1.Size = new Size(959, 84);
             panel1.TabIndex = 21;
             // 
+            // btn_managingMember
+            // 
+            btn_managingMember.BackColor = Color.FromArgb(108, 190, 250);
+            btn_managingMember.FlatAppearance.BorderColor = Color.FromArgb(108, 190, 250);
+            btn_managingMember.FlatStyle = FlatStyle.Flat;
+            btn_managingMember.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_managingMember.ForeColor = Color.White;
+            btn_managingMember.Location = new Point(88, 32);
+            btn_managingMember.Margin = new Padding(2);
+            btn_managingMember.Name = "btn_managingMember";
+            btn_managingMember.Size = new Size(78, 26);
+            btn_managingMember.TabIndex = 21;
+            btn_managingMember.Text = "회원관리";
+            btn_managingMember.UseVisualStyleBackColor = false;
+            btn_managingMember.Visible = false;
+            btn_managingMember.Click += btn_managingMember_Click;
+            // 
             // label_id
             // 
             label_id.AutoSize = true;
             label_id.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label_id.ForeColor = Color.White;
-            label_id.Location = new Point(626, 35);
+            label_id.Location = new Point(600, 32);
             label_id.Margin = new Padding(2, 0, 2, 0);
             label_id.Name = "label_id";
             label_id.Size = new Size(0, 15);
@@ -293,5 +312,6 @@
         private Label label5;
         private Panel panel1;
         private Label label_id;
+        private Button btn_managingMember;
     }
 }
