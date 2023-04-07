@@ -186,8 +186,8 @@ namespace TeamProject
             Check check = new Check();
             UserUid = check.FindUid(UserId);
 
-
-            cmd.CommandText = $"SELECT u.u_nickname, m.title, r.r_rate, r.r_content, r.r_date " +
+           
+            cmd.CommandText = $"SELECT  m.title, u.u_nickname, r.r_rate, r.r_content, r.r_date " +
                                 $"FROM review r " +
                                 $"INNER JOIN project_user u ON r.u_uid = u.u_uid " +
                                 $"INNER JOIN MovieList M ON r.MovieUID = m.MovieUID " +
@@ -201,10 +201,8 @@ namespace TeamProject
             myReviewView.DataSource = dataTable;
 
 
-
-            myReviewView.Columns["u_nickname"].HeaderText = "닉네임";
-
             myReviewView.Columns["title"].HeaderText = "영화 제목";
+            myReviewView.Columns["u_nickname"].HeaderText = "닉네임";          
             myReviewView.Columns["r_rate"].HeaderText = "내 평점";
             myReviewView.Columns["r_content"].HeaderText = "내 리뷰";
             myReviewView.Columns["r_date"].HeaderText = "리뷰를 남긴 날짜";
@@ -349,12 +347,12 @@ namespace TeamProject
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            idBox.ReadOnly = false; 
+            idBox.ReadOnly = false;
         }
 
         private void pwmodify_Click(object sender, EventArgs e)
         {
-            pwBox.ReadOnly = false;        
+            pwBox.ReadOnly = false;
         }
 
         private void nmmodify_Click(object sender, EventArgs e)
@@ -375,7 +373,7 @@ namespace TeamProject
         private void btn_reviewDelete_Click(object sender, EventArgs e)
         {
             Check check = new Check();
-            string movietitle = myReviewView.SelectedCells[1].Value.ToString();
+            string movietitle = myReviewView.SelectedCells[0].Value.ToString();
             UserUid = check.FindUid(UserId);
             MovieUid = check.FindMvUid(movietitle);
 
