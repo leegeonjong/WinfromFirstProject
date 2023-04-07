@@ -23,7 +23,7 @@ namespace TeamProject
         public int UserUid { get; set; }
 
         int MovieUid;
-        
+
 
 
         public MyPage(Admin_Page form, Main main)
@@ -35,7 +35,7 @@ namespace TeamProject
             UserId = main.userid;
             UserUid = main.useruid;
             MovieUid = main.movieuid;
-            
+
             myReviewView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 190, 250);
             myReviewView.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 190, 250);
             myReviewView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
@@ -54,7 +54,7 @@ namespace TeamProject
 
             certification cert = new certification(strConn);
             SqlCommand cmd = cert.GetSqlCommand();
-  
+
 
 
 
@@ -335,8 +335,8 @@ namespace TeamProject
             {
                 cell.OwningRow.Selected = true;
             }
-            
-            ReviewUpdate updatePage = new ReviewUpdate(adminform,this);
+
+            ReviewUpdate updatePage = new ReviewUpdate(adminform, this);
 
             updatePage.Show();
         }
@@ -484,8 +484,8 @@ namespace TeamProject
 
         private void btn_reviewDelete_Click(object sender, EventArgs e)
         {
-          
-                Check check = new Check();
+
+            Check check = new Check();
             string movietitle = myReviewView.SelectedCells[0].Value.ToString();
             UserUid = check.FindUid(UserId);
             MovieUid = check.FindMvUid(movietitle);
@@ -647,5 +647,5 @@ namespace TeamProject
             }
         }
     }
-  
+
 }
