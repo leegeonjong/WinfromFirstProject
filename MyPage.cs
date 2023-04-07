@@ -593,13 +593,15 @@ namespace TeamProject
             else
             {
                 MessageBox.Show("중복된 아이디 입니다");
-                if (main.useruid > 0)
+                if (adminform.usuid > 0)
                 {
-                    idBox.Text = ch.Findid(UserUid);
-                    idBox.ReadOnly = false;
+                    idBox.Text = ch.Findid(adminform.usuid);
+                    idBox.ReadOnly = true;
+                    modify();
                     return;
                 }
-                idBox.Text = ch.Findid(adminform.usuid);
+                idBox.Text = ch.Findid(UserUid);
+                idBox.ReadOnly = true;
             }
             modify();
         }
