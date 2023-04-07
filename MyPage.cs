@@ -265,10 +265,6 @@ namespace TeamProject
         }
 
 
-        private void btn_reviewclose_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
 
         private void btn_reviewUpdate_Click(object sender, EventArgs e)
         {

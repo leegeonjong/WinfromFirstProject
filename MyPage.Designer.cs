@@ -67,6 +67,7 @@
             panel9 = new Panel();
             label6 = new Label();
             myBookmarkView = new DataGridView();
+            btn_reviewDelete = new Button();
             tab1.SuspendLayout();
             tabPage1.SuspendLayout();
             panel1.SuspendLayout();
@@ -379,6 +380,7 @@
             // panel11
             // 
             panel11.BackColor = Color.FromArgb(108, 160, 220);
+            panel11.Controls.Add(btn_reviewDelete);
             panel11.Controls.Add(btn_reviewUpdate);
             panel11.Controls.Add(btn_reviewclose);
             panel11.Dock = DockStyle.Bottom;
@@ -538,6 +540,21 @@
             myBookmarkView.Size = new Size(584, 419);
             myBookmarkView.TabIndex = 1;
             // 
+            // btn_reviewDelete
+            // 
+            btn_reviewDelete.BackColor = Color.FromArgb(108, 190, 250);
+            btn_reviewDelete.FlatAppearance.BorderColor = Color.FromArgb(108, 190, 250);
+            btn_reviewDelete.FlatStyle = FlatStyle.Flat;
+            btn_reviewDelete.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_reviewDelete.ForeColor = Color.White;
+            btn_reviewDelete.Location = new Point(276, 7);
+            btn_reviewDelete.Margin = new Padding(4);
+            btn_reviewDelete.Name = "btn_reviewDelete";
+            btn_reviewDelete.Size = new Size(102, 27);
+            btn_reviewDelete.TabIndex = 4;
+            btn_reviewDelete.Text = "삭제하기";
+            btn_reviewDelete.UseVisualStyleBackColor = false;
+            // 
             // MyPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -607,5 +624,6 @@
         private Label label6;
         private Panel panel11;
         private Panel panel10;
+        private Button btn_reviewDelete;
     }
 }

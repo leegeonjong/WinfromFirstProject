@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using Mysqlx.Crud;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -74,8 +75,12 @@ namespace TeamProject
 
                 using SqlConnection conn = new(strConn);
                 conn.Open();
+                 
+                string sql = "DELETE Review WHERE u_uid = @u_uid; " +
+                    " DELETE BookMark WHERE u_uid = @u_uid; " +
+                    " DELETE project_user WHERE u_uid = @u_uid; ";
 
-                string sql = "DELETE project_user WHERE u_uid = @u_uid";
+
 
                 int cnt = 0;
 
