@@ -40,7 +40,7 @@ namespace TeamProject
             certification cert = new certification(strConn);
             SqlCommand cmd = cert.GetSqlCommand();
 
-            cmd.CommandText = "SELECT u_uid,u_id, u_password, u_name, u_phonenum, u_level, u_nickname FROM project_user";
+            cmd.CommandText = "SELECT u_uid,u_id, u_password, u_name, u_phonenum, u_nickname FROM project_user";
             SqlDataReader reader = cmd.ExecuteReader();
 
             DataTable dataTable = new DataTable();
@@ -128,7 +128,7 @@ namespace TeamProject
             certification cert = new certification(strConn);
             SqlCommand cmd = cert.GetSqlCommand();
 
-            cmd.CommandText = "SELECT u_uid,u_id, u_password, u_name, u_phonenum, u_level, u_nickname FROM project_user";
+            cmd.CommandText = "SELECT u_uid,u_id, u_password, u_name, u_phonenum, u_nickname FROM project_user";
             SqlDataReader reader = cmd.ExecuteReader();
 
             DataTable dataTable = new DataTable();
@@ -174,7 +174,7 @@ namespace TeamProject
             SqlCommand cmd = cert.GetSqlCommand();
 
             string searchText = SearchBox.Text.Trim(); // 텍스트박스에서 검색어 가져오기
-            cmd.CommandText = "SELECT u_uid,u_id, u_password, u_name, u_phonenum, u_level, u_nickname FROM project_user WHERE u_id LIKE @searchText";
+            cmd.CommandText = "SELECT u_uid,u_id, u_password, u_name, u_phonenum, u_nickname FROM project_user WHERE u_id LIKE @searchText";
             cmd.Parameters.AddWithValue("@searchText", "%" + searchText + "%"); // 검색어 매개변수 추가
 
             SqlDataReader reader = cmd.ExecuteReader();

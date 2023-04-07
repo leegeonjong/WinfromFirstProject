@@ -110,7 +110,7 @@ namespace TeamProject
                 SqlCommand cmd = cert.GetSqlCommand();
 
                 // UPDATE 쿼리문 작성
-                string sql = "UPDATE project_user SET u_id = @u_id, u_password = @u_password, u_name = @u_name, u_phonenum = @u_phonenum, u_level = @u_level, u_nickname = @u_nickname WHERE u_uid = @u_uid";
+                string sql = "UPDATE project_user SET u_id = @u_id, u_password = @u_password, u_name = @u_name, u_phonenum = @u_phonenum, u_nickname = @u_nickname WHERE u_uid = @u_uid";
 
                 // SqlCommand 객체에 UPDATE 쿼리문 설정
                 cmd.CommandText = sql;
@@ -345,6 +345,31 @@ namespace TeamProject
             { MessageBox.Show("중복검사 성공"); }
             if (i == 2)
             { MessageBox.Show("중복검사 실패"); }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            idBox.ReadOnly = false; 
+        }
+
+        private void pwmodify_Click(object sender, EventArgs e)
+        {
+            pwBox.ReadOnly = false;        
+        }
+
+        private void nmmodify_Click(object sender, EventArgs e)
+        {
+            nameBox.ReadOnly = false;
+        }
+
+        private void phnmodify_Click(object sender, EventArgs e)
+        {
+            pnBox.ReadOnly = false;
+        }
+
+        private void nnmodify_Click(object sender, EventArgs e)
+        {
+            nnBox.ReadOnly = false;
         }
 
         private void btn_reviewDelete_Click(object sender, EventArgs e)

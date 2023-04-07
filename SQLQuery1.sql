@@ -50,16 +50,16 @@ CREATE TABLE project_user
 )
 drop table Project_User
 
- INSERT INTO project_user (u_id, u_password, u_name, u_phonenum, u_level, u_nickname, u_isadmin)
+ INSERT INTO project_user (u_id, u_password, u_name, u_phonenum, u_nickname, u_isadmin)
 VALUES
 ('admin', 'admin1234', '관리자', '01099999999', 10, '관리자',3),
-('kdh', 'kdh1234', '김동후', '01091946962', 1, '동후', 0),
+('kdh', 'kdh1234', '김동후', '01091946962', '동후', 0),
 
-('kkk', 'kdh12345', '김동구', '01091946962', 1, '동구', 0),
-('hhh', 'kdh12344', '김후후', '01091946962', 1, '후후', 0),
-('bbb', 'kdh12343', '김주후', '01091946962', 1, '주후', 0),
-('zzz', 'kdh12342', '김부후', '01091946962', 1, '부후', 0),
-('nnn', 'kdh12341', '김루후', '01091946962', 1, '루후', 0);
+('kkk', 'kdh12345', '김동구', '01091946962', '동구', 0),
+('hhh', 'kdh12344', '김후후', '01091946962', '후후', 0),
+('bbb', 'kdh12343', '김주후', '01091946962', '주후', 0),
+('zzz', 'kdh12342', '김부후', '01091946962', '부후', 0),
+('nnn', 'kdh12341', '김루후', '01091946962', '루후', 0);
 
         
       select*from Project_User
