@@ -28,666 +28,758 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label5 = new Label();
-            tab1 = new TabControl();
-            tabPage1 = new TabPage();
-            nnmodify = new Button();
-            phnmodify = new Button();
-            nmmodify = new Button();
-            pwmodify = new Button();
-            button_update = new Button();
-            button3 = new Button();
-            idmodify = new Button();
-            panel6 = new Panel();
-            panel5 = new Panel();
-            panel4 = new Panel();
-            panel3 = new Panel();
-            panel2 = new Panel();
-            panel1 = new Panel();
-            label9 = new Label();
-            btn_Cancel = new Button();
-            btn_update = new Button();
-            pnBox = new TextBox();
-            label8 = new Label();
-            nnBox = new TextBox();
-            nameBox = new TextBox();
-            pwBox = new TextBox();
-            idBox = new TextBox();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
-            tabPage2 = new TabPage();
-            panel11 = new Panel();
-            btn_reviewDelete = new Button();
-            btn_reviewUpdate = new Button();
-            btn_reviewclose = new Button();
-            panel8 = new Panel();
-            label11 = new Label();
-            myReviewView = new DataGridView();
-            tabPage3 = new TabPage();
-            panel10 = new Panel();
-            btn_bmdelete = new Button();
-            button1 = new Button();
-            panel9 = new Panel();
-            label6 = new Label();
-            myBookmarkView = new DataGridView();
-            tab1.SuspendLayout();
-            tabPage1.SuspendLayout();
-            panel1.SuspendLayout();
-            tabPage2.SuspendLayout();
-            panel11.SuspendLayout();
-            panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)myReviewView).BeginInit();
-            tabPage3.SuspendLayout();
-            panel10.SuspendLayout();
-            panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)myBookmarkView).BeginInit();
-            SuspendLayout();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tab1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.nmcomp = new System.Windows.Forms.Button();
+            this.phncom = new System.Windows.Forms.Button();
+            this.nmcom = new System.Windows.Forms.Button();
+            this.pwcom = new System.Windows.Forms.Button();
+            this.idcom = new System.Windows.Forms.Button();
+            this.nnmodify = new System.Windows.Forms.Button();
+            this.phnmodify = new System.Windows.Forms.Button();
+            this.nmmodify = new System.Windows.Forms.Button();
+            this.pwmodify = new System.Windows.Forms.Button();
+            this.button_update = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.idmodify = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btn_Cancel = new System.Windows.Forms.Button();
+            this.btn_update = new System.Windows.Forms.Button();
+            this.pnBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.nnBox = new System.Windows.Forms.TextBox();
+            this.nameBox = new System.Windows.Forms.TextBox();
+            this.pwBox = new System.Windows.Forms.TextBox();
+            this.idBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.btn_reviewDelete = new System.Windows.Forms.Button();
+            this.btn_reviewUpdate = new System.Windows.Forms.Button();
+            this.btn_reviewclose = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.myReviewView = new System.Windows.Forms.DataGridView();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.btn_bmdelete = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.myBookmarkView = new System.Windows.Forms.DataGridView();
+            this.tab1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.myReviewView)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.myBookmarkView)).BeginInit();
+            this.SuspendLayout();
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(414, 28);
-            label5.Margin = new Padding(4, 0, 4, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(67, 15);
-            label5.TabIndex = 4;
-            label5.Text = "마이페이지";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(353, 28);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 15);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "마이페이지";
             // 
             // tab1
             // 
-            tab1.Controls.Add(tabPage1);
-            tab1.Controls.Add(tabPage2);
-            tab1.Controls.Add(tabPage3);
-            tab1.Dock = DockStyle.Bottom;
-            tab1.Location = new Point(0, 4);
-            tab1.Margin = new Padding(4);
-            tab1.Name = "tab1";
-            tab1.SelectedIndex = 0;
-            tab1.Size = new Size(818, 548);
-            tab1.TabIndex = 5;
+            this.tab1.Controls.Add(this.tabPage1);
+            this.tab1.Controls.Add(this.tabPage2);
+            this.tab1.Controls.Add(this.tabPage3);
+            this.tab1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tab1.Location = new System.Drawing.Point(0, 47);
+            this.tab1.Margin = new System.Windows.Forms.Padding(4);
+            this.tab1.Name = "tab1";
+            this.tab1.SelectedIndex = 0;
+            this.tab1.Size = new System.Drawing.Size(818, 540);
+            this.tab1.TabIndex = 5;
             // 
             // tabPage1
             // 
-            tabPage1.BackColor = Color.White;
-            tabPage1.Controls.Add(nnmodify);
-            tabPage1.Controls.Add(phnmodify);
-            tabPage1.Controls.Add(nmmodify);
-            tabPage1.Controls.Add(pwmodify);
-            tabPage1.Controls.Add(button_update);
-            tabPage1.Controls.Add(button3);
-            tabPage1.Controls.Add(idmodify);
-            tabPage1.Controls.Add(panel6);
-            tabPage1.Controls.Add(panel5);
-            tabPage1.Controls.Add(panel4);
-            tabPage1.Controls.Add(panel3);
-            tabPage1.Controls.Add(panel2);
-            tabPage1.Controls.Add(panel1);
-            tabPage1.Controls.Add(btn_Cancel);
-            tabPage1.Controls.Add(btn_update);
-            tabPage1.Controls.Add(pnBox);
-            tabPage1.Controls.Add(label8);
-            tabPage1.Controls.Add(nnBox);
-            tabPage1.Controls.Add(nameBox);
-            tabPage1.Controls.Add(pwBox);
-            tabPage1.Controls.Add(idBox);
-            tabPage1.Controls.Add(label4);
-            tabPage1.Controls.Add(label3);
-            tabPage1.Controls.Add(label2);
-            tabPage1.Controls.Add(label1);
-            tabPage1.Location = new Point(4, 24);
-            tabPage1.Margin = new Padding(4);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(4);
-            tabPage1.Size = new Size(810, 520);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "회원정보";
+            this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.nmcomp);
+            this.tabPage1.Controls.Add(this.phncom);
+            this.tabPage1.Controls.Add(this.nmcom);
+            this.tabPage1.Controls.Add(this.pwcom);
+            this.tabPage1.Controls.Add(this.idcom);
+            this.tabPage1.Controls.Add(this.nnmodify);
+            this.tabPage1.Controls.Add(this.phnmodify);
+            this.tabPage1.Controls.Add(this.nmmodify);
+            this.tabPage1.Controls.Add(this.pwmodify);
+            this.tabPage1.Controls.Add(this.button_update);
+            this.tabPage1.Controls.Add(this.button3);
+            this.tabPage1.Controls.Add(this.idmodify);
+            this.tabPage1.Controls.Add(this.panel6);
+            this.tabPage1.Controls.Add(this.panel5);
+            this.tabPage1.Controls.Add(this.panel4);
+            this.tabPage1.Controls.Add(this.panel3);
+            this.tabPage1.Controls.Add(this.panel2);
+            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Controls.Add(this.btn_Cancel);
+            this.tabPage1.Controls.Add(this.btn_update);
+            this.tabPage1.Controls.Add(this.pnBox);
+            this.tabPage1.Controls.Add(this.label8);
+            this.tabPage1.Controls.Add(this.nnBox);
+            this.tabPage1.Controls.Add(this.nameBox);
+            this.tabPage1.Controls.Add(this.pwBox);
+            this.tabPage1.Controls.Add(this.idBox);
+            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Size = new System.Drawing.Size(810, 512);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "회원정보";
+            // 
+            // nmcomp
+            // 
+            this.nmcomp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.nmcomp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.nmcomp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.nmcomp.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.nmcomp.ForeColor = System.Drawing.Color.White;
+            this.nmcomp.Location = new System.Drawing.Point(571, 392);
+            this.nmcomp.Margin = new System.Windows.Forms.Padding(4);
+            this.nmcomp.Name = "nmcomp";
+            this.nmcomp.Size = new System.Drawing.Size(60, 25);
+            this.nmcomp.TabIndex = 34;
+            this.nmcomp.Text = "완료";
+            this.nmcomp.UseVisualStyleBackColor = false;
+            this.nmcomp.Click += new System.EventHandler(this.nmcomp_Click);
+            // 
+            // phncom
+            // 
+            this.phncom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.phncom.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.phncom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.phncom.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.phncom.ForeColor = System.Drawing.Color.White;
+            this.phncom.Location = new System.Drawing.Point(571, 320);
+            this.phncom.Margin = new System.Windows.Forms.Padding(4);
+            this.phncom.Name = "phncom";
+            this.phncom.Size = new System.Drawing.Size(60, 25);
+            this.phncom.TabIndex = 33;
+            this.phncom.Text = "완료";
+            this.phncom.UseVisualStyleBackColor = false;
+            this.phncom.Click += new System.EventHandler(this.phncom_Click);
+            // 
+            // nmcom
+            // 
+            this.nmcom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.nmcom.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.nmcom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.nmcom.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.nmcom.ForeColor = System.Drawing.Color.White;
+            this.nmcom.Location = new System.Drawing.Point(571, 238);
+            this.nmcom.Margin = new System.Windows.Forms.Padding(4);
+            this.nmcom.Name = "nmcom";
+            this.nmcom.Size = new System.Drawing.Size(60, 25);
+            this.nmcom.TabIndex = 32;
+            this.nmcom.Text = "완료";
+            this.nmcom.UseVisualStyleBackColor = false;
+            this.nmcom.Click += new System.EventHandler(this.nmcom_Click);
+            // 
+            // pwcom
+            // 
+            this.pwcom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.pwcom.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.pwcom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pwcom.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.pwcom.ForeColor = System.Drawing.Color.White;
+            this.pwcom.Location = new System.Drawing.Point(571, 166);
+            this.pwcom.Margin = new System.Windows.Forms.Padding(4);
+            this.pwcom.Name = "pwcom";
+            this.pwcom.Size = new System.Drawing.Size(60, 25);
+            this.pwcom.TabIndex = 31;
+            this.pwcom.Text = "완료";
+            this.pwcom.UseVisualStyleBackColor = false;
+            this.pwcom.Click += new System.EventHandler(this.pwcom_Click);
+            // 
+            // idcom
+            // 
+            this.idcom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.idcom.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.idcom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.idcom.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.idcom.ForeColor = System.Drawing.Color.White;
+            this.idcom.Location = new System.Drawing.Point(571, 97);
+            this.idcom.Margin = new System.Windows.Forms.Padding(4);
+            this.idcom.Name = "idcom";
+            this.idcom.Size = new System.Drawing.Size(60, 25);
+            this.idcom.TabIndex = 30;
+            this.idcom.Text = "완료";
+            this.idcom.UseVisualStyleBackColor = false;
+            this.idcom.Click += new System.EventHandler(this.idcom_Click);
             // 
             // nnmodify
             // 
-            nnmodify.BackColor = Color.FromArgb(108, 190, 250);
-            nnmodify.FlatAppearance.BorderColor = Color.FromArgb(108, 190, 250);
-            nnmodify.FlatStyle = FlatStyle.Flat;
-            nnmodify.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            nnmodify.ForeColor = Color.White;
-            nnmodify.Location = new Point(559, 413);
-            nnmodify.Margin = new Padding(4);
-            nnmodify.Name = "nnmodify";
-            nnmodify.Size = new Size(102, 27);
-            nnmodify.TabIndex = 29;
-            nnmodify.Text = "수정";
-            nnmodify.UseVisualStyleBackColor = false;
-            nnmodify.Click += nnmodify_Click;
+            this.nnmodify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.nnmodify.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.nnmodify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.nnmodify.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.nnmodify.ForeColor = System.Drawing.Color.White;
+            this.nnmodify.Location = new System.Drawing.Point(503, 392);
+            this.nnmodify.Margin = new System.Windows.Forms.Padding(4);
+            this.nnmodify.Name = "nnmodify";
+            this.nnmodify.Size = new System.Drawing.Size(60, 25);
+            this.nnmodify.TabIndex = 29;
+            this.nnmodify.Text = "수정";
+            this.nnmodify.UseVisualStyleBackColor = false;
+            this.nnmodify.Click += new System.EventHandler(this.nnmodify_Click);
             // 
             // phnmodify
             // 
-            phnmodify.BackColor = Color.FromArgb(108, 190, 250);
-            phnmodify.FlatAppearance.BorderColor = Color.FromArgb(108, 190, 250);
-            phnmodify.FlatStyle = FlatStyle.Flat;
-            phnmodify.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            phnmodify.ForeColor = Color.White;
-            phnmodify.Location = new Point(559, 330);
-            phnmodify.Margin = new Padding(4);
-            phnmodify.Name = "phnmodify";
-            phnmodify.Size = new Size(102, 27);
-            phnmodify.TabIndex = 28;
-            phnmodify.Text = "수정";
-            phnmodify.UseVisualStyleBackColor = false;
-            phnmodify.Click += phnmodify_Click;
+            this.phnmodify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.phnmodify.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.phnmodify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.phnmodify.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.phnmodify.ForeColor = System.Drawing.Color.White;
+            this.phnmodify.Location = new System.Drawing.Point(503, 320);
+            this.phnmodify.Margin = new System.Windows.Forms.Padding(4);
+            this.phnmodify.Name = "phnmodify";
+            this.phnmodify.Size = new System.Drawing.Size(60, 25);
+            this.phnmodify.TabIndex = 28;
+            this.phnmodify.Text = "수정";
+            this.phnmodify.UseVisualStyleBackColor = false;
+            this.phnmodify.Click += new System.EventHandler(this.phnmodify_Click);
             // 
             // nmmodify
             // 
-            nmmodify.BackColor = Color.FromArgb(108, 190, 250);
-            nmmodify.FlatAppearance.BorderColor = Color.FromArgb(108, 190, 250);
-            nmmodify.FlatStyle = FlatStyle.Flat;
-            nmmodify.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            nmmodify.ForeColor = Color.White;
-            nmmodify.Location = new Point(559, 259);
-            nmmodify.Margin = new Padding(4);
-            nmmodify.Name = "nmmodify";
-            nmmodify.Size = new Size(102, 27);
-            nmmodify.TabIndex = 27;
-            nmmodify.Text = "수정";
-            nmmodify.UseVisualStyleBackColor = false;
-            nmmodify.Click += nmmodify_Click;
+            this.nmmodify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.nmmodify.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.nmmodify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.nmmodify.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.nmmodify.ForeColor = System.Drawing.Color.White;
+            this.nmmodify.Location = new System.Drawing.Point(503, 238);
+            this.nmmodify.Margin = new System.Windows.Forms.Padding(4);
+            this.nmmodify.Name = "nmmodify";
+            this.nmmodify.Size = new System.Drawing.Size(60, 25);
+            this.nmmodify.TabIndex = 27;
+            this.nmmodify.Text = "수정";
+            this.nmmodify.UseVisualStyleBackColor = false;
+            this.nmmodify.Click += new System.EventHandler(this.nmmodify_Click);
             // 
             // pwmodify
             // 
-            pwmodify.BackColor = Color.FromArgb(108, 190, 250);
-            pwmodify.FlatAppearance.BorderColor = Color.FromArgb(108, 190, 250);
-            pwmodify.FlatStyle = FlatStyle.Flat;
-            pwmodify.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            pwmodify.ForeColor = Color.White;
-            pwmodify.Location = new Point(559, 183);
-            pwmodify.Margin = new Padding(4);
-            pwmodify.Name = "pwmodify";
-            pwmodify.Size = new Size(102, 27);
-            pwmodify.TabIndex = 26;
-            pwmodify.Text = "수정";
-            pwmodify.UseVisualStyleBackColor = false;
-            pwmodify.Click += pwmodify_Click;
+            this.pwmodify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.pwmodify.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.pwmodify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pwmodify.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.pwmodify.ForeColor = System.Drawing.Color.White;
+            this.pwmodify.Location = new System.Drawing.Point(503, 166);
+            this.pwmodify.Margin = new System.Windows.Forms.Padding(4);
+            this.pwmodify.Name = "pwmodify";
+            this.pwmodify.Size = new System.Drawing.Size(60, 25);
+            this.pwmodify.TabIndex = 26;
+            this.pwmodify.Text = "수정";
+            this.pwmodify.UseVisualStyleBackColor = false;
+            this.pwmodify.Click += new System.EventHandler(this.pwmodify_Click);
             // 
             // button_update
             // 
-            button_update.BackColor = Color.FromArgb(108, 190, 250);
-            button_update.FlatAppearance.BorderColor = Color.FromArgb(108, 190, 250);
-            button_update.FlatStyle = FlatStyle.Flat;
-            button_update.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button_update.ForeColor = Color.White;
-            button_update.Location = new Point(207, 466);
-            button_update.Margin = new Padding(4);
-            button_update.Name = "button_update";
-            button_update.Size = new Size(102, 27);
-            button_update.TabIndex = 25;
-            button_update.Text = "수정하기";
-            button_update.UseVisualStyleBackColor = false;
-            button_update.Click += btn_update_Click;
+            this.button_update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.button_update.Enabled = false;
+            this.button_update.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.button_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_update.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button_update.ForeColor = System.Drawing.Color.White;
+            this.button_update.Location = new System.Drawing.Point(217, 474);
+            this.button_update.Margin = new System.Windows.Forms.Padding(4);
+            this.button_update.Name = "button_update";
+            this.button_update.Size = new System.Drawing.Size(102, 27);
+            this.button_update.TabIndex = 25;
+            this.button_update.Text = "수정하기";
+            this.button_update.UseVisualStyleBackColor = false;
+            this.button_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // button3
             // 
-            button3.BackColor = Color.FromArgb(108, 190, 250);
-            button3.FlatAppearance.BorderColor = Color.FromArgb(108, 160, 220);
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(430, 466);
-            button3.Margin = new Padding(4);
-            button3.Name = "button3";
-            button3.Size = new Size(102, 27);
-            button3.TabIndex = 24;
-            button3.Text = "닫기";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += btn_Cancel_Click;
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(160)))), ((int)(((byte)(220)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(388, 474);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(102, 27);
+            this.button3.TabIndex = 24;
+            this.button3.Text = "닫기";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // idmodify
             // 
-            idmodify.BackColor = Color.FromArgb(108, 190, 250);
-            idmodify.FlatAppearance.BorderColor = Color.FromArgb(108, 190, 250);
-            idmodify.FlatStyle = FlatStyle.Flat;
-            idmodify.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            idmodify.ForeColor = Color.White;
-            idmodify.Location = new Point(559, 109);
-            idmodify.Margin = new Padding(4);
-            idmodify.Name = "idmodify";
-            idmodify.Size = new Size(102, 27);
-            idmodify.TabIndex = 23;
-            idmodify.Text = "수정";
-            idmodify.UseVisualStyleBackColor = false;
-            idmodify.Click += button2_Click_1;
+            this.idmodify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.idmodify.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.idmodify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.idmodify.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.idmodify.ForeColor = System.Drawing.Color.White;
+            this.idmodify.Location = new System.Drawing.Point(503, 96);
+            this.idmodify.Margin = new System.Windows.Forms.Padding(4);
+            this.idmodify.Name = "idmodify";
+            this.idmodify.Size = new System.Drawing.Size(60, 25);
+            this.idmodify.TabIndex = 23;
+            this.idmodify.Text = "수정";
+            this.idmodify.UseVisualStyleBackColor = false;
+            this.idmodify.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // panel6
             // 
-            panel6.BackColor = Color.FromArgb(108, 160, 220);
-            panel6.Location = new Point(369, 434);
-            panel6.Margin = new Padding(4);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(163, 1);
-            panel6.TabIndex = 22;
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(160)))), ((int)(((byte)(220)))));
+            this.panel6.Location = new System.Drawing.Point(313, 429);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(163, 1);
+            this.panel6.TabIndex = 22;
             // 
             // panel5
             // 
-            panel5.BackColor = Color.FromArgb(108, 160, 220);
-            panel5.Location = new Point(369, 357);
-            panel5.Margin = new Padding(4);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(163, 1);
-            panel5.TabIndex = 21;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(160)))), ((int)(((byte)(220)))));
+            this.panel5.Location = new System.Drawing.Point(313, 352);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(163, 1);
+            this.panel5.TabIndex = 21;
             // 
             // panel4
             // 
-            panel4.BackColor = Color.FromArgb(108, 160, 220);
-            panel4.Location = new Point(369, 281);
-            panel4.Margin = new Padding(4);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(163, 1);
-            panel4.TabIndex = 20;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(160)))), ((int)(((byte)(220)))));
+            this.panel4.Location = new System.Drawing.Point(313, 276);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(163, 1);
+            this.panel4.TabIndex = 20;
             // 
             // panel3
             // 
-            panel3.BackColor = Color.FromArgb(108, 160, 220);
-            panel3.Location = new Point(369, 205);
-            panel3.Margin = new Padding(4);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(163, 1);
-            panel3.TabIndex = 20;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(160)))), ((int)(((byte)(220)))));
+            this.panel3.Location = new System.Drawing.Point(313, 200);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(163, 1);
+            this.panel3.TabIndex = 20;
             // 
             // panel2
             // 
-            panel2.BackColor = Color.FromArgb(108, 160, 220);
-            panel2.Location = new Point(369, 135);
-            panel2.Margin = new Padding(4);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(163, 1);
-            panel2.TabIndex = 19;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(160)))), ((int)(((byte)(220)))));
+            this.panel2.Location = new System.Drawing.Point(313, 130);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(163, 1);
+            this.panel2.TabIndex = 19;
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(108, 160, 220);
-            panel1.Controls.Add(label9);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(4, 4);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(802, 66);
-            panel1.TabIndex = 18;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(160)))), ((int)(((byte)(220)))));
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(4, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(802, 66);
+            this.panel1.TabIndex = 18;
             // 
             // label9
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.ForeColor = Color.White;
-            label9.Location = new Point(329, 21);
-            label9.Margin = new Padding(4, 0, 4, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(83, 30);
-            label9.TabIndex = 0;
-            label9.Text = "내 정보";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(329, 21);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(83, 30);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "내 정보";
             // 
             // btn_Cancel
             // 
-            btn_Cancel.BackColor = Color.FromArgb(108, 160, 220);
-            btn_Cancel.FlatStyle = FlatStyle.Flat;
-            btn_Cancel.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Cancel.ForeColor = Color.White;
-            btn_Cancel.Location = new Point(405, 556);
-            btn_Cancel.Margin = new Padding(5);
-            btn_Cancel.Name = "btn_Cancel";
-            btn_Cancel.Size = new Size(123, 41);
-            btn_Cancel.TabIndex = 17;
-            btn_Cancel.Text = "취소하기";
-            btn_Cancel.UseVisualStyleBackColor = false;
+            this.btn_Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(160)))), ((int)(((byte)(220)))));
+            this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Cancel.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Cancel.ForeColor = System.Drawing.Color.White;
+            this.btn_Cancel.Location = new System.Drawing.Point(405, 556);
+            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(5);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(123, 41);
+            this.btn_Cancel.TabIndex = 17;
+            this.btn_Cancel.Text = "취소하기";
+            this.btn_Cancel.UseVisualStyleBackColor = false;
             // 
             // btn_update
             // 
-            btn_update.BackColor = Color.FromArgb(108, 160, 220);
-            btn_update.FlatStyle = FlatStyle.Flat;
-            btn_update.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_update.ForeColor = Color.White;
-            btn_update.Location = new Point(196, 556);
-            btn_update.Margin = new Padding(5);
-            btn_update.Name = "btn_update";
-            btn_update.Size = new Size(123, 41);
-            btn_update.TabIndex = 16;
-            btn_update.Text = "수정";
-            btn_update.UseVisualStyleBackColor = false;
+            this.btn_update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(160)))), ((int)(((byte)(220)))));
+            this.btn_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_update.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_update.ForeColor = System.Drawing.Color.White;
+            this.btn_update.Location = new System.Drawing.Point(196, 556);
+            this.btn_update.Margin = new System.Windows.Forms.Padding(5);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(123, 41);
+            this.btn_update.TabIndex = 16;
+            this.btn_update.Text = "수정";
+            this.btn_update.UseVisualStyleBackColor = false;
             // 
             // pnBox
             // 
-            pnBox.BorderStyle = BorderStyle.None;
-            pnBox.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            pnBox.Location = new Point(369, 325);
-            pnBox.Margin = new Padding(5);
-            pnBox.Name = "pnBox";
-            pnBox.ReadOnly = true;
-            pnBox.Size = new Size(163, 18);
-            pnBox.TabIndex = 15;
+            this.pnBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pnBox.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.pnBox.Location = new System.Drawing.Point(313, 320);
+            this.pnBox.Margin = new System.Windows.Forms.Padding(5);
+            this.pnBox.Name = "pnBox";
+            this.pnBox.ReadOnly = true;
+            this.pnBox.Size = new System.Drawing.Size(163, 18);
+            this.pnBox.TabIndex = 15;
             // 
             // label8
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(200, 335);
-            label8.Margin = new Padding(5, 0, 5, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(73, 17);
-            label8.TabIndex = 14;
-            label8.Text = "휴대폰번호";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(144, 330);
+            this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(73, 17);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "휴대폰번호";
             // 
             // nnBox
             // 
-            nnBox.BorderStyle = BorderStyle.None;
-            nnBox.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            nnBox.Location = new Point(369, 401);
-            nnBox.Margin = new Padding(5);
-            nnBox.Name = "nnBox";
-            nnBox.ReadOnly = true;
-            nnBox.Size = new Size(163, 18);
-            nnBox.TabIndex = 11;
+            this.nnBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nnBox.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.nnBox.Location = new System.Drawing.Point(313, 396);
+            this.nnBox.Margin = new System.Windows.Forms.Padding(5);
+            this.nnBox.Name = "nnBox";
+            this.nnBox.ReadOnly = true;
+            this.nnBox.Size = new System.Drawing.Size(163, 18);
+            this.nnBox.TabIndex = 11;
             // 
             // nameBox
             // 
-            nameBox.BorderStyle = BorderStyle.None;
-            nameBox.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            nameBox.Location = new Point(369, 247);
-            nameBox.Margin = new Padding(5);
-            nameBox.Name = "nameBox";
-            nameBox.ReadOnly = true;
-            nameBox.Size = new Size(163, 18);
-            nameBox.TabIndex = 10;
+            this.nameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nameBox.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.nameBox.Location = new System.Drawing.Point(313, 242);
+            this.nameBox.Margin = new System.Windows.Forms.Padding(5);
+            this.nameBox.Name = "nameBox";
+            this.nameBox.ReadOnly = true;
+            this.nameBox.Size = new System.Drawing.Size(163, 18);
+            this.nameBox.TabIndex = 10;
             // 
             // pwBox
             // 
-            pwBox.BorderStyle = BorderStyle.None;
-            pwBox.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            pwBox.Location = new Point(369, 171);
-            pwBox.Margin = new Padding(5);
-            pwBox.Name = "pwBox";
-            pwBox.ReadOnly = true;
-            pwBox.Size = new Size(163, 18);
-            pwBox.TabIndex = 9;
+            this.pwBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pwBox.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.pwBox.Location = new System.Drawing.Point(313, 166);
+            this.pwBox.Margin = new System.Windows.Forms.Padding(5);
+            this.pwBox.Name = "pwBox";
+            this.pwBox.ReadOnly = true;
+            this.pwBox.Size = new System.Drawing.Size(163, 18);
+            this.pwBox.TabIndex = 9;
             // 
             // idBox
             // 
-            idBox.BorderStyle = BorderStyle.None;
-            idBox.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            idBox.Location = new Point(369, 101);
-            idBox.Margin = new Padding(5);
-            idBox.Name = "idBox";
-            idBox.ReadOnly = true;
-            idBox.Size = new Size(163, 18);
-            idBox.TabIndex = 8;
+            this.idBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.idBox.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.idBox.Location = new System.Drawing.Point(313, 96);
+            this.idBox.Margin = new System.Windows.Forms.Padding(5);
+            this.idBox.Name = "idBox";
+            this.idBox.ReadOnly = true;
+            this.idBox.Size = new System.Drawing.Size(163, 18);
+            this.idBox.TabIndex = 8;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(216, 413);
-            label4.Margin = new Padding(5, 0, 5, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(47, 17);
-            label4.TabIndex = 7;
-            label4.Text = "닉네임";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(160, 408);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 17);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "닉네임";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(224, 259);
-            label3.Margin = new Padding(5, 0, 5, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(34, 17);
-            label3.TabIndex = 6;
-            label3.Text = "이름";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(168, 254);
+            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(34, 17);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "이름";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(207, 183);
-            label2.Margin = new Padding(5, 0, 5, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(60, 17);
-            label2.TabIndex = 5;
-            label2.Text = "비밀번호";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(151, 178);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 17);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "비밀번호";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("맑은 고딕", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(216, 106);
-            label1.Margin = new Padding(5, 0, 5, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(47, 17);
-            label1.TabIndex = 4;
-            label1.Text = "아이디";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(160, 101);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 17);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "아이디";
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(panel11);
-            tabPage2.Controls.Add(panel8);
-            tabPage2.Controls.Add(myReviewView);
-            tabPage2.ForeColor = SystemColors.ControlText;
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Margin = new Padding(4);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(4);
-            tabPage2.Size = new Size(810, 520);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "내가 남긴 리뷰";
-            tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Controls.Add(this.panel11);
+            this.tabPage2.Controls.Add(this.panel8);
+            this.tabPage2.Controls.Add(this.myReviewView);
+            this.tabPage2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Size = new System.Drawing.Size(810, 512);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "내가 남긴 리뷰";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // panel11
             // 
-            panel11.BackColor = Color.FromArgb(108, 160, 220);
-            panel11.Controls.Add(btn_reviewDelete);
-            panel11.Controls.Add(btn_reviewUpdate);
-            panel11.Controls.Add(btn_reviewclose);
-            panel11.Dock = DockStyle.Bottom;
-            panel11.Location = new Point(4, 477);
-            panel11.Name = "panel11";
-            panel11.Size = new Size(802, 39);
-            panel11.TabIndex = 22;
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(160)))), ((int)(((byte)(220)))));
+            this.panel11.Controls.Add(this.btn_reviewDelete);
+            this.panel11.Controls.Add(this.btn_reviewUpdate);
+            this.panel11.Controls.Add(this.btn_reviewclose);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel11.Location = new System.Drawing.Point(4, 469);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(802, 39);
+            this.panel11.TabIndex = 22;
             // 
             // btn_reviewDelete
             // 
-            btn_reviewDelete.BackColor = Color.FromArgb(108, 190, 250);
-            btn_reviewDelete.FlatAppearance.BorderColor = Color.FromArgb(108, 190, 250);
-            btn_reviewDelete.FlatStyle = FlatStyle.Flat;
-            btn_reviewDelete.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_reviewDelete.ForeColor = Color.White;
-            btn_reviewDelete.Location = new Point(276, 7);
-            btn_reviewDelete.Margin = new Padding(4);
-            btn_reviewDelete.Name = "btn_reviewDelete";
-            btn_reviewDelete.Size = new Size(102, 27);
-            btn_reviewDelete.TabIndex = 4;
-            btn_reviewDelete.Text = "삭제하기";
-            btn_reviewDelete.UseVisualStyleBackColor = false;
-            btn_reviewDelete.Click += btn_reviewDelete_Click;
+            this.btn_reviewDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.btn_reviewDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.btn_reviewDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_reviewDelete.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_reviewDelete.ForeColor = System.Drawing.Color.White;
+            this.btn_reviewDelete.Location = new System.Drawing.Point(276, 7);
+            this.btn_reviewDelete.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_reviewDelete.Name = "btn_reviewDelete";
+            this.btn_reviewDelete.Size = new System.Drawing.Size(102, 27);
+            this.btn_reviewDelete.TabIndex = 4;
+            this.btn_reviewDelete.Text = "삭제하기";
+            this.btn_reviewDelete.UseVisualStyleBackColor = false;
+            this.btn_reviewDelete.Click += new System.EventHandler(this.btn_reviewDelete_Click);
             // 
             // btn_reviewUpdate
             // 
-            btn_reviewUpdate.BackColor = Color.FromArgb(108, 190, 250);
-            btn_reviewUpdate.FlatAppearance.BorderColor = Color.FromArgb(108, 190, 250);
-            btn_reviewUpdate.FlatStyle = FlatStyle.Flat;
-            btn_reviewUpdate.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_reviewUpdate.ForeColor = Color.White;
-            btn_reviewUpdate.Location = new Point(386, 7);
-            btn_reviewUpdate.Margin = new Padding(4);
-            btn_reviewUpdate.Name = "btn_reviewUpdate";
-            btn_reviewUpdate.Size = new Size(102, 27);
-            btn_reviewUpdate.TabIndex = 2;
-            btn_reviewUpdate.Text = "수정하기";
-            btn_reviewUpdate.UseVisualStyleBackColor = false;
-            btn_reviewUpdate.Click += btn_reviewUpdate_Click;
+            this.btn_reviewUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.btn_reviewUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.btn_reviewUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_reviewUpdate.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_reviewUpdate.ForeColor = System.Drawing.Color.White;
+            this.btn_reviewUpdate.Location = new System.Drawing.Point(386, 7);
+            this.btn_reviewUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_reviewUpdate.Name = "btn_reviewUpdate";
+            this.btn_reviewUpdate.Size = new System.Drawing.Size(102, 27);
+            this.btn_reviewUpdate.TabIndex = 2;
+            this.btn_reviewUpdate.Text = "수정하기";
+            this.btn_reviewUpdate.UseVisualStyleBackColor = false;
+            this.btn_reviewUpdate.Click += new System.EventHandler(this.btn_reviewUpdate_Click);
             // 
             // btn_reviewclose
             // 
-            btn_reviewclose.BackColor = Color.FromArgb(108, 190, 250);
-            btn_reviewclose.FlatAppearance.BorderColor = Color.FromArgb(108, 160, 220);
-            btn_reviewclose.FlatStyle = FlatStyle.Flat;
-            btn_reviewclose.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_reviewclose.ForeColor = Color.White;
-            btn_reviewclose.Location = new Point(496, 7);
-            btn_reviewclose.Margin = new Padding(4);
-            btn_reviewclose.Name = "btn_reviewclose";
-            btn_reviewclose.Size = new Size(75, 27);
-            btn_reviewclose.TabIndex = 3;
-            btn_reviewclose.Text = "닫기";
-            btn_reviewclose.UseVisualStyleBackColor = false;
-            btn_reviewclose.Click += btn_Cancel_Click;
+            this.btn_reviewclose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.btn_reviewclose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(160)))), ((int)(((byte)(220)))));
+            this.btn_reviewclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_reviewclose.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_reviewclose.ForeColor = System.Drawing.Color.White;
+            this.btn_reviewclose.Location = new System.Drawing.Point(496, 7);
+            this.btn_reviewclose.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_reviewclose.Name = "btn_reviewclose";
+            this.btn_reviewclose.Size = new System.Drawing.Size(75, 27);
+            this.btn_reviewclose.TabIndex = 3;
+            this.btn_reviewclose.Text = "닫기";
+            this.btn_reviewclose.UseVisualStyleBackColor = false;
+            this.btn_reviewclose.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // panel8
             // 
-            panel8.BackColor = Color.FromArgb(108, 160, 220);
-            panel8.Controls.Add(label11);
-            panel8.Dock = DockStyle.Top;
-            panel8.Location = new Point(4, 4);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(802, 42);
-            panel8.TabIndex = 19;
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(160)))), ((int)(((byte)(220)))));
+            this.panel8.Controls.Add(this.label11);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(4, 4);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(802, 42);
+            this.panel8.TabIndex = 19;
             // 
             // label11
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.ForeColor = Color.White;
-            label11.Location = new Point(207, 5);
-            label11.Margin = new Padding(4, 0, 4, 0);
-            label11.Name = "label11";
-            label11.Size = new Size(153, 30);
-            label11.TabIndex = 0;
-            label11.Text = "내가 남긴 리뷰";
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(207, 5);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(153, 30);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "내가 남긴 리뷰";
             // 
             // myReviewView
             // 
-            myReviewView.BackgroundColor = Color.White;
-            myReviewView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            myReviewView.EnableHeadersVisualStyles = false;
-            myReviewView.GridColor = Color.LightGray;
-            myReviewView.Location = new Point(4, 53);
-            myReviewView.Margin = new Padding(4);
-            myReviewView.Name = "myReviewView";
-            myReviewView.RowHeadersWidth = 5;
-            myReviewView.RowTemplate.Height = 25;
-            myReviewView.Size = new Size(802, 417);
-            myReviewView.TabIndex = 1;
+            this.myReviewView.BackgroundColor = System.Drawing.Color.White;
+            this.myReviewView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.myReviewView.EnableHeadersVisualStyles = false;
+            this.myReviewView.GridColor = System.Drawing.Color.LightGray;
+            this.myReviewView.Location = new System.Drawing.Point(4, 53);
+            this.myReviewView.Margin = new System.Windows.Forms.Padding(4);
+            this.myReviewView.Name = "myReviewView";
+            this.myReviewView.RowHeadersWidth = 5;
+            this.myReviewView.RowTemplate.Height = 25;
+            this.myReviewView.Size = new System.Drawing.Size(802, 417);
+            this.myReviewView.TabIndex = 1;
             // 
             // tabPage3
             // 
-            tabPage3.Controls.Add(panel10);
-            tabPage3.Controls.Add(panel9);
-            tabPage3.Controls.Add(myBookmarkView);
-            tabPage3.Location = new Point(4, 24);
-            tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(810, 520);
-            tabPage3.TabIndex = 2;
-            tabPage3.Text = "즐겨찾기";
-            tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Controls.Add(this.panel10);
+            this.tabPage3.Controls.Add(this.panel9);
+            this.tabPage3.Controls.Add(this.myBookmarkView);
+            this.tabPage3.Location = new System.Drawing.Point(4, 24);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(810, 512);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "즐겨찾기";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // panel10
             // 
-            panel10.BackColor = Color.FromArgb(108, 160, 220);
-            panel10.Controls.Add(btn_bmdelete);
-            panel10.Controls.Add(button1);
-            panel10.Dock = DockStyle.Bottom;
-            panel10.Location = new Point(0, 477);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(810, 43);
-            panel10.TabIndex = 21;
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(160)))), ((int)(((byte)(220)))));
+            this.panel10.Controls.Add(this.btn_bmdelete);
+            this.panel10.Controls.Add(this.button1);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel10.Location = new System.Drawing.Point(0, 469);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(810, 43);
+            this.panel10.TabIndex = 21;
             // 
             // btn_bmdelete
             // 
-            btn_bmdelete.BackColor = Color.FromArgb(108, 190, 250);
-            btn_bmdelete.FlatAppearance.BorderColor = Color.FromArgb(108, 160, 220);
-            btn_bmdelete.FlatStyle = FlatStyle.Flat;
-            btn_bmdelete.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_bmdelete.ForeColor = Color.White;
-            btn_bmdelete.Location = new Point(467, 7);
-            btn_bmdelete.Margin = new Padding(4);
-            btn_bmdelete.Name = "btn_bmdelete";
-            btn_bmdelete.Size = new Size(131, 36);
-            btn_bmdelete.TabIndex = 3;
-            btn_bmdelete.Text = "즐겨찾기 삭제";
-            btn_bmdelete.UseVisualStyleBackColor = false;
-            btn_bmdelete.Click += btn_bmdelete_Click;
+            this.btn_bmdelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.btn_bmdelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(160)))), ((int)(((byte)(220)))));
+            this.btn_bmdelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_bmdelete.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_bmdelete.ForeColor = System.Drawing.Color.White;
+            this.btn_bmdelete.Location = new System.Drawing.Point(467, 7);
+            this.btn_bmdelete.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_bmdelete.Name = "btn_bmdelete";
+            this.btn_bmdelete.Size = new System.Drawing.Size(131, 36);
+            this.btn_bmdelete.TabIndex = 3;
+            this.btn_bmdelete.Text = "즐겨찾기 삭제";
+            this.btn_bmdelete.UseVisualStyleBackColor = false;
+            this.btn_bmdelete.Click += new System.EventHandler(this.btn_bmdelete_Click);
             // 
             // button1
             // 
-            button1.BackColor = Color.FromArgb(108, 190, 250);
-            button1.FlatAppearance.BorderColor = Color.FromArgb(108, 160, 220);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(606, 7);
-            button1.Margin = new Padding(4);
-            button1.Name = "button1";
-            button1.Size = new Size(96, 36);
-            button1.TabIndex = 2;
-            button1.Text = "닫기";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += btn_Cancel_Click;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(190)))), ((int)(((byte)(250)))));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(160)))), ((int)(((byte)(220)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(606, 7);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(96, 36);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "닫기";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // panel9
             // 
-            panel9.BackColor = Color.FromArgb(108, 160, 220);
-            panel9.Controls.Add(label6);
-            panel9.Dock = DockStyle.Top;
-            panel9.Location = new Point(0, 0);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(810, 46);
-            panel9.TabIndex = 20;
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(160)))), ((int)(((byte)(220)))));
+            this.panel9.Controls.Add(this.label6);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(810, 46);
+            this.panel9.TabIndex = 20;
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(324, 7);
-            label6.Margin = new Padding(4, 0, 4, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(125, 30);
-            label6.TabIndex = 0;
-            label6.Text = "내 즐겨찾기";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(324, 7);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(125, 30);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "내 즐겨찾기";
             // 
             // myBookmarkView
             // 
-            myBookmarkView.BackgroundColor = Color.White;
-            myBookmarkView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            myBookmarkView.Location = new Point(4, 43);
-            myBookmarkView.Margin = new Padding(4);
-            myBookmarkView.Name = "myBookmarkView";
-            myBookmarkView.RowHeadersWidth = 51;
-            myBookmarkView.RowTemplate.Height = 25;
-            myBookmarkView.Size = new Size(798, 427);
-            myBookmarkView.TabIndex = 1;
+            this.myBookmarkView.BackgroundColor = System.Drawing.Color.White;
+            this.myBookmarkView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.myBookmarkView.Location = new System.Drawing.Point(4, 43);
+            this.myBookmarkView.Margin = new System.Windows.Forms.Padding(4);
+            this.myBookmarkView.Name = "myBookmarkView";
+            this.myBookmarkView.RowHeadersWidth = 51;
+            this.myBookmarkView.RowTemplate.Height = 25;
+            this.myBookmarkView.Size = new System.Drawing.Size(798, 427);
+            this.myBookmarkView.TabIndex = 1;
             // 
             // MyPage
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(818, 552);
-            Controls.Add(tab1);
-            Controls.Add(label5);
-            Name = "MyPage";
-            Text = "MyPage";
-            Load += MyPage_Load;
-            tab1.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            tabPage2.ResumeLayout(false);
-            panel11.ResumeLayout(false);
-            panel8.ResumeLayout(false);
-            panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)myReviewView).EndInit();
-            tabPage3.ResumeLayout(false);
-            panel10.ResumeLayout(false);
-            panel9.ResumeLayout(false);
-            panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)myBookmarkView).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(818, 587);
+            this.Controls.Add(this.tab1);
+            this.Controls.Add(this.label5);
+            this.Name = "MyPage";
+            this.Text = "MyPage";
+            this.Load += new System.EventHandler(this.MyPage_Load);
+            this.tab1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.myReviewView)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.myBookmarkView)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -735,5 +827,10 @@
         private Button button_update;
         private Button button3;
         private Button idmodify;
+        private Button nmcomp;
+        private Button phncom;
+        private Button nmcom;
+        private Button pwcom;
+        private Button idcom;
     }
 }
