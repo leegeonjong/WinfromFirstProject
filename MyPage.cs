@@ -54,6 +54,7 @@ namespace TeamProject
 
             certification cert = new certification(strConn);
             SqlCommand cmd = cert.GetSqlCommand();
+            modify();
 
 
 
@@ -84,13 +85,7 @@ namespace TeamProject
 
             cmd.CommandText = "SELECT u_uid,u_id, u_password, u_name, u_phonenum, u_level, u_nickname FROM project_user WHERE u_uid = @u_uid";
             cmd.Parameters.AddWithValue("@u_uid", adminform.usuid);
-
-
-
-
             SqlDataReader reader = cmd.ExecuteReader();
-
-
             while (reader.Read())
             {
 
@@ -418,26 +413,31 @@ namespace TeamProject
         private void button2_Click_1(object sender, EventArgs e)
         {
             idBox.ReadOnly = false;
+            modify();
         }
 
         private void pwmodify_Click(object sender, EventArgs e)
         {
             pwBox.ReadOnly = false;
+            modify();
         }
 
         private void nmmodify_Click(object sender, EventArgs e)
         {
             nameBox.ReadOnly = false;
+            modify();
         }
 
         private void phnmodify_Click(object sender, EventArgs e)
         {
             pnBox.ReadOnly = false;
+            modify();
         }
 
         private void nnmodify_Click(object sender, EventArgs e)
         {
             nnBox.ReadOnly = false;
+            modify();
         }
 
         private void btn_reviewDelete_Click(object sender, EventArgs e)
@@ -496,5 +496,68 @@ namespace TeamProject
             }
             ReviewView();
         }
+
+        private void idcom_Click(object sender, EventArgs e)
+        {
+            Check ch = new();
+            if (ch.CheckID(idBox.Text) == 1)
+            {
+                MessageBox.Show("중복검사 통과");
+                idBox.ReadOnly = true;
+            }
+            else
+            {
+                MessageBox.Show("중복된 아이디 입니다");
+                if (main.useruid > 0)
+                {
+                    idBox.Text = ch.Findid(UserUid);
+                    return;
+                }
+                idBox.Text = ch.Findid(adminform.usuid);
+            }
+            modify();
+        }
+
+        private void pwcom_Click(object sender, EventArgs e)
+        {
+            pwBox.ReadOnly = true;
+            modify();
+        }
+
+        private void nmcom_Click(object sender, EventArgs e)
+        {
+            nameBox.ReadOnly = true;
+            modify();
+        }
+
+        private void phncom_Click(object sender, EventArgs e)
+        {
+            pnBox.ReadOnly = true;
+            modify();
+        }
+
+        private void nmcomp_Click(object sender, EventArgs e)
+        {
+            nnBox.ReadOnly = true;
+            modify();
+        }
+
+
+        public void modify()
+        {
+            if (idBox.ReadOnly == true &&
+                pwBox.ReadOnly == true &&
+                nameBox.ReadOnly == true &&
+                 pnBox.ReadOnly == true &&
+                 nnBox.ReadOnly == true)
+            {
+                button_update.Enabled = true;
+            }
+            else
+            {
+                button_update.Enabled = false;
+            }
+        }
     }
+  
 }

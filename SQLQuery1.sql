@@ -52,7 +52,7 @@ drop table Project_User
 
  INSERT INTO project_user (u_id, u_password, u_name, u_phonenum, u_nickname, u_isadmin)
 VALUES
-('admin', 'admin1234', '관리자', '01099999999', 10, '관리자',3),
+('admin', 'admin1234', '관리자', '01099999999', '관리자',3),
 ('kdh', 'kdh1234', '김동후', '01091946962', '동후', 0),
 
 ('kkk', 'kdh12345', '김동구', '01091946962', '동구', 0),
