@@ -172,6 +172,31 @@ namespace TeamProject
             return count;
 
         }
+
+        public int countreview1(int uuid)
+        {
+            int counter = 0;
+            var db = new certification(strConn);
+            SqlCommand cmd = db.GetSqlCommand();
+            cmd.CommandText = "SELECT COUNT(*) FROM Review WHERE u_uid=@uuid";           
+            cmd.Parameters.AddWithValue("@uuid", uuid);
+            int count = (int)cmd.ExecuteScalar();
+            return count;
+
+        }
+
+        public int countrbookmark(int uuid)
+        {
+            int counter = 0;
+            var db = new certification(strConn);
+            SqlCommand cmd = db.GetSqlCommand();
+            cmd.CommandText = "SELECT COUNT(*) FROM Bookmark WHERE u_uid=@uuid";
+            cmd.Parameters.AddWithValue("@uuid", uuid);
+            int count = (int)cmd.ExecuteScalar();
+            return count;
+
+        }
+
         public void bookmarkon(int muid, int uuid, bool book)
          {
             var db = new certification(strConn);

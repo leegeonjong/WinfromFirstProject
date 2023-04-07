@@ -133,7 +133,7 @@ namespace TeamProject
                 cell.OwningRow.Selected = true;
             }
 
-            Admin_InformUpdate updatePage = new Admin_InformUpdate(this);
+            memberDetail updatePage = new memberDetail(this);
             updatePage.Show();
         }
 
