@@ -233,9 +233,25 @@ namespace TeamProject
             logStatus = true;
             btnLogin.Text = "·Î±×¾Æ¿ô";
             label_id.Text = userid;
-            label_nn.Text = userNickname;
+            label_nn.Text = userNickname + " ´Ô ¹Ý°©½À´Ï´Ù";
             useruid = chk.FindUid(label_id.Text);
             mypage.Visible = true;
+            label_id.Visible = false;
+
+
+        }
+
+        public void Main_AdminLoad(object sender, EventArgs e)
+        {
+            Check chk = new Check();
+            logStatus = true;
+            btnLogin.Text = "·Î±×¾Æ¿ô";
+            label_id.Text = userid;
+            label_nn.Text = userNickname + " °ü¸®ÀÚ´Ô ¹Ý°©½À´Ï´Ù";
+            useruid = chk.FindUid(label_id.Text);
+            mypage.Visible = true;
+            btn_managingMember.Visible = true;         
+            label_id.Visible = false;
 
 
         }
@@ -364,6 +380,10 @@ namespace TeamProject
 
         }
 
-    
+        private void btn_managingMember_Click(object sender, EventArgs e)
+        {
+            Admin_Page adminpage = new Admin_Page(this);
+            adminpage.Show();
+        }
     }
 }

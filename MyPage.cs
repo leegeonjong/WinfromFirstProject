@@ -23,7 +23,7 @@ namespace TeamProject
         public int UserUid { get; set; }
 
         int MovieUid;
-
+        int aduseruid;
 
 
         public MyPage(Admin_Page form, Main main)
@@ -35,16 +35,26 @@ namespace TeamProject
             UserId = main.userid;
             UserUid = main.useruid;
             MovieUid = main.movieuid;
+            aduseruid = form.userUid;
+            myReviewView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 190, 250);
+            myReviewView.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 190, 250);
+            myReviewView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            myBookmarkView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 190, 250);
+            myBookmarkView.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 190, 250);
+            myBookmarkView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
 
         }
 
-        private void MyPage_Load(object sender, EventArgs e)
+        public void MyPage_Load(object sender, EventArgs e)
         {
             ReviewView();
             BookmarkView();
 
             certification cert = new certification(strConn);
             SqlCommand cmd = cert.GetSqlCommand();
+            modify();
 
 
 
@@ -62,7 +72,7 @@ namespace TeamProject
                     nameBox.Text = reader1["u_name"].ToString();
                     pnBox.Text = reader1["u_phonenum"].ToString();
                     nnBox.Text = reader1["u_nickname"].ToString();
-                    lvBox.Text = reader1["u_level"].ToString();
+
 
                 }
 
@@ -75,13 +85,7 @@ namespace TeamProject
 
             cmd.CommandText = "SELECT u_uid,u_id, u_password, u_name, u_phonenum, u_level, u_nickname FROM project_user WHERE u_uid = @u_uid";
             cmd.Parameters.AddWithValue("@u_uid", adminform.usuid);
-
-
-
-
             SqlDataReader reader = cmd.ExecuteReader();
-
-
             while (reader.Read())
             {
 
@@ -90,7 +94,7 @@ namespace TeamProject
                 nameBox.Text = reader["u_name"].ToString();
                 pnBox.Text = reader["u_phonenum"].ToString();
                 nnBox.Text = reader["u_nickname"].ToString();
-                lvBox.Text = reader["u_level"].ToString();
+
 
             }
 
@@ -107,7 +111,7 @@ namespace TeamProject
                 SqlCommand cmd = cert.GetSqlCommand();
 
                 // UPDATE 쿼리문 작성
-                string sql = "UPDATE project_user SET u_id = @u_id, u_password = @u_password, u_name = @u_name, u_phonenum = @u_phonenum, u_level = @u_level, u_nickname = @u_nickname WHERE u_uid = @u_uid";
+                string sql = "UPDATE project_user SET u_id = @u_id, u_password = @u_password, u_name = @u_name, u_phonenum = @u_phonenum, u_nickname = @u_nickname WHERE u_uid = @u_uid";
 
                 // SqlCommand 객체에 UPDATE 쿼리문 설정
                 cmd.CommandText = sql;
@@ -123,7 +127,6 @@ namespace TeamProject
                 cmd.Parameters.AddWithValue("@u_password", pwBox.Text);
                 cmd.Parameters.AddWithValue("@u_name", nameBox.Text);
                 cmd.Parameters.AddWithValue("@u_phonenum", pnBox.Text);
-                cmd.Parameters.AddWithValue("@u_level", lvBox.Text);
                 cmd.Parameters.AddWithValue("@u_nickname", nnBox.Text);
 
                 // UPDATE 쿼리문 실행
@@ -182,43 +185,79 @@ namespace TeamProject
             SqlCommand cmd = cert.GetSqlCommand();
 
             Check check = new Check();
+
             UserUid = check.FindUid(UserId);
 
 
-            cmd.CommandText = $"SELECT u.u_nickname, m.title, r.r_rate, r.r_content, r.r_date " +
+            if (main.useruid > 0)
+            {
+
+                cmd.CommandText = $"SELECT  m.title, u.u_nickname, r.r_rate, r.r_content, r.r_date " +
                                 $"FROM review r " +
                                 $"INNER JOIN project_user u ON r.u_uid = u.u_uid " +
                                 $"INNER JOIN MovieList M ON r.MovieUID = m.MovieUID " +
                                 $"WHERE u.u_uid = {UserUid}";
 
-            SqlDataReader reader = cmd.ExecuteReader();
+                SqlDataReader reader = cmd.ExecuteReader();
 
-            DataTable dataTable = new DataTable();
-            dataTable.Load(reader);
+                DataTable dataTable = new DataTable();
+                dataTable.Load(reader);
 
-            myReviewView.DataSource = dataTable;
+                myReviewView.DataSource = dataTable;
 
-            myReviewView.Columns["u_nickname"].HeaderText = "닉네임";
 
-            myReviewView.Columns["title"].HeaderText = "영화 제목";
-            myReviewView.Columns["r_rate"].HeaderText = "내 평점";
-            myReviewView.Columns["r_content"].HeaderText = "내 리뷰";
-            myReviewView.Columns["r_date"].HeaderText = "리뷰를 남긴 날짜";
+                myReviewView.Columns["title"].HeaderText = "영화 제목";
+                myReviewView.Columns["u_nickname"].HeaderText = "닉네임";
+                myReviewView.Columns["r_rate"].HeaderText = "내 평점";
+                myReviewView.Columns["r_content"].HeaderText = "내 리뷰";
+                myReviewView.Columns["r_date"].HeaderText = "리뷰를 남긴 날짜";
 
-            foreach (DataGridViewColumn column in myReviewView.Columns)
-            {
-                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+                foreach (DataGridViewColumn column in myReviewView.Columns)
+                {
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+                reader.Close();
+                cmd.Dispose();
+                return;
             }
 
+            {
 
-            // 리소스 정리
-            reader.Close();
-            cmd.Dispose();
+                cmd.CommandText = $"SELECT  m.title, u.u_nickname, r.r_rate, r.r_content, r.r_date " +
+                                $"FROM review r " +
+                                $"INNER JOIN project_user u ON r.u_uid = u.u_uid " +
+                                $"INNER JOIN MovieList M ON r.MovieUID = m.MovieUID " +
+                                $"WHERE u.u_uid = {adminform.usuid}";
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                DataTable dataTable = new DataTable();
+                dataTable.Load(reader);
+
+                myReviewView.DataSource = dataTable;
+
+
+                myReviewView.Columns["title"].HeaderText = "영화 제목";
+                myReviewView.Columns["u_nickname"].HeaderText = "닉네임";
+                myReviewView.Columns["r_rate"].HeaderText = "내 평점";
+                myReviewView.Columns["r_content"].HeaderText = "내 리뷰";
+                myReviewView.Columns["r_date"].HeaderText = "리뷰를 남긴 날짜";
+
+
+                foreach (DataGridViewColumn column in myReviewView.Columns)
+                {
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+                reader.Close();
+                cmd.Dispose();
+            }
+
 
         }
 
 
-        private void BookmarkView()
+        public void BookmarkView()
         {
             myBookmarkView.AllowUserToAddRows = false;
 
@@ -228,39 +267,66 @@ namespace TeamProject
             Check check = new Check();
             UserUid = check.FindUid(UserId);
 
-
-            cmd.CommandText = $"SELECT M.title " +
+            if (main.useruid > 0)
+            {
+                cmd.CommandText = $"SELECT M.title " +
                                 $"FROM Bookmark b " +
                                 $"INNER JOIN project_user u ON b.u_uid = u.u_uid " +
                                 $"INNER JOIN MovieList M ON b.MovieUID = m.MovieUID " +
                                 $"WHERE u.u_uid = {UserUid}";
 
-            SqlDataReader reader = cmd.ExecuteReader();
+                SqlDataReader reader = cmd.ExecuteReader();
 
-            DataTable dataTable = new DataTable();
-            dataTable.Load(reader);
+                DataTable dataTable = new DataTable();
+                dataTable.Load(reader);
 
-            myBookmarkView.DataSource = dataTable;
+                myBookmarkView.DataSource = dataTable;
 
-            myBookmarkView.Columns["Title"].HeaderText = "영화제목";
+                myBookmarkView.Columns["Title"].HeaderText = "영화제목";
 
 
-            foreach (DataGridViewColumn column in myBookmarkView.Columns)
-            {
-                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                foreach (DataGridViewColumn column in myBookmarkView.Columns)
+                {
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+
+
+                // 리소스 정리
+                reader.Close();
+                cmd.Dispose();
+                return;
             }
 
+            {
+                cmd.CommandText = $"SELECT M.title " +
+                            $"FROM Bookmark b " +
+                            $"INNER JOIN project_user u ON b.u_uid = u.u_uid " +
+                            $"INNER JOIN MovieList M ON b.MovieUID = m.MovieUID " +
+                            $"WHERE u.u_uid = {adminform.usuid}";
 
-            // 리소스 정리
-            reader.Close();
-            cmd.Dispose();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                DataTable dataTable = new DataTable();
+                dataTable.Load(reader);
+
+                myBookmarkView.DataSource = dataTable;
+
+                myBookmarkView.Columns["Title"].HeaderText = "영화제목";
+
+
+                foreach (DataGridViewColumn column in myBookmarkView.Columns)
+                {
+                    column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+
+
+                // 리소스 정리
+                reader.Close();
+                cmd.Dispose();
+            }
         }
 
 
-        private void btn_reviewclose_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
 
         private void btn_reviewUpdate_Click(object sender, EventArgs e)
         {
@@ -317,6 +383,7 @@ namespace TeamProject
                     {
                         cnt += result;
                     }
+
                 }
 
             }
@@ -331,5 +398,166 @@ namespace TeamProject
             }
             BookmarkView();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int i;
+            Check ch = new();
+            i = ch.CheckID(idBox.Text);
+            if (i == 1)
+            { MessageBox.Show("중복검사 성공"); }
+            if (i == 2)
+            { MessageBox.Show("중복검사 실패"); }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            idBox.ReadOnly = false;
+            modify();
+        }
+
+        private void pwmodify_Click(object sender, EventArgs e)
+        {
+            pwBox.ReadOnly = false;
+            modify();
+        }
+
+        private void nmmodify_Click(object sender, EventArgs e)
+        {
+            nameBox.ReadOnly = false;
+            modify();
+        }
+
+        private void phnmodify_Click(object sender, EventArgs e)
+        {
+            pnBox.ReadOnly = false;
+            modify();
+        }
+
+        private void nnmodify_Click(object sender, EventArgs e)
+        {
+            nnBox.ReadOnly = false;
+            modify();
+        }
+
+        private void btn_reviewDelete_Click(object sender, EventArgs e)
+        {
+            Check check = new Check();
+            string movietitle = myReviewView.SelectedCells[0].Value.ToString();
+            UserUid = check.FindUid(UserId);
+            MovieUid = check.FindMvUid(movietitle);
+
+            try
+            {
+                foreach (DataGridViewCell cell in myReviewView.SelectedCells)
+                {
+                    cell.OwningRow.Selected = true;
+                }
+
+                Cursor = Cursors.WaitCursor;
+
+                if (myReviewView.SelectedRows.Count == 0) return; // 삭제하려는 row가 선택되어 있지 않으면 return
+
+
+                // 삭제전에 확인
+                if (MessageBox.Show($"{myReviewView.SelectedRows.Count}개의 리뷰를 삭제할까요?", "삭제확인"
+                     , MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK)
+                { return; }
+
+                using SqlConnection conn = new(strConn);
+                conn.Open();
+
+                string sql = $"DELETE FROM Review WHERE u_uid = '{UserUid}' AND MovieUID = {MovieUid}; ";
+
+                int cnt = 0;
+
+                foreach (DataGridViewRow row in myReviewView.SelectedRows)
+                {
+                    string uid = row.Cells[0].Value.ToString();  // PK 값은 첫번째 컬럼
+                    using SqlCommand cmd = new(sql, conn);
+                    cmd.Parameters.AddWithValue("@u_uid", uid);
+
+                    int result = cmd.ExecuteNonQuery();
+                    if (result > 0)
+                    {
+                        cnt += result;
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error"
+                    , MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
+            }
+            ReviewView();
+        }
+
+        private void idcom_Click(object sender, EventArgs e)
+        {
+            Check ch = new();
+            if (ch.CheckID(idBox.Text) == 1)
+            {
+                MessageBox.Show("중복검사 통과");
+                idBox.ReadOnly = true;
+            }
+            else
+            {
+                MessageBox.Show("중복된 아이디 입니다");
+                if (main.useruid > 0)
+                {
+                    idBox.Text = ch.Findid(UserUid);
+                    return;
+                }
+                idBox.Text = ch.Findid(adminform.usuid);
+            }
+            modify();
+        }
+
+        private void pwcom_Click(object sender, EventArgs e)
+        {
+            pwBox.ReadOnly = true;
+            modify();
+        }
+
+        private void nmcom_Click(object sender, EventArgs e)
+        {
+            nameBox.ReadOnly = true;
+            modify();
+        }
+
+        private void phncom_Click(object sender, EventArgs e)
+        {
+            pnBox.ReadOnly = true;
+            modify();
+        }
+
+        private void nmcomp_Click(object sender, EventArgs e)
+        {
+            nnBox.ReadOnly = true;
+            modify();
+        }
+
+
+        public void modify()
+        {
+            if (idBox.ReadOnly == true &&
+                pwBox.ReadOnly == true &&
+                nameBox.ReadOnly == true &&
+                 pnBox.ReadOnly == true &&
+                 nnBox.ReadOnly == true)
+            {
+                button_update.Enabled = true;
+            }
+            else
+            {
+                button_update.Enabled = false;
+            }
+        }
     }
+  
 }
