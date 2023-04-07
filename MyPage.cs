@@ -334,5 +334,16 @@ namespace TeamProject
             }
             BookmarkView();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int i;
+            Check ch = new();
+            i = ch.CheckID(idBox.Text);
+            if (i == 1) 
+            { MessageBox.Show("중복검사 성공"); }
+            if (i == 2)
+            { MessageBox.Show("중복검사 실패"); }
+        }
     }
 }
