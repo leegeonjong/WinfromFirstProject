@@ -90,11 +90,14 @@ namespace TeamProject
                 }
                 lblRuntime.Text = (string)Movie["runtime"] + "(분)";
                 // 영화감독 이름 추출
-                string directorNames = string.Join(", ", Movie["directors"]["director"].Select(d => d["directorNm"].ToString()));
+                string directorNames = string.Join(", ", 
+                    Movie["directors"]["director"].Select(d => d["directorNm"].ToString()));
                 // 출연배우 이름 추출
-                string actorNames = string.Join(", ", Movie["actors"]["actor"].Select(a => a["actorNm"].ToString()));
+                string actorNames = string.Join(", ", 
+                    Movie["actors"]["actor"].Select(a => a["actorNm"].ToString()));
                 // 줄거리 추출
-                string plotText = Movie["plots"]["plot"].FirstOrDefault(p => p["plotLang"].ToString() == "한국어")?["plotText"].ToString();
+                string plotText = Movie["plots"]["plot"].
+                    FirstOrDefault(p => p["plotLang"].ToString() == "한국어")?["plotText"].ToString();
                 // 추출한 데이터를 레이블에 할당합니다.
                 lblDirector.Text = directorNames;
                 txtlActor.Text = actorNames;
@@ -113,7 +116,7 @@ namespace TeamProject
                 if (await reader.ReadAsync())
                 {
                     double rateAvg = reader.GetDouble(0);
-                    lblScore.Text = rateAvg.ToString();
+                    lblScore.Text = rateAvg.ToString("F1"); //소수점 이하 한 자리까지 표시
                 }
                 else
                 {

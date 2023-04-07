@@ -46,24 +46,19 @@ namespace TeamProject
         }
         private async Task LoadMovieDataAsync()
         {
-            //Admin_Page adminPage = new Admin_Page();
-            //adminPage.Show();
-            string Country = "한국";
-            const string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
+            const string strConn = "Server=127.0.0.1; Database=teamproject; " +
+                "uid=project; pwd=1234; Encrypt=false";
             using SqlConnection conn = new SqlConnection(strConn);
             await conn.OpenAsync();
-
-            using SqlCommand cmd = new SqlCommand("SELECT TOP 50 Title FROM MovieList WHERE Country = @Country", conn);
-            SqlParameter parameter = new SqlParameter("@Country", System.Data.SqlDbType.VarChar);
-            parameter.Value = Country;
-            cmd.Parameters.Add(parameter);
+            using SqlCommand cmd = new SqlCommand("SELECT TOP 50 Title, RateAvg FROM MovieList", conn);
             using SqlDataReader reader = await cmd.ExecuteReaderAsync();
             rank = 0;
             while (await reader.ReadAsync())
             {
                 string title = reader.GetString(0);
+                double rateAvg = reader.GetDouble(1);
                 string imageUrl = await SearchMovie(title);
-                AddMovieItem(title, imageUrl);
+                AddMovieItem(title, imageUrl, rateAvg);
             }
 
         }
@@ -130,7 +125,7 @@ namespace TeamProject
 
             return null;
         }
-        private void AddMovieItem(string title, string imageUrlOrText)
+        private void AddMovieItem(string title, string imageUrlOrText, double rateAvg)
         {
             var panel = new Panel
             {
@@ -165,7 +160,7 @@ namespace TeamProject
             rank++;
             var titleLabel = new Label
             {
-                Text = $"[{rank}] {title}",
+                Text = $"[{rank}] {title} [{rateAvg:F1}]",
                 Location = new Point(0, 180),
                 AutoSize = true,
                 AutoEllipsis = false,
@@ -250,7 +245,7 @@ namespace TeamProject
             label_nn.Text = userNickname + " 관리자님 반갑습니다";
             useruid = chk.FindUid(label_id.Text);
             mypage.Visible = true;
-            btn_managingMember.Visible = true;         
+            btn_managingMember.Visible = true;
             label_id.Visible = false;
 
 
@@ -265,8 +260,8 @@ namespace TeamProject
                 2 => "Title DESC",      //내림차순
                 3 => "ReleaseDate DESC",//최신 작품순
                 4 => "ReleaseDate ASC", //예전 작품순
-                5 => "RateAvg DESC",    //리뷰 많은순
-                6 => "RateAvg ASC",     //리뷰 적은순
+                5 => "RateAvg DESC",    //별점 많은순
+                6 => "RateAvg ASC",     //별점 적은순
             };
             DateTime startDate = dTPStart.Value;
             DateTime endDate = dTPEnd.Value;
@@ -281,7 +276,8 @@ namespace TeamProject
             using SqlConnection conn = new SqlConnection(strConn);
             await conn.OpenAsync();
 
-            string query = $"SELECT TOP 50 Title FROM MovieList WHERE ReleaseDate BETWEEN @StartDate AND @EndDate ORDER BY {orderByColumn}";
+            string query = $"SELECT TOP 50 Title, RateAvg FROM MovieList WHERE ReleaseDate " +
+                $"BETWEEN @StartDate AND @EndDate ORDER BY {orderByColumn}";
             using SqlCommand cmd = new SqlCommand(query, conn);
 
             cmd.Parameters.AddWithValue("@StartDate", startDate);
@@ -293,8 +289,9 @@ namespace TeamProject
             while (await reader.ReadAsync())
             {
                 string title = reader.GetString(0);
+                double rateAvg = reader.GetDouble(1);
                 string imageUrl = await SearchMovie(title);
-                AddMovieItem(title, imageUrl);
+                AddMovieItem(title, imageUrl, rateAvg);
             }
         }
 
@@ -323,7 +320,7 @@ namespace TeamProject
                     DateTime startDate = dTPStart.Value;
                     DateTime endDate = dTPEnd.Value;
 
-                    using SqlCommand cmd = new SqlCommand("SELECT Title FROM MovieList WHERE ReleaseDate BETWEEN @startDate AND @endDate", conn);
+                    using SqlCommand cmd = new SqlCommand("SELECT Title, RateAvg FROM MovieList WHERE ReleaseDate BETWEEN @startDate AND @endDate", conn);
                     SqlParameter startParam = new SqlParameter("@startDate", System.Data.SqlDbType.Date);
                     startParam.Value = startDate;
                     cmd.Parameters.Add(startParam);
@@ -338,14 +335,15 @@ namespace TeamProject
                     while (await reader.ReadAsync())
                     {
                         string title = reader.GetString(0);
+                        double rateAvg = reader.GetDouble(1);
                         string imageUrl = await SearchMovie(title);
-                        AddMovieItem(title, imageUrl);
+                        AddMovieItem(title, imageUrl, rateAvg);
                     }
                     return;
                 }
             };
 
-            using SqlCommand cmd = new SqlCommand("SELECT TOP 50 Title FROM MovieList WHERE Title LIKE @name", conn);
+            using SqlCommand cmd = new SqlCommand("SELECT TOP 50 Title, RateAvg FROM MovieList WHERE Title LIKE @name", conn);
             SqlParameter parameter = new SqlParameter("@name", System.Data.SqlDbType.VarChar);
             parameter.Value = "%" + name + "%";
             cmd.Parameters.Add(parameter);
@@ -355,8 +353,9 @@ namespace TeamProject
             while (await reader.ReadAsync())
             {
                 string title = reader.GetString(0);
+                double rateAvg = reader.GetDouble(1);
                 string imageUrl = await SearchMovie(title);
-                AddMovieItem(title, imageUrl);
+                AddMovieItem(title, imageUrl, rateAvg);
             }
         }
 
