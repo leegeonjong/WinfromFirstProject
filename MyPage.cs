@@ -51,7 +51,7 @@ namespace TeamProject
 
             certification cert = new certification(strConn);
             SqlCommand cmd = cert.GetSqlCommand();
-            modify();
+  
 
 
 
@@ -96,6 +96,7 @@ namespace TeamProject
             }
 
             // SqlDataReader 객체를 닫습니다.
+            modify();
             reader.Close();
         }
 
@@ -508,6 +509,7 @@ namespace TeamProject
                 if (main.useruid > 0)
                 {
                     idBox.Text = ch.Findid(UserUid);
+                    idBox.ReadOnly = false;
                     return;
                 }
                 idBox.Text = ch.Findid(adminform.usuid);
