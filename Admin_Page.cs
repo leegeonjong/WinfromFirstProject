@@ -27,8 +27,7 @@ namespace TeamProject
         {
             InitializeComponent();
             MainForm = mainForm;
-            memberView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 190, 250);
-            memberView.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 190, 250);
+            memberView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 190, 250);           
             memberView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
            
         }
