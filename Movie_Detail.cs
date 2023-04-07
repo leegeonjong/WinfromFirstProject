@@ -112,7 +112,7 @@ namespace TeamProject
                 parameter.Value = title;
                 cmd.Parameters.Add(parameter);
                 using SqlDataReader reader = await cmd.ExecuteReaderAsync();
-
+                
                 if (await reader.ReadAsync())
                 {
                     double rateAvg = reader.GetDouble(0);

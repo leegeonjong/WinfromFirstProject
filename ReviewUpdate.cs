@@ -50,6 +50,8 @@ namespace TeamProject
             SqlCommand cmd = cert.GetSqlCommand();
             Check check = new Check();
 
+
+
             MovieUid = check.FindMvUid(mnBox.Text);
             UserUid = check.FindUid(mypage.idBox.Text);
 
@@ -137,6 +139,8 @@ namespace TeamProject
         finally
         {
             Cursor = Cursors.Default;
+                Check check = new();
+                check.UpdateAvgRate(MovieUid);
         }
     }
 }
