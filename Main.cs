@@ -166,7 +166,7 @@ namespace TeamProject
                 AutoEllipsis = false,
                 Size = new Size(120, 40),
                 TextAlign = ContentAlignment.TopCenter,
-                Font = new Font("Arial", 10, FontStyle.Bold)
+                Font = new Font("Arial", 10)
             };
             titleLabel.DoubleClick += TitleLabel_DoubleClick;
             panel.Controls.Add(titleLabel);
