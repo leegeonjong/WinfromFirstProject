@@ -345,5 +345,30 @@ namespace TeamProject
             if (i == 2)
             { MessageBox.Show("중복검사 실패"); }
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            idBox.ReadOnly = false; 
+        }
+
+        private void pwmodify_Click(object sender, EventArgs e)
+        {
+            pwBox.ReadOnly = false;        
+        }
+
+        private void nmmodify_Click(object sender, EventArgs e)
+        {
+            nameBox.ReadOnly = false;
+        }
+
+        private void phnmodify_Click(object sender, EventArgs e)
+        {
+            pnBox.ReadOnly = false;
+        }
+
+        private void nnmodify_Click(object sender, EventArgs e)
+        {
+            nnBox.ReadOnly = false;
+        }
     }
 }
