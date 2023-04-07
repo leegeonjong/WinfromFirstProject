@@ -14,19 +14,22 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TeamProject
 {
-   
+
     public partial class Admin_Page : Form
     {
         string strConn = "Server=127.0.0.1; Database=teamproject; uid=project; pwd=1234; Encrypt=false";
         public int usuid { get; set; }
         public int userUid { get; set; }
 
-        
+
         private Main MainForm;
         public Admin_Page(Main mainForm)
         {
             InitializeComponent();
             MainForm = mainForm;
+            memberView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 190, 250);
+            memberView.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 190, 250);
+            memberView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
 
         private void Admin_Page_Load(object sender, EventArgs e)
@@ -36,6 +39,7 @@ namespace TeamProject
 
         private void DataViewLoad()
         {
+            memberView.AllowUserToAddRows = false;
 
             certification cert = new certification(strConn);
             SqlCommand cmd = cert.GetSqlCommand();
@@ -47,6 +51,13 @@ namespace TeamProject
             dataTable.Load(reader);
 
             memberView.DataSource = dataTable;
+
+            memberView.Columns["u_uid"].HeaderText = "회원고유번호";
+            memberView.Columns["u_id"].HeaderText = "아이디";
+            memberView.Columns["u_password"].HeaderText = "비밀번호";
+            memberView.Columns["u_name"].HeaderText = "이름";
+            memberView.Columns["u_phonenum"].HeaderText = "휴대폰 번호";
+            memberView.Columns["u_nickname"].HeaderText = "닉네임";
 
             // 리소스 정리
             reader.Close();
@@ -75,7 +86,7 @@ namespace TeamProject
 
                 using SqlConnection conn = new(strConn);
                 conn.Open();
-                 
+
                 string sql = "DELETE Review WHERE u_uid = @u_uid; " +
                     " DELETE BookMark WHERE u_uid = @u_uid; " +
                     " DELETE project_user WHERE u_uid = @u_uid; ";
@@ -136,6 +147,8 @@ namespace TeamProject
 
             memberView.DataSource = dataTable;
 
+
+
             // 리소스 정리
             reader.Close();
             cmd.Dispose();
@@ -152,12 +165,12 @@ namespace TeamProject
                 DataGridViewRow row = memberView.Rows[rowIndex];
                 usuid = (int)row.Cells[0].Value;
                 // detailForm 객체 생성 및 화면에 표시
-                MyPage mypage = new MyPage(this,MainForm);              
+                MyPage mypage = new MyPage(this, MainForm);
                 mypage.StartPosition = FormStartPosition.CenterScreen;
-                mypage.Show();                
-                
+                mypage.Show();
+
             }
-            MainForm.useruid = userUid;                                
+            MainForm.useruid = userUid;
         }
 
         private void btn_Search_Click(object sender, EventArgs e)
@@ -181,6 +194,6 @@ namespace TeamProject
             cmd.Dispose();
         }
 
-     
+
     }
 }

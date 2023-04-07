@@ -37,8 +37,11 @@ namespace TeamProject
             MovieUid = main.movieuid;
             aduseruid = form.userUid;
             myReviewView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 190, 250);
+            myReviewView.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 190, 250);
             myReviewView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
             myBookmarkView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 190, 250);
+            myBookmarkView.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 190, 250);
             myBookmarkView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
 
