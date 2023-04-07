@@ -335,8 +335,8 @@ namespace TeamProject
             {
                 cell.OwningRow.Selected = true;
             }
-            Main main = new Main();
-            ReviewUpdate updatePage = new ReviewUpdate(this);
+            
+            ReviewUpdate updatePage = new ReviewUpdate(adminform,this);
 
             updatePage.Show();
         }
