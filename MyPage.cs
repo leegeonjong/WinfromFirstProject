@@ -596,10 +596,13 @@ namespace TeamProject
                 if (main.useruid > 0)
                 {
                     idBox.Text = ch.Findid(UserUid);
-                    idBox.ReadOnly = false;
+                    idBox.ReadOnly = true;
+                    modify();
                     return;
                 }
                 idBox.Text = ch.Findid(adminform.usuid);
+                idBox.ReadOnly = true;
+                modify();
             }
             modify();
         }
