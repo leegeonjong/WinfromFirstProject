@@ -65,7 +65,7 @@ namespace TeamProject
                     nameBox.Text = reader1["u_name"].ToString();
                     pnBox.Text = reader1["u_phonenum"].ToString();
                     nnBox.Text = reader1["u_nickname"].ToString();
-                    lvBox.Text = reader1["u_level"].ToString();
+
 
                 }
 
@@ -93,7 +93,7 @@ namespace TeamProject
                 nameBox.Text = reader["u_name"].ToString();
                 pnBox.Text = reader["u_phonenum"].ToString();
                 nnBox.Text = reader["u_nickname"].ToString();
-                lvBox.Text = reader["u_level"].ToString();
+
 
             }
 
@@ -126,7 +126,6 @@ namespace TeamProject
                 cmd.Parameters.AddWithValue("@u_password", pwBox.Text);
                 cmd.Parameters.AddWithValue("@u_name", nameBox.Text);
                 cmd.Parameters.AddWithValue("@u_phonenum", pnBox.Text);
-                cmd.Parameters.AddWithValue("@u_level", lvBox.Text);
                 cmd.Parameters.AddWithValue("@u_nickname", nnBox.Text);
 
                 // UPDATE 쿼리문 실행
@@ -341,7 +340,7 @@ namespace TeamProject
             int i;
             Check ch = new();
             i = ch.CheckID(idBox.Text);
-            if (i == 1) 
+            if (i == 1)
             { MessageBox.Show("중복검사 성공"); }
             if (i == 2)
             { MessageBox.Show("중복검사 실패"); }
