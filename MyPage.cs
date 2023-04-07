@@ -37,8 +37,11 @@ namespace TeamProject
             MovieUid = main.movieuid;
             aduseruid = form.userUid;
             myReviewView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 190, 250);
+            myReviewView.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 190, 250);
             myReviewView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
             myBookmarkView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 190, 250);
+            myBookmarkView.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(108, 190, 250);
             myBookmarkView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
 
@@ -56,10 +59,10 @@ namespace TeamProject
 
 
 
-            if (main.useruid > 0)
+            if (adminform.usuid > 0)
             {
                 cmd.CommandText = "SELECT u_uid,u_id, u_password, u_name, u_phonenum, u_level, u_nickname FROM project_user WHERE u_uid = @u_uid";
-                cmd.Parameters.AddWithValue("@u_uid", main.useruid);
+                cmd.Parameters.AddWithValue("@u_uid", adminform.usuid);
                 SqlDataReader reader1 = cmd.ExecuteReader();
                 while (reader1.Read())
                 {
@@ -81,7 +84,7 @@ namespace TeamProject
 
 
             cmd.CommandText = "SELECT u_uid,u_id, u_password, u_name, u_phonenum, u_level, u_nickname FROM project_user WHERE u_uid = @u_uid";
-            cmd.Parameters.AddWithValue("@u_uid", adminform.usuid);
+            cmd.Parameters.AddWithValue("@u_uid", main.useruid);
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -187,14 +190,14 @@ namespace TeamProject
             UserUid = check.FindUid(UserId);
 
 
-            if (main.useruid > 0)
+            if (adminform.usuid > 0)
             {
 
                 cmd.CommandText = $"SELECT  m.title, u.u_nickname, r.r_rate, r.r_content, r.r_date " +
                                 $"FROM review r " +
                                 $"INNER JOIN project_user u ON r.u_uid = u.u_uid " +
                                 $"INNER JOIN MovieList M ON r.MovieUID = m.MovieUID " +
-                                $"WHERE u.u_uid = {UserUid}";
+                                $"WHERE u.u_uid = {adminform.usuid}";
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -226,7 +229,7 @@ namespace TeamProject
                                 $"FROM review r " +
                                 $"INNER JOIN project_user u ON r.u_uid = u.u_uid " +
                                 $"INNER JOIN MovieList M ON r.MovieUID = m.MovieUID " +
-                                $"WHERE u.u_uid = {adminform.usuid}";
+                                $"WHERE u.u_uid = {UserUid}";
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -265,13 +268,13 @@ namespace TeamProject
             Check check = new Check();
             UserUid = check.FindUid(UserId);
 
-            if (main.useruid > 0)
+            if (adminform.usuid > 0)
             {
                 cmd.CommandText = $"SELECT M.title " +
                                 $"FROM Bookmark b " +
                                 $"INNER JOIN project_user u ON b.u_uid = u.u_uid " +
                                 $"INNER JOIN MovieList M ON b.MovieUID = m.MovieUID " +
-                                $"WHERE u.u_uid = {UserUid}";
+                                $"WHERE u.u_uid = {adminform.usuid}";
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -300,7 +303,7 @@ namespace TeamProject
                             $"FROM Bookmark b " +
                             $"INNER JOIN project_user u ON b.u_uid = u.u_uid " +
                             $"INNER JOIN MovieList M ON b.MovieUID = m.MovieUID " +
-                            $"WHERE u.u_uid = {adminform.usuid}";
+                            $"WHERE u.u_uid = {UserUid}";
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -348,40 +351,81 @@ namespace TeamProject
 
             try
             {
-                foreach (DataGridViewCell cell in myBookmarkView.SelectedCells)
+                if (adminform.usuid > 0)
                 {
-                    cell.OwningRow.Selected = true;
-                }
-
-                Cursor = Cursors.WaitCursor;
-
-                if (myBookmarkView.SelectedRows.Count == 0) return; // 삭제하려는 row가 선택되어 있지 않으면 return
-
-
-                // 삭제전에 확인
-                if (MessageBox.Show($"{myBookmarkView.SelectedRows.Count}개의 즐겨찾기를 삭제할까요?", "삭제확인"
-                     , MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK)
-                { return; }
-
-                using SqlConnection conn = new(strConn);
-                conn.Open();
-
-                string sql = $"DELETE FROM Bookmark WHERE u_uid = '{UserUid}' AND MovieUID = {MovieUid}; ";
-
-                int cnt = 0;
-
-                foreach (DataGridViewRow row in myBookmarkView.SelectedRows)
-                {
-                    string uid = row.Cells[0].Value.ToString();  // PK 값은 첫번째 컬럼
-                    using SqlCommand cmd = new(sql, conn);
-                    cmd.Parameters.AddWithValue("@u_uid", uid);
-
-                    int result = cmd.ExecuteNonQuery();
-                    if (result > 0)
+                    foreach (DataGridViewCell cell in myBookmarkView.SelectedCells)
                     {
-                        cnt += result;
+                        cell.OwningRow.Selected = true;
                     }
 
+                    Cursor = Cursors.WaitCursor;
+
+                    if (myBookmarkView.SelectedRows.Count == 0) return; // 삭제하려는 row가 선택되어 있지 않으면 return
+
+
+                    // 삭제전에 확인
+                    if (MessageBox.Show($"{myBookmarkView.SelectedRows.Count}개의 즐겨찾기를 삭제할까요?", "삭제확인"
+                         , MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK)
+                    { return; }
+
+                    using SqlConnection conn = new(strConn);
+                    conn.Open();
+
+                    string sql = $"DELETE FROM Bookmark WHERE u_uid = '{adminform.usuid}' AND MovieUID = {MovieUid}; ";
+
+                    int cnt = 0;
+
+                    foreach (DataGridViewRow row in myBookmarkView.SelectedRows)
+                    {
+                        string uid = row.Cells[0].Value.ToString();  // PK 값은 첫번째 컬럼
+                        using SqlCommand cmd = new(sql, conn);
+                        cmd.Parameters.AddWithValue("@u_uid", uid);
+
+                        int result = cmd.ExecuteNonQuery();
+                        if (result > 0)
+                        {
+                            cnt += result;
+                        }
+
+                    }
+                }
+                else
+                {
+                    foreach (DataGridViewCell cell in myBookmarkView.SelectedCells)
+                    {
+                        cell.OwningRow.Selected = true;
+                    }
+
+                    Cursor = Cursors.WaitCursor;
+
+                    if (myBookmarkView.SelectedRows.Count == 0) return; // 삭제하려는 row가 선택되어 있지 않으면 return
+
+
+                    // 삭제전에 확인
+                    if (MessageBox.Show($"{myBookmarkView.SelectedRows.Count}개의 즐겨찾기를 삭제할까요?", "삭제확인"
+                         , MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK)
+                    { return; }
+
+                    using SqlConnection conn = new(strConn);
+                    conn.Open();
+
+                    string sql = $"DELETE FROM Bookmark WHERE u_uid = '{UserUid}' AND MovieUID = {MovieUid}; ";
+
+                    int cnt = 0;
+
+                    foreach (DataGridViewRow row in myBookmarkView.SelectedRows)
+                    {
+                        string uid = row.Cells[0].Value.ToString();  // PK 값은 첫번째 컬럼
+                        using SqlCommand cmd = new(sql, conn);
+                        cmd.Parameters.AddWithValue("@u_uid", uid);
+
+                        int result = cmd.ExecuteNonQuery();
+                        if (result > 0)
+                        {
+                            cnt += result;
+                        }
+
+                    }
                 }
 
             }
@@ -440,45 +484,88 @@ namespace TeamProject
 
         private void btn_reviewDelete_Click(object sender, EventArgs e)
         {
-            Check check = new Check();
+          
+                Check check = new Check();
             string movietitle = myReviewView.SelectedCells[0].Value.ToString();
             UserUid = check.FindUid(UserId);
             MovieUid = check.FindMvUid(movietitle);
 
             try
             {
-                foreach (DataGridViewCell cell in myReviewView.SelectedCells)
+                if (adminform.usuid > 0)
                 {
-                    cell.OwningRow.Selected = true;
-                }
 
-                Cursor = Cursors.WaitCursor;
-
-                if (myReviewView.SelectedRows.Count == 0) return; // 삭제하려는 row가 선택되어 있지 않으면 return
-
-
-                // 삭제전에 확인
-                if (MessageBox.Show($"{myReviewView.SelectedRows.Count}개의 리뷰를 삭제할까요?", "삭제확인"
-                     , MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK)
-                { return; }
-
-                using SqlConnection conn = new(strConn);
-                conn.Open();
-
-                string sql = $"DELETE FROM Review WHERE u_uid = '{UserUid}' AND MovieUID = {MovieUid}; ";
-
-                int cnt = 0;
-
-                foreach (DataGridViewRow row in myReviewView.SelectedRows)
-                {
-                    string uid = row.Cells[0].Value.ToString();  // PK 값은 첫번째 컬럼
-                    using SqlCommand cmd = new(sql, conn);
-                    cmd.Parameters.AddWithValue("@u_uid", uid);
-
-                    int result = cmd.ExecuteNonQuery();
-                    if (result > 0)
+                    foreach (DataGridViewCell cell in myReviewView.SelectedCells)
                     {
-                        cnt += result;
+                        cell.OwningRow.Selected = true;
+                    }
+
+                    Cursor = Cursors.WaitCursor;
+
+                    if (myReviewView.SelectedRows.Count == 0) return; // 삭제하려는 row가 선택되어 있지 않으면 return
+
+
+                    // 삭제전에 확인
+                    if (MessageBox.Show($"{myReviewView.SelectedRows.Count}개의 리뷰를 삭제할까요?", "삭제확인"
+                         , MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK)
+                    { return; }
+
+                    using SqlConnection conn = new(strConn);
+                    conn.Open();
+
+                    string sql = $"DELETE FROM Review WHERE u_uid = '{adminform.usuid}' AND MovieUID = {MovieUid}; ";
+
+                    int cnt = 0;
+
+                    foreach (DataGridViewRow row in myReviewView.SelectedRows)
+                    {
+                        string uid = row.Cells[0].Value.ToString();  // PK 값은 첫번째 컬럼
+                        using SqlCommand cmd = new(sql, conn);
+                        cmd.Parameters.AddWithValue("@u_uid", uid);
+
+                        int result = cmd.ExecuteNonQuery();
+                        if (result > 0)
+                        {
+                            cnt += result;
+                        }
+                    }
+                }
+                else
+                {
+
+                    foreach (DataGridViewCell cell in myReviewView.SelectedCells)
+                    {
+                        cell.OwningRow.Selected = true;
+                    }
+
+                    Cursor = Cursors.WaitCursor;
+
+                    if (myReviewView.SelectedRows.Count == 0) return; // 삭제하려는 row가 선택되어 있지 않으면 return
+
+
+                    // 삭제전에 확인
+                    if (MessageBox.Show($"{myReviewView.SelectedRows.Count}개의 리뷰를 삭제할까요?", "삭제확인"
+                         , MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK)
+                    { return; }
+
+                    using SqlConnection conn = new(strConn);
+                    conn.Open();
+
+                    string sql = $"DELETE FROM Review WHERE u_uid = '{UserUid}' AND MovieUID = {MovieUid}; ";
+
+                    int cnt = 0;
+
+                    foreach (DataGridViewRow row in myReviewView.SelectedRows)
+                    {
+                        string uid = row.Cells[0].Value.ToString();  // PK 값은 첫번째 컬럼
+                        using SqlCommand cmd = new(sql, conn);
+                        cmd.Parameters.AddWithValue("@u_uid", uid);
+
+                        int result = cmd.ExecuteNonQuery();
+                        if (result > 0)
+                        {
+                            cnt += result;
+                        }
                     }
                 }
 
