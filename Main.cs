@@ -1,22 +1,8 @@
 using Microsoft.Data.SqlClient;
-using System.Drawing;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System;
+
 using Newtonsoft.Json.Linq;
+
 using System.Net;
-using System.Text;
-using System.Xml;
-using MySqlX.XDevAPI;
-using TMDbLib.Client;
-using TMDbLib.Objects.General;
-using TMDbLib.Objects.Movies;
-using TMDbLib.Objects.Search;
-using Microsoft.VisualBasic.Devices;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Security.Policy;
 
 namespace TeamProject
 {
