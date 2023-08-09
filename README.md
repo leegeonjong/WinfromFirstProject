@@ -1,4 +1,4 @@
-# **쇼핑몰 상품관리 프로그램**
+# **영화 리뷰 프로그램**
 
 ## **개요**
 - 회원 CRUD , 영화리스트 CRUD 등을 통한 CRUD의 이해
@@ -33,12 +33,9 @@ ERD 설계
 
 ![image-2](./image/signin.png)
 
-마이페이지
+마이페이지(정보 수정)
 
 ![image-3](./image/MyPage.png)
-
-
-
-상품 추가 탭(이미지 업로드)
+마이페이지(리뷰관리)
 
 ![image-4](./image/MyPage2.png)
