@@ -21,22 +21,22 @@
 
 [제작 시연 영상]: https://www.youtube.com/watch?v=R2bu9cVhz_Q&list=PLedGoSru794_Yr2H12lOkCSZo3Y-VFaEk&index=3
 
-ERD 설계
+- ERD 설계
 
 ![image](./image/erd.png)
 
-로그인 
+- 로그인 
 
 ![image-1](./image/login.png)
 
-회원가입
+- 회원가입
 
 ![image-2](./image/signin.png)
 
-마이페이지(정보 수정)
+- 마이페이지(정보 수정)
 
 ![image-3](./image/MyPage.png)
 
-마이페이지(리뷰관리)
+- 마이페이지(리뷰관리)
 
 ![image-4](./image/MyPage2.png)
