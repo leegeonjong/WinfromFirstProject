@@ -22,6 +22,7 @@
 [제작 시연 영상]: https://www.youtube.com/watch?v=R2bu9cVhz_Q&list=PLedGoSru794_Yr2H12lOkCSZo3Y-VFaEk&index=3
 
 ERD 설계
+
 ![image](./image/erd.png)
 
 로그인 
@@ -29,6 +30,7 @@ ERD 설계
 ![image-1](./image/login.png)
 
 회원가입
+
 ![image-2](./image/signin.png)
 
 마이페이지
