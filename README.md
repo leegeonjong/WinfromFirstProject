@@ -36,6 +36,7 @@ ERD 설계
 마이페이지(정보 수정)
 
 ![image-3](./image/MyPage.png)
+
 마이페이지(리뷰관리)
 
 ![image-4](./image/MyPage2.png)
